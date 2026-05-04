@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PassExamUSA — Premium License Exam Prep Apps 2026</title>
+<meta name="description" content="Pass your Real Estate, CDL, or Driver's License exam on the first try. 200+ updated questions, AI explanations, offline mode.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%230A0F1E'/><text x='50' y='68' text-anchor='middle' font-size='55' fill='%23C8A84B'>★</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* === RESET & VARIABLES === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg-primary: #0A0F1E;
+  --bg-card: #141B2D;
+  --bg-glass: rgba(20, 27, 45, 0.7);
+  --accent-gold: #C8A84B;
+  --accent-light: #E8C86B;
+  --accent-glow: rgba(200, 168, 75, 0.3);
+  --accent-orange: #E87C35;
+  --accent-blue: #3B82F6;
+  --success: #10B981;
+  --text-primary: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --text-muted: #475569;
+  --border-gold: rgba(200, 168, 75, 0.2);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-body); cursor: pointer; border: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 4px; }
+
+/* === UTILITIES === */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.section-pad { padding: 100px 0; }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.gold-text { color: var(--accent-gold); }
+.shimmer {
+  background: linear-gradient(110deg, var(--accent-gold) 0%, #fff 20%, var(--accent-gold) 40%, var(--accent-gold) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer { 0%,100%{background-position:200% 0} 50%{background-position:-200% 0} }
+
+/* === GLASS CARD === */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(200,168,75,0.1);
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: 12px;
+  font-weight: 600; font-size: 15px;
+  transition: all 0.3s ease; letter-spacing: 0.3px;
+}
+.btn-gold {
+  background: linear-gradient(135deg, var(--accent-gold), #D4B85C);
+  color: #0A0F1E;
+}
+.btn-gold:hover { box-shadow: 0 0 30px var(--accent-glow); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--accent-gold);
+  color: var(--accent-gold);
+}
+.btn-outline:hover { background: rgba(200,168,75,0.1); transform: translateY(-2px); }
+.btn-orange { background: linear-gradient(135deg, var(--accent-orange), #F09050); color: #fff; }
+.btn-orange:hover { box-shadow: 0 0 30px rgba(232,124,53,0.4); transform: translateY(-2px); }
+.btn-blue { background: linear-gradient(135deg, var(--accent-blue), #60A5FA); color: #fff; }
+.btn-blue:hover { box-shadow: 0 0 30px rgba(59,130,246,0.4); transform: translateY(-2px); }
+
+/* === PAGE SYSTEM === */
+.page { display: none; }
+.page.active { display: block; }
+
+/* === NAV === */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+#navbar.scrolled {
+  background: rgba(10,15,30,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 10px 0;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  display: flex; align-items: center; gap: 6px;
+  z-index: 1001;
+}
+.logo-icon { color: var(--accent-gold); font-size: 18px; }
+.nav-links {
+  display: flex; gap: 32px;
+}
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  transition: color 0.3s; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+  background: var(--accent-gold); transition: width 0.3s;
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-cta { padding: 10px 24px; font-size: 13px; }
+.burger { display: none; flex-direction: column; gap: 5px; background: none; z-index: 1001; }
+.burger span { width: 24px; height: 2px; background: var(--text-primary); transition: all 0.3s; border-radius: 2px; }
+.burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding-top: 80px;
+}
+.hero-gradient {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(to top, var(--bg-primary), transparent);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-badge {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+  color: var(--accent-gold);
+  padding: 8px 20px; border-radius: 100px;
+  border: 1px solid var(--border-gold);
+  background: rgba(200,168,75,0.08);
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.15; font-weight: 700;
+  margin-bottom: 24px;
+}
+.hero-sub {
+  font-size: 18px; color: var(--text-secondary);
+  max-width: 520px; margin-bottom: 36px; line-height: 1.7;
+}
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Phone Mockup */
+.phone-mockup {
+  display: flex; justify-content: center; align-items: center;
+  animation: phoneFloat 6s ease-in-out infinite;
+}
+@keyframes phoneFloat {
+  0%,100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-20px) rotate(-1deg); }
+}
+.phone-frame {
+  width: 280px; height: 570px;
+  border-radius: 36px;
+  border: 3px solid rgba(200,168,75,0.4);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(200,168,75,0.15);
+  background: #000;
+}
+.phone-notch {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 28px;
+  background: #000; border-radius: 0 0 18px 18px;
+  z-index: 2;
+}
+.phone-screen {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+}
+
+/* === STATS === */
+.stats-bar {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 48px 0;
+  position: relative;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+  text-align: center;
+}
+.stat-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.stat-number {
+  font-family: var(--font-mono); font-size: 48px; font-weight: 700;
+  color: var(--accent-gold);
+}
+.stat-plus { font-family: var(--font-mono); font-size: 32px; color: var(--accent-gold); }
+.stat-star { font-size: 28px; color: var(--accent-gold); margin-left: 4px; }
+.stat-label { font-size: 14px; color: var(--text-secondary); line-height: 1.4; }
+
+/* === SHOWCASE === */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  text-align: center; margin-bottom: 12px;
+}
+.section-sub {
+  text-align: center; color: var(--text-secondary);
+  font-size: 17px; margin-bottom: 60px;
+}
+.showcase-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.app-card {
+  padding: 32px; position: relative; overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.app-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 30px rgba(200,168,75,0.1);
+}
+.card-badge {
+  position: absolute; top: 20px; right: 20px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 100px; letter-spacing: 0.8px;
+}
+.badge-gold { background: rgba(200,168,75,0.2); color: var(--accent-gold); }
+.badge-orange { background: rgba(232,124,53,0.2); color: var(--accent-orange); }
+.badge-blue { background: rgba(59,130,246,0.2); color: var(--accent-blue); }
+.card-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 700; margin-bottom: 4px;
+}
+.card-edition { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+.card-features { margin-bottom: 28px; }
+.card-features li {
+  font-size: 14px; padding: 6px 0; color: var(--text-secondary);
+  display: flex; align-items: center; gap: 10px;
+}
+.check { font-weight: 700; font-size: 15px; }
+.card-actions { display: flex; gap: 12px; }
+.card-actions .btn { width: 100%; justify-content: center; }
+
+/* === WHY === */
+.why-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.why-card {
+  padding: 40px 32px; text-align: center;
+  transition: transform 0.3s;
+}
+.why-card:hover { transform: translateY(-6px); }
+.why-icon { font-size: 42px; margin-bottom: 20px; }
+.why-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px; margin-bottom: 12px; font-weight: 600;
+}
+.why-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+/* === TESTIMONIALS === */
+.testimonials { background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(20,27,45,0.4) 50%, var(--bg-primary) 100%); }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.test-card { padding: 32px; transition: transform 0.3s; }
+.test-card:hover { transform: translateY(-4px); }
+.test-stars { color: var(--accent-gold); font-size: 18px; margin-bottom: 16px; letter-spacing: 3px; }
+.test-quote {
+  font-size: 15px; line-height: 1.8; color: var(--text-secondary);
+  margin-bottom: 24px; font-style: italic;
+}
+.test-author { display: flex; align-items: center; gap: 14px; }
+.test-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(200,168,75,0.2); color: var(--accent-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+}
+.test-author strong { font-size: 14px; }
+.text-muted { color: var(--text-muted); font-size: 12px; }
+
+/* === PLATFORMS === */
+.platform-badges { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.store-badge {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 28px; transition: all 0.3s;
+  color: var(--text-primary);
+}
+.store-badge:hover { transform: translateY(-3px); box-shadow: 0 0 20px var(--accent-glow); }
+.store-badge small { font-size: 11px; color: var(--text-secondary); display: block; }
+.store-badge strong { font-size: 16px; display: block; }
+
+/* === HOW IT WORKS === */
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  position: relative;
+}
+.steps-grid::before {
+  content: ''; position: absolute; top: 40px; left: 12%; right: 12%;
+  height: 2px; background: linear-gradient(90deg, transparent, var(--border-gold), var(--accent-gold), var(--border-gold), transparent);
+  z-index: 0;
+}
+.step-card {
+  text-align: center; position: relative; z-index: 1;
+  padding: 20px;
+}
+.step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-gold), #D4B85C);
+  color: #0A0F1E; font-family: var(--font-mono); font-weight: 700; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+.step-card h4 { font-family: var(--font-display); font-size: 18px; margin-bottom: 8px; }
+.step-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+/* === DEMO QUESTION === */
+.demo-box {
+  max-width: 680px; margin: 0 auto; padding: 40px;
+}
+.demo-question {
+  font-family: var(--font-display); font-size: 22px; line-height: 1.5;
+  margin-bottom: 28px; text-align: center;
+}
+.demo-options { display: flex; flex-direction: column; gap: 12px; }
+.demo-opt {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px; border-radius: 12px;
+  background: rgba(200,168,75,0.05);
+  border: 1.5px solid rgba(200,168,75,0.15);
+  cursor: pointer; transition: all 0.3s;
+  font-size: 15px;
+}
+.demo-opt:hover { border-color: var(--accent-gold); background: rgba(200,168,75,0.1); }
+.demo-opt.correct {
+  border-color: var(--success) !important;
+  background: rgba(16,185,129,0.1) !important;
+}
+.demo-opt.wrong {
+  border-color: #EF4444 !important;
+  background: rgba(239,68,68,0.1) !important;
+}
+.demo-opt.disabled { pointer-events: none; opacity: 0.6; }
+.demo-opt.correct.disabled { opacity: 1; }
+.demo-letter {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(200,168,75,0.15); color: var(--accent-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; flex-shrink: 0;
+}
+.demo-result {
+  display: none; margin-top: 24px; padding: 20px;
+  border-radius: 12px; font-size: 14px; line-height: 1.7;
+}
+.demo-result.show { display: block; }
+.demo-result.success { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); }
+.demo-result.fail { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); }
+.demo-result strong { color: var(--text-primary); }
+.demo-cta {
+  text-align: center; margin-top: 28px;
+}
+
+/* === SUBPAGE COMMON === */
+.subpage-hero {
+  min-height: 60vh; display: flex; align-items: center;
+  padding-top: 100px; padding-bottom: 40px;
+  position: relative; overflow: hidden;
+}
+.subpage-hero .container { position: relative; z-index: 1; }
+.subpage-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.15; font-weight: 700; margin-bottom: 20px;
+}
+.subpage-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin-bottom: 32px; line-height: 1.7; }
+.subpage-badges { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-accent-line {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+
+/* Video Demo */
+.video-section { text-align: center; }
+.video-wrapper {
+  max-width: 800px; margin: 0 auto;
+  border-radius: 20px; overflow: hidden;
+  border: 2px solid var(--border-gold);
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--bg-card);
+  display: flex; align-items: center; justify-content: center;
+}
+.play-btn {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: rgba(200,168,75,0.9);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s;
+  box-shadow: 0 0 40px rgba(200,168,75,0.4);
+}
+.play-btn:hover { transform: scale(1.1); box-shadow: 0 0 60px rgba(200,168,75,0.6); }
+.play-btn svg { fill: #0A0F1E; margin-left: 4px; }
+
+/* Features Grid */
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.feat-card {
+  padding: 28px; transition: transform 0.3s;
+}
+.feat-card:hover { transform: translateY(-4px); }
+.feat-icon { font-size: 36px; margin-bottom: 16px; }
+.feat-card h4 { font-family: var(--font-display); font-size: 18px; margin-bottom: 8px; }
+.feat-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+/* Screenshot Gallery */
+.gallery-scroll {
+  display: flex; gap: 20px; overflow-x: auto;
+  padding: 20px 0; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-scroll::-webkit-scrollbar { height: 6px; }
+.gallery-scroll::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 3px; }
+.gallery-item {
+  flex: 0 0 220px; scroll-snap-align: center;
+  border-radius: 20px; overflow: hidden;
+  border: 2px solid var(--border-gold);
+  background: var(--bg-card);
+  height: 420px; display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); font-size: 14px;
+}
+
+/* Accordion */
+.accordion { max-width: 800px; margin: 0 auto; }
+.acc-item { border-bottom: 1px solid var(--border-gold); }
+.acc-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; cursor: pointer; font-weight: 500; font-size: 16px;
+  color: var(--text-primary); transition: color 0.3s;
+}
+.acc-header:hover { color: var(--accent-gold); }
+.acc-arrow { transition: transform 0.3s; color: var(--accent-gold); font-size: 14px; }
+.acc-item.open .acc-arrow { transform: rotate(180deg); }
+.acc-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+  color: var(--text-secondary); font-size: 14px; line-height: 1.7;
+}
+.acc-item.open .acc-body { max-height: 200px; }
+.acc-body-inner { padding: 0 0 18px; }
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(200,168,75,0.05), transparent);
+}
+.cta-price {
+  font-family: var(--font-mono); font-size: 28px; font-weight: 700;
+  color: var(--accent-gold); margin: 16px 0 8px;
+}
+.cta-note { color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+
+/* === INVESTORS === */
+.options-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.option-card {
+  padding: 36px; text-align: center; position: relative;
+  transition: transform 0.3s;
+}
+.option-card:hover { transform: translateY(-6px); }
+.option-label {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 2px;
+  color: var(--accent-gold); margin-bottom: 16px; text-transform: uppercase;
+}
+.option-card h3 {
+  font-family: var(--font-display); font-size: 24px; margin-bottom: 16px;
+}
+.option-card p { color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; line-height: 1.7; }
+.option-card .btn { width: 100%; justify-content: center; }
+
+/* Tech Stack */
+.tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 700px; margin: 0 auto; }
+.tech-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px; border-radius: 12px;
+  background: rgba(200,168,75,0.05);
+  border: 1px solid rgba(200,168,75,0.1);
+}
+.tech-label { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+.tech-value { font-size: 14px; font-weight: 600; }
+
+/* Proof */
+.proof-list {
+  max-width: 600px; margin: 0 auto;
+}
+.proof-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(200,168,75,0.08);
+  font-size: 15px;
+}
+.proof-check {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(16,185,129,0.15); color: var(--success);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; flex-shrink: 0;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 640px; margin: 0 auto;
+  padding: 40px;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block; font-size: 13px; font-weight: 600;
+  color: var(--text-secondary); margin-bottom: 8px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 14px 18px;
+  background: rgba(20,27,45,0.8);
+  border: 1px solid rgba(200,168,75,0.15);
+  border-radius: 12px; color: var(--text-primary);
+  font-family: var(--font-body); font-size: 15px;
+  transition: border-color 0.3s;
+  outline: none;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(200,168,75,0.1);
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+.checkbox-group { display: flex; gap: 16px; flex-wrap: wrap; }
+.checkbox-label {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer; font-size: 14px; color: var(--text-secondary);
+}
+.checkbox-label input[type="checkbox"] {
+  width: 18px; height: 18px; accent-color: var(--accent-gold);
+}
+.form-success {
+  display: none; text-align: center; padding: 24px;
+  color: var(--accent-gold); font-size: 16px; font-weight: 500;
+}
+
+/* === FOOTER === */
+#footer {
+  border-top: 1px solid var(--border-gold);
+  padding: 60px 0 30px;
+  background: rgba(10,15,30,0.8);
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand { }
+.footer-brand .nav-logo { font-size: 20px; margin-bottom: 14px; display: inline-flex; }
+.footer-brand p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; max-width: 300px; }
+.footer-col h4 {
+  font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--accent-gold); margin-bottom: 16px;
+}
+.footer-col a {
+  display: block; color: var(--text-secondary); font-size: 14px;
+  padding: 4px 0; transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--accent-gold); }
+.footer-bottom {
+  border-top: 1px solid rgba(200,168,75,0.1);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  color: var(--text-muted); font-size: 13px;
+}
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(200,168,75,0.2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary); transition: all 0.3s; font-size: 14px;
+}
+.footer-socials a:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-sub { margin: 0 auto 36px; }
+  .hero-ctas { justify-content: center; }
+  .hero-phone { order: -1; }
+  .phone-frame { width: 220px; height: 450px; }
+  .showcase-grid { grid-template-columns: 1fr 1fr; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .options-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid::before { display: none; }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10,15,30,0.98); backdrop-filter: blur(20px);
+    flex-direction: column; justify-content: center; align-items: center;
+    gap: 28px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 20px; }
+  .nav-cta { display: none; }
+  .burger { display: flex; }
+  .showcase-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .stat-number { font-size: 36px; }
+  .test-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid::before { display: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .section-pad { padding: 60px 0; }
+  .hero { padding-top: 60px; }
+  .subpage-hero { padding-top: 80px; min-height: 50vh; }
+  .contact-form { padding: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- CANVAS PARTICLES -->
+<canvas id="particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner container">
+    <a href="#home" class="nav-logo" onclick="showPage('home')">
+      <span class="logo-icon">★</span> PassExam<span class="gold-text">USA</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#real-estate" onclick="showPage('real-estate')">Real Estate</a>
+      <a href="#cdl" onclick="showPage('cdl')">CDL</a>
+      <a href="#dmv" onclick="showPage('dmv')">Driver's License</a>
+      <a href="#investors" onclick="showPage('investors')">For Investors</a>
+    </div>
+    <a href="#real-estate" class="btn btn-gold nav-cta" onclick="showPage('real-estate')">Download App</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ======== HOME PAGE ======== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge reveal">2026 Updated ★★★★★</div>
+        <h1 class="hero-title reveal">
+          Pass Your License Exam.<br>
+          <span class="shimmer">On the First Try.</span>
+        </h1>
+        <p class="hero-sub reveal">92% of our students pass on their first attempt. Real Estate, CDL, Driver's License — AI-powered prep that tells you exactly when you're ready.</p>
+        <div class="hero-ctas reveal">
+          <a href="#demo-question" class="btn btn-gold">Try a Free Question</a>
+          <a href="#investors" class="btn btn-outline" onclick="showPage('investors')">For Investors</a>
+        </div>
+        <div class="hero-trust reveal" style="display:flex;gap:24px;margin-top:28px;flex-wrap:wrap;">
+          <span style="font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:6px;">
+            <span style="color:var(--success);">✓</span> No subscription
+          </span>
+          <span style="font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:6px;">
+            <span style="color:var(--success);">✓</span> Works offline
+          </span>
+          <span style="font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:6px;">
+            <span style="color:var(--success);">✓</span> AI explanations
+          </span>
+        </div>
+      </div>
+      <div class="hero-phone reveal">
+        <div class="phone-mockup">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <img src="app-screenshot.jpg" alt="PassExamUSA Real Estate App" class="phone-screen">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-gradient"></div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar" id="statsBar">
+    <div class="container stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="200">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Exam<br>Questions</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number stat-rating" style="font-size:48px;">92%</span>
+        <span class="stat-label">Pass on<br>First Try</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number stat-rating">4.8</span><span class="stat-star">★</span>
+        <span class="stat-label">App Store<br>Rating</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="3">0</span>
+        <span class="stat-label">Apps in<br>Ecosystem</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section-pad" style="background:linear-gradient(180deg,transparent,rgba(200,168,75,0.03),transparent);">
+    <div class="container">
+      <h2 class="section-title reveal">How It <span class="shimmer">Works</span></h2>
+      <p class="section-sub reveal">From download to passing — in 4 simple steps.</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">1</div>
+          <h4>Download the App</h4>
+          <p>Choose your exam, install the app. Works on iOS and Android. No account needed.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">2</div>
+          <h4>Take Practice Tests</h4>
+          <p>Answer real exam questions organized by topic. Study at your own pace, anywhere.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">3</div>
+          <h4>AI Finds Your Weak Spots</h4>
+          <p>The readiness gauge tracks your progress. AI explains every mistake so you actually learn.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">4</div>
+          <h4>Pass Your Exam</h4>
+          <p>When the gauge hits 90%+ — you're ready. Walk into the test center with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO QUESTION -->
+  <section class="section-pad" id="demo-question">
+    <div class="container">
+      <h2 class="section-title reveal">Try a <span class="shimmer">Real Question</span></h2>
+      <p class="section-sub reveal">This is what studying with PassExamUSA feels like. Pick an answer.</p>
+      <div class="demo-box glass reveal">
+        <div class="demo-question">A buyer signs a purchase agreement but the seller has not yet accepted. At this point, the buyer is known as the:</div>
+        <div class="demo-options" id="demoOptions">
+          <div class="demo-opt" onclick="checkDemo(this, false)">
+            <span class="demo-letter">A</span>
+            <span>Vendee</span>
+          </div>
+          <div class="demo-opt" onclick="checkDemo(this, false)">
+            <span class="demo-letter">B</span>
+            <span>Grantee</span>
+          </div>
+          <div class="demo-opt" onclick="checkDemo(this, true)">
+            <span class="demo-letter">C</span>
+            <span>Offeror</span>
+          </div>
+          <div class="demo-opt" onclick="checkDemo(this, false)">
+            <span class="demo-letter">D</span>
+            <span>Optionee</span>
+          </div>
+        </div>
+        <div class="demo-result" id="demoResultCorrect">
+          <strong style="color:var(--success);">Correct!</strong><br>
+          The buyer who signs and submits an offer is the <strong>offeror</strong>. They become the <em>vendee</em> only after the seller accepts. The <em>grantee</em> receives the deed at closing, and an <em>optionee</em> holds an option to purchase.<br><br>
+          <span style="color:var(--accent-gold);">This is how our AI explains every answer in the app.</span>
+        </div>
+        <div class="demo-result" id="demoResultWrong">
+          <strong style="color:#EF4444;">Not quite.</strong><br>
+          The correct answer is <strong>C) Offeror</strong>. The buyer who signs and submits an offer is the offeror. They become the vendee only after the seller accepts.<br><br>
+          <span style="color:var(--accent-gold);">In the app, our AI gives you detailed memory tricks to never forget.</span>
+        </div>
+        <div class="demo-cta" id="demoCta" style="display:none;">
+          <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px;">200 more questions like this in the app.</p>
+          <a href="#real-estate" class="btn btn-gold" onclick="showPage('real-estate')">See All Features →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP SHOWCASE -->
+  <section class="showcase section-pad" id="showcase">
+    <div class="container">
+      <h2 class="section-title reveal">Choose Your <span class="shimmer">Exam</span></h2>
+      <p class="section-sub reveal">Three premium apps. One mission: help you pass.</p>
+      <div class="showcase-grid">
+        <!-- Real Estate Card -->
+        <div class="app-card glass reveal" data-accent="#C8A84B">
+          <div class="card-badge badge-gold">Most Popular</div>
+          <div class="card-icon" style="background:rgba(200,168,75,0.15);color:#C8A84B;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="card-title">Real Estate License</h3>
+          <p class="card-edition">2026 Edition</p>
+          <ul class="card-features">
+            <li><span class="check gold-text">✓</span> 200 Exam Questions</li>
+            <li><span class="check gold-text">✓</span> National + CA, TX, FL, NY</li>
+            <li><span class="check gold-text">✓</span> Readiness Score Tracker</li>
+            <li><span class="check gold-text">✓</span> AI Mistake Explanations</li>
+            <li><span class="check gold-text">✓</span> Real Estate Math Module</li>
+          </ul>
+          <div class="card-actions">
+            <a href="#real-estate" class="btn btn-gold" onclick="showPage('real-estate')">Learn More →</a>
+          </div>
+        </div>
+        <!-- CDL Card -->
+        <div class="app-card glass reveal" data-accent="#E87C35">
+          <div class="card-badge badge-orange">Available Now</div>
+          <div class="card-icon" style="background:rgba(232,124,53,0.15);color:#E87C35;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3 class="card-title">CDL Truck Driver</h3>
+          <p class="card-edition">Class A, B & C</p>
+          <ul class="card-features">
+            <li><span class="check" style="color:#E87C35">✓</span> General Knowledge</li>
+            <li><span class="check" style="color:#E87C35">✓</span> Air Brakes</li>
+            <li><span class="check" style="color:#E87C35">✓</span> Hazmat & Tankers</li>
+            <li><span class="check" style="color:#E87C35">✓</span> Pre-Trip Inspection</li>
+            <li><span class="check" style="color:#E87C35">✓</span> All 50 States</li>
+          </ul>
+          <div class="card-actions">
+            <a href="#cdl" class="btn btn-orange" onclick="showPage('cdl')">Learn More →</a>
+          </div>
+        </div>
+        <!-- DMV Card -->
+        <div class="app-card glass reveal" data-accent="#3B82F6">
+          <div class="card-badge badge-blue">Most Accessible</div>
+          <div class="card-icon" style="background:rgba(59,130,246,0.15);color:#3B82F6;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10l-2.7-3.4A2 2 0 0013.7 6H6.3a2 2 0 00-1.6.6L2 10l-2.5 1.1C-1.3 11.3-2 12.1-2 13v3c0 .6.4 1 1 1h2" transform="translate(2,0)"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          </div>
+          <h3 class="card-title">Driver's License</h3>
+          <p class="card-edition">DMV Prep 2026</p>
+          <ul class="card-features">
+            <li><span class="check" style="color:#3B82F6">✓</span> Road Signs & Rules</li>
+            <li><span class="check" style="color:#3B82F6">✓</span> All 50 States</li>
+            <li><span class="check" style="color:#3B82F6">✓</span> Practice Tests</li>
+            <li><span class="check" style="color:#3B82F6">✓</span> Offline Mode</li>
+            <li><span class="check" style="color:#3B82F6">✓</span> Multi-language Support</li>
+          </ul>
+          <div class="card-actions">
+            <a href="#dmv" class="btn btn-blue" onclick="showPage('dmv')">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Why <span class="shimmer">Choose Us</span></h2>
+      <div class="why-grid">
+        <div class="why-card glass reveal">
+          <div class="why-icon">🎯</div>
+          <h3>Exam-Focused</h3>
+          <p>Only what's on the real exam. No filler, no fluff — every question mirrors actual test content.</p>
+        </div>
+        <div class="why-card glass reveal">
+          <div class="why-icon">📊</div>
+          <h3>Smart Analytics</h3>
+          <p>Track your weak spots automatically. Our readiness gauge tells you exactly when you're ready to pass.</p>
+        </div>
+        <div class="why-card glass reveal">
+          <div class="why-icon">🤖</div>
+          <h3>AI-Powered</h3>
+          <p>Get instant, detailed explanations for every mistake. Learn not just the answer, but the reasoning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">What Our <span class="shimmer">Students Say</span></h2>
+      <div class="test-grid">
+        <div class="test-card glass reveal">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"Passed on my first try! The readiness gauge kept me motivated and I knew exactly when I was ready."</p>
+          <div class="test-author">
+            <div class="test-avatar">MK</div>
+            <div><strong>Maria K.</strong><br><span class="text-muted">Licensed Realtor, California</span></div>
+          </div>
+        </div>
+        <div class="test-card glass reveal">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"Best CDL prep app I've found. The air brakes section alone was worth it. Passed General Knowledge easily."</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:rgba(232,124,53,0.2);color:#E87C35;">DV</div>
+            <div><strong>Dmitri V.</strong><br><span class="text-muted">CDL Driver, Texas</span></div>
+          </div>
+        </div>
+        <div class="test-card glass reveal">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"Simple, clean, works offline. Exactly what I needed to study on my commute. Passed DMV on the first try."</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:rgba(59,130,246,0.2);color:#3B82F6;">JT</div>
+            <div><strong>James T.</strong><br><span class="text-muted">New Driver, Florida</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section class="platforms section-pad">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title reveal">Available <span class="shimmer">Now</span></h2>
+      <p class="section-sub reveal">Download on your favorite platform and start studying today.</p>
+      <div class="platform-badges reveal">
+        <a href="#" class="store-badge glass">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.52-3.23 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <div><small>Download on the</small><strong>App Store</strong></div>
+        </a>
+        <a href="#" class="store-badge glass">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.834 1.64a1 1 0 010 1.726l-2.834 1.641-2.532-2.533 2.532-2.474zM5.864 3.469L16.8 9.793l-2.302 2.302-8.634-8.626z"/></svg>
+          <div><small>Get it on</small><strong>Google Play</strong></div>
+        </a>
+        <a href="#" class="store-badge glass" style="opacity:0.6;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          <div><small>Coming Soon</small><strong>Web Version</strong></div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======== REAL ESTATE PAGE ======== -->
+<div class="page" id="page-real-estate">
+  <div class="hero-accent-line" style="background:linear-gradient(90deg,transparent,#C8A84B,transparent);"></div>
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="hero-badge reveal" style="border-color:rgba(200,168,75,0.3);">Real Estate Exam Prep</div>
+      <h1 class="reveal">Pass Your Real Estate<br>License Exam. <span class="shimmer">Faster.</span></h1>
+      <p class="reveal">200 most current questions for 2026. National + California, Texas, Florida, New York. Updated and verified by licensed agents.</p>
+      <div class="subpage-badges reveal">
+        <a href="#" class="btn btn-gold">App Store</a>
+        <a href="#" class="btn btn-outline">Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">See it in <span class="shimmer">Action</span></h2>
+      <p class="section-sub reveal">Real app. Real questions. Real results.</p>
+      <div class="video-wrapper reveal">
+        <video controls playsinline poster="app-screenshot.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;">
+          <source src="demo-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Everything You Need to <span class="shimmer">Pass</span></h2>
+      <p class="section-sub reveal">Six powerful tools designed for exam success.</p>
+      <div class="features-grid">
+        <div class="feat-card glass reveal">
+          <div class="feat-icon">📊</div>
+          <h4>Readiness Gauge</h4>
+          <p>Know exactly how ready you are with our intelligent progress tracker that analyzes your performance.</p>
+        </div>
+        <div class="feat-card glass reveal">
+          <div class="feat-icon">🗺️</div>
+          <h4>State Selection</h4>
+          <p>California, Texas, Florida, New York — plus National questions. Choose your state and focus.</p>
+        </div>
+        <div class="feat-card glass reveal">
+          <div class="feat-icon">🔢</div>
+          <h4>Math Module</h4>
+          <p>Commission calculations, mortgage math, property tax, and closing costs — with step-by-step solutions.</p>
+        </div>
+        <div class="feat-card glass reveal">
+          <div class="feat-icon">🤖</div>
+          <h4>AI Explanations</h4>
+          <p>Get detailed AI-powered explanations for every wrong answer, including memory tricks and context.</p>
+        </div>
+        <div class="feat-card glass reveal">
+          <div class="feat-icon">❌</div>
+          <h4>Mistake Review</h4>
+          <p>Track every error, revisit your weak spots, and turn mistakes into mastery before exam day.</p>
+        </div>
+        <div class="feat-card glass reveal">
+          <div class="feat-icon">📖</div>
+          <h4>Vocabulary</h4>
+          <p>80 key real estate terms with examples, definitions, and context — essential for passing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">App <span class="shimmer">Screenshots</span></h2>
+      <p class="section-sub reveal">Clean design. Intuitive interface. Built for learning.</p>
+      <div class="gallery-scroll reveal">
+        <div class="gallery-item"><img src="app-screenshot.jpg" alt="Home Screen" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="gallery-item"><img src="screen-question-correct.jpg" alt="Correct Answer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="gallery-item"><img src="screen-question-wrong.jpg" alt="Wrong Answer with Explanation" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="gallery-item"><img src="screen-results.jpg" alt="Exam Results" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="gallery-item"><img src="screen-mistake-review.jpg" alt="Mistake Review" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="gallery-item"><img src="screen-study-mode.jpg" alt="Study Mode" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="gallery-item"><img src="screen-progress.jpg" alt="My Progress" style="width:100%;height:100%;object-fit:cover;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Question <span class="shimmer">Categories</span></h2>
+      <p class="section-sub reveal">200 questions across 6 categories — covering everything on the real exam.</p>
+      <div class="accordion reveal">
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span>National — 60 Questions</span>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">Property Ownership, Agency Relationships, Contracts & Agreements, Real Estate Finance, Land Use Controls & Regulations, Practice of Real Estate.</div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span>California — 35 Questions</span>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">Transfer Disclosure Statement (TDS), Proposition 13, California DRE Rules, Agency Disclosure, Natural Hazard Zones, Mello-Roos.</div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span>Texas — 35 Questions</span>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">TREC Rules & Regulations, Homestead Exemptions, Mineral Rights, Texas Property Code, Deceptive Trade Practices Act, Community Property.</div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span>Florida — 35 Questions</span>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">Johnson v Davis, Radon Gas Disclosure, Florida DBPR Rules, Homestead Exemption, Documentary Stamps, License Law.</div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span>Contracts — 20 Questions</span>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">Contingencies, Earnest Money, Breach of Contract, Counter-offers, Specific Performance, Statute of Frauds.</div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span>Math — 15 Questions</span>
+            <span class="acc-arrow">▼</span>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">Commission Calculations, Mortgage Payment, Property Tax Proration, Closing Costs, GRM & Cap Rate, Loan-to-Value Ratio.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-pad">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title reveal">Ready to <span class="shimmer">Pass?</span></h2>
+      <div class="cta-price reveal">$14.99</div>
+      <p class="cta-note reveal">One Time Purchase. No Subscription. Lifetime Access.</p>
+      <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#" class="btn btn-gold">Download on App Store</a>
+        <a href="#" class="btn btn-outline">Get it on Google Play</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======== CDL PAGE ======== -->
+<div class="page" id="page-cdl">
+  <div class="hero-accent-line" style="background:linear-gradient(90deg,transparent,#E87C35,transparent);"></div>
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="hero-badge reveal" style="border-color:rgba(232,124,53,0.3);color:#E87C35;background:rgba(232,124,53,0.08);">CDL Exam Prep</div>
+      <h1 class="reveal">Get Your CDL.<br><span style="background:linear-gradient(110deg,#E87C35,#F09050,#E87C35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Get the Job.</span></h1>
+      <p class="reveal">Complete CDL preparation for Class A, B & C commercial driver's licenses. All endorsements included. All 50 states covered.</p>
+      <div class="subpage-badges reveal">
+        <a href="#" class="btn btn-orange">App Store</a>
+        <a href="#" class="btn btn-outline" style="border-color:#E87C35;color:#E87C35;">Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">See the App in <span style="color:#E87C35">Action</span></h2>
+      <p class="section-sub reveal">Real CDL questions. Smart tracking. Pass with confidence.</p>
+      <div class="video-wrapper reveal" style="border-color:rgba(232,124,53,0.3);">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;width:100%;height:100%;">
+          <img src="screen-cdl-home.jpg" alt="CDL Home" style="width:100%;height:100%;object-fit:cover;">
+          <img src="screen-cdl-study.jpg" alt="CDL Study" style="width:100%;height:100%;object-fit:cover;">
+          <img src="screen-cdl-tools.jpg" alt="CDL Tools" style="width:100%;height:100%;object-fit:cover;">
+          <img src="screen-cdl-profile.jpg" alt="CDL Profile" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Master Every <span style="color:#E87C35">Endorsement</span></h2>
+      <p class="section-sub reveal">Comprehensive coverage of all CDL test categories.</p>
+      <div class="features-grid">
+        <div class="feat-card glass reveal"><div class="feat-icon">📚</div><h4>General Knowledge</h4><p>Core CDL concepts: vehicle inspection, basic control, safe driving, cargo handling, and transport regulations.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">💨</div><h4>Air Brakes</h4><p>Air brake system components, dual air brakes, inspection procedures, and emergency stops.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">🔗</div><h4>Combination Vehicles</h4><p>Coupling/uncoupling, rollover prevention, skid control, and trailer awareness.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">☢️</div><h4>Hazmat</h4><p>Hazardous materials handling, placarding, documentation, loading/unloading, and emergency response.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">🛢️</div><h4>Tankers</h4><p>Liquid surge, center of gravity, safe speeds, and tanker-specific inspection procedures.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">🔍</div><h4>Pre-Trip Inspection</h4><p>Step-by-step vehicle inspection simulator covering every component the examiner checks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Trip Highlight -->
+  <section class="section-pad" style="background:linear-gradient(180deg,transparent,rgba(232,124,53,0.03),transparent);">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title reveal">Pre-Trip Inspection <span style="color:#E87C35">Simulator</span></h2>
+      <p class="section-sub reveal">The most feared part of the CDL exam — now in your pocket. Practice the full walk-around inspection with our step-by-step guided simulator.</p>
+      <div class="glass reveal" style="max-width:600px;margin:0 auto;padding:40px;text-align:left;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="proof-item" style="border:none;padding:8px 0;"><span class="proof-check" style="background:rgba(232,124,53,0.15);color:#E87C35;">1</span> Engine Compartment Check</div>
+          <div class="proof-item" style="border:none;padding:8px 0;"><span class="proof-check" style="background:rgba(232,124,53,0.15);color:#E87C35;">2</span> In-Cab Inspection</div>
+          <div class="proof-item" style="border:none;padding:8px 0;"><span class="proof-check" style="background:rgba(232,124,53,0.15);color:#E87C35;">3</span> External Walk-Around</div>
+          <div class="proof-item" style="border:none;padding:8px 0;"><span class="proof-check" style="background:rgba(232,124,53,0.15);color:#E87C35;">4</span> Brake Check & Air Test</div>
+          <div class="proof-item" style="border:none;padding:8px 0;"><span class="proof-check" style="background:rgba(232,124,53,0.15);color:#E87C35;">5</span> Coupling System (Combo)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Question <span style="color:#E87C35">Categories</span></h2>
+      <div class="accordion reveal">
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>General Knowledge — 50 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Vehicle inspection, basic control, safe driving, cargo handling, transport regulations, and federal motor carrier safety rules.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Air Brakes — 25 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Air brake system parts, dual air brakes, inspecting air brakes, using air brakes, and emergency procedures.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Combination Vehicles — 20 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Coupling and uncoupling, inspecting combination vehicles, rollover prevention, and skid control.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Hazmat — 30 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Hazardous materials rules, shipping papers, placarding, loading and unloading, bulk packages, and route planning.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Tankers — 15 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Inspecting tank vehicles, driving tank vehicles, safe driving rules, and liquid surge effects.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Pre-Trip Inspection — 20 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Engine compartment, in-cab checks, external walk-around, brake tests, and light checks.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-pad">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title reveal">Ready to Get Your <span style="color:#E87C35">CDL?</span></h2>
+      <div class="cta-price reveal" style="color:#E87C35;">$14.99</div>
+      <p class="cta-note reveal">One Time Purchase. No Subscription. All Endorsements Included.</p>
+      <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#" class="btn btn-orange">Download on App Store</a>
+        <a href="#" class="btn btn-outline" style="border-color:#E87C35;color:#E87C35;">Get it on Google Play</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======== DMV PAGE ======== -->
+<div class="page" id="page-dmv">
+  <div class="hero-accent-line" style="background:linear-gradient(90deg,transparent,#3B82F6,transparent);"></div>
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="hero-badge reveal" style="border-color:rgba(59,130,246,0.3);color:#3B82F6;background:rgba(59,130,246,0.08);">DMV Exam Prep</div>
+      <h1 class="reveal">Pass Your DMV Test.<br><span style="background:linear-gradient(110deg,#3B82F6,#60A5FA,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">First Try.</span></h1>
+      <p class="reveal">The simplest, most effective way to prepare for your driver's license exam. All 50 states. Updated for 2026. Study anywhere, anytime.</p>
+      <div class="subpage-badges reveal">
+        <a href="#" class="btn btn-blue">App Store</a>
+        <a href="#" class="btn btn-outline" style="border-color:#3B82F6;color:#3B82F6;">Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Simple & <span style="color:#3B82F6">Effective</span></h2>
+      <p class="section-sub reveal">No complex setup. Open the app and start learning immediately.</p>
+      <div class="video-wrapper reveal" style="border-color:rgba(59,130,246,0.3);">
+        <video controls playsinline poster="screen-cdl-home.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;">
+          <source src="demo-video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Everything for Your <span style="color:#3B82F6">DMV Test</span></h2>
+      <p class="section-sub reveal">Master road rules, signs, and safe driving practices.</p>
+      <div class="features-grid">
+        <div class="feat-card glass reveal"><div class="feat-icon">🚦</div><h4>Road Signs & Rules</h4><p>Every road sign you'll encounter on the real test, with visual aids and detailed explanations.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">🗺️</div><h4>All 50 States</h4><p>State-specific questions for every US state. Choose your state and get tailored content.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">📝</div><h4>Practice Tests</h4><p>Full-length practice exams that mirror the real DMV test format, timing, and difficulty.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">📱</div><h4>Offline Mode</h4><p>No internet needed. Download questions and study on the bus, in the park, or anywhere.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">🌐</div><h4>Multi-Language</h4><p>Study in your preferred language. Available in English, Spanish, and more.</p></div>
+        <div class="feat-card glass reveal"><div class="feat-icon">📊</div><h4>Progress Tracking</h4><p>See your improvement over time. Know exactly when you're ready to pass the real test.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Road Signs Showcase -->
+  <section class="section-pad" style="background:linear-gradient(180deg,transparent,rgba(59,130,246,0.03),transparent);">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title reveal">Learn Every <span style="color:#3B82F6">Road Sign</span></h2>
+      <p class="section-sub reveal">Visual learning with real road signs from the DMV handbook.</p>
+      <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;max-width:700px;margin:0 auto;" class="reveal">
+        <div class="glass" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;border-radius:12px;">🛑</div>
+        <div class="glass" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;border-radius:12px;">⚠️</div>
+        <div class="glass" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;border-radius:12px;">🚸</div>
+        <div class="glass" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;border-radius:12px;">⛽</div>
+        <div class="glass" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;border-radius:12px;">🅿️</div>
+        <div class="glass" style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;border-radius:12px;">🚧</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Test <span style="color:#3B82F6">Categories</span></h2>
+      <div class="accordion reveal">
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Road Signs — 40 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Stop, yield, warning, regulatory, guide, construction, and school zone signs with visual recognition.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Traffic Rules — 35 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Right of way, lane changes, intersections, roundabouts, highway driving, and parking rules.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Safe Driving — 30 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Following distance, speed limits, night driving, adverse weather, sharing the road, and defensive driving.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>DUI & Safety Laws — 20 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Blood alcohol limits, implied consent, seat belt laws, child safety seats, and distracted driving.</div></div></div>
+        <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><span>Vehicle Operations — 15 Questions</span><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-body-inner">Vehicle registration, insurance requirements, license types, and basic vehicle maintenance for safety.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-pad">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title reveal">Get Your License <span style="color:#3B82F6">Today</span></h2>
+      <div class="cta-price reveal" style="color:#3B82F6;">$9.99</div>
+      <p class="cta-note reveal">One Time Purchase. No Subscription. All 50 States.</p>
+      <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#" class="btn btn-blue">Download on App Store</a>
+        <a href="#" class="btn btn-outline" style="border-color:#3B82F6;color:#3B82F6;">Get it on Google Play</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======== INVESTORS PAGE ======== -->
+<div class="page" id="page-investors">
+  <div class="hero-accent-line" style="background:linear-gradient(90deg,transparent,#C8A84B,transparent);"></div>
+  <section class="subpage-hero">
+    <div class="container" style="text-align:center;">
+      <div class="hero-badge reveal">For Investors & Buyers</div>
+      <h1 class="reveal" style="max-width:700px;margin:0 auto 20px;">A Proven App Ecosystem.<br><span class="shimmer">Ready to Scale.</span></h1>
+      <p class="reveal" style="max-width:600px;margin:0 auto 32px;">Three production-ready mobile apps. Proven in the market. Full source code available for purchase or licensing.</p>
+      <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#contact-form" class="btn btn-gold">Request a Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Acquisition <span class="shimmer">Options</span></h2>
+      <p class="section-sub reveal">Choose the package that fits your business goals.</p>
+      <div class="options-grid">
+        <div class="option-card glass reveal">
+          <div class="option-label">Option A</div>
+          <h3>Single App License</h3>
+          <p>Full source code for one app of your choice (Real Estate, CDL, or DMV). Includes deployment guide and 30 days of support.</p>
+          <a href="#contact-form" class="btn btn-outline">Inquire →</a>
+        </div>
+        <div class="option-card glass reveal" style="border-color:rgba(200,168,75,0.4);box-shadow:0 0 30px rgba(200,168,75,0.1);">
+          <div class="option-label">Option B — Best Value</div>
+          <h3>Full Ecosystem</h3>
+          <p>All 3 apps source code, deployment guides, App Store accounts transfer, question database, and 60 days of support.</p>
+          <a href="#contact-form" class="btn btn-gold">Inquire →</a>
+        </div>
+        <div class="option-card glass reveal">
+          <div class="option-label">Option C</div>
+          <h3>Partnership</h3>
+          <p>Revenue share model. We handle development and updates — you handle marketing and distribution. Discuss individually.</p>
+          <a href="#contact-form" class="btn btn-outline">Inquire →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="background:linear-gradient(180deg,transparent,rgba(200,168,75,0.03),transparent);">
+    <div class="container">
+      <h2 class="section-title reveal">Tech Stack — <span class="shimmer">Full Transparency</span></h2>
+      <p class="section-sub reveal">Modern, maintainable, and production-ready technology.</p>
+      <div class="tech-grid reveal">
+        <div class="tech-item">
+          <div><div class="tech-label">FRONTEND</div><div class="tech-value">React Native + Expo Router</div></div>
+        </div>
+        <div class="tech-item">
+          <div><div class="tech-label">LANGUAGE</div><div class="tech-value">TypeScript</div></div>
+        </div>
+        <div class="tech-item">
+          <div><div class="tech-label">STORAGE</div><div class="tech-value">AsyncStorage (Offline-First)</div></div>
+        </div>
+        <div class="tech-item">
+          <div><div class="tech-label">AI FEATURE</div><div class="tech-value">Anthropic Claude API</div></div>
+        </div>
+        <div class="tech-item">
+          <div><div class="tech-label">BUILD</div><div class="tech-value">EAS Build (APK/AAB + IPA)</div></div>
+        </div>
+        <div class="tech-item">
+          <div><div class="tech-label">DISTRIBUTION</div><div class="tech-value">Google Play + App Store</div></div>
+        </div>
+      </div>
+      <div class="glass reveal" style="max-width:700px;margin:40px auto 0;padding:28px 32px;">
+        <h4 style="color:var(--accent-gold);margin-bottom:12px;font-family:var(--font-display);">Why React Native?</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:14px;color:var(--text-secondary);">
+          <div>→ One codebase → Android + iOS</div>
+          <div>→ Easy to modify and extend</div>
+          <div>→ No server costs (fully offline)</div>
+          <div>→ AI via API (plug your own key)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <h2 class="section-title reveal">Proof of <span class="shimmer">Work</span></h2>
+      <p class="section-sub reveal">Everything is built, tested, and ready to deploy.</p>
+      <div class="proof-list reveal">
+        <div class="proof-item"><span class="proof-check">✓</span> Live on Android (APK tested on Samsung & Xiaomi)</div>
+        <div class="proof-item"><span class="proof-check">✓</span> iOS build ready (IPA)</div>
+        <div class="proof-item"><span class="proof-check">✓</span> 200+ questions database included</div>
+        <div class="proof-item"><span class="proof-check">✓</span> AI explanation feature functional</div>
+        <div class="proof-item"><span class="proof-check">✓</span> Streak tracking & readiness gauge</div>
+        <div class="proof-item"><span class="proof-check">✓</span> Category analytics & mistake review</div>
+        <div class="proof-item"><span class="proof-check">✓</span> Fully offline — no backend required</div>
+        <div class="proof-item"><span class="proof-check">✓</span> Clean, documented codebase</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="contact-form">
+    <div class="container">
+      <h2 class="section-title reveal">Request a Demo or <span class="shimmer">Discuss Purchase</span></h2>
+      <p class="section-sub reveal">Tell us what you're interested in and we'll get back to you within 24 hours.</p>
+      <form class="contact-form glass reveal" action="https://formspree.io/f/mbdwgnql" method="POST" id="investorForm">
+        <div class="form-group">
+          <label>Name *</label>
+          <input type="text" name="name" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Company / Role</label>
+          <input type="text" name="company" placeholder="Optional">
+        </div>
+        <div class="form-group">
+          <label>Which app(s) interest you?</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" name="apps" value="Real Estate"> Real Estate</label>
+            <label class="checkbox-label"><input type="checkbox" name="apps" value="CDL"> CDL</label>
+            <label class="checkbox-label"><input type="checkbox" name="apps" value="DMV"> DMV</label>
+            <label class="checkbox-label"><input type="checkbox" name="apps" value="All"> All Apps</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea name="message" required placeholder="Tell us about your interest..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">Send Request</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        ✓ Thank you! We'll be in touch within 24 hours.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo" onclick="showPage('home')">
+          <span class="logo-icon">★</span> PassExam<span class="gold-text">USA</span>
+        </a>
+        <p>Premium exam prep apps for Real Estate, CDL Trucking, and Driver's License. Built for success.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Apps</h4>
+        <a href="#real-estate" onclick="showPage('real-estate')">Real Estate</a>
+        <a href="#cdl" onclick="showPage('cdl')">CDL Trucking</a>
+        <a href="#dmv" onclick="showPage('dmv')">Driver's License</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#investors" onclick="showPage('investors')">For Investors</a>
+        <a href="#">About Us</a>
+        <a href="#contact-form" onclick="showPage('investors')">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PassExamUSA. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Instagram">◉</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// === PARTICLES ===
+(function(){
+  const c=document.getElementById('particles'),x=c.getContext('2d');
+  let w,h,pts=[];
+  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight;}
+  resize(); window.addEventListener('resize',resize);
+  for(let i=0;i<60;i++) pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+0.5,
+    vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,a:Math.random()*0.5+0.2});
+  function draw(){
+    x.clearRect(0,0,w,h);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+      x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);
+      x.fillStyle=`rgba(200,168,75,${p.a})`;x.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// === NAV SCROLL ===
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>50);
+});
+
+// === BURGER ===
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
+}));
+
+// === SPA ROUTING ===
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const page=document.getElementById('page-'+id);
+  if(page){page.classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+  // Update nav active
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.classList.remove('active');
+    if(a.getAttribute('href')==='#'+id) a.classList.add('active');
+  });
+  // Re-trigger reveals
+  setTimeout(initReveals,100);
+}
+// Handle hash on load
+window.addEventListener('hashchange',()=>{
+  const h=location.hash.replace('#','');
+  if(h&&document.getElementById('page-'+h)) showPage(h);
+});
+if(location.hash){
+  const h=location.hash.replace('#','');
+  if(document.getElementById('page-'+h)) showPage(h);
+}
+
+// === SCROLL REVEAL ===
+function initReveals(){
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+}
+initReveals();
+
+// === COUNT-UP ===
+let counted=false;
+const statsObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&!counted){
+      counted=true;
+      document.querySelectorAll('.stat-number[data-target]').forEach(el=>{
+        const target=parseInt(el.dataset.target);
+        const duration=1800;
+        const start=performance.now();
+        function update(now){
+          const elapsed=now-start;
+          const progress=Math.min(elapsed/duration,1);
+          const eased=1-Math.pow(1-progress,3);
+          el.textContent=Math.floor(eased*target).toLocaleString();
+          if(progress<1) requestAnimationFrame(update);
+          else el.textContent=target.toLocaleString();
+        }
+        requestAnimationFrame(update);
+      });
+    }
+  });
+},{threshold:0.3});
+const statsBar=document.getElementById('statsBar');
+if(statsBar) statsObs.observe(statsBar);
+
+// === ACCORDION ===
+function toggleAcc(header){
+  const item=header.parentElement;
+  const wasOpen=item.classList.contains('open');
+  // Close siblings
+  item.parentElement.querySelectorAll('.acc-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+// === FORM ===
+const form=document.getElementById('investorForm');
+if(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const btn=form.querySelector('button[type="submit"]');
+    btn.textContent='Sending...'; btn.disabled=true;
+    fetch(form.action,{
+      method:'POST',
+      body:new FormData(form),
+      headers:{'Accept':'application/json'}
+    }).then(r=>{
+      if(r.ok){
+        form.style.display='none';
+        document.getElementById('formSuccess').style.display='block';
+      } else {
+        btn.textContent='Error — Try Again'; btn.disabled=false;
+      }
+    }).catch(()=>{
+      btn.textContent='Error — Try Again'; btn.disabled=false;
+    });
+  });
+}
+
+// === DEMO QUESTION ===
+function checkDemo(el, isCorrect){
+  const opts=document.querySelectorAll('#demoOptions .demo-opt');
+  opts.forEach(o=>{o.classList.add('disabled');});
+  // Find and highlight correct
+  opts.forEach((o,i)=>{ if(i===2) o.classList.add('correct'); });
+  if(!isCorrect) el.classList.add('wrong');
+  // Show result
+  if(isCorrect){
+    const r=document.getElementById('demoResultCorrect');
+    r.classList.add('show','success');
+  } else {
+    const r=document.getElementById('demoResultWrong');
+    r.classList.add('show','fail');
+  }
+  document.getElementById('demoCta').style.display='block';
+}
+</script>
+</body>
+</html>
