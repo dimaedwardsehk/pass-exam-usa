@@ -1,0 +1,17 @@
+# Environment
+.env
+venv/
+.venv/
+
+# Output
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/

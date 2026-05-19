@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dimaedwardsehk.github.io/pass-exam-usa/sitemap.xml
