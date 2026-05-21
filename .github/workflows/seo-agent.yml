@@ -1,0 +1,59 @@
+name: SEO Agent
+
+on:
+  schedule:
+    - cron: "0 12 */2 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-agent
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONUNBUFFERED: "1"
+      TZ: "UTC"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          allow-prereleases: true
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run SEO agent
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python -m agent.run
+
+      - name: Configure git
+        run: |
+          git config user.name "seo-agent[bot]"
+          git config user.email "seo-agent[bot]@users.noreply.github.com"
+
+      - name: Commit and push
+        run: |
+          git add blog/ index.html sitemap.xml data/state.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          DATE_TAG=$(date -u +%F)
+          git commit -m "chore(seo): auto-publish ${DATE_TAG} [skip ci]"
+          git push origin HEAD:main

@@ -1,0 +1,278 @@
+{
+  "real_estate": [
+    {
+      "kw": "how to pass the texas real estate exam",
+      "state": "TX",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the Texas Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the Texas Real Estate Exam (2026 Guide)",
+      "meta_pattern": "Step-by-step plan to pass the Texas real estate exam in 2026: study schedule, hardest topics, and practice questions that build confidence."
+    },
+    {
+      "kw": "texas real estate math practice",
+      "state": "TX",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "Texas Real Estate Math Practice for the 2026 Exam",
+      "title_pattern": "Texas Real Estate Math Practice (2026)",
+      "meta_pattern": "Practice Texas real estate math for the 2026 exam with plain examples, common formulas, and topic-focused study tips for faster review."
+    },
+    {
+      "kw": "fiduciary duty explained texas real estate",
+      "state": "TX",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "Fiduciary Duty Explained for Texas Real Estate in 2026",
+      "title_pattern": "Texas Fiduciary Duty Explained for Real Estate",
+      "meta_pattern": "Learn how fiduciary duty works in Texas real estate, what agents owe clients, and how to study the concept for exam day."
+    },
+    {
+      "kw": "aceableagent vs the ce shop texas real estate",
+      "state": "TX",
+      "intent": "transactional",
+      "category": "real_estate",
+      "h1_pattern": "AceableAgent vs The CE Shop for Texas Real Estate in 2026",
+      "title_pattern": "AceableAgent vs The CE Shop Texas Real Estate",
+      "meta_pattern": "Compare AceableAgent and The CE Shop for Texas real estate prep, including study fit, exam focus, and practice question needs."
+    },
+    {
+      "kw": "texas real estate exam practice questions",
+      "state": "TX",
+      "intent": "transactional",
+      "category": "real_estate",
+      "h1_pattern": "Texas Real Estate Exam Practice Questions for 2026",
+      "title_pattern": "Texas Real Estate Exam Practice Questions",
+      "meta_pattern": "Use Texas real estate exam practice questions to review key topics, find weak areas, and build a focused 2026 study routine."
+    },
+    {
+      "kw": "how to pass the california real estate exam",
+      "state": "CA",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the California Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the California Real Estate Exam",
+      "meta_pattern": "Prepare for the California real estate exam in 2026 with a clear study plan, topic review, and practice question strategy."
+    },
+    {
+      "kw": "california real estate math practice",
+      "state": "CA",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "California Real Estate Math Practice for the 2026 Exam",
+      "title_pattern": "California Real Estate Math Practice (2026)",
+      "meta_pattern": "Build confidence with California real estate math practice, common calculation types, and simple drills for the 2026 exam."
+    },
+    {
+      "kw": "fiduciary duty explained california real estate",
+      "state": "CA",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "Fiduciary Duty Explained for California Real Estate in 2026",
+      "title_pattern": "California Fiduciary Duty Explained",
+      "meta_pattern": "Study fiduciary duty for California real estate with clear definitions, client duties, and exam-focused examples for 2026."
+    },
+    {
+      "kw": "aceableagent vs the ce shop california real estate",
+      "state": "CA",
+      "intent": "transactional",
+      "category": "real_estate",
+      "h1_pattern": "AceableAgent vs The CE Shop for California Real Estate in 2026",
+      "title_pattern": "AceableAgent vs The CE Shop California",
+      "meta_pattern": "Compare AceableAgent and The CE Shop for California real estate prep so you can match your study style to exam demands in 2026."
+    },
+    {
+      "kw": "california real estate exam prep questions",
+      "state": "CA",
+      "intent": "transactional",
+      "category": "real_estate",
+      "h1_pattern": "California Real Estate Exam Prep Questions for 2026",
+      "title_pattern": "California Real Estate Exam Prep Questions",
+      "meta_pattern": "Review California real estate exam prep questions by topic, spot gaps fast, and plan smarter practice before your 2026 test."
+    },
+    {
+      "kw": "how to pass the florida real estate exam",
+      "state": "FL",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the Florida Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the Florida Real Estate Exam",
+      "meta_pattern": "Use a practical 2026 plan for the Florida real estate exam, including study timing, key topics, and practice question review."
+    },
+    {
+      "kw": "florida real estate math practice",
+      "state": "FL",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "Florida Real Estate Math Practice for the 2026 Exam",
+      "title_pattern": "Florida Real Estate Math Practice (2026)",
+      "meta_pattern": "Practice Florida real estate math with simple examples, formula review, and exam-style drills built for 2026 test prep and review."
+    },
+    {
+      "kw": "fiduciary duty explained florida real estate",
+      "state": "FL",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "Fiduciary Duty Explained for Florida Real Estate in 2026",
+      "title_pattern": "Florida Fiduciary Duty Explained",
+      "meta_pattern": "Understand fiduciary duty in Florida real estate, how it appears on exams, and how to study agency duties without confusion."
+    },
+    {
+      "kw": "aceableagent vs the ce shop florida real estate",
+      "state": "FL",
+      "intent": "transactional",
+      "category": "real_estate",
+      "h1_pattern": "AceableAgent vs The CE Shop for Florida Real Estate in 2026",
+      "title_pattern": "AceableAgent vs The CE Shop Florida",
+      "meta_pattern": "Compare AceableAgent and The CE Shop for Florida real estate exam prep, including practice depth, learner fit, and study goals."
+    },
+    {
+      "kw": "florida real estate exam practice test",
+      "state": "FL",
+      "intent": "transactional",
+      "category": "real_estate",
+      "h1_pattern": "Florida Real Estate Exam Practice Test Guide for 2026",
+      "title_pattern": "Florida Real Estate Exam Practice Test Guide",
+      "meta_pattern": "Use Florida real estate exam practice tests to review major topics, track progress, and prepare with confidence for 2026."
+    }
+  ],
+  "cdl": [
+    {
+      "kw": "cdl passenger endorsement practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL Passenger Endorsement Practice Test Guide for 2026",
+      "title_pattern": "CDL Passenger Endorsement Practice Test",
+      "meta_pattern": "Prepare for the CDL passenger endorsement with exam-style practice, safety topic review, and a focused 2026 study plan for test day."
+    },
+    {
+      "kw": "cdl air brakes practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL Air Brakes Practice Test Guide for 2026",
+      "title_pattern": "CDL Air Brakes Practice Test (2026)",
+      "meta_pattern": "Study CDL air brakes for 2026 with practice questions, system vocabulary, inspection topics, and test-day review tips for drivers."
+    },
+    {
+      "kw": "cdl hazmat practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL Hazmat Practice Test Guide for 2026",
+      "title_pattern": "CDL Hazmat Practice Test Guide (2026)",
+      "meta_pattern": "Review CDL hazmat topics for 2026 with practice questions, key terms, safety rules, and a clear plan for exam prep and recall."
+    },
+    {
+      "kw": "hardest cdl test questions",
+      "state": null,
+      "intent": "informational",
+      "category": "cdl",
+      "h1_pattern": "Hardest CDL Test Questions to Practice in 2026",
+      "title_pattern": "Hardest CDL Test Questions to Practice",
+      "meta_pattern": "Learn why CDL questions feel hard, which topics cause mistakes, and how to use practice tests to improve before 2026 exam day."
+    },
+    {
+      "kw": "cdl general knowledge practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL General Knowledge Practice Test Guide for 2026",
+      "title_pattern": "CDL General Knowledge Practice Test",
+      "meta_pattern": "Prepare for CDL general knowledge with 2026 practice questions, core topic review, and a simple study routine for drivers."
+    },
+    {
+      "kw": "texas cdl general knowledge practice test",
+      "state": "TX",
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "Texas CDL General Knowledge Practice Test for 2026",
+      "title_pattern": "Texas CDL General Knowledge Practice Test",
+      "meta_pattern": "Use Texas CDL general knowledge practice to review safe driving rules, vehicle topics, and exam-style questions for 2026."
+    },
+    {
+      "kw": "california cdl air brakes practice test",
+      "state": "CA",
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "California CDL Air Brakes Practice Test for 2026",
+      "title_pattern": "California CDL Air Brakes Practice Test",
+      "meta_pattern": "Practice California CDL air brakes topics with focused questions, safety vocabulary, and 2026 exam prep guidance for drivers."
+    },
+    {
+      "kw": "florida cdl passenger endorsement practice test",
+      "state": "FL",
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "Florida CDL Passenger Endorsement Practice Test for 2026",
+      "title_pattern": "Florida CDL Passenger Endorsement Practice",
+      "meta_pattern": "Study for the Florida CDL passenger endorsement with practice questions, passenger safety review, and 2026 test prep tips."
+    }
+  ],
+  "dmv": [
+    {
+      "kw": "california dmv practice test",
+      "state": "CA",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "California DMV Practice Test Guide for 2026",
+      "title_pattern": "California DMV Practice Test (2026)",
+      "meta_pattern": "Prepare for the California DMV test with 2026 practice questions, road sign review, safe driving topics, and clear study tips."
+    },
+    {
+      "kw": "california permit test practice questions",
+      "state": "CA",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "California Permit Test Practice Questions for 2026",
+      "title_pattern": "California Permit Test Practice Questions",
+      "meta_pattern": "Use California permit test practice questions to review road rules, signs, and safe driving topics before your 2026 exam."
+    },
+    {
+      "kw": "hardest dmv test questions california",
+      "state": "CA",
+      "intent": "informational",
+      "category": "dmv",
+      "h1_pattern": "Hardest DMV Test Questions in California for 2026",
+      "title_pattern": "Hardest DMV Test Questions California",
+      "meta_pattern": "Learn which California DMV test questions feel hardest, why drivers miss them, and how to practice smarter for 2026 test day."
+    },
+    {
+      "kw": "texas dmv practice test",
+      "state": "TX",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "Texas DMV Practice Test Guide for 2026",
+      "title_pattern": "Texas DMV Practice Test (2026)",
+      "meta_pattern": "Prepare for the Texas DMV test with 2026 practice questions, driver handbook review, road signs, and practical study tips."
+    },
+    {
+      "kw": "texas permit test study guide",
+      "state": "TX",
+      "intent": "informational",
+      "category": "dmv",
+      "h1_pattern": "Texas Permit Test Study Guide for 2026",
+      "title_pattern": "Texas Permit Test Study Guide (2026)",
+      "meta_pattern": "Study for the Texas permit test with a 2026 guide to road rules, signs, safe driving basics, and practice questions for review."
+    },
+    {
+      "kw": "florida dmv practice test",
+      "state": "FL",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "Florida DMV Practice Test Guide for 2026",
+      "title_pattern": "Florida DMV Practice Test (2026)",
+      "meta_pattern": "Prepare for the Florida DMV test with 2026 practice questions, road sign review, and driver handbook study tips for test day."
+    },
+    {
+      "kw": "florida permit test practice questions",
+      "state": "FL",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "Florida Permit Test Practice Questions for 2026",
+      "title_pattern": "Florida Permit Test Practice Questions",
+      "meta_pattern": "Use Florida permit test practice questions to review signs, traffic laws, and safe driving topics for your 2026 exam day."
+    }
+  ]
+}

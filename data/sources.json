@@ -1,0 +1,20 @@
+{
+  "cdl": {
+    "general": "sources/cdl/cdl_manual_general.txt",
+    "air_brakes": "sources/cdl/cdl_air_brakes.txt",
+    "passenger": "sources/cdl/cdl_passenger.txt",
+    "hazmat": "sources/cdl/cdl_hazmat.txt"
+  },
+  "real_estate": {
+    "TX": "sources/real_estate/tx_re_handbook.txt",
+    "CA": "sources/real_estate/ca_re_handbook.txt",
+    "FL": "sources/real_estate/fl_re_handbook.txt",
+    "math": "sources/real_estate/re_math_basics.txt",
+    "glossary": "sources/real_estate/re_glossary.txt"
+  },
+  "dmv": {
+    "CA": "sources/dmv/ca_dmv_handbook.txt",
+    "TX": "sources/dmv/tx_dmv_handbook.txt",
+    "FL": "sources/dmv/fl_dmv_handbook.txt"
+  }
+}
