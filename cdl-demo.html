@@ -12,8 +12,8 @@
 <style>
   :root {
     --bg: #050A14;
-    --card: #0E1525;
-    --card-2: #131C30;
+    --card: rgba(14, 21, 37, 0.92);
+    --card-2: rgba(19, 28, 48, 0.92);
     --border: #1E2B47;
     --gold: #E0B53F;
     --gold-2: #C99327;
@@ -22,14 +22,13 @@
     --muted: #8B96AE;
     --dim: #5A6478;
     --good: #22C55E;
-    --good-bg: rgba(15, 42, 26, .85);
+    --good-bg: rgba(15, 42, 26, .92);
     --bad: #EF4444;
-    --bad-bg: rgba(42, 15, 18, .85);
+    --bad-bg: rgba(42, 15, 18, .92);
   }
   * { box-sizing: border-box; }
   html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     background: var(--bg);
     color: var(--text);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -38,42 +37,46 @@
     overflow-x: hidden;
   }
 
-  /* ========= ANIMATED US FLAG BACKGROUND (port of AnimatedFlag v76) ========= */
+  /* ========= ANIMATED US FLAG — bottom-left anchored, rotated -35°, exact port of v76 ========= */
   .flag-bg {
     position: fixed;
     inset: 0;
     overflow: hidden;
-    background: var(--bg);
     pointer-events: none;
     z-index: 0;
-  }
-  .flag-bg::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(1200px 700px at 70% -10%, rgba(5,10,20,.0) 0%, rgba(5,10,20,.55) 70%, rgba(5,10,20,.85) 100%);
-    pointer-events: none;
+    background: var(--bg);
   }
   .flag-layer {
     position: absolute;
     transform-origin: 0 100%;
+    /* bottom, left, width, height set in JS based on viewport diagonal */
   }
-  .flag-svg {
+  .flag-layer svg {
+    width: 100%; height: 100%;
     overflow: visible;
     display: block;
+  }
+  /* Dark vignette overlay so cards remain readable on top */
+  .flag-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 600px at 60% 40%, rgba(5,10,20,.45) 0%, rgba(5,10,20,.78) 70%, rgba(5,10,20,.92) 100%);
+    pointer-events: none;
   }
 
   .container {
     position: relative;
     z-index: 1;
-    max-width: 760px;
+    max-width: 880px;
     margin: 0 auto;
-    padding: 28px 18px 80px;
+    padding: 14px 22px 30px;
   }
 
   /* HEADER */
   .top-bar {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 14px; margin-bottom: 22px; flex-wrap: wrap;
+    gap: 14px; margin-bottom: 18px; flex-wrap: wrap;
   }
   .brand a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 12px; }
   .brand-mark {
@@ -94,7 +97,7 @@
     padding: 7px 13px; border-radius: 999px;
     font-size: 12px; font-weight: 700; cursor: pointer;
     font-family: inherit; letter-spacing: 0.04em;
-    transition: all .18s;
+    transition: all .18s; backdrop-filter: blur(6px);
   }
   .lang-btn.active {
     background: linear-gradient(135deg, var(--gold), var(--gold-deep));
@@ -102,13 +105,13 @@
   }
   .lang-btn:hover:not(.active) { color: var(--text); border-color: var(--gold); }
 
-  /* HERO */
-  .hero { margin-bottom: 22px; }
+  /* HERO — minimal, just one line */
+  .hero { margin: 0 0 14px; }
   .hero-title {
-    font-size: clamp(32px, 5vw, 42px);
+    font-size: clamp(24px, 4vw, 32px);
     font-weight: 800;
     letter-spacing: -0.02em;
-    line-height: 1.05;
+    line-height: 1.1;
     margin: 0;
   }
   .hero-title .gold {
@@ -117,25 +120,23 @@
     -webkit-text-fill-color: transparent;
   }
   .hero-sub {
-    color: var(--muted); margin: 8px 0 0;
-    font-size: 14px; max-width: 560px;
+    color: var(--muted); margin: 6px 0 0;
+    font-size: 13px; max-width: 600px;
   }
 
-  /* TOP META ROW (X + 1/15 + topic + points) */
+  /* META ROW */
   .meta-row {
-    display: flex; align-items: center; gap: 14px;
-    margin-bottom: 14px; font-weight: 700;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 10px; font-weight: 700;
   }
   .meta-x {
     width: 28px; height: 28px; border-radius: 50%;
     border: 1px solid var(--border); background: transparent;
     color: var(--muted); display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 16px; font-family: inherit;
+    cursor: pointer; font-size: 16px; font-family: inherit; line-height: 1;
   }
   .meta-x:hover { color: var(--text); border-color: var(--gold); }
-  .meta-counter {
-    color: var(--muted); font-size: 14px; letter-spacing: 0.02em;
-  }
+  .meta-counter { color: var(--muted); font-size: 14px; }
   .meta-counter b { color: var(--text); }
   .meta-pill {
     display: inline-flex; align-items: center;
@@ -151,8 +152,8 @@
     font-size: 14px; font-weight: 800;
   }
   .progress-track {
-    height: 4px; background: var(--card); border-radius: 999px;
-    overflow: hidden; margin-bottom: 22px;
+    height: 4px; background: var(--card-2); border-radius: 999px;
+    overflow: hidden; margin-bottom: 16px;
   }
   .progress-bar {
     height: 100%;
@@ -161,132 +162,142 @@
     transition: width .45s cubic-bezier(.4,0,.2,1);
   }
 
-  /* QUESTION */
-  .q-text {
-    font-size: clamp(19px, 2.6vw, 22px);
-    font-weight: 700; line-height: 1.35;
-    margin: 0 0 18px; letter-spacing: -0.01em;
-  }
-  .hint-box {
+  /* QUIZ CARD CONTAINER — sticky next button at bottom */
+  .quiz-shell {
+    position: relative;
     background: var(--card);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--gold);
-    padding: 12px 14px;
-    border-radius: 0 10px 10px 0;
-    color: var(--muted); font-size: 14px;
-    margin-bottom: 18px; display: none;
+    border-radius: 18px;
+    padding: 20px 20px 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(224,181,63,.08);
   }
-  .hint-box.show { display: block; animation: fadeIn .25s ease-out; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* OPTIONS */
-  .options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+  .q-text {
+    font-size: clamp(17px, 2.4vw, 20px);
+    font-weight: 700; line-height: 1.35;
+    margin: 0 0 12px; letter-spacing: -0.01em;
+  }
+  .hint-box {
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 10px 13px;
+    border-radius: 0 10px 10px 0;
+    color: var(--muted); font-size: 13px;
+    margin-bottom: 12px; display: none;
+  }
+  .hint-box.show { display: block; }
+
+  /* OPTIONS — compact */
+  .options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
   .option {
     position: relative;
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card);
+    display: flex; align-items: center; gap: 12px;
+    background: var(--card-2);
     border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 14px 16px;
+    border-radius: 12px;
+    padding: 11px 14px;
     cursor: pointer; text-align: left;
-    color: var(--text); font-size: 15px;
-    line-height: 1.45;
+    color: var(--text); font-size: 14.5px;
+    line-height: 1.4;
     font-family: inherit;
-    transition: all .18s ease;
+    transition: all .15s ease;
   }
   .option:hover:not(:disabled) {
     border-color: var(--gold);
-    transform: translateY(-1px);
   }
   .option:disabled { cursor: default; }
   .opt-letter {
     flex-shrink: 0;
-    width: 34px; height: 34px;
+    width: 30px; height: 30px;
     border-radius: 50%;
-    background: var(--card-2);
+    background: rgba(255,255,255,.04);
     color: var(--text);
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 14px;
+    font-weight: 800; font-size: 13px;
     border: 1px solid var(--border);
   }
   .opt-text { flex: 1; }
   .opt-icon {
     flex-shrink: 0;
-    width: 26px; height: 26px;
+    width: 24px; height: 24px;
     border-radius: 50%;
     display: none;
     align-items: center; justify-content: center;
-    color: #fff; font-weight: 800; font-size: 14px;
+    color: #fff; font-weight: 800; font-size: 13px;
   }
   .option.correct {
     border-color: var(--good);
     background: var(--good-bg);
-    box-shadow: 0 0 0 1px var(--good);
   }
-  .option.correct .opt-letter {
-    background: var(--good); border-color: var(--good); color: #fff;
-  }
-  .option.correct .opt-icon {
-    display: flex; background: var(--good);
-  }
+  .option.correct .opt-letter { background: var(--good); border-color: var(--good); color: #fff; }
+  .option.correct .opt-icon { display: flex; background: var(--good); }
   .option.wrong {
     border-color: var(--bad);
     background: var(--bad-bg);
-    box-shadow: 0 0 0 1px var(--bad);
   }
-  .option.wrong .opt-letter {
-    background: var(--bad); border-color: var(--bad); color: #fff;
-  }
-  .option.wrong .opt-icon {
-    display: flex; background: var(--bad);
-  }
+  .option.wrong .opt-letter { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .option.wrong .opt-icon { display: flex; background: var(--bad); }
 
-  /* FEEDBACK */
+  /* FEEDBACK — collapsible toggle so it doesn't push button off-screen */
   .feedback {
-    margin: 0 0 18px;
-    background: var(--card);
+    margin: 0 0 12px;
+    background: var(--card-2);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
+    border-radius: 12px;
+    overflow: hidden;
     display: none;
-    animation: fadeIn .25s ease-out;
   }
   .feedback.show { display: block; }
+  .feedback-header {
+    padding: 12px 14px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none;
+    gap: 10px;
+  }
   .feedback-title {
-    font-weight: 800; font-size: 16px;
-    margin: 0 0 8px;
-    color: var(--gold);
+    font-weight: 800; font-size: 14px;
+    color: var(--gold); flex: 1;
   }
   .feedback.is-correct .feedback-title { color: var(--good); }
-  .feedback.is-wrong   .feedback-title { color: var(--gold); }
-  .feedback-text {
-    color: var(--text); font-size: 15px; line-height: 1.55; margin: 0 0 12px;
+  .feedback-toggle {
+    color: var(--muted); font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; gap: 6px;
   }
+  .feedback-toggle::after {
+    content: '▾'; transition: transform .2s;
+  }
+  .feedback.collapsed .feedback-toggle::after { transform: rotate(-90deg); }
+  .feedback-body {
+    padding: 0 14px 14px;
+    font-size: 14px; line-height: 1.5;
+    color: var(--text);
+  }
+  .feedback.collapsed .feedback-body { display: none; }
   .feedback-watch {
-    margin-top: 12px;
-    background: var(--card-2);
+    margin-top: 10px;
+    background: rgba(0,0,0,.2);
     border-left: 3px solid var(--gold);
-    padding: 12px 14px;
-    border-radius: 0 10px 10px 0;
+    padding: 10px 12px;
+    border-radius: 0 8px 8px 0;
   }
   .feedback-watch-title {
-    color: var(--gold); font-weight: 800; font-size: 14px;
-    display: flex; align-items: center; gap: 8px;
-    margin: 0 0 6px;
+    color: var(--gold); font-weight: 800; font-size: 13px;
+    display: flex; align-items: center; gap: 6px;
+    margin: 0 0 4px;
   }
-  .feedback-watch-title::before {
-    content: '💡'; font-size: 16px;
-  }
-  .feedback-watch-text { color: var(--text); font-size: 14px; line-height: 1.55; margin: 0; }
+  .feedback-watch-title::before { content: '💡'; font-size: 14px; }
+  .feedback-watch-text { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0; }
 
-  /* NEXT BUTTON */
+  /* STICKY NEXT BUTTON */
   .next-btn {
     width: 100%;
     background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
     color: #1a0e00;
-    border: none; border-radius: 14px;
-    padding: 18px 22px;
-    font-size: 17px; font-weight: 800;
+    border: none; border-radius: 12px;
+    padding: 14px 22px;
+    font-size: 16px; font-weight: 800;
     cursor: pointer; font-family: inherit;
     letter-spacing: 0.01em;
     transition: transform .15s, filter .2s;
@@ -297,7 +308,7 @@
     filter: brightness(1.05);
   }
   .next-btn:disabled {
-    background: var(--card);
+    background: var(--card-2);
     color: var(--dim);
     cursor: not-allowed;
     box-shadow: none;
@@ -308,21 +319,18 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
-    padding: 36px 26px;
+    padding: 32px 24px;
     text-align: center;
+    backdrop-filter: blur(8px);
   }
   .score-ring {
     position: relative; width: 180px; height: 180px;
-    margin: 0 auto 18px;
+    margin: 0 auto 14px;
   }
   .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-  .score-ring .ring-bg { stroke: var(--card-2); }
+  .score-ring .ring-bg { stroke: rgba(255,255,255,.05); }
   .score-ring .ring-fg { stroke: url(#goldGrad); transition: stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1); }
-  .score-num {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-  }
+  .score-num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .score-pct {
     font-size: 44px; font-weight: 800;
     background: linear-gradient(180deg, #fff, var(--gold));
@@ -331,65 +339,57 @@
     line-height: 1; letter-spacing: -0.02em;
   }
   .score-label { color: var(--muted); font-size: 13px; font-weight: 600; margin-top: 6px; }
-  .score-correct {
-    font-size: 36px; font-weight: 800;
-    margin: 6px 0 4px; color: var(--text);
-  }
+  .score-correct { font-size: 32px; font-weight: 800; margin: 6px 0 4px; color: var(--text); }
   .score-correct-label { color: var(--muted); font-size: 13px; font-weight: 600; }
-  .score-verdict { color: var(--text); font-size: 16px; font-weight: 600; margin-top: 16px; }
+  .score-verdict { color: var(--text); font-size: 15px; font-weight: 600; margin-top: 14px; }
 
   .cta-box {
-    margin-top: 26px;
+    margin-top: 22px;
     background: var(--card-2);
     border: 1.5px solid var(--gold);
     border-radius: 16px;
-    padding: 24px 22px;
+    padding: 22px;
     text-align: left;
     box-shadow: 0 0 0 1px rgba(224,181,63,.2), 0 16px 40px -16px rgba(224,181,63,.3);
   }
   .cta-box h3 {
-    margin: 0 0 14px; font-size: 22px; font-weight: 800;
-    letter-spacing: -0.01em;
+    margin: 0 0 12px; font-size: 20px; font-weight: 800;
     background: linear-gradient(180deg, #fff, var(--gold));
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .cta-list { list-style: none; margin: 0 0 18px; padding: 0; }
+  .cta-list { list-style: none; margin: 0 0 16px; padding: 0; }
   .cta-list li {
-    padding: 8px 0 8px 28px; position: relative;
+    padding: 6px 0 6px 26px; position: relative;
     font-size: 14px; color: var(--text);
   }
   .cta-list li::before {
-    content: '✓'; position: absolute; left: 0; top: 8px;
-    width: 20px; height: 20px; border-radius: 50%;
+    content: '✓'; position: absolute; left: 0; top: 6px;
+    width: 18px; height: 18px; border-radius: 50%;
     background: linear-gradient(135deg, var(--gold), var(--gold-deep));
-    color: #1a0e00; font-weight: 900; font-size: 12px;
+    color: #1a0e00; font-weight: 900; font-size: 11px;
     display: flex; align-items: center; justify-content: center;
   }
   .cta-price-row {
     display: flex; align-items: baseline; gap: 10px;
-    margin: 18px 0 14px; flex-wrap: wrap;
+    margin: 14px 0 12px; flex-wrap: wrap;
   }
-  .cta-price { font-size: 32px; font-weight: 800; color: var(--gold); letter-spacing: -0.02em; }
+  .cta-price { font-size: 30px; font-weight: 800; color: var(--gold); letter-spacing: -0.02em; }
   .cta-price-sub { color: var(--muted); font-size: 13px; }
   .cta-btn {
     display: block;
     background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
     color: #1a0e00;
-    padding: 16px 22px;
-    border-radius: 14px;
+    padding: 14px 22px;
+    border-radius: 12px;
     font-weight: 800; font-size: 16px;
     text-decoration: none; text-align: center;
     box-shadow: 0 10px 28px -8px rgba(224,181,63,.5);
-    transition: transform .15s, filter .2s;
-  }
-  .cta-btn:hover {
-    transform: translateY(-1px); filter: brightness(1.05);
   }
   .restart-btn {
-    margin-top: 14px; background: transparent;
+    margin-top: 12px; background: transparent;
     color: var(--muted); border: 1px solid var(--border);
-    border-radius: 12px; padding: 12px 18px;
+    border-radius: 12px; padding: 10px 18px;
     font-size: 14px; font-weight: 600;
     cursor: pointer; font-family: inherit;
   }
@@ -397,26 +397,24 @@
 
   footer {
     text-align: center; color: var(--muted);
-    font-size: 13px; margin-top: 30px;
+    font-size: 12px; margin-top: 22px;
   }
   footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
 
   @media (max-width: 480px) {
-    .container { padding: 18px 14px 60px; }
-    .hero-title { font-size: 28px; }
-    .options { gap: 10px; }
-    .option { padding: 12px 14px; font-size: 14px; }
-    .opt-letter { width: 30px; height: 30px; font-size: 13px; }
-    .feedback { padding: 16px; }
-    .next-btn { padding: 16px; font-size: 16px; }
+    .container { padding: 16px 12px 24px; }
+    .quiz-shell { padding: 16px 14px 14px; }
+    .options { gap: 7px; }
+    .option { padding: 10px 12px; font-size: 14px; }
+    .opt-letter { width: 28px; height: 28px; font-size: 12px; }
+    .next-btn { padding: 13px; font-size: 15px; }
     .score-ring { width: 150px; height: 150px; }
-    .score-pct { font-size: 38px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ========= ANIMATED FLAG BACKGROUND ========= -->
+<!-- ========= ANIMATED US FLAG, anchored bottom-left, rotated -35° ========= -->
 <div class="flag-bg" aria-hidden="true">
   <div class="flag-layer" id="flagLayer"></div>
 </div>
@@ -442,29 +440,27 @@
   </div>
 
   <div class="hero">
-    <h1 class="hero-title"><span class="gold">CDL Master Prep</span><br>Free Practice — 15 of the Hardest Questions</h1>
-    <p class="hero-sub">Real exam scenarios drivers miss most: tire blowouts, hazmat placards, tankers, doubles &amp; triples, pre-trip checks. Pick a hint language above for translation help.</p>
+    <h1 class="hero-title"><span class="gold">Free CDL Practice</span></h1>
   </div>
 
   <div id="quizArea"></div>
   <div id="resultsArea" style="display:none;"></div>
 
-  <footer>
-    <p>Full prep: 200 questions · 11 topics · 4-language hints · offline · <a href="index.html#cdl">$9.99 lifetime</a></p>
-  </footer>
+  <footer></footer>
 </div>
 
 <script>
 /* =========================================================================
-   ANIMATED FLAG BACKGROUND — port of AnimatedFlag v76 (web branch only).
-   Renders a giant US flag with feTurbulence + feDisplacementMap, animates
-   baseFrequency and scale via requestAnimationFrame.
+   ANIMATED US FLAG — exact port of AnimatedFlag v76 (web branch).
+   - Size based on screen DIAGONAL (FLAG_W = diag * 1.4).
+   - Anchored to bottom-left with proportional negative offsets.
+   - Rotated -35°. Stripes sweep from lower-left up to upper-right.
+   - Animated via feTurbulence + feDisplacementMap, RAF loop.
    ========================================================================= */
 (function buildFlag() {
   const COLORS = { red: '#4A1520', white: '#5A544D', blue: '#0A1220' };
   const STRIPE_COUNT = 13;
   const ROTATION_DEG = -35;
-
   const layer = document.getElementById('flagLayer');
 
   function compute() {
@@ -478,10 +474,10 @@
     const CANTON_W = FLAG_W * 0.4;
     const bottomOffset = -diag * 0.28;
     const leftOffset = -diag * 0.32;
-    return { SW, SH, diag, FLAG_W, FLAG_H, STRIPE_H, CANTON_W, CANTON_H, bottomOffset, leftOffset };
+    return { FLAG_W, FLAG_H, STRIPE_H, CANTON_W, CANTON_H, bottomOffset, leftOffset };
   }
 
-  function buildStarPath(cx, cy, r) {
+  function starPath(cx, cy, r) {
     return `M ${cx} ${cy - r} L ${cx + r * 0.22} ${cy - r * 0.22} L ${cx + r * 0.95} ${cy - r * 0.31} L ${cx + r * 0.44} ${cy + r * 0.22} L ${cx + r * 0.59} ${cy + r * 0.9} L ${cx} ${cy + r * 0.5} L ${cx - r * 0.59} ${cy + r * 0.9} L ${cx - r * 0.44} ${cy + r * 0.22} L ${cx - r * 0.95} ${cy - r * 0.31} L ${cx - r * 0.22} ${cy - r * 0.22} Z`;
   }
 
@@ -493,7 +489,6 @@
     layer.style.height = d.FLAG_H + 'px';
     layer.style.transform = `rotate(${ROTATION_DEG}deg)`;
 
-    // Build SVG
     const cols = 9, rows = 7;
     const sx = d.CANTON_W / (cols + 1);
     const sy = d.CANTON_H / (rows + 1);
@@ -513,11 +508,11 @@
     }
     let starsSvg = '';
     for (const s of stars) {
-      starsSvg += `<path d="${buildStarPath(s.x, s.y, starSize / 2)}" fill="#FFFFFF" opacity="0.25"/>`;
+      starsSvg += `<path d="${starPath(s.x, s.y, starSize / 2)}" fill="#FFFFFF" opacity="0.25"/>`;
     }
 
     layer.innerHTML = `
-      <svg class="flag-svg" width="${d.FLAG_W}" height="${d.FLAG_H}" viewBox="0 0 ${d.FLAG_W} ${d.FLAG_H}">
+      <svg width="${d.FLAG_W}" height="${d.FLAG_H}" viewBox="0 0 ${d.FLAG_W} ${d.FLAG_H}">
         <defs>
           <filter id="flagWaveFilter" x="-20%" y="-20%" width="140%" height="140%">
             <feTurbulence id="flagTurb" type="fractalNoise" baseFrequency="0.00275 0.00525" numOctaves="3" seed="5" result="turbulence"/>
@@ -540,7 +535,7 @@
     resizeTimer = setTimeout(render, 200);
   });
 
-  // RAF animation loop — animate baseFrequency and scale outside React
+  // RAF wave animation
   const TURB_DURATION = 32000;
   const DISP_DURATION = 24000;
   const startTime = performance.now();
@@ -553,19 +548,17 @@
     const dProg = (elapsed % DISP_DURATION) / DISP_DURATION;
     const dSin = Math.sin(dProg * Math.PI * 2);
     const scale = 80 + 5 * dSin;
-
     const turb = document.getElementById('flagTurb');
     const disp = document.getElementById('flagDisp');
     if (turb) turb.setAttribute('baseFrequency', fx.toFixed(5) + ' ' + fy.toFixed(5));
     if (disp) disp.setAttribute('scale', scale.toFixed(1));
-
     requestAnimationFrame(animate);
   }
   requestAnimationFrame(animate);
 })();
 
 /* =========================================================================
-   QUIZ LOGIC
+   QUIZ
    ========================================================================= */
 const FALLBACK_LANG = 'en';
 let HINT_LANG = 'en';
@@ -573,18 +566,19 @@ let questions = [];
 let current = 0;
 let correctCount = 0;
 let answered = false;
+let feedbackCollapsed = false;
 
 const TOPIC_LABELS = {
   'emergencies': 'EMERGENCIES',
   'hazmat': 'HAZMAT',
   'doubles-triples': 'DOUBLES & TRIPLES',
   'tankers': 'TANKERS',
-  'combination-vehicles': 'COMBINATION VEHICLES',
-  'pre-trip-inspection': 'PRE-TRIP INSPECTION',
+  'combination-vehicles': 'COMBINATION',
+  'pre-trip-inspection': 'PRE-TRIP',
   'safe-driving': 'SAFE DRIVING',
   'cargo': 'CARGO',
   'passengers': 'PASSENGERS',
-  'general-knowledge': 'GENERAL KNOWLEDGE',
+  'general-knowledge': 'GENERAL',
   'air-brakes': 'AIR BRAKES'
 };
 
@@ -593,12 +587,10 @@ function tx(obj, lang) {
   if (typeof obj === 'string') return obj;
   return obj[lang] || obj[FALLBACK_LANG] || Object.values(obj)[0] || '';
 }
-
 function escapeHtml(s) {
   if (s == null) return '';
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-
 function setProgress(idx) {
   const pct = (idx / questions.length) * 100;
   const bar = document.getElementById('progressBar');
@@ -609,6 +601,7 @@ function renderQuestion() {
   const q = questions[current];
   if (!q) { renderResults(); return; }
   answered = false;
+  feedbackCollapsed = false;
 
   const topic = TOPIC_LABELS[q.topicId] || q.topicId.toUpperCase();
   const en = tx(q.text, 'en');
@@ -622,6 +615,7 @@ function renderQuestion() {
   html += '<span class="meta-pts">' + (correctCount * 10) + ' pts</span>';
   html += '</div>';
   html += '<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>';
+  html += '<div class="quiz-shell">';
   html += '<div class="q-text">' + escapeHtml(en) + '</div>';
   if (hint && hint !== en) html += '<div class="hint-box show">' + escapeHtml(hint) + '</div>';
   html += '<div class="options">';
@@ -630,19 +624,25 @@ function renderQuestion() {
     html += '<button class="option" data-id="' + opt.id + '" type="button">';
     html += '<span class="opt-letter">' + opt.id + '</span>';
     html += '<span class="opt-text">' + escapeHtml(optEn) + '</span>';
-    html += '<span class="opt-icon" data-icon-id="' + opt.id + '"></span>';
+    html += '<span class="opt-icon"></span>';
     html += '</button>';
   }
   html += '</div>';
   html += '<div class="feedback" id="feedbackBox">';
-  html += '<div class="feedback-title" id="feedbackTitle"></div>';
-  html += '<div class="feedback-text" id="feedbackText"></div>';
+  html += '<div class="feedback-header" id="feedbackHeader">';
+  html += '<span class="feedback-title" id="feedbackTitle"></span>';
+  html += '<span class="feedback-toggle">why</span>';
+  html += '</div>';
+  html += '<div class="feedback-body">';
+  html += '<div id="feedbackText"></div>';
   html += '<div class="feedback-watch" id="feedbackWatch" style="display:none;">';
   html += '<div class="feedback-watch-title">Watch Out:</div>';
   html += '<div class="feedback-watch-text" id="feedbackWatchText"></div>';
   html += '</div>';
   html += '</div>';
+  html += '</div>';
   html += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
+  html += '</div>';
 
   document.getElementById('quizArea').innerHTML = html;
   setProgress(current);
@@ -653,7 +653,18 @@ function renderQuestion() {
   document.getElementById('nextBtn').addEventListener('click', () => {
     current++;
     renderQuestion();
+    // Scroll to top so next question is visible without scrolling
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+  // Feedback collapse toggle
+  const fbHeader = document.getElementById('feedbackHeader');
+  if (fbHeader) {
+    fbHeader.addEventListener('click', () => {
+      const fb = document.getElementById('feedbackBox');
+      feedbackCollapsed = !feedbackCollapsed;
+      fb.classList.toggle('collapsed', feedbackCollapsed);
+    });
+  }
 }
 
 function onAnswer(chosenId) {
@@ -678,7 +689,6 @@ function onAnswer(chosenId) {
     }
   });
 
-  // Update points pill
   const pts = document.querySelector('.meta-pts');
   if (pts) pts.textContent = (correctCount * 10) + ' pts';
 
@@ -689,8 +699,12 @@ function onAnswer(chosenId) {
   const fbWatchText = document.getElementById('feedbackWatchText');
   fb.classList.add('show');
   fb.classList.toggle('is-correct', wasCorrect);
-  fb.classList.toggle('is-wrong', !wasCorrect);
-  fbTitle.textContent = wasCorrect ? 'Correct — Here\u2019s Why' : 'Incorrect — Here\u2019s Why';
+
+  // Auto-collapse "why" if correct, expand if wrong
+  feedbackCollapsed = wasCorrect;
+  fb.classList.toggle('collapsed', feedbackCollapsed);
+
+  fbTitle.textContent = wasCorrect ? '✓ Correct — tap "why" to see the explanation' : '✕ Incorrect — Here\u2019s Why';
   fbText.textContent = tx(q.explanation, 'en');
 
   const hintExp = HINT_LANG !== 'en' ? tx(q.explanation, HINT_LANG) : '';
@@ -704,6 +718,11 @@ function onAnswer(chosenId) {
   const nextBtn = document.getElementById('nextBtn');
   nextBtn.disabled = false;
   nextBtn.textContent = current === questions.length - 1 ? 'See Results →' : 'Next Question →';
+
+  // Auto-scroll button into view smoothly (no need to drag)
+  setTimeout(() => {
+    nextBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 50);
 }
 
 function renderResults() {
@@ -767,11 +786,11 @@ function renderResults() {
   });
 
   document.getElementById('restartBtn').addEventListener('click', () => {
-    current = 0;
-    correctCount = 0;
+    current = 0; correctCount = 0;
     document.getElementById('quizArea').style.display = '';
     area.style.display = 'none';
     renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
@@ -780,31 +799,7 @@ document.getElementById('langRow').addEventListener('click', (e) => {
   HINT_LANG = e.target.dataset.lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === HINT_LANG));
   if (document.getElementById('resultsArea').style.display !== 'block' && questions.length) {
-    if (!answered) {
-      renderQuestion();
-    } else {
-      // Refresh hint visibility on the fly when an answer is showing
-      const hintBoxOld = document.querySelector('.hint-box');
-      if (hintBoxOld) hintBoxOld.remove();
-      const q = questions[current];
-      const hint = HINT_LANG !== 'en' ? tx(q.text, HINT_LANG) : '';
-      if (hint && hint !== tx(q.text, 'en')) {
-        const div = document.createElement('div');
-        div.className = 'hint-box show';
-        div.textContent = hint;
-        const qText = document.querySelector('.q-text');
-        qText.parentNode.insertBefore(div, qText.nextSibling);
-      }
-      const hintExp = HINT_LANG !== 'en' ? tx(q.explanation, HINT_LANG) : '';
-      const fbWatch = document.getElementById('feedbackWatch');
-      const fbWatchText = document.getElementById('feedbackWatchText');
-      if (hintExp && hintExp !== tx(q.explanation, 'en')) {
-        fbWatch.style.display = 'block';
-        fbWatchText.textContent = hintExp;
-      } else if (fbWatch) {
-        fbWatch.style.display = 'none';
-      }
-    }
+    renderQuestion();
   }
 });
 
