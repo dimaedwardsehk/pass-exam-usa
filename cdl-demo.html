@@ -11,329 +11,341 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0A0E1A;
-    --bg-elev: #11172A;
-    --surface: #161D33;
-    --surface-2: #1C2440;
-    --border: #222B4A;
-    --gold: #FCD34D;
-    --gold-2: #FBBF24;
-    --gold-deep: #D97706;
-    --text: #F8FAFC;
-    --muted: #94A3B8;
-    --dim: #64748B;
+    --bg: #050A14;
+    --card: #0E1525;
+    --card-2: #131C30;
+    --border: #1E2B47;
+    --gold: #E0B53F;
+    --gold-2: #C99327;
+    --gold-deep: #A87510;
+    --text: #F4F6FB;
+    --muted: #8B96AE;
+    --dim: #5A6478;
     --good: #22C55E;
-    --good-bg: #0F2A1A;
+    --good-bg: rgba(15, 42, 26, .85);
     --bad: #EF4444;
-    --bad-bg: #2A0F12;
-    --shadow: 0 20px 50px -12px rgba(0,0,0,.6), 0 8px 20px -8px rgba(0,0,0,.5);
-    --gold-glow: 0 0 0 1px rgba(252,211,77,.25), 0 8px 30px -10px rgba(252,211,77,.35);
+    --bad-bg: rgba(42, 15, 18, .85);
   }
   * { box-sizing: border-box; }
   html, body {
     margin: 0;
     padding: 0;
-    background:
-      radial-gradient(1100px 600px at 50% -10%, rgba(252,211,77,.07), transparent 60%),
-      radial-gradient(800px 500px at 90% 110%, rgba(217,119,6,.08), transparent 60%),
-      var(--bg);
+    background: var(--bg);
     color: var(--text);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
+    overflow-x: hidden;
   }
-  .container { max-width: 760px; margin: 0 auto; padding: 28px 18px 80px; position: relative; }
 
-  /* HEADER WITH FLAG */
-  .top-bar {
-    display: flex; align-items: center; justify-content: space-between; gap: 14px;
-    margin-bottom: 18px; flex-wrap: wrap;
+  /* ========= ANIMATED US FLAG BACKGROUND (port of AnimatedFlag v76) ========= */
+  .flag-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: var(--bg);
+    pointer-events: none;
+    z-index: 0;
   }
-  .brand { display: flex; align-items: center; gap: 12px; }
+  .flag-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(1200px 700px at 70% -10%, rgba(5,10,20,.0) 0%, rgba(5,10,20,.55) 70%, rgba(5,10,20,.85) 100%);
+    pointer-events: none;
+  }
+  .flag-layer {
+    position: absolute;
+    transform-origin: 0 100%;
+  }
+  .flag-svg {
+    overflow: visible;
+    display: block;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 18px 80px;
+  }
+
+  /* HEADER */
+  .top-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px; margin-bottom: 22px; flex-wrap: wrap;
+  }
   .brand a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 12px; }
   .brand-mark {
     width: 38px; height: 38px; border-radius: 10px;
     background: linear-gradient(135deg, var(--gold), var(--gold-deep));
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800; color: #1a0e00; font-size: 18px;
-    box-shadow: var(--gold-glow);
+    font-weight: 800; color: #1a0e00; font-size: 17px;
+    box-shadow: 0 6px 18px -6px rgba(224,181,63,.55);
   }
   .brand-name { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
   .brand-sub { color: var(--muted); font-size: 12px; font-weight: 500; }
 
   .lang-row { display: flex; gap: 6px; flex-wrap: wrap; }
   .lang-btn {
-    background: var(--surface);
+    background: var(--card);
     border: 1px solid var(--border);
     color: var(--muted);
-    padding: 7px 12px; border-radius: 999px;
+    padding: 7px 13px; border-radius: 999px;
     font-size: 12px; font-weight: 700; cursor: pointer;
-    transition: all .18s; font-family: inherit;
-    letter-spacing: 0.04em;
+    font-family: inherit; letter-spacing: 0.04em;
+    transition: all .18s;
   }
   .lang-btn.active {
     background: linear-gradient(135deg, var(--gold), var(--gold-deep));
     color: #1a0e00; border-color: transparent;
-    box-shadow: 0 4px 14px -4px rgba(252,211,77,.5);
   }
   .lang-btn:hover:not(.active) { color: var(--text); border-color: var(--gold); }
 
-  /* FLAG STAGE */
-  .flag-stage {
-    position: relative; height: 110px; margin-bottom: 12px;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .flag-pole {
-    position: absolute; left: 50%; transform: translateX(-130px);
-    top: 4px; width: 4px; height: 100px;
-    background: linear-gradient(90deg, #4a5568, #94a3b8 50%, #4a5568);
-    border-radius: 2px;
-    box-shadow: 0 0 8px rgba(0,0,0,.5);
-  }
-  .flag-pole::before {
-    content: ''; position: absolute; top: -6px; left: -3px;
-    width: 10px; height: 10px; border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, var(--gold), var(--gold-deep));
-    box-shadow: 0 0 8px rgba(252,211,77,.6);
-  }
-  .flag {
-    position: absolute; left: calc(50% - 126px); top: 8px;
-    width: 200px; height: 110px;
-    transform-origin: left center;
-    animation: wave 3.2s ease-in-out infinite;
-    filter: drop-shadow(2px 6px 8px rgba(0,0,0,.45));
-  }
-  @keyframes wave {
-    0%, 100% { transform: skewY(-1.2deg) translateY(0); }
-    25% { transform: skewY(0.8deg) translateY(-2px); }
-    50% { transform: skewY(1.5deg) translateY(0); }
-    75% { transform: skewY(-0.5deg) translateY(2px); }
-  }
-  .flag svg { width: 100%; height: 100%; display: block; }
-  .flag-shine {
-    position: absolute; inset: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.08) 30%, transparent 60%, rgba(0,0,0,.12) 100%);
-    pointer-events: none; mix-blend-mode: overlay;
-    animation: shimmer 3.2s ease-in-out infinite;
-  }
-  @keyframes shimmer {
-    0%, 100% { transform: translateX(-10%); }
-    50% { transform: translateX(10%); }
-  }
-
-  /* TITLE */
-  .hero {
-    text-align: center; margin: 4px 0 26px;
-  }
-  .hero h1 {
-    font-size: clamp(26px, 4vw, 34px);
-    margin: 0 0 8px;
-    letter-spacing: -0.02em;
+  /* HERO */
+  .hero { margin-bottom: 22px; }
+  .hero-title {
+    font-size: clamp(32px, 5vw, 42px);
     font-weight: 800;
-    background: linear-gradient(180deg, #fff 0%, #fcd34d 100%);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .hero-title .gold {
+    background: linear-gradient(180deg, #fff 0%, var(--gold) 100%);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .hero p { color: var(--muted); margin: 0 auto; max-width: 540px; font-size: 14px; }
+  .hero-sub {
+    color: var(--muted); margin: 8px 0 0;
+    font-size: 14px; max-width: 560px;
+  }
 
-  /* PROGRESS */
-  .progress-wrap {
+  /* TOP META ROW (X + 1/15 + topic + points) */
+  .meta-row {
     display: flex; align-items: center; gap: 14px;
-    margin-bottom: 22px;
+    margin-bottom: 14px; font-weight: 700;
+  }
+  .meta-x {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--muted); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 16px; font-family: inherit;
+  }
+  .meta-x:hover { color: var(--text); border-color: var(--gold); }
+  .meta-counter {
+    color: var(--muted); font-size: 14px; letter-spacing: 0.02em;
+  }
+  .meta-counter b { color: var(--text); }
+  .meta-pill {
+    display: inline-flex; align-items: center;
+    background: rgba(224,181,63,.10);
+    border: 1px solid rgba(224,181,63,.35);
+    color: var(--gold);
+    padding: 4px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .meta-pts {
+    margin-left: auto; color: var(--gold);
+    font-size: 14px; font-weight: 800;
   }
   .progress-track {
-    flex: 1; height: 8px;
-    background: var(--surface);
-    border-radius: 999px; overflow: hidden;
-    border: 1px solid var(--border);
+    height: 4px; background: var(--card); border-radius: 999px;
+    overflow: hidden; margin-bottom: 22px;
   }
   .progress-bar {
     height: 100%;
     background: linear-gradient(90deg, var(--gold-deep), var(--gold));
     width: 0%;
-    transition: width .45s cubic-bezier(.4,.0,.2,1);
-    box-shadow: 0 0 12px rgba(252,211,77,.35);
-  }
-  .progress-num {
-    color: var(--gold); font-weight: 800; font-size: 13px;
-    letter-spacing: 0.05em; min-width: 56px; text-align: right;
+    transition: width .45s cubic-bezier(.4,0,.2,1);
   }
 
-  /* CARD */
-  .card {
-    position: relative;
-    background: linear-gradient(180deg, var(--surface), var(--bg-elev));
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 26px 24px;
-    margin-bottom: 18px;
-    box-shadow: var(--shadow);
-  }
-  .card::before {
-    content: ''; position: absolute; inset: 0;
-    border-radius: 18px; pointer-events: none;
-    background: linear-gradient(135deg, rgba(252,211,77,.18), transparent 35%, transparent 65%, rgba(252,211,77,.10));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor; mask-composite: exclude;
-    padding: 1px;
-  }
-
-  .topic-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(252,211,77,.10);
-    border: 1px solid rgba(252,211,77,.30);
-    color: var(--gold);
-    padding: 6px 12px; border-radius: 999px;
-    font-size: 11px; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    margin-bottom: 16px;
-  }
-  .topic-tag::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 8px var(--gold);
-  }
-  .question-text {
-    font-size: clamp(17px, 2.4vw, 20px);
-    font-weight: 700; line-height: 1.4;
-    margin-bottom: 14px; letter-spacing: -0.01em;
+  /* QUESTION */
+  .q-text {
+    font-size: clamp(19px, 2.6vw, 22px);
+    font-weight: 700; line-height: 1.35;
+    margin: 0 0 18px; letter-spacing: -0.01em;
   }
   .hint-box {
-    background: var(--surface-2);
+    background: var(--card);
+    border: 1px solid var(--border);
     border-left: 3px solid var(--gold);
-    padding: 10px 14px;
+    padding: 12px 14px;
     border-radius: 0 10px 10px 0;
     color: var(--muted); font-size: 14px;
     margin-bottom: 18px; display: none;
   }
   .hint-box.show { display: block; animation: fadeIn .25s ease-out; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
 
   /* OPTIONS */
-  .options { display: flex; flex-direction: column; gap: 10px; }
+  .options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
   .option {
-    display: flex; align-items: flex-start; gap: 14px;
-    background: var(--surface-2);
+    position: relative;
+    display: flex; align-items: center; gap: 14px;
+    background: var(--card);
     border: 1.5px solid var(--border);
     border-radius: 14px;
     padding: 14px 16px;
     cursor: pointer; text-align: left;
     color: var(--text); font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.45;
     font-family: inherit;
     transition: all .18s ease;
   }
   .option:hover:not(:disabled) {
     border-color: var(--gold);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px -10px rgba(252,211,77,.3);
   }
   .option:disabled { cursor: default; }
   .opt-letter {
     flex-shrink: 0;
-    width: 32px; height: 32px;
+    width: 34px; height: 34px;
     border-radius: 50%;
-    background: var(--surface);
+    background: var(--card-2);
     color: var(--text);
     display: flex; align-items: center; justify-content: center;
     font-weight: 800; font-size: 14px;
     border: 1px solid var(--border);
-    transition: all .18s;
   }
-  .opt-text { flex: 1; padding-top: 4px; }
+  .opt-text { flex: 1; }
+  .opt-icon {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: none;
+    align-items: center; justify-content: center;
+    color: #fff; font-weight: 800; font-size: 14px;
+  }
   .option.correct {
-    background: var(--good-bg);
     border-color: var(--good);
-    box-shadow: 0 0 0 1px var(--good), 0 8px 24px -10px rgba(34,197,94,.4);
+    background: var(--good-bg);
+    box-shadow: 0 0 0 1px var(--good);
   }
   .option.correct .opt-letter {
-    background: var(--good); color: #fff; border-color: var(--good);
+    background: var(--good); border-color: var(--good); color: #fff;
+  }
+  .option.correct .opt-icon {
+    display: flex; background: var(--good);
   }
   .option.wrong {
-    background: var(--bad-bg);
     border-color: var(--bad);
+    background: var(--bad-bg);
+    box-shadow: 0 0 0 1px var(--bad);
   }
   .option.wrong .opt-letter {
-    background: var(--bad); color: #fff; border-color: var(--bad);
+    background: var(--bad); border-color: var(--bad); color: #fff;
+  }
+  .option.wrong .opt-icon {
+    display: flex; background: var(--bad);
   }
 
+  /* FEEDBACK */
   .feedback {
-    margin-top: 18px; padding: 16px 18px;
+    margin: 0 0 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 14px;
-    display: none; animation: fadeIn .3s ease-out;
+    padding: 18px 20px;
+    display: none;
+    animation: fadeIn .25s ease-out;
   }
   .feedback.show { display: block; }
-  .feedback.correct { background: var(--good-bg); border: 1px solid var(--good); }
-  .feedback.wrong   { background: var(--bad-bg);  border: 1px solid var(--bad); }
   .feedback-title {
-    display: flex; align-items: center; gap: 8px;
-    font-weight: 800; font-size: 14px;
-    margin-bottom: 8px; letter-spacing: 0.02em;
+    font-weight: 800; font-size: 16px;
+    margin: 0 0 8px;
+    color: var(--gold);
   }
-  .feedback.correct .feedback-title { color: var(--good); }
-  .feedback.wrong   .feedback-title { color: var(--bad); }
-  .feedback-text { font-size: 14px; line-height: 1.55; color: var(--text); }
-  .feedback-hint { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+  .feedback.is-correct .feedback-title { color: var(--good); }
+  .feedback.is-wrong   .feedback-title { color: var(--gold); }
+  .feedback-text {
+    color: var(--text); font-size: 15px; line-height: 1.55; margin: 0 0 12px;
+  }
+  .feedback-watch {
+    margin-top: 12px;
+    background: var(--card-2);
+    border-left: 3px solid var(--gold);
+    padding: 12px 14px;
+    border-radius: 0 10px 10px 0;
+  }
+  .feedback-watch-title {
+    color: var(--gold); font-weight: 800; font-size: 14px;
+    display: flex; align-items: center; gap: 8px;
+    margin: 0 0 6px;
+  }
+  .feedback-watch-title::before {
+    content: '💡'; font-size: 16px;
+  }
+  .feedback-watch-text { color: var(--text); font-size: 14px; line-height: 1.55; margin: 0; }
 
+  /* NEXT BUTTON */
   .next-btn {
-    margin-top: 18px; width: 100%;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    width: 100%;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
     color: #1a0e00;
     border: none; border-radius: 14px;
-    padding: 16px 22px;
-    font-size: 16px; font-weight: 800;
+    padding: 18px 22px;
+    font-size: 17px; font-weight: 800;
     cursor: pointer; font-family: inherit;
     letter-spacing: 0.01em;
-    transition: transform .15s, box-shadow .2s;
-    box-shadow: 0 8px 24px -8px rgba(252,211,77,.45);
+    transition: transform .15s, filter .2s;
+    box-shadow: 0 10px 28px -8px rgba(224,181,63,.4);
   }
   .next-btn:hover:not(:disabled) {
     transform: translateY(-1px);
-    box-shadow: 0 12px 28px -8px rgba(252,211,77,.55);
+    filter: brightness(1.05);
   }
   .next-btn:disabled {
-    background: var(--surface-2);
+    background: var(--card);
     color: var(--dim);
     cursor: not-allowed;
     box-shadow: none;
   }
 
   /* RESULTS */
-  .results-card { text-align: center; padding: 36px 26px; }
+  .results-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 36px 26px;
+    text-align: center;
+  }
   .score-ring {
-    position: relative; width: 160px; height: 160px;
-    margin: 0 auto 16px;
+    position: relative; width: 180px; height: 180px;
+    margin: 0 auto 18px;
   }
   .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-  .score-ring .ring-bg { stroke: var(--surface); }
-  .score-ring .ring-fg { stroke: url(#goldGrad); transition: stroke-dashoffset 1s cubic-bezier(.4,.0,.2,1); }
+  .score-ring .ring-bg { stroke: var(--card-2); }
+  .score-ring .ring-fg { stroke: url(#goldGrad); transition: stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1); }
   .score-num {
     position: absolute; inset: 0;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
   }
-  .score-big {
-    font-size: 48px; font-weight: 800; line-height: 1;
+  .score-pct {
+    font-size: 44px; font-weight: 800;
     background: linear-gradient(180deg, #fff, var(--gold));
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
+    line-height: 1; letter-spacing: -0.02em;
   }
-  .score-of { color: var(--muted); font-size: 13px; font-weight: 600; margin-top: 4px; }
-  .score-verdict { color: var(--text); font-size: 16px; font-weight: 600; margin-top: 4px; }
+  .score-label { color: var(--muted); font-size: 13px; font-weight: 600; margin-top: 6px; }
+  .score-correct {
+    font-size: 36px; font-weight: 800;
+    margin: 6px 0 4px; color: var(--text);
+  }
+  .score-correct-label { color: var(--muted); font-size: 13px; font-weight: 600; }
+  .score-verdict { color: var(--text); font-size: 16px; font-weight: 600; margin-top: 16px; }
 
   .cta-box {
-    margin-top: 28px;
-    background:
-      radial-gradient(800px 200px at 50% 0%, rgba(252,211,77,.18), transparent 70%),
-      linear-gradient(180deg, var(--surface-2), var(--bg-elev));
+    margin-top: 26px;
+    background: var(--card-2);
     border: 1.5px solid var(--gold);
-    border-radius: 18px;
-    padding: 26px 22px;
+    border-radius: 16px;
+    padding: 24px 22px;
     text-align: left;
-    box-shadow: var(--gold-glow);
+    box-shadow: 0 0 0 1px rgba(224,181,63,.2), 0 16px 40px -16px rgba(224,181,63,.3);
   }
   .cta-box h3 {
     margin: 0 0 14px; font-size: 22px; font-weight: 800;
@@ -344,14 +356,14 @@
   }
   .cta-list { list-style: none; margin: 0 0 18px; padding: 0; }
   .cta-list li {
-    padding: 8px 0 8px 26px; position: relative;
+    padding: 8px 0 8px 28px; position: relative;
     font-size: 14px; color: var(--text);
   }
   .cta-list li::before {
     content: '✓'; position: absolute; left: 0; top: 8px;
-    width: 18px; height: 18px; border-radius: 50%;
+    width: 20px; height: 20px; border-radius: 50%;
     background: linear-gradient(135deg, var(--gold), var(--gold-deep));
-    color: #1a0e00; font-weight: 900; font-size: 11px;
+    color: #1a0e00; font-weight: 900; font-size: 12px;
     display: flex; align-items: center; justify-content: center;
   }
   .cta-price-row {
@@ -362,19 +374,17 @@
   .cta-price-sub { color: var(--muted); font-size: 13px; }
   .cta-btn {
     display: block;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
     color: #1a0e00;
     padding: 16px 22px;
     border-radius: 14px;
     font-weight: 800; font-size: 16px;
     text-decoration: none; text-align: center;
-    box-shadow: 0 10px 28px -8px rgba(252,211,77,.5);
-    transition: transform .15s, box-shadow .2s;
-    letter-spacing: 0.01em;
+    box-shadow: 0 10px 28px -8px rgba(224,181,63,.5);
+    transition: transform .15s, filter .2s;
   }
   .cta-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 32px -8px rgba(252,211,77,.6);
+    transform: translateY(-1px); filter: brightness(1.05);
   }
   .restart-btn {
     margin-top: 14px; background: transparent;
@@ -393,16 +403,24 @@
 
   @media (max-width: 480px) {
     .container { padding: 18px 14px 60px; }
-    .card { padding: 22px 18px; border-radius: 16px; }
-    .flag-stage { height: 90px; }
-    .flag { width: 160px; height: 90px; left: calc(50% - 100px); }
-    .flag-pole { transform: translateX(-104px); height: 80px; }
-    .score-ring { width: 140px; height: 140px; }
-    .score-big { font-size: 40px; }
+    .hero-title { font-size: 28px; }
+    .options { gap: 10px; }
+    .option { padding: 12px 14px; font-size: 14px; }
+    .opt-letter { width: 30px; height: 30px; font-size: 13px; }
+    .feedback { padding: 16px; }
+    .next-btn { padding: 16px; font-size: 16px; }
+    .score-ring { width: 150px; height: 150px; }
+    .score-pct { font-size: 38px; }
   }
 </style>
 </head>
 <body>
+
+<!-- ========= ANIMATED FLAG BACKGROUND ========= -->
+<div class="flag-bg" aria-hidden="true">
+  <div class="flag-layer" id="flagLayer"></div>
+</div>
+
 <div class="container">
 
   <div class="top-bar">
@@ -423,77 +441,132 @@
     </div>
   </div>
 
-  <div class="flag-stage" aria-hidden="true">
-    <div class="flag-pole"></div>
-    <div class="flag">
-      <svg viewBox="0 0 380 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#d62828"/>
-            <stop offset="100%" stop-color="#9e1b1b"/>
-          </linearGradient>
-          <linearGradient id="whiteGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#ffffff"/>
-            <stop offset="100%" stop-color="#e8eef7"/>
-          </linearGradient>
-          <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1e3a8a"/>
-            <stop offset="100%" stop-color="#0c1a4e"/>
-          </linearGradient>
-        </defs>
-        <rect width="380" height="200" fill="url(#redGrad)"/>
-        <rect y="15.4"  width="380" height="15.4" fill="url(#whiteGrad)"/>
-        <rect y="46.2"  width="380" height="15.4" fill="url(#whiteGrad)"/>
-        <rect y="77"    width="380" height="15.4" fill="url(#whiteGrad)"/>
-        <rect y="107.7" width="380" height="15.4" fill="url(#whiteGrad)"/>
-        <rect y="138.5" width="380" height="15.4" fill="url(#whiteGrad)"/>
-        <rect y="169.2" width="380" height="15.4" fill="url(#whiteGrad)"/>
-        <rect width="152" height="107.7" fill="url(#blueGrad)"/>
-        <g fill="#fff">
-          <!-- 9 rows of stars, alternating 6 and 5 -->
-          <g id="stars">
-            <!-- row 1: 6 stars y=10 -->
-            <circle cx="14"  cy="10" r="2.4"/><circle cx="36"  cy="10" r="2.4"/><circle cx="58"  cy="10" r="2.4"/><circle cx="80"  cy="10" r="2.4"/><circle cx="102" cy="10" r="2.4"/><circle cx="124" cy="10" r="2.4"/>
-            <!-- row 2: 5 stars y=22 offset -->
-            <circle cx="25"  cy="22" r="2.4"/><circle cx="47"  cy="22" r="2.4"/><circle cx="69"  cy="22" r="2.4"/><circle cx="91"  cy="22" r="2.4"/><circle cx="113" cy="22" r="2.4"/>
-            <!-- row 3 -->
-            <circle cx="14"  cy="34" r="2.4"/><circle cx="36"  cy="34" r="2.4"/><circle cx="58"  cy="34" r="2.4"/><circle cx="80"  cy="34" r="2.4"/><circle cx="102" cy="34" r="2.4"/><circle cx="124" cy="34" r="2.4"/>
-            <!-- row 4 -->
-            <circle cx="25"  cy="46" r="2.4"/><circle cx="47"  cy="46" r="2.4"/><circle cx="69"  cy="46" r="2.4"/><circle cx="91"  cy="46" r="2.4"/><circle cx="113" cy="46" r="2.4"/>
-            <!-- row 5 -->
-            <circle cx="14"  cy="58" r="2.4"/><circle cx="36"  cy="58" r="2.4"/><circle cx="58"  cy="58" r="2.4"/><circle cx="80"  cy="58" r="2.4"/><circle cx="102" cy="58" r="2.4"/><circle cx="124" cy="58" r="2.4"/>
-            <!-- row 6 -->
-            <circle cx="25"  cy="70" r="2.4"/><circle cx="47"  cy="70" r="2.4"/><circle cx="69"  cy="70" r="2.4"/><circle cx="91"  cy="70" r="2.4"/><circle cx="113" cy="70" r="2.4"/>
-            <!-- row 7 -->
-            <circle cx="14"  cy="82" r="2.4"/><circle cx="36"  cy="82" r="2.4"/><circle cx="58"  cy="82" r="2.4"/><circle cx="80"  cy="82" r="2.4"/><circle cx="102" cy="82" r="2.4"/><circle cx="124" cy="82" r="2.4"/>
-            <!-- row 8 -->
-            <circle cx="25"  cy="94" r="2.4"/><circle cx="47"  cy="94" r="2.4"/><circle cx="69"  cy="94" r="2.4"/><circle cx="91"  cy="94" r="2.4"/><circle cx="113" cy="94" r="2.4"/>
-          </g>
-        </g>
-      </svg>
-      <div class="flag-shine"></div>
-    </div>
-  </div>
-
   <div class="hero">
-    <h1>CDL Practice Test — Free Demo</h1>
-    <p>15 of the toughest CDL scenarios drivers miss on exam day: tire blowouts, hazmat placards, tankers, doubles & triples. Pick a hint language above for translation help.</p>
-  </div>
-
-  <div class="progress-wrap">
-    <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
-    <div class="progress-num" id="progressNum">0 / 15</div>
+    <h1 class="hero-title"><span class="gold">CDL Master Prep</span><br>Free Practice — 15 of the Hardest Questions</h1>
+    <p class="hero-sub">Real exam scenarios drivers miss most: tire blowouts, hazmat placards, tankers, doubles &amp; triples, pre-trip checks. Pick a hint language above for translation help.</p>
   </div>
 
   <div id="quizArea"></div>
   <div id="resultsArea" style="display:none;"></div>
 
   <footer>
-    <p>Full exam prep with all 200 questions, 4-language hints, and offline mode — <a href="index.html#cdl">Get the app for $9.99</a></p>
+    <p>Full prep: 200 questions · 11 topics · 4-language hints · offline · <a href="index.html#cdl">$9.99 lifetime</a></p>
   </footer>
 </div>
 
 <script>
+/* =========================================================================
+   ANIMATED FLAG BACKGROUND — port of AnimatedFlag v76 (web branch only).
+   Renders a giant US flag with feTurbulence + feDisplacementMap, animates
+   baseFrequency and scale via requestAnimationFrame.
+   ========================================================================= */
+(function buildFlag() {
+  const COLORS = { red: '#4A1520', white: '#5A544D', blue: '#0A1220' };
+  const STRIPE_COUNT = 13;
+  const ROTATION_DEG = -35;
+
+  const layer = document.getElementById('flagLayer');
+
+  function compute() {
+    const SW = window.innerWidth;
+    const SH = window.innerHeight;
+    const diag = Math.sqrt(SW * SW + SH * SH);
+    const FLAG_W = diag * 1.4;
+    const FLAG_H = FLAG_W / 1.9;
+    const STRIPE_H = FLAG_H / STRIPE_COUNT;
+    const CANTON_H = STRIPE_H * 7;
+    const CANTON_W = FLAG_W * 0.4;
+    const bottomOffset = -diag * 0.28;
+    const leftOffset = -diag * 0.32;
+    return { SW, SH, diag, FLAG_W, FLAG_H, STRIPE_H, CANTON_W, CANTON_H, bottomOffset, leftOffset };
+  }
+
+  function buildStarPath(cx, cy, r) {
+    return `M ${cx} ${cy - r} L ${cx + r * 0.22} ${cy - r * 0.22} L ${cx + r * 0.95} ${cy - r * 0.31} L ${cx + r * 0.44} ${cy + r * 0.22} L ${cx + r * 0.59} ${cy + r * 0.9} L ${cx} ${cy + r * 0.5} L ${cx - r * 0.59} ${cy + r * 0.9} L ${cx - r * 0.44} ${cy + r * 0.22} L ${cx - r * 0.95} ${cy - r * 0.31} L ${cx - r * 0.22} ${cy - r * 0.22} Z`;
+  }
+
+  function render() {
+    const d = compute();
+    layer.style.bottom = d.bottomOffset + 'px';
+    layer.style.left = d.leftOffset + 'px';
+    layer.style.width = d.FLAG_W + 'px';
+    layer.style.height = d.FLAG_H + 'px';
+    layer.style.transform = `rotate(${ROTATION_DEG}deg)`;
+
+    // Build SVG
+    const cols = 9, rows = 7;
+    const sx = d.CANTON_W / (cols + 1);
+    const sy = d.CANTON_H / (rows + 1);
+    const stars = [];
+    for (let r = 1; r <= rows; r++) {
+      for (let c = 1; c <= cols; c++) {
+        if (r % 2 === 0 && c > cols - 1) continue;
+        stars.push({ x: c * sx + (r % 2 === 0 ? sx * 0.5 : 0), y: r * sy });
+      }
+    }
+    const starSize = d.STRIPE_H * 0.6;
+
+    let stripesSvg = '';
+    for (let i = 0; i < STRIPE_COUNT; i++) {
+      const fill = i % 2 === 0 ? COLORS.red : COLORS.white;
+      stripesSvg += `<rect x="0" y="${i * d.STRIPE_H}" width="${d.FLAG_W}" height="${d.STRIPE_H + 0.5}" fill="${fill}"/>`;
+    }
+    let starsSvg = '';
+    for (const s of stars) {
+      starsSvg += `<path d="${buildStarPath(s.x, s.y, starSize / 2)}" fill="#FFFFFF" opacity="0.25"/>`;
+    }
+
+    layer.innerHTML = `
+      <svg class="flag-svg" width="${d.FLAG_W}" height="${d.FLAG_H}" viewBox="0 0 ${d.FLAG_W} ${d.FLAG_H}">
+        <defs>
+          <filter id="flagWaveFilter" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence id="flagTurb" type="fractalNoise" baseFrequency="0.00275 0.00525" numOctaves="3" seed="5" result="turbulence"/>
+            <feDisplacementMap id="flagDisp" in="SourceGraphic" in2="turbulence" scale="80" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <g filter="url(#flagWaveFilter)">
+          ${stripesSvg}
+          <rect x="0" y="0" width="${d.CANTON_W}" height="${d.CANTON_H}" fill="${COLORS.blue}"/>
+          ${starsSvg}
+        </g>
+      </svg>
+    `;
+  }
+
+  render();
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(render, 200);
+  });
+
+  // RAF animation loop — animate baseFrequency and scale outside React
+  const TURB_DURATION = 32000;
+  const DISP_DURATION = 24000;
+  const startTime = performance.now();
+  function animate() {
+    const elapsed = performance.now() - startTime;
+    const tProg = (elapsed % TURB_DURATION) / TURB_DURATION;
+    const tSin = Math.sin(tProg * Math.PI * 2);
+    const fx = 0.00275 + 0.00075 * tSin;
+    const fy = 0.00525 + 0.00125 * tSin;
+    const dProg = (elapsed % DISP_DURATION) / DISP_DURATION;
+    const dSin = Math.sin(dProg * Math.PI * 2);
+    const scale = 80 + 5 * dSin;
+
+    const turb = document.getElementById('flagTurb');
+    const disp = document.getElementById('flagDisp');
+    if (turb) turb.setAttribute('baseFrequency', fx.toFixed(5) + ' ' + fy.toFixed(5));
+    if (disp) disp.setAttribute('scale', scale.toFixed(1));
+
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+})();
+
+/* =========================================================================
+   QUIZ LOGIC
+   ========================================================================= */
 const FALLBACK_LANG = 'en';
 let HINT_LANG = 'en';
 let questions = [];
@@ -502,17 +575,17 @@ let correctCount = 0;
 let answered = false;
 
 const TOPIC_LABELS = {
-  'emergencies': 'Emergencies',
-  'hazmat': 'Hazmat',
-  'doubles-triples': 'Doubles & Triples',
-  'tankers': 'Tankers',
-  'combination-vehicles': 'Combination Vehicles',
-  'pre-trip-inspection': 'Pre-Trip Inspection',
-  'safe-driving': 'Safe Driving',
-  'cargo': 'Cargo',
-  'passengers': 'Passengers',
-  'general-knowledge': 'General Knowledge',
-  'air-brakes': 'Air Brakes'
+  'emergencies': 'EMERGENCIES',
+  'hazmat': 'HAZMAT',
+  'doubles-triples': 'DOUBLES & TRIPLES',
+  'tankers': 'TANKERS',
+  'combination-vehicles': 'COMBINATION VEHICLES',
+  'pre-trip-inspection': 'PRE-TRIP INSPECTION',
+  'safe-driving': 'SAFE DRIVING',
+  'cargo': 'CARGO',
+  'passengers': 'PASSENGERS',
+  'general-knowledge': 'GENERAL KNOWLEDGE',
+  'air-brakes': 'AIR BRAKES'
 };
 
 function tx(obj, lang) {
@@ -521,47 +594,58 @@ function tx(obj, lang) {
   return obj[lang] || obj[FALLBACK_LANG] || Object.values(obj)[0] || '';
 }
 
-function setProgress(idx) {
-  const pct = (idx / questions.length) * 100;
-  document.getElementById('progressBar').style.width = pct + '%';
-  document.getElementById('progressNum').textContent = idx + ' / ' + questions.length;
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
-function escapeHtml(str) {
-  if (str == null) return '';
-  return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function setProgress(idx) {
+  const pct = (idx / questions.length) * 100;
+  const bar = document.getElementById('progressBar');
+  if (bar) bar.style.width = pct + '%';
 }
 
 function renderQuestion() {
   const q = questions[current];
   if (!q) { renderResults(); return; }
   answered = false;
-  setProgress(current);
 
-  const topic = TOPIC_LABELS[q.topicId] || q.topicId;
+  const topic = TOPIC_LABELS[q.topicId] || q.topicId.toUpperCase();
   const en = tx(q.text, 'en');
   const hint = HINT_LANG !== 'en' ? tx(q.text, HINT_LANG) : '';
 
-  let html = '<div class="card">';
-  html += '<span class="topic-tag">' + escapeHtml(topic) + ' · Question ' + (current + 1) + ' of ' + questions.length + '</span>';
-  html += '<div class="question-text">' + escapeHtml(en) + '</div>';
-  if (hint && hint !== en) {
-    html += '<div class="hint-box show">' + escapeHtml(hint) + '</div>';
-  }
+  let html = '';
+  html += '<div class="meta-row">';
+  html += '<button class="meta-x" type="button" onclick="window.location.href=\'index.html\'">×</button>';
+  html += '<span class="meta-counter"><b>' + (current + 1) + '</b>/' + questions.length + '</span>';
+  html += '<span class="meta-pill">' + escapeHtml(topic) + '</span>';
+  html += '<span class="meta-pts">' + (correctCount * 10) + ' pts</span>';
+  html += '</div>';
+  html += '<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>';
+  html += '<div class="q-text">' + escapeHtml(en) + '</div>';
+  if (hint && hint !== en) html += '<div class="hint-box show">' + escapeHtml(hint) + '</div>';
   html += '<div class="options">';
   for (const opt of q.options) {
     const optEn = tx(opt.text, 'en');
     html += '<button class="option" data-id="' + opt.id + '" type="button">';
     html += '<span class="opt-letter">' + opt.id + '</span>';
     html += '<span class="opt-text">' + escapeHtml(optEn) + '</span>';
+    html += '<span class="opt-icon" data-icon-id="' + opt.id + '"></span>';
     html += '</button>';
   }
   html += '</div>';
-  html += '<div class="feedback" id="feedbackBox"><div class="feedback-title" id="feedbackTitle"></div><div class="feedback-text" id="feedbackText"></div><div class="feedback-hint" id="feedbackHint"></div></div>';
-  html += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
+  html += '<div class="feedback" id="feedbackBox">';
+  html += '<div class="feedback-title" id="feedbackTitle"></div>';
+  html += '<div class="feedback-text" id="feedbackText"></div>';
+  html += '<div class="feedback-watch" id="feedbackWatch" style="display:none;">';
+  html += '<div class="feedback-watch-title">Watch Out:</div>';
+  html += '<div class="feedback-watch-text" id="feedbackWatchText"></div>';
   html += '</div>';
+  html += '</div>';
+  html += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
 
   document.getElementById('quizArea').innerHTML = html;
+  setProgress(current);
 
   document.querySelectorAll('.option').forEach(btn => {
     btn.addEventListener('click', () => onAnswer(btn.dataset.id));
@@ -582,23 +666,40 @@ function onAnswer(chosenId) {
 
   document.querySelectorAll('.option').forEach(btn => {
     btn.disabled = true;
-    if (btn.dataset.id === correct) btn.classList.add('correct');
-    if (btn.dataset.id === chosenId && !wasCorrect) btn.classList.add('wrong');
+    if (btn.dataset.id === correct) {
+      btn.classList.add('correct');
+      const icon = btn.querySelector('.opt-icon');
+      if (icon) icon.textContent = '✓';
+    }
+    if (btn.dataset.id === chosenId && !wasCorrect) {
+      btn.classList.add('wrong');
+      const icon = btn.querySelector('.opt-icon');
+      if (icon) icon.textContent = '✕';
+    }
   });
+
+  // Update points pill
+  const pts = document.querySelector('.meta-pts');
+  if (pts) pts.textContent = (correctCount * 10) + ' pts';
 
   const fb = document.getElementById('feedbackBox');
   const fbTitle = document.getElementById('feedbackTitle');
   const fbText = document.getElementById('feedbackText');
-  const fbHint = document.getElementById('feedbackHint');
+  const fbWatch = document.getElementById('feedbackWatch');
+  const fbWatchText = document.getElementById('feedbackWatchText');
   fb.classList.add('show');
-  fb.classList.toggle('correct', wasCorrect);
-  fb.classList.toggle('wrong', !wasCorrect);
-  fbTitle.innerHTML = wasCorrect
-    ? '✓ Correct — nice work'
-    : '✕ Not quite — here is why';
+  fb.classList.toggle('is-correct', wasCorrect);
+  fb.classList.toggle('is-wrong', !wasCorrect);
+  fbTitle.textContent = wasCorrect ? 'Correct — Here\u2019s Why' : 'Incorrect — Here\u2019s Why';
   fbText.textContent = tx(q.explanation, 'en');
+
   const hintExp = HINT_LANG !== 'en' ? tx(q.explanation, HINT_LANG) : '';
-  fbHint.textContent = (hintExp && hintExp !== fbText.textContent) ? hintExp : '';
+  if (hintExp && hintExp !== fbText.textContent) {
+    fbWatch.style.display = 'block';
+    fbWatchText.textContent = hintExp;
+  } else {
+    fbWatch.style.display = 'none';
+  }
 
   const nextBtn = document.getElementById('nextBtn');
   nextBtn.disabled = false;
@@ -606,7 +707,6 @@ function onAnswer(chosenId) {
 }
 
 function renderResults() {
-  setProgress(questions.length);
   document.getElementById('quizArea').style.display = 'none';
   const area = document.getElementById('resultsArea');
   area.style.display = 'block';
@@ -617,34 +717,37 @@ function renderResults() {
   else if (pct >= 60) verdict = 'On track. Polish the weak areas.';
   else verdict = 'Drill the basics before exam day.';
 
-  const radius = 70;
+  const radius = 78;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference * (1 - correctCount / questions.length);
 
   area.innerHTML = ''
-    + '<div class="card results-card">'
+    + '<div class="results-card">'
       + '<div class="score-ring">'
-        + '<svg viewBox="0 0 160 160">'
+        + '<svg viewBox="0 0 180 180">'
           + '<defs><linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">'
-            + '<stop offset="0%" stop-color="#FCD34D"/>'
-            + '<stop offset="100%" stop-color="#D97706"/>'
+            + '<stop offset="0%" stop-color="#E0B53F"/>'
+            + '<stop offset="100%" stop-color="#A87510"/>'
           + '</linearGradient></defs>'
-          + '<circle class="ring-bg" cx="80" cy="80" r="70" fill="none" stroke-width="10"/>'
-          + '<circle class="ring-fg" cx="80" cy="80" r="70" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + circumference + '" id="ringFg"/>'
+          + '<circle class="ring-bg" cx="90" cy="90" r="' + radius + '" fill="none" stroke-width="10"/>'
+          + '<circle class="ring-fg" cx="90" cy="90" r="' + radius + '" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + circumference + '" id="ringFg"/>'
         + '</svg>'
         + '<div class="score-num">'
-          + '<div class="score-big">' + correctCount + '/' + questions.length + '</div>'
-          + '<div class="score-of">' + pct + '% correct</div>'
+          + '<div class="score-pct">' + pct + '%</div>'
+          + '<div class="score-label">Ready</div>'
         + '</div>'
       + '</div>'
+      + '<div class="score-correct">' + correctCount + ' / ' + questions.length + '</div>'
+      + '<div class="score-correct-label">Answered correctly</div>'
       + '<div class="score-verdict">' + verdict + '</div>'
       + '<div class="cta-box">'
         + '<h3>Get the full CDL Master Prep</h3>'
         + '<ul class="cta-list">'
-          + '<li>200 real CDL exam questions across 11 official topics</li>'
-          + '<li>Hint translations in English, Russian, Spanish, Polish</li>'
-          + '<li>Pre-trip inspection drills, common mistakes, road signs, vocabulary</li>'
-          + '<li>Works fully offline once installed — no signal needed</li>'
+          + '<li>200 real exam questions across 11 official topics</li>'
+          + '<li>Hint translations: English, Russian, Spanish, Polish</li>'
+          + '<li>Pre-trip inspection drills, common mistakes, road signs</li>'
+          + '<li>Full vocabulary and explanations from CDL Manual</li>'
+          + '<li>Works fully offline — no signal needed</li>'
           + '<li>Lifetime access, no subscription</li>'
         + '</ul>'
         + '<div class="cta-price-row">'
@@ -656,7 +759,6 @@ function renderResults() {
       + '<button class="restart-btn" id="restartBtn">Restart Demo</button>'
     + '</div>';
 
-  // Animate ring
   requestAnimationFrame(() => {
     setTimeout(() => {
       const ring = document.getElementById('ringFg');
@@ -677,8 +779,32 @@ document.getElementById('langRow').addEventListener('click', (e) => {
   if (!e.target.dataset.lang) return;
   HINT_LANG = e.target.dataset.lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === HINT_LANG));
-  if (document.getElementById('quizArea').style.display !== 'none' && questions.length) {
-    renderQuestion();
+  if (document.getElementById('resultsArea').style.display !== 'block' && questions.length) {
+    if (!answered) {
+      renderQuestion();
+    } else {
+      // Refresh hint visibility on the fly when an answer is showing
+      const hintBoxOld = document.querySelector('.hint-box');
+      if (hintBoxOld) hintBoxOld.remove();
+      const q = questions[current];
+      const hint = HINT_LANG !== 'en' ? tx(q.text, HINT_LANG) : '';
+      if (hint && hint !== tx(q.text, 'en')) {
+        const div = document.createElement('div');
+        div.className = 'hint-box show';
+        div.textContent = hint;
+        const qText = document.querySelector('.q-text');
+        qText.parentNode.insertBefore(div, qText.nextSibling);
+      }
+      const hintExp = HINT_LANG !== 'en' ? tx(q.explanation, HINT_LANG) : '';
+      const fbWatch = document.getElementById('feedbackWatch');
+      const fbWatchText = document.getElementById('feedbackWatchText');
+      if (hintExp && hintExp !== tx(q.explanation, 'en')) {
+        fbWatch.style.display = 'block';
+        fbWatchText.textContent = hintExp;
+      } else if (fbWatch) {
+        fbWatch.style.display = 'none';
+      }
+    }
   }
 });
 
@@ -686,11 +812,10 @@ fetch('data/cdl_demo_questions.json')
   .then(r => r.json())
   .then(data => {
     questions = data;
-    setProgress(0);
     renderQuestion();
   })
   .catch(err => {
-    document.getElementById('quizArea').innerHTML = '<div class="card"><p>Could not load questions. Please refresh the page.</p></div>';
+    document.getElementById('quizArea').innerHTML = '<div class="results-card"><p style="color:var(--muted);">Could not load questions. Please refresh the page.</p></div>';
     console.error(err);
   });
 </script>
