@@ -6,92 +6,484 @@
 <title>CDL Practice Test — Free 15 Questions | Pass Exam USA</title>
 <meta name="description" content="Free 15-question CDL practice test with the toughest scenarios drivers miss: tire blowouts, hazmat, doubles, tankers. Translations in EN, RU, ES, PL.">
 <link rel="canonical" href="https://dimaedwardsehk.github.io/pass-exam-usa/cdl-demo.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b1220;
-    --panel: #131c2f;
-    --panel-2: #1a2440;
-    --text: #e8edf7;
-    --muted: #9aa5bd;
-    --accent: #4ea1ff;
-    --accent-2: #2563eb;
-    --good: #22c55e;
-    --bad: #ef4444;
-    --border: #243149;
+    --bg: #0A0E1A;
+    --bg-elev: #11172A;
+    --surface: #161D33;
+    --surface-2: #1C2440;
+    --border: #222B4A;
+    --gold: #FCD34D;
+    --gold-2: #FBBF24;
+    --gold-deep: #D97706;
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+    --dim: #64748B;
+    --good: #22C55E;
+    --good-bg: #0F2A1A;
+    --bad: #EF4444;
+    --bad-bg: #2A0F12;
+    --shadow: 0 20px 50px -12px rgba(0,0,0,.6), 0 8px 20px -8px rgba(0,0,0,.5);
+    --gold-glow: 0 0 0 1px rgba(252,211,77,.25), 0 8px 30px -10px rgba(252,211,77,.35);
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.5; }
-  .container { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
-  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
-  .brand { font-weight: 700; font-size: 18px; }
-  .brand a { color: var(--text); text-decoration: none; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background:
+      radial-gradient(1100px 600px at 50% -10%, rgba(252,211,77,.07), transparent 60%),
+      radial-gradient(800px 500px at 90% 110%, rgba(217,119,6,.08), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 28px 18px 80px; position: relative; }
+
+  /* HEADER WITH FLAG */
+  .top-bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    margin-bottom: 18px; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: #1a0e00; font-size: 18px;
+    box-shadow: var(--gold-glow);
+  }
+  .brand-name { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
+  .brand-sub { color: var(--muted); font-size: 12px; font-weight: 500; }
+
   .lang-row { display: flex; gap: 6px; flex-wrap: wrap; }
-  .lang-btn { background: var(--panel); border: 1px solid var(--border); color: var(--muted); padding: 6px 10px; border-radius: 8px; font-size: 13px; cursor: pointer; transition: all .15s; }
-  .lang-btn.active { background: var(--accent-2); color: white; border-color: var(--accent-2); }
-  .lang-btn:hover { color: var(--text); }
-  h1 { font-size: 26px; margin: 8px 0 4px; }
-  .subtitle { color: var(--muted); margin: 0 0 20px; font-size: 14px; }
-  .progress { height: 6px; background: var(--panel); border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
-  .progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); width: 0%; transition: width .3s; }
-  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 16px; }
-  .topic-tag { display: inline-block; background: var(--panel-2); color: var(--accent); padding: 4px 10px; border-radius: 999px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 12px; }
-  .question-text { font-size: 17px; font-weight: 600; margin-bottom: 18px; }
-  .hint { background: var(--panel-2); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 6px; color: var(--muted); font-size: 14px; margin-bottom: 18px; display: none; }
-  .hint.show { display: block; }
+  .lang-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 7px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 700; cursor: pointer;
+    transition: all .18s; font-family: inherit;
+    letter-spacing: 0.04em;
+  }
+  .lang-btn.active {
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: #1a0e00; border-color: transparent;
+    box-shadow: 0 4px 14px -4px rgba(252,211,77,.5);
+  }
+  .lang-btn:hover:not(.active) { color: var(--text); border-color: var(--gold); }
+
+  /* FLAG STAGE */
+  .flag-stage {
+    position: relative; height: 110px; margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .flag-pole {
+    position: absolute; left: 50%; transform: translateX(-130px);
+    top: 4px; width: 4px; height: 100px;
+    background: linear-gradient(90deg, #4a5568, #94a3b8 50%, #4a5568);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(0,0,0,.5);
+  }
+  .flag-pole::before {
+    content: ''; position: absolute; top: -6px; left: -3px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--gold), var(--gold-deep));
+    box-shadow: 0 0 8px rgba(252,211,77,.6);
+  }
+  .flag {
+    position: absolute; left: calc(50% - 126px); top: 8px;
+    width: 200px; height: 110px;
+    transform-origin: left center;
+    animation: wave 3.2s ease-in-out infinite;
+    filter: drop-shadow(2px 6px 8px rgba(0,0,0,.45));
+  }
+  @keyframes wave {
+    0%, 100% { transform: skewY(-1.2deg) translateY(0); }
+    25% { transform: skewY(0.8deg) translateY(-2px); }
+    50% { transform: skewY(1.5deg) translateY(0); }
+    75% { transform: skewY(-0.5deg) translateY(2px); }
+  }
+  .flag svg { width: 100%; height: 100%; display: block; }
+  .flag-shine {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.08) 30%, transparent 60%, rgba(0,0,0,.12) 100%);
+    pointer-events: none; mix-blend-mode: overlay;
+    animation: shimmer 3.2s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { transform: translateX(-10%); }
+    50% { transform: translateX(10%); }
+  }
+
+  /* TITLE */
+  .hero {
+    text-align: center; margin: 4px 0 26px;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 4vw, 34px);
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    background: linear-gradient(180deg, #fff 0%, #fcd34d 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p { color: var(--muted); margin: 0 auto; max-width: 540px; font-size: 14px; }
+
+  /* PROGRESS */
+  .progress-wrap {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 22px;
+  }
+  .progress-track {
+    flex: 1; height: 8px;
+    background: var(--surface);
+    border-radius: 999px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold));
+    width: 0%;
+    transition: width .45s cubic-bezier(.4,.0,.2,1);
+    box-shadow: 0 0 12px rgba(252,211,77,.35);
+  }
+  .progress-num {
+    color: var(--gold); font-weight: 800; font-size: 13px;
+    letter-spacing: 0.05em; min-width: 56px; text-align: right;
+  }
+
+  /* CARD */
+  .card {
+    position: relative;
+    background: linear-gradient(180deg, var(--surface), var(--bg-elev));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px 24px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+  .card::before {
+    content: ''; position: absolute; inset: 0;
+    border-radius: 18px; pointer-events: none;
+    background: linear-gradient(135deg, rgba(252,211,77,.18), transparent 35%, transparent 65%, rgba(252,211,77,.10));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    padding: 1px;
+  }
+
+  .topic-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(252,211,77,.10);
+    border: 1px solid rgba(252,211,77,.30);
+    color: var(--gold);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .topic-tag::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+  }
+  .question-text {
+    font-size: clamp(17px, 2.4vw, 20px);
+    font-weight: 700; line-height: 1.4;
+    margin-bottom: 14px; letter-spacing: -0.01em;
+  }
+  .hint-box {
+    background: var(--surface-2);
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    border-radius: 0 10px 10px 0;
+    color: var(--muted); font-size: 14px;
+    margin-bottom: 18px; display: none;
+  }
+  .hint-box.show { display: block; animation: fadeIn .25s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* OPTIONS */
   .options { display: flex; flex-direction: column; gap: 10px; }
-  .option { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; cursor: pointer; text-align: left; color: var(--text); font-size: 15px; transition: all .15s; font-family: inherit; }
-  .option:hover:not(:disabled) { border-color: var(--accent); }
-  .option:disabled { cursor: default; opacity: .85; }
-  .option .opt-id { display: inline-block; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); color: var(--muted); text-align: center; line-height: 22px; font-size: 12px; margin-right: 10px; font-weight: 700; }
-  .option.correct { border-color: var(--good); background: rgba(34,197,94,.1); }
-  .option.correct .opt-id { background: var(--good); color: white; }
-  .option.wrong { border-color: var(--bad); background: rgba(239,68,68,.1); }
-  .option.wrong .opt-id { background: var(--bad); color: white; }
-  .explanation { margin-top: 18px; padding: 14px 16px; background: var(--panel-2); border-radius: 10px; border-left: 3px solid var(--good); display: none; }
-  .explanation.show { display: block; }
-  .explanation-title { font-weight: 700; font-size: 13px; color: var(--good); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em; }
-  .explanation.was-wrong { border-left-color: var(--bad); }
-  .explanation.was-wrong .explanation-title { color: var(--bad); }
-  .next-btn { background: var(--accent-2); color: white; border: none; border-radius: 10px; padding: 14px 24px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 16px; transition: background .15s; font-family: inherit; }
-  .next-btn:hover { background: #1d4ed8; }
-  .next-btn:disabled { background: var(--panel-2); color: var(--muted); cursor: not-allowed; }
-  .results-card { text-align: center; padding: 32px 22px; }
-  .score { font-size: 56px; font-weight: 800; margin: 8px 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .score-label { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-  .cta-box { background: linear-gradient(135deg, var(--accent-2), #1d4ed8); border-radius: 14px; padding: 24px; margin-top: 20px; text-align: left; }
-  .cta-box h3 { margin: 0 0 12px; font-size: 22px; }
-  .cta-box ul { margin: 0 0 16px; padding-left: 20px; color: rgba(255,255,255,.9); }
-  .cta-box li { margin-bottom: 6px; font-size: 14px; }
-  .cta-price { font-size: 18px; font-weight: 700; margin: 12px 0; }
-  .cta-btn { display: block; background: white; color: var(--accent-2); padding: 14px; border-radius: 10px; font-weight: 700; text-decoration: none; text-align: center; margin-top: 12px; }
-  .cta-btn:hover { background: rgba(255,255,255,.92); }
-  .restart-btn { background: transparent; color: var(--muted); border: 1px solid var(--border); border-radius: 10px; padding: 10px 18px; font-size: 14px; cursor: pointer; margin-top: 14px; font-family: inherit; }
-  .restart-btn:hover { color: var(--text); border-color: var(--accent); }
-  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 28px; }
-  footer a { color: var(--accent); text-decoration: none; }
+  .option {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--surface-2);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    cursor: pointer; text-align: left;
+    color: var(--text); font-size: 15px;
+    line-height: 1.5;
+    font-family: inherit;
+    transition: all .18s ease;
+  }
+  .option:hover:not(:disabled) {
+    border-color: var(--gold);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -10px rgba(252,211,77,.3);
+  }
+  .option:disabled { cursor: default; }
+  .opt-letter {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px;
+    border: 1px solid var(--border);
+    transition: all .18s;
+  }
+  .opt-text { flex: 1; padding-top: 4px; }
+  .option.correct {
+    background: var(--good-bg);
+    border-color: var(--good);
+    box-shadow: 0 0 0 1px var(--good), 0 8px 24px -10px rgba(34,197,94,.4);
+  }
+  .option.correct .opt-letter {
+    background: var(--good); color: #fff; border-color: var(--good);
+  }
+  .option.wrong {
+    background: var(--bad-bg);
+    border-color: var(--bad);
+  }
+  .option.wrong .opt-letter {
+    background: var(--bad); color: #fff; border-color: var(--bad);
+  }
+
+  .feedback {
+    margin-top: 18px; padding: 16px 18px;
+    border-radius: 14px;
+    display: none; animation: fadeIn .3s ease-out;
+  }
+  .feedback.show { display: block; }
+  .feedback.correct { background: var(--good-bg); border: 1px solid var(--good); }
+  .feedback.wrong   { background: var(--bad-bg);  border: 1px solid var(--bad); }
+  .feedback-title {
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 800; font-size: 14px;
+    margin-bottom: 8px; letter-spacing: 0.02em;
+  }
+  .feedback.correct .feedback-title { color: var(--good); }
+  .feedback.wrong   .feedback-title { color: var(--bad); }
+  .feedback-text { font-size: 14px; line-height: 1.55; color: var(--text); }
+  .feedback-hint { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  .next-btn {
+    margin-top: 18px; width: 100%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: #1a0e00;
+    border: none; border-radius: 14px;
+    padding: 16px 22px;
+    font-size: 16px; font-weight: 800;
+    cursor: pointer; font-family: inherit;
+    letter-spacing: 0.01em;
+    transition: transform .15s, box-shadow .2s;
+    box-shadow: 0 8px 24px -8px rgba(252,211,77,.45);
+  }
+  .next-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px -8px rgba(252,211,77,.55);
+  }
+  .next-btn:disabled {
+    background: var(--surface-2);
+    color: var(--dim);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  /* RESULTS */
+  .results-card { text-align: center; padding: 36px 26px; }
+  .score-ring {
+    position: relative; width: 160px; height: 160px;
+    margin: 0 auto 16px;
+  }
+  .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .score-ring .ring-bg { stroke: var(--surface); }
+  .score-ring .ring-fg { stroke: url(#goldGrad); transition: stroke-dashoffset 1s cubic-bezier(.4,.0,.2,1); }
+  .score-num {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .score-big {
+    font-size: 48px; font-weight: 800; line-height: 1;
+    background: linear-gradient(180deg, #fff, var(--gold));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .score-of { color: var(--muted); font-size: 13px; font-weight: 600; margin-top: 4px; }
+  .score-verdict { color: var(--text); font-size: 16px; font-weight: 600; margin-top: 4px; }
+
+  .cta-box {
+    margin-top: 28px;
+    background:
+      radial-gradient(800px 200px at 50% 0%, rgba(252,211,77,.18), transparent 70%),
+      linear-gradient(180deg, var(--surface-2), var(--bg-elev));
+    border: 1.5px solid var(--gold);
+    border-radius: 18px;
+    padding: 26px 22px;
+    text-align: left;
+    box-shadow: var(--gold-glow);
+  }
+  .cta-box h3 {
+    margin: 0 0 14px; font-size: 22px; font-weight: 800;
+    letter-spacing: -0.01em;
+    background: linear-gradient(180deg, #fff, var(--gold));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cta-list { list-style: none; margin: 0 0 18px; padding: 0; }
+  .cta-list li {
+    padding: 8px 0 8px 26px; position: relative;
+    font-size: 14px; color: var(--text);
+  }
+  .cta-list li::before {
+    content: '✓'; position: absolute; left: 0; top: 8px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: #1a0e00; font-weight: 900; font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cta-price-row {
+    display: flex; align-items: baseline; gap: 10px;
+    margin: 18px 0 14px; flex-wrap: wrap;
+  }
+  .cta-price { font-size: 32px; font-weight: 800; color: var(--gold); letter-spacing: -0.02em; }
+  .cta-price-sub { color: var(--muted); font-size: 13px; }
+  .cta-btn {
+    display: block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+    color: #1a0e00;
+    padding: 16px 22px;
+    border-radius: 14px;
+    font-weight: 800; font-size: 16px;
+    text-decoration: none; text-align: center;
+    box-shadow: 0 10px 28px -8px rgba(252,211,77,.5);
+    transition: transform .15s, box-shadow .2s;
+    letter-spacing: 0.01em;
+  }
+  .cta-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 32px -8px rgba(252,211,77,.6);
+  }
+  .restart-btn {
+    margin-top: 14px; background: transparent;
+    color: var(--muted); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 18px;
+    font-size: 14px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+  }
+  .restart-btn:hover { color: var(--text); border-color: var(--gold); }
+
+  footer {
+    text-align: center; color: var(--muted);
+    font-size: 13px; margin-top: 30px;
+  }
+  footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
   @media (max-width: 480px) {
-    h1 { font-size: 22px; }
-    .question-text { font-size: 16px; }
-    .option { font-size: 14px; padding: 12px 14px; }
+    .container { padding: 18px 14px 60px; }
+    .card { padding: 22px 18px; border-radius: 16px; }
+    .flag-stage { height: 90px; }
+    .flag { width: 160px; height: 90px; left: calc(50% - 100px); }
+    .flag-pole { transform: translateX(-104px); height: 80px; }
+    .score-ring { width: 140px; height: 140px; }
+    .score-big { font-size: 40px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
-  <header>
-    <div class="brand"><a href="index.html">← Pass Exam USA</a></div>
+
+  <div class="top-bar">
+    <div class="brand">
+      <a href="index.html">
+        <div class="brand-mark">PE</div>
+        <div>
+          <div class="brand-name">Pass Exam USA</div>
+          <div class="brand-sub">CDL · Real Estate · DMV</div>
+        </div>
+      </a>
+    </div>
     <div class="lang-row" id="langRow">
       <button class="lang-btn active" data-lang="en">EN</button>
       <button class="lang-btn" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="es">ES</button>
       <button class="lang-btn" data-lang="pl">PL</button>
     </div>
-  </header>
+  </div>
 
-  <h1>CDL Practice Test — Free Demo</h1>
-  <p class="subtitle">15 of the toughest CDL scenarios drivers miss: tire blowouts, hazmat, tankers, doubles. Pick a hint language above for translation help.</p>
+  <div class="flag-stage" aria-hidden="true">
+    <div class="flag-pole"></div>
+    <div class="flag">
+      <svg viewBox="0 0 380 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d62828"/>
+            <stop offset="100%" stop-color="#9e1b1b"/>
+          </linearGradient>
+          <linearGradient id="whiteGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#e8eef7"/>
+          </linearGradient>
+          <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1e3a8a"/>
+            <stop offset="100%" stop-color="#0c1a4e"/>
+          </linearGradient>
+        </defs>
+        <rect width="380" height="200" fill="url(#redGrad)"/>
+        <rect y="15.4"  width="380" height="15.4" fill="url(#whiteGrad)"/>
+        <rect y="46.2"  width="380" height="15.4" fill="url(#whiteGrad)"/>
+        <rect y="77"    width="380" height="15.4" fill="url(#whiteGrad)"/>
+        <rect y="107.7" width="380" height="15.4" fill="url(#whiteGrad)"/>
+        <rect y="138.5" width="380" height="15.4" fill="url(#whiteGrad)"/>
+        <rect y="169.2" width="380" height="15.4" fill="url(#whiteGrad)"/>
+        <rect width="152" height="107.7" fill="url(#blueGrad)"/>
+        <g fill="#fff">
+          <!-- 9 rows of stars, alternating 6 and 5 -->
+          <g id="stars">
+            <!-- row 1: 6 stars y=10 -->
+            <circle cx="14"  cy="10" r="2.4"/><circle cx="36"  cy="10" r="2.4"/><circle cx="58"  cy="10" r="2.4"/><circle cx="80"  cy="10" r="2.4"/><circle cx="102" cy="10" r="2.4"/><circle cx="124" cy="10" r="2.4"/>
+            <!-- row 2: 5 stars y=22 offset -->
+            <circle cx="25"  cy="22" r="2.4"/><circle cx="47"  cy="22" r="2.4"/><circle cx="69"  cy="22" r="2.4"/><circle cx="91"  cy="22" r="2.4"/><circle cx="113" cy="22" r="2.4"/>
+            <!-- row 3 -->
+            <circle cx="14"  cy="34" r="2.4"/><circle cx="36"  cy="34" r="2.4"/><circle cx="58"  cy="34" r="2.4"/><circle cx="80"  cy="34" r="2.4"/><circle cx="102" cy="34" r="2.4"/><circle cx="124" cy="34" r="2.4"/>
+            <!-- row 4 -->
+            <circle cx="25"  cy="46" r="2.4"/><circle cx="47"  cy="46" r="2.4"/><circle cx="69"  cy="46" r="2.4"/><circle cx="91"  cy="46" r="2.4"/><circle cx="113" cy="46" r="2.4"/>
+            <!-- row 5 -->
+            <circle cx="14"  cy="58" r="2.4"/><circle cx="36"  cy="58" r="2.4"/><circle cx="58"  cy="58" r="2.4"/><circle cx="80"  cy="58" r="2.4"/><circle cx="102" cy="58" r="2.4"/><circle cx="124" cy="58" r="2.4"/>
+            <!-- row 6 -->
+            <circle cx="25"  cy="70" r="2.4"/><circle cx="47"  cy="70" r="2.4"/><circle cx="69"  cy="70" r="2.4"/><circle cx="91"  cy="70" r="2.4"/><circle cx="113" cy="70" r="2.4"/>
+            <!-- row 7 -->
+            <circle cx="14"  cy="82" r="2.4"/><circle cx="36"  cy="82" r="2.4"/><circle cx="58"  cy="82" r="2.4"/><circle cx="80"  cy="82" r="2.4"/><circle cx="102" cy="82" r="2.4"/><circle cx="124" cy="82" r="2.4"/>
+            <!-- row 8 -->
+            <circle cx="25"  cy="94" r="2.4"/><circle cx="47"  cy="94" r="2.4"/><circle cx="69"  cy="94" r="2.4"/><circle cx="91"  cy="94" r="2.4"/><circle cx="113" cy="94" r="2.4"/>
+          </g>
+        </g>
+      </svg>
+      <div class="flag-shine"></div>
+    </div>
+  </div>
 
-  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="hero">
+    <h1>CDL Practice Test — Free Demo</h1>
+    <p>15 of the toughest CDL scenarios drivers miss on exam day: tire blowouts, hazmat placards, tankers, doubles & triples. Pick a hint language above for translation help.</p>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="progress-num" id="progressNum">0 / 15</div>
+  </div>
 
   <div id="quizArea"></div>
   <div id="resultsArea" style="display:none;"></div>
@@ -129,39 +521,48 @@ function tx(obj, lang) {
   return obj[lang] || obj[FALLBACK_LANG] || Object.values(obj)[0] || '';
 }
 
-function setProgress(pct) {
+function setProgress(idx) {
+  const pct = (idx / questions.length) * 100;
   document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressNum').textContent = idx + ' / ' + questions.length;
+}
+
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
 function renderQuestion() {
   const q = questions[current];
   if (!q) { renderResults(); return; }
   answered = false;
-  setProgress((current / questions.length) * 100);
+  setProgress(current);
 
   const topic = TOPIC_LABELS[q.topicId] || q.topicId;
   const en = tx(q.text, 'en');
   const hint = HINT_LANG !== 'en' ? tx(q.text, HINT_LANG) : '';
 
   let html = '<div class="card">';
-  html += '<span class="topic-tag">' + topic + ' · ' + (current + 1) + ' / ' + questions.length + '</span>';
+  html += '<span class="topic-tag">' + escapeHtml(topic) + ' · Question ' + (current + 1) + ' of ' + questions.length + '</span>';
   html += '<div class="question-text">' + escapeHtml(en) + '</div>';
   if (hint && hint !== en) {
-    html += '<div class="hint show">' + escapeHtml(hint) + '</div>';
+    html += '<div class="hint-box show">' + escapeHtml(hint) + '</div>';
   }
   html += '<div class="options">';
   for (const opt of q.options) {
     const optEn = tx(opt.text, 'en');
     html += '<button class="option" data-id="' + opt.id + '" type="button">';
-    html += '<span class="opt-id">' + opt.id + '</span>' + escapeHtml(optEn);
+    html += '<span class="opt-letter">' + opt.id + '</span>';
+    html += '<span class="opt-text">' + escapeHtml(optEn) + '</span>';
     html += '</button>';
   }
   html += '</div>';
-  html += '<div class="explanation" id="explanationBox"><div class="explanation-title" id="explanationTitle">Explanation</div><div id="explanationText"></div></div>';
+  html += '<div class="feedback" id="feedbackBox"><div class="feedback-title" id="feedbackTitle"></div><div class="feedback-text" id="feedbackText"></div><div class="feedback-hint" id="feedbackHint"></div></div>';
   html += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
   html += '</div>';
 
   document.getElementById('quizArea').innerHTML = html;
+
   document.querySelectorAll('.option').forEach(btn => {
     btn.addEventListener('click', () => onAnswer(btn.dataset.id));
   });
@@ -185,16 +586,19 @@ function onAnswer(chosenId) {
     if (btn.dataset.id === chosenId && !wasCorrect) btn.classList.add('wrong');
   });
 
-  const exp = document.getElementById('explanationBox');
-  const expText = document.getElementById('explanationText');
-  const expTitle = document.getElementById('explanationTitle');
-  const enExpl = tx(q.explanation, 'en');
-  const hintExpl = HINT_LANG !== 'en' ? tx(q.explanation, HINT_LANG) : '';
-  expText.innerHTML = '<div>' + escapeHtml(enExpl) + '</div>' +
-    (hintExpl && hintExpl !== enExpl ? '<div style="margin-top:8px;color:var(--muted);font-size:14px;">' + escapeHtml(hintExpl) + '</div>' : '');
-  expTitle.textContent = wasCorrect ? 'Correct — Explanation' : 'Incorrect — Explanation';
-  exp.classList.toggle('was-wrong', !wasCorrect);
-  exp.classList.add('show');
+  const fb = document.getElementById('feedbackBox');
+  const fbTitle = document.getElementById('feedbackTitle');
+  const fbText = document.getElementById('feedbackText');
+  const fbHint = document.getElementById('feedbackHint');
+  fb.classList.add('show');
+  fb.classList.toggle('correct', wasCorrect);
+  fb.classList.toggle('wrong', !wasCorrect);
+  fbTitle.innerHTML = wasCorrect
+    ? '✓ Correct — nice work'
+    : '✕ Not quite — here is why';
+  fbText.textContent = tx(q.explanation, 'en');
+  const hintExp = HINT_LANG !== 'en' ? tx(q.explanation, HINT_LANG) : '';
+  fbHint.textContent = (hintExp && hintExp !== fbText.textContent) ? hintExp : '';
 
   const nextBtn = document.getElementById('nextBtn');
   nextBtn.disabled = false;
@@ -202,35 +606,63 @@ function onAnswer(chosenId) {
 }
 
 function renderResults() {
-  setProgress(100);
+  setProgress(questions.length);
   document.getElementById('quizArea').style.display = 'none';
   const area = document.getElementById('resultsArea');
   area.style.display = 'block';
 
   const pct = Math.round((correctCount / questions.length) * 100);
-  let verdict = 'You need more practice.';
+  let verdict = '';
   if (pct >= 80) verdict = 'Strong result. Lock it in with the full test.';
-  else if (pct >= 60) verdict = 'You are on track. Polish the weak areas.';
-  else verdict = 'You missed the basics. Drill them before exam day.';
+  else if (pct >= 60) verdict = 'On track. Polish the weak areas.';
+  else verdict = 'Drill the basics before exam day.';
 
-  area.innerHTML = '' +
-    '<div class="card results-card">' +
-      '<div class="score-label">YOUR SCORE</div>' +
-      '<div class="score">' + correctCount + ' / ' + questions.length + '</div>' +
-      '<div class="score-label">' + pct + '% — ' + escapeHtml(verdict) + '</div>' +
-      '<div class="cta-box">' +
-        '<h3>Ready for all 200 questions?</h3>' +
-        '<ul>' +
-          '<li>200 real CDL exam questions across 11 topics</li>' +
-          '<li>Hint translations in English, Russian, Spanish, Polish</li>' +
-          '<li>Pre-trip inspection, common mistakes, road signs, vocabulary</li>' +
-          '<li>Works fully offline once installed</li>' +
-        '</ul>' +
-        '<div class="cta-price">$9.99 — one-time payment, lifetime access</div>' +
-        '<a class="cta-btn" href="index.html#cdl">Get Full CDL Prep →</a>' +
-      '</div>' +
-      '<button class="restart-btn" id="restartBtn">Restart Demo</button>' +
-    '</div>';
+  const radius = 70;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference * (1 - correctCount / questions.length);
+
+  area.innerHTML = ''
+    + '<div class="card results-card">'
+      + '<div class="score-ring">'
+        + '<svg viewBox="0 0 160 160">'
+          + '<defs><linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">'
+            + '<stop offset="0%" stop-color="#FCD34D"/>'
+            + '<stop offset="100%" stop-color="#D97706"/>'
+          + '</linearGradient></defs>'
+          + '<circle class="ring-bg" cx="80" cy="80" r="70" fill="none" stroke-width="10"/>'
+          + '<circle class="ring-fg" cx="80" cy="80" r="70" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + circumference + '" id="ringFg"/>'
+        + '</svg>'
+        + '<div class="score-num">'
+          + '<div class="score-big">' + correctCount + '/' + questions.length + '</div>'
+          + '<div class="score-of">' + pct + '% correct</div>'
+        + '</div>'
+      + '</div>'
+      + '<div class="score-verdict">' + verdict + '</div>'
+      + '<div class="cta-box">'
+        + '<h3>Get the full CDL Master Prep</h3>'
+        + '<ul class="cta-list">'
+          + '<li>200 real CDL exam questions across 11 official topics</li>'
+          + '<li>Hint translations in English, Russian, Spanish, Polish</li>'
+          + '<li>Pre-trip inspection drills, common mistakes, road signs, vocabulary</li>'
+          + '<li>Works fully offline once installed — no signal needed</li>'
+          + '<li>Lifetime access, no subscription</li>'
+        + '</ul>'
+        + '<div class="cta-price-row">'
+          + '<div class="cta-price">$9.99</div>'
+          + '<div class="cta-price-sub">one-time payment · lifetime access</div>'
+        + '</div>'
+        + '<a class="cta-btn" href="index.html#cdl">Get Full CDL Prep →</a>'
+      + '</div>'
+      + '<button class="restart-btn" id="restartBtn">Restart Demo</button>'
+    + '</div>';
+
+  // Animate ring
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const ring = document.getElementById('ringFg');
+      if (ring) ring.style.strokeDashoffset = offset;
+    }, 100);
+  });
 
   document.getElementById('restartBtn').addEventListener('click', () => {
     current = 0;
@@ -241,21 +673,11 @@ function renderResults() {
   });
 }
 
-function escapeHtml(str) {
-  if (str == null) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
 document.getElementById('langRow').addEventListener('click', (e) => {
   if (!e.target.dataset.lang) return;
   HINT_LANG = e.target.dataset.lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === HINT_LANG));
-  if (document.getElementById('quizArea').style.display !== 'none') {
+  if (document.getElementById('quizArea').style.display !== 'none' && questions.length) {
     renderQuestion();
   }
 });
@@ -264,6 +686,7 @@ fetch('data/cdl_demo_questions.json')
   .then(r => r.json())
   .then(data => {
     questions = data;
+    setProgress(0);
     renderQuestion();
   })
   .catch(err => {
