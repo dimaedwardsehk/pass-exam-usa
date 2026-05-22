@@ -387,6 +387,182 @@
   }
   footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
 
+  /* ========= APK SHELL: TOPICS RAIL, TOOLS GRID, BOTTOM NAV, TOAST ========= */
+
+  /* Topics rail — горизонтальный скролл сразу под флагом-вверху */
+  .topics-rail {
+    margin: 0 0 16px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px 2px 12px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .topics-rail::-webkit-scrollbar { display: none; }
+  .topic-chip {
+    flex: 0 0 auto;
+    background: var(--card-2);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex; align-items: center; gap: 10px;
+    cursor: pointer;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 13px; font-weight: 700;
+    transition: all .15s ease;
+    backdrop-filter: blur(6px);
+    position: relative;
+    min-width: 130px;
+  }
+  .topic-chip:hover { border-color: var(--gold); color: var(--text); transform: translateY(-1px); }
+  .topic-chip .topic-emoji { font-size: 20px; line-height: 1; }
+  .topic-chip .topic-name { white-space: nowrap; }
+  .topic-chip .topic-lock {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
+  /* Tools grid — карточки внизу страницы */
+  .tools-section {
+    margin-top: 22px;
+  }
+  .tools-title {
+    font-size: 18px; font-weight: 800;
+    margin: 0 0 12px;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .tool-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .15s ease;
+    backdrop-filter: blur(6px);
+    position: relative;
+    font-family: inherit;
+    color: var(--text);
+  }
+  .tool-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .tool-card .tool-emoji {
+    font-size: 28px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .tool-card .tool-label {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text);
+  }
+  .tool-card .tool-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .tool-card .tool-lock {
+    position: absolute;
+    top: 8px; right: 8px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(224,181,63,0.15);
+    border: 1px solid rgba(224,181,63,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    color: var(--gold);
+  }
+
+  /* Bottom navigation — закреплённый снизу, как в APK */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(8, 13, 27, 0.92);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    padding: 8px env(safe-area-inset-right, 0) calc(8px + env(safe-area-inset-bottom, 0)) env(safe-area-inset-left, 0);
+  }
+  .nav-item {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 8px 4px;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    transition: color .15s;
+    position: relative;
+  }
+  .nav-item .nav-emoji { font-size: 20px; line-height: 1; opacity: 0.65; transition: opacity .15s, transform .15s; }
+  .nav-item.active { color: var(--gold); }
+  .nav-item.active .nav-emoji { opacity: 1; transform: scale(1.1); }
+  .nav-item:hover:not(.active) { color: var(--text); }
+  .nav-item:hover:not(.active) .nav-emoji { opacity: 0.9; }
+  .nav-item .nav-lock {
+    position: absolute;
+    top: 4px; right: 50%;
+    transform: translateX(16px);
+    font-size: 8px;
+    color: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* Toast — золотая сноска снизу */
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 84px;
+    transform: translateX(-50%) translateY(20px);
+    background: linear-gradient(180deg, var(--gold), var(--gold-2));
+    color: #1a0e00;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 10px 30px -8px rgba(224,181,63,.5), 0 0 0 1px rgba(255,255,255,0.15) inset;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s, transform .25s;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Bottom padding so content doesn't hide behind nav */
+  body { padding-bottom: 70px; }
+
+  @media (max-width: 720px) {
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .tool-card { padding: 14px 8px; }
+    .tool-card .tool-emoji { font-size: 24px; }
+  }
   @media (max-width: 480px) {
     .container { padding: 16px 12px 24px; }
     .quiz-shell { padding: 16px 14px 14px; }
@@ -395,6 +571,10 @@
     .opt-letter { width: 28px; height: 28px; font-size: 12px; }
     .next-btn { padding: 13px; font-size: 15px; }
     .score-ring { width: 150px; height: 150px; }
+    .topic-chip { min-width: 110px; padding: 8px 12px; font-size: 12px; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-item { font-size: 9px; }
+    .nav-item .nav-emoji { font-size: 18px; }
   }
 </style>
 </head>
@@ -427,11 +607,26 @@
     <h1 class="hero-title"><span class="gold">Free CDL Practice</span></h1>
   </div>
 
+  <!-- TOPICS RAIL — все 11 тем из APK, кликаются с тостом -->
+  <div class="topics-rail" id="topicsRail"></div>
+
   <div id="quizArea"></div>
   <div id="resultsArea" style="display:none;"></div>
 
+  <!-- TOOLS — карточки как в Tools-экране APK -->
+  <section class="tools-section">
+    <h2 class="tools-title">Tools</h2>
+    <div class="tools-grid" id="toolsGrid"></div>
+  </section>
+
   <footer></footer>
 </div>
+
+<!-- BOTTOM NAVIGATION (как в APK) -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast">🔒 Available in full version — $9.99</div>
 
 <script>
 /* =========================================================================
@@ -772,6 +967,111 @@ fetch('data/cdl_demo_questions.json')
     document.getElementById('quizArea').innerHTML = '<div class="results-card"><p style="color:var(--muted);">Could not load questions. Please refresh the page.</p></div>';
     console.error(err);
   });
+
+/* =========================================================================
+   APK SHELL — Topics rail, Tools grid, Bottom nav, Toast
+   ========================================================================= */
+(function buildAppShell() {
+  // 11 тем строго из APK (data/topics.ts)
+  const TOPICS = [
+    { emoji: '📘',  name: 'General Knowledge' },
+    { emoji: '💨',  name: 'Air Brakes' },
+    { emoji: '🚚',  name: 'Combination Vehicles' },
+    { emoji: '☣️', name: 'Hazardous Materials' },
+    { emoji: '🛢️', name: 'Tank Vehicles' },
+    { emoji: '🚌',  name: 'Passenger Transport' },
+    { emoji: '🔍',  name: 'Pre-Trip Inspection' },
+    { emoji: '🛡️', name: 'Safe Driving' },
+    { emoji: '🚨',  name: 'Emergencies' },
+    { emoji: '📦',  name: 'Cargo & Weight' },
+    { emoji: '🚛',  name: 'Doubles & Triples' },
+  ];
+
+  // 5 инструментов из ToolsScreen.tsx
+  const TOOLS = [
+    { emoji: '🔧',  label: 'Pre-Trip Checklist',  sub: '10 zones · 35 checks' },
+    { emoji: '🧑‍✈️', label: 'Inspector Simulator', sub: '20 Q&A flashcards' },
+    { emoji: '📖',  label: 'CDL Vocabulary',      sub: '4-language hints' },
+    { emoji: '🚧',  label: 'Road Signs',           sub: 'Shapes · colors · meaning' },
+    { emoji: '⚠️',  label: 'Common Mistakes',      sub: 'What examiners fail you for' },
+  ];
+
+  // Bottom navigation 5 пунктов из TabsNavigator.tsx
+  const NAV = [
+    { emoji: '🏠',  label: 'Home',    active: true,  free: true  },
+    { emoji: '📚',  label: 'Study',   active: false, free: false },
+    { emoji: '📝',  label: 'Exam',    active: false, free: false },
+    { emoji: '🛠️', label: 'Tools',   active: false, free: false },
+    { emoji: '👤',  label: 'Profile', active: false, free: false },
+  ];
+
+  // Render Topics rail
+  const rail = document.getElementById('topicsRail');
+  if (rail) {
+    rail.innerHTML = TOPICS.map(t => (
+      '<button class="topic-chip" type="button" data-locked="1">' +
+        '<span class="topic-emoji">' + t.emoji + '</span>' +
+        '<span class="topic-name">' + t.name + '</span>' +
+        '<span class="topic-lock">🔒</span>' +
+      '</button>'
+    )).join('');
+    rail.querySelectorAll('.topic-chip').forEach(chip => {
+      chip.addEventListener('click', () => showLockToast());
+    });
+  }
+
+  // Render Tools grid
+  const tools = document.getElementById('toolsGrid');
+  if (tools) {
+    tools.innerHTML = TOOLS.map(t => (
+      '<button class="tool-card" type="button" data-locked="1">' +
+        '<span class="tool-lock">🔒</span>' +
+        '<span class="tool-emoji">' + t.emoji + '</span>' +
+        '<span class="tool-label">' + t.label + '</span>' +
+        '<span class="tool-sub">' + t.sub + '</span>' +
+      '</button>'
+    )).join('');
+    tools.querySelectorAll('.tool-card').forEach(card => {
+      card.addEventListener('click', () => showLockToast());
+    });
+  }
+
+  // Render Bottom nav
+  const nav = document.getElementById('bottomNav');
+  if (nav) {
+    nav.innerHTML = NAV.map(n => (
+      '<button class="nav-item' + (n.active ? ' active' : '') + '" type="button" data-free="' + (n.free ? '1' : '0') + '">' +
+        '<span class="nav-emoji">' + n.emoji + '</span>' +
+        '<span>' + n.label + '</span>' +
+        (n.free ? '' : '<span class="nav-lock">🔒</span>') +
+      '</button>'
+    )).join('');
+    nav.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.dataset.free === '1') {
+          // Home — already here, scroll to top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          showLockToast();
+        }
+      });
+    });
+  }
+
+  // Toast logic
+  let toastTimer = null;
+  function showLockToast() {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2500);
+  }
+  // Expose for any other handler
+  window.__showLockToast = showLockToast;
+})();
 </script>
 </body>
 </html>
