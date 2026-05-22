@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDL Practice Test — Free 15 Questions | Pass Exam USA</title>
+<meta name="description" content="Free 15-question CDL practice test with the toughest scenarios drivers miss: tire blowouts, hazmat, doubles, tankers. Translations in EN, RU, ES, PL.">
+<link rel="canonical" href="https://dimaedwardsehk.github.io/pass-exam-usa/cdl-demo.html">
+<style>
+  :root {
+    --bg: #0b1220;
+    --panel: #131c2f;
+    --panel-2: #1a2440;
+    --text: #e8edf7;
+    --muted: #9aa5bd;
+    --accent: #4ea1ff;
+    --accent-2: #2563eb;
+    --good: #22c55e;
+    --bad: #ef4444;
+    --border: #243149;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.5; }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .brand { font-weight: 700; font-size: 18px; }
+  .brand a { color: var(--text); text-decoration: none; }
+  .lang-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .lang-btn { background: var(--panel); border: 1px solid var(--border); color: var(--muted); padding: 6px 10px; border-radius: 8px; font-size: 13px; cursor: pointer; transition: all .15s; }
+  .lang-btn.active { background: var(--accent-2); color: white; border-color: var(--accent-2); }
+  .lang-btn:hover { color: var(--text); }
+  h1 { font-size: 26px; margin: 8px 0 4px; }
+  .subtitle { color: var(--muted); margin: 0 0 20px; font-size: 14px; }
+  .progress { height: 6px; background: var(--panel); border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+  .progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); width: 0%; transition: width .3s; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 16px; }
+  .topic-tag { display: inline-block; background: var(--panel-2); color: var(--accent); padding: 4px 10px; border-radius: 999px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 12px; }
+  .question-text { font-size: 17px; font-weight: 600; margin-bottom: 18px; }
+  .hint { background: var(--panel-2); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 6px; color: var(--muted); font-size: 14px; margin-bottom: 18px; display: none; }
+  .hint.show { display: block; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; cursor: pointer; text-align: left; color: var(--text); font-size: 15px; transition: all .15s; font-family: inherit; }
+  .option:hover:not(:disabled) { border-color: var(--accent); }
+  .option:disabled { cursor: default; opacity: .85; }
+  .option .opt-id { display: inline-block; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); color: var(--muted); text-align: center; line-height: 22px; font-size: 12px; margin-right: 10px; font-weight: 700; }
+  .option.correct { border-color: var(--good); background: rgba(34,197,94,.1); }
+  .option.correct .opt-id { background: var(--good); color: white; }
+  .option.wrong { border-color: var(--bad); background: rgba(239,68,68,.1); }
+  .option.wrong .opt-id { background: var(--bad); color: white; }
+  .explanation { margin-top: 18px; padding: 14px 16px; background: var(--panel-2); border-radius: 10px; border-left: 3px solid var(--good); display: none; }
+  .explanation.show { display: block; }
+  .explanation-title { font-weight: 700; font-size: 13px; color: var(--good); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em; }
+  .explanation.was-wrong { border-left-color: var(--bad); }
+  .explanation.was-wrong .explanation-title { color: var(--bad); }
+  .next-btn { background: var(--accent-2); color: white; border: none; border-radius: 10px; padding: 14px 24px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 16px; transition: background .15s; font-family: inherit; }
+  .next-btn:hover { background: #1d4ed8; }
+  .next-btn:disabled { background: var(--panel-2); color: var(--muted); cursor: not-allowed; }
+  .results-card { text-align: center; padding: 32px 22px; }
+  .score { font-size: 56px; font-weight: 800; margin: 8px 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .score-label { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .cta-box { background: linear-gradient(135deg, var(--accent-2), #1d4ed8); border-radius: 14px; padding: 24px; margin-top: 20px; text-align: left; }
+  .cta-box h3 { margin: 0 0 12px; font-size: 22px; }
+  .cta-box ul { margin: 0 0 16px; padding-left: 20px; color: rgba(255,255,255,.9); }
+  .cta-box li { margin-bottom: 6px; font-size: 14px; }
+  .cta-price { font-size: 18px; font-weight: 700; margin: 12px 0; }
+  .cta-btn { display: block; background: white; color: var(--accent-2); padding: 14px; border-radius: 10px; font-weight: 700; text-decoration: none; text-align: center; margin-top: 12px; }
+  .cta-btn:hover { background: rgba(255,255,255,.92); }
+  .restart-btn { background: transparent; color: var(--muted); border: 1px solid var(--border); border-radius: 10px; padding: 10px 18px; font-size: 14px; cursor: pointer; margin-top: 14px; font-family: inherit; }
+  .restart-btn:hover { color: var(--text); border-color: var(--accent); }
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 28px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 480px) {
+    h1 { font-size: 22px; }
+    .question-text { font-size: 16px; }
+    .option { font-size: 14px; padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand"><a href="index.html">← Pass Exam USA</a></div>
+    <div class="lang-row" id="langRow">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="pl">PL</button>
+    </div>
+  </header>
+
+  <h1>CDL Practice Test — Free Demo</h1>
+  <p class="subtitle">15 of the toughest CDL scenarios drivers miss: tire blowouts, hazmat, tankers, doubles. Pick a hint language above for translation help.</p>
+
+  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+  <div id="quizArea"></div>
+  <div id="resultsArea" style="display:none;"></div>
+
+  <footer>
+    <p>Full exam prep with all 200 questions, 4-language hints, and offline mode — <a href="index.html#cdl">Get the app for $9.99</a></p>
+  </footer>
+</div>
+
+<script>
+const FALLBACK_LANG = 'en';
+let HINT_LANG = 'en';
+let questions = [];
+let current = 0;
+let correctCount = 0;
+let answered = false;
+
+const TOPIC_LABELS = {
+  'emergencies': 'Emergencies',
+  'hazmat': 'Hazmat',
+  'doubles-triples': 'Doubles & Triples',
+  'tankers': 'Tankers',
+  'combination-vehicles': 'Combination Vehicles',
+  'pre-trip-inspection': 'Pre-Trip Inspection',
+  'safe-driving': 'Safe Driving',
+  'cargo': 'Cargo',
+  'passengers': 'Passengers',
+  'general-knowledge': 'General Knowledge',
+  'air-brakes': 'Air Brakes'
+};
+
+function tx(obj, lang) {
+  if (!obj) return '';
+  if (typeof obj === 'string') return obj;
+  return obj[lang] || obj[FALLBACK_LANG] || Object.values(obj)[0] || '';
+}
+
+function setProgress(pct) {
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+function renderQuestion() {
+  const q = questions[current];
+  if (!q) { renderResults(); return; }
+  answered = false;
+  setProgress((current / questions.length) * 100);
+
+  const topic = TOPIC_LABELS[q.topicId] || q.topicId;
+  const en = tx(q.text, 'en');
+  const hint = HINT_LANG !== 'en' ? tx(q.text, HINT_LANG) : '';
+
+  let html = '<div class="card">';
+  html += '<span class="topic-tag">' + topic + ' · ' + (current + 1) + ' / ' + questions.length + '</span>';
+  html += '<div class="question-text">' + escapeHtml(en) + '</div>';
+  if (hint && hint !== en) {
+    html += '<div class="hint show">' + escapeHtml(hint) + '</div>';
+  }
+  html += '<div class="options">';
+  for (const opt of q.options) {
+    const optEn = tx(opt.text, 'en');
+    html += '<button class="option" data-id="' + opt.id + '" type="button">';
+    html += '<span class="opt-id">' + opt.id + '</span>' + escapeHtml(optEn);
+    html += '</button>';
+  }
+  html += '</div>';
+  html += '<div class="explanation" id="explanationBox"><div class="explanation-title" id="explanationTitle">Explanation</div><div id="explanationText"></div></div>';
+  html += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
+  html += '</div>';
+
+  document.getElementById('quizArea').innerHTML = html;
+  document.querySelectorAll('.option').forEach(btn => {
+    btn.addEventListener('click', () => onAnswer(btn.dataset.id));
+  });
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    current++;
+    renderQuestion();
+  });
+}
+
+function onAnswer(chosenId) {
+  if (answered) return;
+  answered = true;
+  const q = questions[current];
+  const correct = q.correctAnswer;
+  const wasCorrect = chosenId === correct;
+  if (wasCorrect) correctCount++;
+
+  document.querySelectorAll('.option').forEach(btn => {
+    btn.disabled = true;
+    if (btn.dataset.id === correct) btn.classList.add('correct');
+    if (btn.dataset.id === chosenId && !wasCorrect) btn.classList.add('wrong');
+  });
+
+  const exp = document.getElementById('explanationBox');
+  const expText = document.getElementById('explanationText');
+  const expTitle = document.getElementById('explanationTitle');
+  const enExpl = tx(q.explanation, 'en');
+  const hintExpl = HINT_LANG !== 'en' ? tx(q.explanation, HINT_LANG) : '';
+  expText.innerHTML = '<div>' + escapeHtml(enExpl) + '</div>' +
+    (hintExpl && hintExpl !== enExpl ? '<div style="margin-top:8px;color:var(--muted);font-size:14px;">' + escapeHtml(hintExpl) + '</div>' : '');
+  expTitle.textContent = wasCorrect ? 'Correct — Explanation' : 'Incorrect — Explanation';
+  exp.classList.toggle('was-wrong', !wasCorrect);
+  exp.classList.add('show');
+
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.disabled = false;
+  nextBtn.textContent = current === questions.length - 1 ? 'See Results →' : 'Next Question →';
+}
+
+function renderResults() {
+  setProgress(100);
+  document.getElementById('quizArea').style.display = 'none';
+  const area = document.getElementById('resultsArea');
+  area.style.display = 'block';
+
+  const pct = Math.round((correctCount / questions.length) * 100);
+  let verdict = 'You need more practice.';
+  if (pct >= 80) verdict = 'Strong result. Lock it in with the full test.';
+  else if (pct >= 60) verdict = 'You are on track. Polish the weak areas.';
+  else verdict = 'You missed the basics. Drill them before exam day.';
+
+  area.innerHTML = '' +
+    '<div class="card results-card">' +
+      '<div class="score-label">YOUR SCORE</div>' +
+      '<div class="score">' + correctCount + ' / ' + questions.length + '</div>' +
+      '<div class="score-label">' + pct + '% — ' + escapeHtml(verdict) + '</div>' +
+      '<div class="cta-box">' +
+        '<h3>Ready for all 200 questions?</h3>' +
+        '<ul>' +
+          '<li>200 real CDL exam questions across 11 topics</li>' +
+          '<li>Hint translations in English, Russian, Spanish, Polish</li>' +
+          '<li>Pre-trip inspection, common mistakes, road signs, vocabulary</li>' +
+          '<li>Works fully offline once installed</li>' +
+        '</ul>' +
+        '<div class="cta-price">$9.99 — one-time payment, lifetime access</div>' +
+        '<a class="cta-btn" href="index.html#cdl">Get Full CDL Prep →</a>' +
+      '</div>' +
+      '<button class="restart-btn" id="restartBtn">Restart Demo</button>' +
+    '</div>';
+
+  document.getElementById('restartBtn').addEventListener('click', () => {
+    current = 0;
+    correctCount = 0;
+    document.getElementById('quizArea').style.display = '';
+    area.style.display = 'none';
+    renderQuestion();
+  });
+}
+
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+document.getElementById('langRow').addEventListener('click', (e) => {
+  if (!e.target.dataset.lang) return;
+  HINT_LANG = e.target.dataset.lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === HINT_LANG));
+  if (document.getElementById('quizArea').style.display !== 'none') {
+    renderQuestion();
+  }
+});
+
+fetch('data/cdl_demo_questions.json')
+  .then(r => r.json())
+  .then(data => {
+    questions = data;
+    renderQuestion();
+  })
+  .catch(err => {
+    document.getElementById('quizArea').innerHTML = '<div class="card"><p>Could not load questions. Please refresh the page.</p></div>';
+    console.error(err);
+  });
+</script>
+</body>
+</html>

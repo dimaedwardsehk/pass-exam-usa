@@ -1,0 +1,647 @@
+[
+  {
+    "id": "em-7",
+    "topicId": "emergencies",
+    "text": {
+      "en": "Steer-tire failure at highway speed is recognized by:",
+      "ru": "Разрыв рулевой шины на скорости распознаётся по:",
+      "es": "La falla de un neumático de dirección a velocidad de autopista se reconoce por:",
+      "pl": "Pęknięcie opony kierowanej przy prędkości autostradowej rozpoznaje się po:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "The cab radio suddenly goes static and sound is lost"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Strong pull to one side, vibration, loud bang or flapping"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "The engine temperature gauge rises immediately and rapidly"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "The truck horn begins sounding on its own continuously"
+        }
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": {
+      "en": "A front blowout causes sudden steering pull toward the blown side, vibration through the wheel, and often a loud bang or thumping from the deflated tire. React by holding the wheel firm and not braking. CDL Manual Section 2.",
+      "ru": "Разрыв передней шины вызывает резкий увод руля в сторону, вибрацию и громкий хлопок или стук сдутой шины. Реакция: крепко держать руль и не тормозить. CDL Manual, Раздел 2.",
+      "es": "Un reventón delantero causa tirón repentino hacia el lado dañado, vibración y un fuerte estallido o golpeteo. Reaccione sujetando el volante y sin frenar. CDL Manual, Sección 2.",
+      "pl": "Pęknięcie przedniej opony powoduje gwałtowne ciągnięcie w stronę uszkodzonego koła, wibracje i głośny huk lub walenie zdętej opony. Reaguj trzymając kierownicę i nie hamując. CDL Manual, Rozdział 2."
+    }
+  },
+  {
+    "id": "em-3",
+    "topicId": "emergencies",
+    "text": {
+      "en": "Reflective warning triangles must be placed within how many minutes of stopping on the roadside?",
+      "ru": "Отражающие предупреждающие треугольники должны быть расставлены в течение скольких минут после остановки на обочине?",
+      "es": "¿En cuántos minutos deben colocarse los triángulos reflectantes después de detenerse en el arcén?",
+      "pl": "Trójkąty odblaskowe trzeba ustawić w ciągu ilu minut od zatrzymania na poboczu?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Within 5 minutes of stopping on the shoulder lane"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Within 30 minutes of stopping on the shoulder lane"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Within 1 hour of stopping on the shoulder lane"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Within 10 minutes of stopping on the shoulder lane"
+        }
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": {
+      "en": "Within 10 minutes of stopping, place three reflective triangles: one within 10 feet of the rear, one about 100 feet back, and one about 200 feet back on the traffic side. At night or low visibility this is critical. CDL Manual Section 2.",
+      "ru": "В течение 10 минут расставьте три треугольника: один в 10 футах, второй в 100 футах, третий в 200 футах позади со стороны движения. Ночью или при плохой видимости это критически важно. CDL Manual, Раздел 2.",
+      "es": "En 10 minutos coloque tres triángulos: uno a 10 pies, otro a 100 pies, y el último a 200 pies detrás, del lado del tráfico. De noche o con poca visibilidad es crítico. CDL Manual, Sección 2.",
+      "pl": "W ciągu 10 minut ustaw trzy trójkąty: jeden w 10 stopach, drugi w 100 stopach, trzeci w 200 stopach z tyłu od strony ruchu. W nocy lub przy słabej widoczności to krytyczne. CDL Manual, Rozdział 2."
+    }
+  },
+  {
+    "id": "em-4",
+    "topicId": "emergencies",
+    "text": {
+      "en": "If you are in a crash, your legal responsibilities include:",
+      "ru": "Если вы попали в аварию, ваши законные обязанности включают:",
+      "es": "Si tiene un accidente, sus responsabilidades legales incluyen:",
+      "pl": "Jeśli uczestniczysz w wypadku, twoje obowiązki prawne obejmują:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Protect the area, notify authorities, do not move vehicle"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Leave the scene to get repairs at a nearby truck shop"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Move the vehicle immediately to unblock traffic flow"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Nothing — the carrier company handles every accident step"
+        }
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": {
+      "en": "After a crash: protect the scene (triangles, hazard lights), check for injuries, call 911, do not move the vehicle unless it creates a hazard, exchange information, and report to your carrier. Leaving is illegal. CDL Manual Section 2.",
+      "ru": "После аварии: обезопасьте место (треугольники, аварийка), проверьте пострадавших, вызовите 911, не перемещайте ТС без необходимости, обменяйтесь данными, сообщите перевозчику. Уезжать — незаконно. CDL Manual, Раздел 2.",
+      "es": "Tras un accidente: proteja la escena (triángulos, intermitentes), verifique heridos, llame al 911, no mueva el vehículo sin necesidad, intercambie información, reporte al transportista. Irse es ilegal. CDL Manual, Sección 2.",
+      "pl": "Po wypadku: zabezpiecz miejsce (trójkąty, światła awaryjne), sprawdź poszkodowanych, zadzwoń 911, nie ruszaj pojazdu bez potrzeby, wymień dane, zgłoś przewoźnikowi. Odjazd jest nielegalny. CDL Manual, Rozdział 2."
+    }
+  },
+  {
+    "id": "em-10",
+    "topicId": "emergencies",
+    "text": {
+      "en": "If your accelerator (gas pedal) becomes stuck, you should:",
+      "ru": "Если педаль газа заклинила, следует:",
+      "es": "Si el acelerador (pedal de gas) se atasca, \"debe\":",
+      "pl": "Jeśli pedał gazu się zakleszczy, powinieneś:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Shift to neutral, apply brakes, pull off the road safely"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Turn off the engine while in gear at high highway speed"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Pump the gas pedal harder to try to free the stuck mechanism"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Do nothing and wait for the fuel in the tank to run out"
+        }
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": {
+      "en": "Shift to neutral immediately (engine will race but cannot accelerate the vehicle), apply brakes firmly, pull safely off the road, and then turn off the engine. Do not turn off the ignition while in gear at speed — you lose power steering and vacuum brakes. CDL Manual Section 2.",
+      "ru": "Немедленно переключите на нейтраль (двигатель разгонится, но не ускорит машину), нажмите тормоз, безопасно съедьте с дороги, затем заглушите двигатель. Не выключайте зажигание на скорости в передаче — потеряете гидроусилитель и вакуумные тормоза. CDL Manual, Раздел 2.",
+      "es": "Ponga neutro de inmediato (el motor acelerará sin mover el vehículo), frene con firmeza, salga de la carretera, y luego apague el motor. No apague la llave en marcha a alta velocidad — pierde servodirección y frenos. CDL Manual, Sección 2.",
+      "pl": "Natychmiast przełącz na luz (silnik się rozkręci, ale nie przyspieszy pojazdu), zahamuj mocno, bezpiecznie zjedź z drogi, potem wyłącz silnik. Nie wyłączaj zapłonu na biegu przy dużej prędkości — stracisz wspomaganie i hamulce. CDL Manual, Rozdział 2."
+    }
+  },
+  {
+    "id": "hm-2",
+    "topicId": "hazmat",
+    "text": {
+      "en": "Table 1 materials in the Hazardous Materials Regulations require placards at what quantity?",
+      "ru": "Материалы из Таблицы 1 правил перевозки опасных грузов требуют табличек при каком количестве?",
+      "es": "¿A partir de qué cantidad los materiales de la Tabla 1 del HMR requieren carteles?",
+      "pl": "Materiały z Tabeli 1 wymagają tablicy ostrzegawczej przy jakiej ilości?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Any amount, even a single pound of material"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "1,001 lb aggregate or more is required for placarding"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "5,000 lb aggregate or more triggers placard rules"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Only full truckloads or sealed container shipments"
+        }
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": {
+      "en": "Table 1 materials (explosives 1.1–1.3, poison gas, dangerous when wet, etc.) require placards regardless of quantity — even one pound. Table 2 materials require placards only at 1,001 lb aggregate. CDL Manual Section 9.",
+      "ru": "Материалы Таблицы 1 (взрывчатые 1.1–1.3, ядовитые газы, опасные при намокании и т.д.) требуют табличек при любом количестве. Таблица 2 — от 1001 фунта совокупного веса. CDL Manual, Раздел 9.",
+      "es": "Los materiales de Tabla 1 (explosivos 1.1–1.3, gases venenosos, peligrosos en mojado, etc.) requieren carteles sin importar la cantidad. Tabla 2 solo desde 1,001 lb acumuladas. CDL Manual, Sección 9.",
+      "pl": "Materiały Tabeli 1 (wybuchowe 1.1–1.3, gazy trujące, niebezpieczne przy zamoczeniu itp.) wymagają tablicy niezależnie od ilości. Tabela 2 — od 1001 funtów łącznie. CDL Manual, Rozdział 9."
+    }
+  },
+  {
+    "id": "hm-3",
+    "topicId": "hazmat",
+    "text": {
+      "en": "Who is responsible for properly placarding a vehicle carrying hazardous materials?",
+      "ru": "Кто несёт ответственность за правильное размещение табличек на транспорте с опасным грузом?",
+      "es": "¿Quién es responsable de colocar correctamente los carteles en un vehículo con materiales peligrosos?",
+      "pl": "Kto odpowiada za prawidłowe umieszczenie tablic ostrzegawczych na pojeździe z materiałami niebezpiecznymi?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "The shipper alone is legally responsible"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "The driver and the carrier share responsibility"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "The carrier alone is legally responsible"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "The consignee (receiver) at the delivery dock"
+        }
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": {
+      "en": "While the shipper must provide correct placards or placarding information, the driver must not move the vehicle until placards are correctly displayed on all four sides. The carrier and driver share this legal responsibility. CDL Manual Section 9.",
+      "ru": "Отправитель обязан предоставить правильные таблички или информацию, но водитель не должен трогаться, пока таблички не установлены на всех четырёх сторонах. Перевозчик и водитель делят ответственность. CDL Manual, Раздел 9.",
+      "es": "El expedidor debe proporcionar los carteles o la información correcta, pero el conductor no puede mover el vehículo hasta que estén colocados en los cuatro lados. Transportista y conductor comparten responsabilidad. CDL Manual, Sección 9.",
+      "pl": "Nadawca musi dostarczyć tablice lub informacje, ale kierowca nie rusza, dopóki tablice nie są na czterech bokach. Przewoźnik i kierowca dzielą odpowiedzialność. CDL Manual, Rozdział 9."
+    }
+  },
+  {
+    "id": "dt-12",
+    "topicId": "doubles-triples",
+    "text": {
+      "en": "When backing a set of doubles, you should:",
+      "ru": "При сдаче задом на doubles следует:",
+      "es": "Al retroceder con dobles, \"debe\":",
+      "pl": "Przy cofaniu zestawem podwójnym należy:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Always back the full combination in a straight line only"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Back the entire combination quickly to clear traffic"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Disconnect the rear trailer and back only the front portion"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Use cruise control while backing to keep speed steady"
+        }
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": {
+      "en": "Backing a double or triple is extremely difficult and dangerous. The recommended practice is to disconnect the rear trailer and back only the front portion, or find a pull-through spot. If you must back, use a spotter and go very slowly. CDL Manual Section 7.",
+      "ru": "Задний ход на doubles/triples крайне сложен и опасен. Рекомендуется отцепить задний прицеп и сдавать только переднюю часть, или найти проезд насквозь. Если надо — используйте помощника и двигайтесь очень медленно. CDL Manual, Раздел 7.",
+      "es": "Retroceder dobles/triples es muy difícil y peligroso. Lo recomendable es desacoplar el remolque trasero y solo retroceder con el delantero, o buscar un paso de frente. Si es necesario, use señalizador y vaya muy lento. CDL Manual, Sección 7.",
+      "pl": "Cofanie doubles/triples jest niezwykle trudne i niebezpieczne. Zaleca się odczepić tylną naczepę i cofać tylko przód, albo znaleźć przejazd na wprost. Jeśli trzeba — użyj naprowadzacza i jedź bardzo wolno. CDL Manual, Rozdział 7."
+    }
+  },
+  {
+    "id": "dt-2",
+    "topicId": "doubles-triples",
+    "text": {
+      "en": "In a set of triples, which trailer is most likely to roll over?",
+      "ru": "В тройной сцепке (triples) какой прицеп наиболее склонен к опрокидыванию?",
+      "es": "En un conjunto de triples, ¿cuál remolque es más propenso a volcarse?",
+      "pl": "W zestawie potrójnym (triples) która naczepa jest najbardziej narażona na wywrócenie?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "All trailers in the set roll over with equal frequency"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "The first (lead) trailer just behind the tractor"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "The tractor itself, because it has the heaviest load"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "The last (rearmost) trailer in the combination"
+        }
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": {
+      "en": "The \"crack-the-whip\" effect amplifies steering movements along the combination; the rearmost trailer swings the widest and is most likely to tip over, especially on curves and lane changes. CDL Manual Section 7.",
+      "ru": "Эффект «кнута» усиливает рулевые движения по длине сцепки; задний прицеп качается сильнее всего и наиболее склонен к опрокидыванию, особенно в поворотах и при смене полосы. CDL Manual, Раздел 7.",
+      "es": "El efecto \"crack-the-whip\" amplifica los movimientos a lo largo del conjunto; el remolque trasero oscila más y es el más propenso a volcar, especialmente en curvas y cambios de carril. CDL Manual, Sección 7.",
+      "pl": "Efekt „bata\" wzmacnia ruchy wzdłuż zestawu; ostatnia naczepa wychyla się najbardziej i najłatwiej się wywraca, zwłaszcza na łukach i przy zmianie pasa. CDL Manual, Rozdział 7."
+    }
+  },
+  {
+    "id": "tk-6",
+    "topicId": "tankers",
+    "text": {
+      "en": "A tanker driver should avoid hard braking because:",
+      "ru": "Водитель цистерны должен избегать резкого торможения, потому что:",
+      "es": "Un conductor de tanque debe evitar frenar bruscamente porque:",
+      "pl": "Kierowca cysterny powinien unikać gwałtownego hamowania, ponieważ:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Surge force pushes the truck forward as brakes apply"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "It damages the engine internals over repeated use"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "It overheats the liquid inside the tank shell quickly"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "It causes the steering wheel to vibrate noticeably"
+        }
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": {
+      "en": "When a tanker brakes hard, the liquid surges forward, pushing the vehicle further. This makes it very hard to stop and can push the truck into the intersection or vehicle ahead. CDL Manual Section 8 advises gentle, controlled braking.",
+      "ru": "При резком торможении жидкость по инерции уходит вперёд и толкает машину, удлиняя тормозной путь. CDL Manual, Раздел 8 рекомендует плавное, контролируемое торможение.",
+      "es": "Al frenar bruscamente, el líquido se desplaza hacia adelante y empuja el vehículo, alargando la distancia de frenado. CDL Manual, Sección 8 recomienda un frenado suave y controlado.",
+      "pl": "Przy gwałtownym hamowaniu ciecz przemieszcza się do przodu i pcha pojazd, wydłużając drogę hamowania. CDL Manual, Rozdział 8 zaleca łagodne, kontrolowane hamowanie."
+    }
+  },
+  {
+    "id": "tk-10",
+    "topicId": "tankers",
+    "text": {
+      "en": "Bulkheads (completely sealed internal walls) differ from baffles in that they:",
+      "ru": "Герметичные переборки (bulkheads) отличаются от перегородок (baffles) тем, что:",
+      "es": "Los mamparos (paredes internas selladas) difieren de los deflectores en que:",
+      "pl": "Przegrody hermetyczne (bulkheads) różnią się od baffles tym, że:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Bulkheads have holes to let liquid flow through them"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Bulkheads divide the tank into sealed compartments with no flow"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Bulkheads only exist on the outside of the tank shell"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Bulkheads reduce forward surge better than internal baffles"
+        }
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": {
+      "en": "Bulkheads are solid walls that create separate compartments, each with its own fill hole and discharge. They prevent liquid from flowing between compartments, which can create weight distribution issues if compartments are unequally filled. CDL Manual Section 8.",
+      "ru": "Bulkheads — сплошные стенки, создающие отдельные отсеки с собственными горловинами и сливами. Жидкость не перетекает между отсеками, но неравномерное заполнение создаёт проблемы с балансом. CDL Manual, Раздел 8.",
+      "es": "Los mamparos son paredes sólidas que crean compartimentos separados, cada uno con su boca de llenado y descarga. Impiden el flujo entre compartimentos, pero el llenado desigual crea problemas de peso. CDL Manual, Sección 8.",
+      "pl": "Bulkheads to szczelne ścianki tworzące oddzielne komory z własnymi otworami załadunkowymi i spustowymi. Ciecz nie przepływa między komorami, ale nierównomierne napełnienie powoduje problemy z rozkładem masy. CDL Manual, Rozdział 8."
+    }
+  },
+  {
+    "id": "cv-2",
+    "topicId": "combination-vehicles",
+    "text": {
+      "en": "When testing the kingpin lock after coupling, what is the proper procedure?",
+      "ru": "Какой правильный способ проверить блокировку шкворня после сцепки?",
+      "es": "¿Cuál es el procedimiento correcto para probar el bloqueo del perno rey después del acople?",
+      "pl": "Jak prawidłowo sprawdzić blokadę sworznia głównego po sprzęgnięciu?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Honk twice and listen for a metallic click from the kingpin"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Reverse hard against the kingpin to seat it fully in the jaws"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Visually inspect the locking jaws through the inspection hole"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Pull forward gently against locked trailer brakes"
+        }
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": {
+      "en": "After coupling, raise the landing gear slightly, lock the trailer brakes, place the tractor in low gear and pull gently against the trailer. If the tractor moves but the trailer stays locked to it, the kingpin is engaged. This is the standard tug test described in Section 6.",
+      "ru": "После сцепки слегка поднимите опоры, заблокируйте тормоза прицепа, включите низшую передачу и плавно потяните вперёд. Если тягач не отделяется от прицепа, шкворень захвачен. Это стандартная проверка натяжением (Раздел 6).",
+      "es": "Tras acoplar, suba un poco las patas de apoyo, ponga frenos del remolque, engrane marcha corta y tire suavemente hacia adelante. Si el tractor no se separa del remolque, el perno rey está enganchado. Es la prueba de tirón estándar (Sección 6).",
+      "pl": "Po sprzęgnięciu unieś lekko podpory, zaciągnij hamulce naczepy, włącz niski bieg i delikatnie pociągnij do przodu. Jeśli ciągnik nie odrywa się od naczepy, sworzeń jest zablokowany. To standardowa próba ciągu (Rozdział 6)."
+    }
+  },
+  {
+    "id": "pti-9",
+    "topicId": "pre-trip-inspection",
+    "text": {
+      "en": "When checking the exhaust system, you look for:",
+      "ru": "При осмотре выхлопной системы ищите:",
+      "es": "Al revisar el sistema de escape, \"busca\":",
+      "pl": "Sprawdzając układ wydechowy, \"szukasz\":"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Only the muffler brand and serial number markings"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Leaks, loose mounts, broken parts, exhaust discoloration"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Catalytic converter serial number and date of issue"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Whether the tail pipe points backward at the correct angle"
+        }
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": {
+      "en": "Exhaust leaks can let carbon monoxide into the cab. Check for broken, loose, or missing exhaust pipes, mufflers, and mounts. Look for soot or discoloration indicating a leak. CDL Manual Section 11.",
+      "ru": "Утечки выхлопа могут пустить CO в кабину. Ищите сломанные, ослабленные или отсутствующие трубы, глушители, крепления. Сажа или изменение цвета — признак утечки. CDL Manual, Раздел 11.",
+      "es": "Las fugas de escape pueden introducir CO en la cabina. Busque tubos, silenciadores y soportes rotos, sueltos o faltantes. Hollín o decoloración indican fuga. CDL Manual, Sección 11.",
+      "pl": "Nieszczelności wydechu mogą wpuścić CO do kabiny. Szukaj połamanych, luźnych lub brakujących rur, tłumików, uchwytów. Sadza lub przebarwienia wskazują wyciek. CDL Manual, Rozdział 11."
+    }
+  },
+  {
+    "id": "sd-4",
+    "topicId": "safe-driving",
+    "text": {
+      "en": "The 14-hour on-duty window means:",
+      "ru": "14-часовое окно рабочего дня означает:",
+      "es": "La ventana de 14 horas en servicio significa:",
+      "pl": "Czternastogodzinne okno służbowe oznacza:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "You must drive continuously for 14 hours straight without breaks"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "No driving after 14 hours on-duty, even if not driving full 11"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "You can reset the 14-hour clock with a single 30-minute break"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "The 14-hour on-duty limit applies only to passenger carriers"
+        }
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": {
+      "en": "Once you go on duty, you have a 14-hour window. After 14 hours have elapsed since you came on duty, you may not drive again (even if you spent part of that time in non-driving duties or taking breaks). Only a full 10-hour off-duty resets the clock. FMCSR §395.3.",
+      "ru": "С момента выхода на работу у вас 14-часовое окно. По истечении 14 часов вы не можете снова вести, даже если часть времени не управляли. Только 10-часовой отдых обнуляет счётчик. FMCSR §395.3.",
+      "es": "Una vez que entra en servicio, tiene 14 horas. Después de 14 horas no puede conducir, aunque parte del tiempo fue sin conducir. Solo 10 horas de descanso reinician el reloj. FMCSR §395.3.",
+      "pl": "Od momentu rozpoczęcia służby masz 14 godzin. Po upływie 14 godzin nie możesz prowadzić, nawet jeśli część czasu nie jechałeś. Tylko 10-godzinny odpoczynek zeruje licznik. FMCSR §395.3."
+    }
+  },
+  {
+    "id": "cg-1",
+    "topicId": "cargo",
+    "text": {
+      "en": "Cargo securement devices must be inspected within the first 50 miles of a trip and then:",
+      "ru": "Средства крепления груза необходимо проверить в первых 50 милях пути, а затем:",
+      "es": "Los dispositivos de sujeción de carga deben inspeccionarse dentro de las primeras 50 millas y luego:",
+      "pl": "Urządzenia mocujące ładunek należy sprawdzić w pierwszych 50 milach, a potem:"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Once a week regardless of total miles driven that week"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Only at the destination when the trailer is unloaded"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Every 150 miles or 3 hours driving, whichever comes first"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "Only if the load shifts visibly in the cargo mirror"
+        }
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": {
+      "en": "FMCSR §392.9 requires drivers to inspect cargo and its securing devices within the first 50 miles, then every 150 miles or 3 hours (whichever comes first), and at every change of duty status. CDL Manual Section 3.",
+      "ru": "FMCSR §392.9 требует проверять груз и его крепление в первых 50 милях, затем каждые 150 миль или 3 часа (что наступит раньше) и при каждой смене статуса. CDL Manual, Раздел 3.",
+      "es": "FMCSR §392.9 exige inspeccionar la carga y su sujeción dentro de las primeras 50 millas, luego cada 150 millas o 3 horas (lo primero), y en cada cambio de estado. CDL Manual, Sección 3.",
+      "pl": "FMCSR §392.9 wymaga kontroli ładunku i mocowań w pierwszych 50 milach, potem co 150 mil lub 3 godziny (co wcześniej) i przy każdej zmianie statusu. CDL Manual, Rozdział 3."
+    }
+  },
+  {
+    "id": "pt-2",
+    "topicId": "passengers",
+    "text": {
+      "en": "How many emergency exits must a bus have at a minimum?",
+      "ru": "Сколько аварийных выходов должно быть в автобусе как минимум?",
+      "es": "¿Cuántas salidas de emergencia debe tener un autobús como mínimo?",
+      "pl": "Ile wyjść ewakuacyjnych musi mieć autobus jako minimum?"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": {
+          "en": "Exactly one — the main entry door at the front is sufficient"
+        }
+      },
+      {
+        "id": "B",
+        "text": {
+          "en": "Depends on bus capacity, at minimum one rear exit plus main door"
+        }
+      },
+      {
+        "id": "C",
+        "text": {
+          "en": "Three exits on each side, regardless of bus seating capacity"
+        }
+      },
+      {
+        "id": "D",
+        "text": {
+          "en": "None beyond the front door — passenger windows do not count"
+        }
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": {
+      "en": "Federal regulations require buses to have emergency exits (rear door/window, roof hatches, push-out windows) in addition to the main entry door, with the number depending on seating capacity. The driver must verify all exits work during pre-trip. CDL Manual Section 4.",
+      "ru": "Федеральные нормы требуют аварийных выходов (задняя дверь/окно, люки, выдавливаемые окна) в дополнение к главной двери — количество зависит от числа мест. Водитель проверяет при предрейсовом осмотре. CDL Manual, Раздел 4.",
+      "es": "Las regulaciones federales exigen salidas de emergencia (puerta/ventana trasera, escotillas, ventanas empujables) además de la puerta principal, según la capacidad. El conductor las verifica en la pretrip. CDL Manual, Sección 4.",
+      "pl": "Przepisy federalne wymagają wyjść awaryjnych (tylne drzwi/okno, włazy dachowe, okna wypychane) oprócz drzwi głównych — liczba zależy od pojemności. Kierowca sprawdza je w kontroli przedrejsowej. CDL Manual, Rozdział 4."
+    }
+  }
+]
