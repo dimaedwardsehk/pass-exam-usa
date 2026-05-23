@@ -148,7 +148,7 @@
     transition: width .45s cubic-bezier(.4,0,.2,1);
   }
 
-  /* QUIZ CARD CONTAINER — sticky next button at bottom */
+  /* QUIZ CARD CONTAINER — fixed height, internal scroll, Tools never move */
   .quiz-shell {
     position: relative;
     background: var(--card);
@@ -157,6 +157,22 @@
     padding: 20px 20px 16px;
     backdrop-filter: blur(8px);
     box-shadow: 0 30px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(224,181,63,.08);
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+  }
+  .quiz-scroll {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    margin-right: -8px;
+    padding-right: 8px;
+    min-height: 0;
+  }
+  .quiz-scroll::-webkit-scrollbar { width: 4px; }
+  .quiz-scroll::-webkit-scrollbar-thumb { background: rgba(224,181,63,0.25); border-radius: 4px; }
+  .quiz-shell .next-btn {
+    flex-shrink: 0;
+    margin-top: 12px;
   }
 
   .q-text {
@@ -770,6 +786,7 @@ function renderQuestion() {
   html += '</div>';
   html += '<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>';
   html += '<div class="quiz-shell">';
+  html += '<div class="quiz-scroll">';
   html += '<div class="q-text">' + escapeHtml(en) + '</div>';
   if (hint && hint !== en) html += '<div class="hint-box show">' + escapeHtml(hint) + '</div>';
   html += '<div class="options">';
@@ -795,6 +812,7 @@ function renderQuestion() {
   html += '</div>';
   html += '</div>';
   html += '</div>';
+  html += '</div>'; // /quiz-scroll
   html += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
   html += '</div>';
 
