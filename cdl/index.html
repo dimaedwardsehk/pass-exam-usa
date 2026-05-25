@@ -18,8 +18,9 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/pass-exam-usa/cdl/pwa/icon-512.png" />
     <style id="expo-reset">
       html, body { height: 100%; background-color: #0A0E1A; }
-      body { overflow: hidden; margin: 0; }
-      #root { display: flex; height: 100%; flex: 1; }
+      body { overflow: hidden; margin: 0; display: flex; align-items: center; justify-content: center; }
+      #root { display: flex; height: 100%; flex: 1; max-width: 430px; width: 100%; box-shadow: 0 0 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06); border-radius: 0; }
+      @media (min-width: 500px) { #root { height: 100vh; border-radius: 24px; overflow: hidden; } }
     </style>
   </head>
   <body>
