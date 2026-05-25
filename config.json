@@ -1,0 +1,59 @@
+{
+  "_comment": "Главный конфиг сайта Pass Exam USA. Меняй цены, ссылки, акции прямо здесь.",
+  "products": {
+    "real_estate": {
+      "title": "Real Estate License",
+      "price": 14.99,
+      "currency": "$",
+      "status": "available",
+      "stores": {
+        "app_store":   { "url": "", "enabled": false },
+        "google_play": { "url": "", "enabled": false }
+      },
+      "payment_links": {
+        "patreon":      { "url": "", "enabled": false, "label": "Buy on Patreon" },
+        "lemonsqueezy": { "url": "", "enabled": false, "label": "Buy via Lemon Squeezy" },
+        "gumroad":      { "url": "", "enabled": false, "label": "Buy on Gumroad" },
+        "telegram":     { "url": "", "enabled": false, "label": "Pay via Telegram" }
+      }
+    },
+    "cdl": {
+      "title": "CDL Master Prep",
+      "price": 9.99,
+      "currency": "$",
+      "status": "available",
+      "stores": {
+        "app_store":   { "url": "", "enabled": false },
+        "google_play": { "url": "", "enabled": false }
+      },
+      "payment_links": {
+        "patreon":      { "url": "", "enabled": false, "label": "Buy on Patreon" },
+        "lemonsqueezy": { "url": "", "enabled": false, "label": "Buy via Lemon Squeezy" },
+        "gumroad":      { "url": "", "enabled": false, "label": "Buy on Gumroad" },
+        "telegram":     { "url": "", "enabled": false, "label": "Pay via Telegram" }
+      }
+    },
+    "dmv": {
+      "title": "Driver's License",
+      "price": 4.99,
+      "currency": "$",
+      "status": "available",
+      "stores": {
+        "app_store":   { "url": "", "enabled": false },
+        "google_play": { "url": "", "enabled": false }
+      },
+      "payment_links": {
+        "patreon":      { "url": "", "enabled": false, "label": "Buy on Patreon" },
+        "lemonsqueezy": { "url": "", "enabled": false, "label": "Buy via Lemon Squeezy" },
+        "gumroad":      { "url": "", "enabled": false, "label": "Buy on Gumroad" },
+        "telegram":     { "url": "", "enabled": false, "label": "Pay via Telegram" }
+      }
+    }
+  },
+  "promo": {
+    "active": false,
+    "discount_pct": 0,
+    "valid_until": "",
+    "label": ""
+  }
+}

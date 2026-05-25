@@ -495,6 +495,112 @@ ul { list-style: none; }
 }
 .cta-note { color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
 
+/* === New universal CTA block (data-cta-block) === */
+.cta-block { max-width: 720px; margin: 24px auto 0; }
+.cta-price-row {
+  display: flex; align-items: baseline; justify-content: center; gap: 14px;
+  flex-wrap: wrap; margin: 18px 0 6px;
+}
+.cta-price-old {
+  font-family: var(--font-mono); font-size: 22px; color: var(--text-secondary);
+  text-decoration: line-through; opacity: 0.65;
+}
+.cta-price-new {
+  font-family: var(--font-mono); font-size: 36px; font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.cta-promo-badge {
+  display: inline-block; background: linear-gradient(90deg, #ef4444, #f59e0b);
+  color: #fff; padding: 4px 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 800; letter-spacing: 1px;
+  text-transform: uppercase; vertical-align: middle;
+}
+.cta-promo-until { color: var(--text-secondary); font-size: 13px; margin-bottom: 8px; }
+.cta-pay-grid {
+  display: flex; flex-direction: column; gap: 10px;
+  max-width: 460px; margin: 22px auto 0;
+}
+.cta-pay-primary {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: linear-gradient(135deg, var(--cta-color, #C8A84B), color-mix(in srgb, var(--cta-color, #C8A84B) 70%, #000));
+  color: #1a0e00; padding: 16px 22px; border-radius: 14px;
+  font-weight: 800; font-size: 16px; text-decoration: none;
+  border: none; cursor: pointer; font-family: inherit;
+  box-shadow: 0 10px 28px -8px color-mix(in srgb, var(--cta-color, #C8A84B) 50%, transparent);
+  transition: transform .15s, filter .2s;
+}
+.cta-pay-primary:hover { transform: translateY(-1px); filter: brightness(1.07); }
+.cta-pay-secondary-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.cta-pay-secondary {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--cta-color, #C8A84B);
+  color: var(--cta-color, #C8A84B);
+  padding: 11px 10px; border-radius: 12px;
+  font-weight: 700; font-size: 13px; text-decoration: none;
+  cursor: pointer; font-family: inherit;
+  transition: all .15s;
+}
+.cta-pay-secondary:hover {
+  background: color-mix(in srgb, var(--cta-color, #C8A84B) 10%, transparent);
+  transform: translateY(-1px);
+}
+.cta-coming-soon {
+  background: rgba(200,168,75,0.06);
+  border: 1px dashed rgba(200,168,75,0.4);
+  border-radius: 14px;
+  padding: 18px 20px;
+  color: var(--text-secondary);
+  font-size: 14px; line-height: 1.55;
+  margin-top: 12px;
+}
+.cta-coming-soon strong { color: var(--text); }
+.cta-divider {
+  display: flex; align-items: center; gap: 14px;
+  color: var(--text-secondary); font-size: 12px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin: 24px auto 14px; max-width: 460px;
+}
+.cta-divider::before, .cta-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: rgba(255,255,255,0.12);
+}
+.cta-store-row {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  max-width: 460px; margin: 0 auto;
+}
+.cta-store-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: 12px;
+  font-weight: 700; font-size: 14px;
+  text-decoration: none; cursor: pointer; font-family: inherit;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  transition: all .15s;
+}
+.cta-store-btn.enabled {
+  border-color: var(--cta-color, #C8A84B);
+  color: var(--cta-color, #C8A84B);
+}
+.cta-store-btn.enabled:hover {
+  background: color-mix(in srgb, var(--cta-color, #C8A84B) 10%, transparent);
+  transform: translateY(-1px);
+}
+.cta-store-btn.disabled {
+  opacity: 0.45; cursor: not-allowed;
+}
+.cta-store-tip {
+  text-align: center; font-size: 12px; color: var(--text-secondary);
+  margin-top: 10px; letter-spacing: 0.3px;
+}
+@media (max-width: 480px) {
+  .cta-pay-secondary-row { grid-template-columns: 1fr; }
+  .cta-price-new { font-size: 30px; }
+}
+
 /* === INVESTORS === */
 .options-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
@@ -1104,12 +1210,7 @@ ul { list-style: none; }
   <section class="cta-section section-pad">
     <div class="container" style="text-align:center;">
       <h2 class="section-title reveal">Ready to <span class="shimmer">Pass?</span></h2>
-      <div class="cta-price reveal">$14.99</div>
-      <p class="cta-note reveal">One Time Purchase. No Subscription. Lifetime Access.</p>
-      <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="#" class="btn btn-gold">Download on App Store</a>
-        <a href="#" class="btn btn-outline">Get it on Google Play</a>
-      </div>
+      <div class="reveal" data-cta-block="real_estate" data-accent="#C8A84B"></div>
     </div>
   </section>
 </div>
@@ -1193,12 +1294,7 @@ ul { list-style: none; }
   <section class="cta-section section-pad">
     <div class="container" style="text-align:center;">
       <h2 class="section-title reveal">Ready to Get Your <span style="color:#E87C35">CDL?</span></h2>
-      <div class="cta-price reveal" style="color:#E87C35;">$14.99</div>
-      <p class="cta-note reveal">One Time Purchase. No Subscription. All Endorsements Included.</p>
-      <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="#" class="btn btn-orange">Download on App Store</a>
-        <a href="#" class="btn btn-outline" style="border-color:#E87C35;color:#E87C35;">Get it on Google Play</a>
-      </div>
+      <div class="reveal" data-cta-block="cdl" data-accent="#E87C35"></div>
     </div>
   </section>
 </div>
@@ -1277,12 +1373,7 @@ ul { list-style: none; }
   <section class="cta-section section-pad">
     <div class="container" style="text-align:center;">
       <h2 class="section-title reveal">Get Your License <span style="color:#3B82F6">Today</span></h2>
-      <div class="cta-price reveal" style="color:#3B82F6;">$9.99</div>
-      <p class="cta-note reveal">One Time Purchase. No Subscription. All 50 States.</p>
-      <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="#" class="btn btn-blue">Download on App Store</a>
-        <a href="#" class="btn btn-outline" style="border-color:#3B82F6;color:#3B82F6;">Get it on Google Play</a>
-      </div>
+      <div class="reveal" data-cta-block="dmv" data-accent="#3B82F6"></div>
     </div>
   </section>
 </div>
@@ -1608,6 +1699,99 @@ function checkDemo(el, isCorrect){
   }
   document.getElementById('demoCta').style.display='block';
 }
+
+// === CTA BLOCKS — read config.json and render universal CTA on every subpage ===
+(function initCtaBlocks() {
+  const placeholders = document.querySelectorAll('[data-cta-block]');
+  if (!placeholders.length) return;
+
+  fetch('config.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(cfg => placeholders.forEach(ph => renderCta(ph, cfg)))
+    .catch(err => console.error('CTA config load failed', err));
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function renderCta(node, cfg) {
+    const productKey = node.dataset.ctaBlock;
+    const accent = node.dataset.accent || '#C8A84B';
+    const product = cfg.products && cfg.products[productKey];
+    if (!product) return;
+
+    const promo = cfg.promo || {};
+    const promoActive = !!promo.active && (!promo.valid_until || new Date(promo.valid_until) > new Date());
+    const basePrice = product.price;
+    const finalPrice = promoActive && promo.discount_pct
+      ? +(basePrice * (1 - promo.discount_pct / 100)).toFixed(2)
+      : basePrice;
+    const cur = product.currency || '$';
+
+    // Price row
+    let priceRow = '<div class="cta-price-row">';
+    if (promoActive && finalPrice !== basePrice) {
+      priceRow += '<span class="cta-promo-badge">' + esc(promo.label || ('-' + promo.discount_pct + '%')) + '</span>';
+      priceRow += '<span class="cta-price-old">' + esc(cur) + esc(basePrice) + '</span>';
+      priceRow += '<span class="cta-price-new" style="color:' + esc(accent) + ';">' + esc(cur) + esc(finalPrice) + '</span>';
+    } else {
+      priceRow += '<span class="cta-price-new" style="color:' + esc(accent) + ';">' + esc(cur) + esc(basePrice) + '</span>';
+    }
+    priceRow += '</div>';
+    let priceNote = '<p class="cta-note">One-time payment · Lifetime access · No subscription</p>';
+    if (promoActive && promo.valid_until) {
+      priceNote += '<div class="cta-promo-until">Promo ends ' + esc(promo.valid_until) + '</div>';
+    }
+
+    // Direct payment links (4 stores)
+    const pl = product.payment_links || {};
+    const enabledPayments = Object.keys(pl).filter(k => pl[k] && pl[k].enabled && pl[k].url);
+    let payHtml = '';
+    if (enabledPayments.length) {
+      const primaryKey = enabledPayments[0];
+      const primary = pl[primaryKey];
+      payHtml += '<div class="cta-pay-grid">';
+      payHtml += '<a class="cta-pay-primary" href="' + esc(primary.url) + '" target="_blank" rel="noopener" style="--cta-color:' + esc(accent) + ';">';
+      payHtml += esc(primary.label || ('Buy via ' + primaryKey)) + '</a>';
+      const secondary = enabledPayments.slice(1);
+      if (secondary.length) {
+        payHtml += '<div class="cta-pay-secondary-row">';
+        secondary.forEach(k => {
+          payHtml += '<a class="cta-pay-secondary" href="' + esc(pl[k].url) + '" target="_blank" rel="noopener" style="--cta-color:' + esc(accent) + ';">' + esc(pl[k].label || k) + '</a>';
+        });
+        payHtml += '</div>';
+      }
+      payHtml += '</div>';
+    } else {
+      payHtml += '<div class="cta-coming-soon">';
+      payHtml += '<strong>Direct purchase coming soon.</strong> ';
+      payHtml += 'We\u2019re finalizing payment partners — meanwhile see the store options below.';
+      payHtml += '</div>';
+    }
+
+    // Store row (App Store + Google Play)
+    const stores = product.stores || {};
+    let storeHtml = '<div class="cta-divider">Or get it on stores</div>';
+    storeHtml += '<div class="cta-store-row">';
+    [['app_store', 'App Store'], ['google_play', 'Google Play']].forEach(([k, name]) => {
+      const s = stores[k] || {};
+      const isOn = s.enabled && s.url;
+      if (isOn) {
+        storeHtml += '<a class="cta-store-btn enabled" href="' + esc(s.url) + '" target="_blank" rel="noopener" style="--cta-color:' + esc(accent) + ';">' + esc(name) + '</a>';
+      } else {
+        storeHtml += '<span class="cta-store-btn disabled" title="Coming soon">' + esc(name) + '</span>';
+      }
+    });
+    storeHtml += '</div>';
+    const anyStore = (stores.app_store && stores.app_store.enabled && stores.app_store.url) || (stores.google_play && stores.google_play.enabled && stores.google_play.url);
+    if (!anyStore) {
+      storeHtml += '<div class="cta-store-tip">Coming to stores soon</div>';
+    }
+
+    node.classList.add('cta-block');
+    node.innerHTML = priceRow + priceNote + payHtml + storeHtml;
+  }
+})();
 </script>
 </body>
 </html>
