@@ -1,0 +1,21 @@
+{
+  "name": "CDL Master Prep 2026",
+  "short_name": "CDL Master Prep",
+  "description": "US Commercial Driver's License exam prep — real FMCSA questions, pre-trip checklist, inspector Q&A and CDL vocabulary. 100% offline, English-first with optional translation hints.",
+  "start_url": "/pass-exam-usa/cdl/",
+  "scope": "/pass-exam-usa/cdl/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0E1A",
+  "theme_color": "#0A0E1A",
+  "lang": "en",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "/pass-exam-usa/cdl/pwa/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/pass-exam-usa/cdl/pwa/icon-256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "/pass-exam-usa/cdl/pwa/icon-384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+    { "src": "/pass-exam-usa/cdl/pwa/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/pass-exam-usa/cdl/pwa/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/pass-exam-usa/cdl/pwa/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
