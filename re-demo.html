@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>Fast Pass Real Estate — Free Trial (15 Questions)</title>
+<meta name="description" content="Test your Real Estate License Exam knowledge with 15 free questions."/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0A0F1E;color:#fff;min-height:100vh}
+.container{max-width:600px;margin:0 auto;padding:16px}
+.header{text-align:center;padding:24px 0 16px}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header p{font-size:13px;color:#8899aa}
+.progress-bar{height:4px;background:#1a2233;border-radius:2px;margin:16px 0}
+.progress-fill{height:100%;background:linear-gradient(90deg,#3C7AE8,#5C9AFF);border-radius:2px;transition:width .3s}
+.stats{display:flex;justify-content:space-between;font-size:13px;color:#8899aa;margin-bottom:20px}
+.category-badge{display:inline-block;font-size:11px;background:#1a2844;color:#5C9AFF;padding:4px 10px;border-radius:12px;margin-bottom:12px}
+.question-text{font-size:18px;line-height:1.5;margin-bottom:20px}
+.option{display:block;width:100%;padding:14px 16px;margin-bottom:10px;border-radius:12px;border:1.5px solid #1a2844;background:#0d1525;color:#fff;font-size:15px;text-align:left;cursor:pointer;transition:all .2s}
+.option:hover{border-color:#3C7AE8;background:#111d33}
+.option.selected{border-color:#3C7AE8;background:#152244}
+.option.correct{border-color:#22c55e;background:#0d2818;color:#22c55e}
+.option.wrong{border-color:#ef4444;background:#2a0d0d;color:#ef4444}
+.option .letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1a2844;color:#5C9AFF;font-size:13px;font-weight:600;margin-right:10px}
+.option.correct .letter{background:#22c55e;color:#fff}
+.option.wrong .letter{background:#ef4444;color:#fff}
+.explanation{margin-top:16px;padding:14px;background:#111d33;border-radius:10px;font-size:14px;line-height:1.5;color:#aabbcc;display:none}
+.explanation.show{display:block}
+.btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:16px;font-weight:600;cursor:pointer;margin-top:16px}
+.btn-primary{background:linear-gradient(135deg,#3C7AE8,#5C9AFF);color:#fff}
+.btn-primary:hover{opacity:.9}
+.result-card{text-align:center;padding:40px 20px}
+.result-score{font-size:64px;font-weight:700;background:linear-gradient(135deg,#3C7AE8,#5C9AFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:20px 0 10px}
+.result-text{font-size:18px;color:#8899aa;margin-bottom:24px}
+.result-breakdown{text-align:left;background:#0d1525;border-radius:12px;padding:16px;margin-top:20px}
+.result-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1a2233;font-size:14px}
+.result-row:last-child{border:none}
+.result-row .cat{color:#8899aa}.result-row .res{font-weight:600}
+.res.pass{color:#22c55e}.res.fail{color:#ef4444}
+.cta{text-align:center;margin-top:30px;padding:20px;background:#111d33;border-radius:12px}
+.cta h3{font-size:18px;margin-bottom:8px}.cta p{font-size:14px;color:#8899aa;margin-bottom:16px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Fast Pass Real Estate</h1>
+    <p>Free Trial — 15 Questions</p>
+  </div>
+
+  <div id="quiz-screen">
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+    <div class="stats">
+      <span id="counter">Question 1 of 15</span>
+      <span id="score-display">Score: 0</span>
+    </div>
+    <div class="category-badge" id="category"></div>
+    <div class="question-text" id="question"></div>
+    <div id="options"></div>
+    <div class="explanation" id="explanation"></div>
+    <button class="btn btn-primary hidden" id="next-btn" onclick="nextQuestion()">Next Question</button>
+  </div>
+
+  <div id="result-screen" class="hidden">
+    <div class="result-card">
+      <h2>Trial Complete!</h2>
+      <div class="result-score" id="final-score"></div>
+      <div class="result-text" id="final-text"></div>
+      <div class="result-breakdown" id="breakdown"></div>
+      <div class="cta">
+        <h3>Want all 200+ questions?</h3>
+        <p>Get the full Fast Pass Real Estate app with mock exams, vocabulary, math practice, and more.</p>
+        <button class="btn btn-primary" onclick="window.location.reload()">Retry Trial</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const questions=[{"id":22,"category":"Agency & Ethics","question":"The fiduciary duties owed by an agent to a client are often remembered by the acronym:","options":["RESPA","OLDCAR","TILA","CLOSE"],"correctIndex":1,"explanation":"OLDCAR stands for Obedience, Loyalty, Disclosure, Confidentiality, Accountability, and Reasonable care."},{"id":18,"category":"Appraisal & Value","question":"The sales comparison approach to value is most reliable for:","options":["Income-producing commercial buildings","Residential properties in active markets","Special-purpose properties","Vacant farmland"],"correctIndex":1,"explanation":"The sales comparison approach works best in active residential markets where comparable sales data is abundant."},{"id":126,"category":"California Specifics","question":"In California, the Transfer Disclosure Statement (TDS) must be provided by the seller in which type of transaction?","options":["All real property transactions without exception","Residential property sales of 1-4 units","Only new construction sales","Commercial property sales only"],"correctIndex":1,"explanation":"California Civil Code Section 1102 requires sellers of residential property containing one to four dwelling units to provide a Transfer Disclosure Statement."},{"id":9,"category":"Contracts","question":"For a real estate contract to be enforceable, it must satisfy the:","options":["Statute of frauds","Rule against perpetuities","Parol evidence rule","Doctrine of laches"],"correctIndex":0,"explanation":"The Statute of Frauds requires real estate contracts to be in writing and signed to be enforceable."},{"id":42,"category":"Environmental","question":"Lead-based paint disclosure is required for homes built before:","options":["1970","1978","1990","1960"],"correctIndex":1,"explanation":"Federal law requires sellers and landlords to disclose known lead-based paint hazards in properties built before 1978."},{"id":30,"category":"Fair Housing","question":"The Fair Housing Act of 1968 prohibits discrimination based on all of the following EXCEPT:","options":["National origin","Marital status","Race","Religion"],"correctIndex":1,"explanation":"Federal Fair Housing law protects race, color, religion, sex, national origin, disability, and familial status. Marital status is protected in some states but not under federal law."},{"id":13,"category":"Finance & Mortgages","question":"In a mortgage, the borrower is called the:","options":["Mortgagor","Beneficiary","Trustor","Mortgagee"],"correctIndex":0,"explanation":"The mortgagor is the borrower who pledges property as security; the mortgagee is the lender."},{"id":156,"category":"Florida Specifics","question":"The Johnson v. Davis case in Florida established which important principle?","options":["Caveat emptor applies to all residential real estate transactions","Buyers must conduct their own inspections and have no recourse against sellers","Real estate agents are strictly liable for all property defects","Sellers of residential property must disclose known material defects that are not readily observable"],"correctIndex":3,"explanation":"Johnson v. Davis (1985) established that sellers of residential real estate in Florida have a duty to disclose known facts that materially affect the value of the property and are not readily observable by the buyer."},{"id":48,"category":"Investment","question":"A 1031 exchange allows an investor to:","options":["Convert a rental property into a primary residence tax-free","Deduct mortgage interest at double the rate","Avoid all taxes permanently","Defer capital gains tax by exchanging like-kind investment properties"],"correctIndex":3,"explanation":"A 1031 exchange (IRC \u00a71031) defers capital gains taxes when an investor sells one investment property and reinvests in another like-kind property."},{"id":6,"category":"Land Use & Zoning","question":"A municipality\u2019s power to regulate land use through zoning comes from:","options":["Escheat","Police power","Taxation","Eminent domain"],"correctIndex":1,"explanation":"Police power allows the government to enact zoning laws to promote public health, safety, and welfare."},{"id":45,"category":"Licensing","question":"An active real estate license must be held under a:","options":["Licensed sponsoring broker","Home inspector","Mortgage lender","Title company"],"correctIndex":0,"explanation":"A salesperson\u2019s license must be held under (or sponsored by) a licensed broker to legally practice real estate."},{"id":37,"category":"Math","question":"A property sold for $350,000. The agent\u2019s commission is 6%. How much is the commission?","options":["$21,000","$35,000","$17,500","$24,500"],"correctIndex":0,"explanation":"$350,000 \u00d7 0.06 = $21,000. Commission is calculated by multiplying the sale price by the commission rate."},{"id":34,"category":"Property Management","question":"A gross lease requires the tenant to pay:","options":["Only property taxes","A fixed rent with the landlord paying operating expenses","Base rent plus all operating expenses","A percentage of sales revenue"],"correctIndex":1,"explanation":"In a gross (full-service) lease, the tenant pays a fixed rent and the landlord covers operating expenses such as taxes, insurance, and maintenance."},{"id":1,"category":"Property Ownership","question":"Which type of estate gives the owner the most complete form of ownership?","options":["Fee simple absolute","Leasehold estate","Life estate","Fee simple defeasible"],"correctIndex":0,"explanation":"Fee simple absolute is the highest form of ownership recognized by law. It is unlimited in duration and freely transferable."},{"id":141,"category":"Texas Specifics","question":"In Texas, the TREC promulgated contract forms are best described as:","options":["Standardized contract forms that licensees are generally required to use for real estate transactions","Forms created by the Texas Association of Realtors for member use only","Optional forms that agents may use at their discretion","Federal contract forms mandated by HUD for all states"],"correctIndex":0,"explanation":"The Texas Real Estate Commission (TREC) promulgates contract forms that licensees must use when applicable. Using non-promulgated forms when a promulgated version exists can be a violation of the Texas Real Estate License Act."}];
+
+const letters=['A','B','C','D'];
+let current=0,score=0,answered=false,results=[];
+
+function render(){
+  const q=questions[current];
+  document.getElementById('progress').style.width=((current/questions.length)*100)+'%';
+  document.getElementById('counter').textContent=`Question ${current+1} of ${questions.length}`;
+  document.getElementById('score-display').textContent=`Score: ${score}`;
+  document.getElementById('category').textContent=q.category;
+  document.getElementById('question').textContent=q.question;
+  document.getElementById('explanation').classList.remove('show');
+  document.getElementById('explanation').textContent='';
+  document.getElementById('next-btn').classList.add('hidden');
+  answered=false;
+
+  const optDiv=document.getElementById('options');
+  optDiv.innerHTML='';
+  q.options.forEach((opt,i)=>{
+    const btn=document.createElement('button');
+    btn.className='option';
+    btn.innerHTML=`<span class="letter">${letters[i]}</span>${opt}`;
+    btn.onclick=()=>selectAnswer(i);
+    optDiv.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx){
+  if(answered)return;
+  answered=true;
+  const q=questions[current];
+  const opts=document.querySelectorAll('.option');
+  opts.forEach((o,i)=>{
+    if(i===q.correctIndex)o.classList.add('correct');
+    if(i===idx&&i!==q.correctIndex)o.classList.add('wrong');
+    o.style.pointerEvents='none';
+  });
+  if(idx===q.correctIndex)score++;
+  results.push({category:q.category,correct:idx===q.correctIndex});
+
+  const expl=document.getElementById('explanation');
+  expl.textContent=q.explanation;
+  expl.classList.add('show');
+  document.getElementById('next-btn').classList.remove('hidden');
+  document.getElementById('score-display').textContent=`Score: ${score}`;
+}
+
+function nextQuestion(){
+  current++;
+  if(current>=questions.length){showResults();return;}
+  render();
+}
+
+function showResults(){
+  document.getElementById('quiz-screen').classList.add('hidden');
+  document.getElementById('result-screen').classList.remove('hidden');
+  const pct=Math.round((score/questions.length)*100);
+  document.getElementById('final-score').textContent=pct+'%';
+  document.getElementById('final-text').textContent=
+    pct>=70?`You passed! ${score}/${questions.length} correct.`:`${score}/${questions.length} correct. You need 70% to pass.`;
+
+  const bd=document.getElementById('breakdown');
+  let html='';
+  results.forEach(r=>{
+    html+=`<div class="result-row"><span class="cat">${r.category}</span><span class="res ${r.correct?'pass':'fail'}">${r.correct?'Correct':'Wrong'}</span></div>`;
+  });
+  bd.innerHTML=html;
+}
+
+render();
+</script>
+</body>
+</html>
