@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — Pass Exam USA</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a1628; color: #f4f6fb; margin: 0; padding: 20px;
+    min-height: 100vh;
+  }
+  .container { max-width: 700px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 0 0 20px; }
+  .lock-screen { text-align: center; padding-top: 20vh; }
+  .lock-screen h2 { font-size: 20px; margin-bottom: 16px; }
+  .lock-screen input {
+    background: #112240; border: 1px solid #1e3a5f; color: #f4f6fb;
+    padding: 12px 18px; border-radius: 10px; font-size: 16px; width: 260px;
+    text-align: center;
+  }
+  .lock-screen button {
+    display: block; margin: 14px auto 0;
+    background: linear-gradient(135deg, #C8A84B, #A87510); color: #1a0e00;
+    border: none; border-radius: 10px; padding: 12px 32px;
+    font-weight: 700; font-size: 15px; cursor: pointer;
+  }
+  .lock-screen .error { color: #ef4444; font-size: 13px; margin-top: 10px; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .section { background: #112240; border: 1px solid #1e3a5f; border-radius: 14px; padding: 20px; margin-bottom: 18px; }
+  .section h3 { margin: 0 0 14px; font-size: 16px; color: #C8A84B; }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-size: 13px; color: #8b96ae; margin-bottom: 4px; font-weight: 600; }
+  .field input, .field select {
+    width: 100%; background: #0a1628; border: 1px solid #1e3a5f; color: #f4f6fb;
+    padding: 10px 14px; border-radius: 8px; font-size: 14px; font-family: inherit;
+  }
+  .field input[type="checkbox"] { width: auto; margin-right: 8px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+  .save-btn {
+    display: block; width: 100%; margin-top: 20px;
+    background: linear-gradient(135deg, #C8A84B, #A87510); color: #1a0e00;
+    border: none; border-radius: 12px; padding: 16px;
+    font-weight: 800; font-size: 16px; cursor: pointer;
+    box-shadow: 0 8px 24px -8px rgba(200,168,75,.4);
+  }
+  .save-btn:hover { filter: brightness(1.05); }
+  .save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .status { text-align: center; margin-top: 12px; font-size: 14px; }
+  .status.ok { color: #22c55e; }
+  .status.err { color: #ef4444; }
+
+  .inline-check { display: flex; align-items: center; gap: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- LOCK SCREEN -->
+  <div class="lock-screen" id="lockScreen">
+    <h2>🔒 Admin Panel</h2>
+    <p style="color:#8b96ae;font-size:14px;">Enter password to manage your site</p>
+    <input type="password" id="pwdInput" placeholder="Password" autofocus>
+    <button onclick="unlock()">Unlock</button>
+    <div class="error" id="pwdError"></div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="panel" id="adminPanel">
+    <h1>⚙️ Site Config</h1>
+    <div id="configForm"></div>
+    <button class="save-btn" id="saveBtn" onclick="saveConfig()">💾 Save & Push to Site</button>
+    <div class="status" id="statusMsg"></div>
+  </div>
+
+</div>
+
+<script>
+// === CONFIG ===
+const REPO = 'dimaedwardsehk/pass-exam-usa';
+const FILE_PATH = 'config.json';
+const BRANCH = 'main';
+
+// Password hash (SHA-256 of the real password). Set your password below.
+// Default password: "admin2026" — change it by updating this hash.
+const PWD_HASH = '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'; // "password" placeholder
+
+let CONFIG = null;
+let TOKEN = '';
+let FILE_SHA = '';
+
+// === LOCK ===
+function unlock() {
+  const pwd = document.getElementById('pwdInput').value;
+  // For simplicity: password stored in localStorage after first successful entry
+  // Real security: use the password to decrypt an encrypted token
+  if (!pwd) { document.getElementById('pwdError').textContent = 'Enter password'; return; }
+
+  // Store token from password field (the GitHub token IS the password)
+  TOKEN = pwd.trim();
+
+  // Try to fetch config with this token to verify it works
+  fetchConfig().then(() => {
+    document.getElementById('lockScreen').style.display = 'none';
+    document.getElementById('adminPanel').classList.add('active');
+    renderForm();
+  }).catch(err => {
+    document.getElementById('pwdError').textContent = 'Invalid token or network error: ' + err.message;
+  });
+}
+
+document.getElementById('pwdInput').addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
+
+// === FETCH CONFIG ===
+async function fetchConfig() {
+  const resp = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}?ref=${BRANCH}`, {
+    headers: { 'Authorization': 'Bearer ' + TOKEN, 'Accept': 'application/vnd.github.v3+json' }
+  });
+  if (!resp.ok) throw new Error('HTTP ' + resp.status);
+  const data = await resp.json();
+  FILE_SHA = data.sha;
+  CONFIG = JSON.parse(atob(data.content));
+}
+
+// === RENDER FORM ===
+function renderForm() {
+  if (!CONFIG) return;
+  let html = '';
+
+  // Products
+  for (const [key, prod] of Object.entries(CONFIG.products)) {
+    const accent = key === 'real_estate' ? '#C8A84B' : key === 'cdl' ? '#E87C35' : '#3B82F6';
+    html += `<div class="section">`;
+    html += `<h3 style="color:${accent}">${prod.title} (${key})</h3>`;
+    html += `<div class="row"><div class="field"><label>Price ($)</label><input type="number" step="0.01" value="${prod.price}" data-path="products.${key}.price"></div>`;
+    html += `<div class="field"><label>Status</label><select data-path="products.${key}.status"><option value="available" ${prod.status==='available'?'selected':''}>Available</option><option value="coming_soon" ${prod.status==='coming_soon'?'selected':''}>Coming Soon</option></select></div></div>`;
+
+    // Stores
+    html += `<p style="font-size:12px;color:#8b96ae;margin:12px 0 6px;">App Stores:</p>`;
+    for (const [sk, sv] of Object.entries(prod.stores || {})) {
+      html += `<div class="field"><div class="inline-check"><input type="checkbox" ${sv.enabled?'checked':''} data-path="products.${key}.stores.${sk}.enabled"><label style="margin:0;">${sk}</label></div><input type="text" value="${sv.url||''}" placeholder="URL" data-path="products.${key}.stores.${sk}.url" style="margin-top:4px;"></div>`;
+    }
+
+    // Payment links
+    html += `<p style="font-size:12px;color:#8b96ae;margin:12px 0 6px;">Payment Links:</p>`;
+    for (const [pk, pv] of Object.entries(prod.payment_links || {})) {
+      html += `<div class="field"><div class="inline-check"><input type="checkbox" ${pv.enabled?'checked':''} data-path="products.${key}.payment_links.${pk}.enabled"><label style="margin:0;">${pv.label || pk}</label></div><input type="text" value="${pv.url||''}" placeholder="URL" data-path="products.${key}.payment_links.${pk}.url" style="margin-top:4px;"></div>`;
+    }
+    html += `</div>`;
+  }
+
+  // Promo
+  const promo = CONFIG.promo || {};
+  html += `<div class="section"><h3>🎉 Promo / Sale</h3>`;
+  html += `<div class="row-3">`;
+  html += `<div class="field"><div class="inline-check"><input type="checkbox" ${promo.active?'checked':''} data-path="promo.active"><label style="margin:0;">Active</label></div></div>`;
+  html += `<div class="field"><label>Discount %</label><input type="number" value="${promo.discount_pct||0}" data-path="promo.discount_pct"></div>`;
+  html += `<div class="field"><label>Valid Until</label><input type="date" value="${promo.valid_until||''}" data-path="promo.valid_until"></div>`;
+  html += `</div>`;
+  html += `<div class="field"><label>Promo Label</label><input type="text" value="${promo.label||''}" placeholder="e.g. BLACK FRIDAY" data-path="promo.label"></div>`;
+  html += `</div>`;
+
+  document.getElementById('configForm').innerHTML = html;
+}
+
+// === COLLECT FORM DATA ===
+function collectConfig() {
+  const inputs = document.querySelectorAll('[data-path]');
+  inputs.forEach(el => {
+    const path = el.dataset.path.split('.');
+    let obj = CONFIG;
+    for (let i = 0; i < path.length - 1; i++) obj = obj[path[i]];
+    const key = path[path.length - 1];
+    if (el.type === 'checkbox') obj[key] = el.checked;
+    else if (el.type === 'number') obj[key] = parseFloat(el.value) || 0;
+    else obj[key] = el.value;
+  });
+}
+
+// === SAVE ===
+async function saveConfig() {
+  const btn = document.getElementById('saveBtn');
+  const status = document.getElementById('statusMsg');
+  btn.disabled = true;
+  status.textContent = 'Saving...';
+  status.className = 'status';
+
+  collectConfig();
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(CONFIG, null, 2) + '\n')));
+
+  try {
+    const resp = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'Bearer ' + TOKEN,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: 'config: update via admin panel',
+        content: content,
+        sha: FILE_SHA,
+        branch: BRANCH
+      })
+    });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status + ' ' + (await resp.text()).slice(0, 200));
+    const data = await resp.json();
+    FILE_SHA = data.content.sha;
+    status.textContent = '✅ Saved! Site will update in ~1 minute.';
+    status.className = 'status ok';
+  } catch (err) {
+    status.textContent = '❌ Error: ' + err.message;
+    status.className = 'status err';
+  }
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>
