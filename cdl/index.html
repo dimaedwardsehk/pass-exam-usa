@@ -1,38 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no" />
-    <title>CDL Master Prep 2026</title>
-    <meta name="description" content="US CDL exam prep — real FMCSA questions, pre-trip checklist, inspector Q&A and CDL vocabulary. 100% offline, English-first with optional translation hints." />
-    <meta name="theme-color" content="#0A0E1A" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="CDL Master Prep" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="manifest" href="/pass-exam-usa/cdl/manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="/pass-exam-usa/cdl/pwa/apple-touch-icon.png" />
-    <link rel="icon" href="/pass-exam-usa/cdl/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/pass-exam-usa/cdl/pwa/icon-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/pass-exam-usa/cdl/pwa/icon-512.png" />
-    <style id="expo-reset">
-      html, body { height: 100%; background-color: #0A0E1A; }
-      body { overflow: hidden; margin: 0; display: flex; align-items: center; justify-content: center; }
-      #root { display: flex; height: 100%; flex: 1; max-width: 430px; width: 100%; box-shadow: 0 0 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06); border-radius: 0; }
-      @media (min-width: 500px) { #root { height: 100vh; border-radius: 24px; overflow: hidden; } }
-    </style>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script src="/pass-exam-usa/cdl/_expo/static/js/web/index-d76a9a227b38e8a965b26d843089b5d2.js" defer></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/pass-exam-usa/cdl/sw.js').catch(() => {});
-        });
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CDL Master Prep 2026</title>
+  <meta name="description" content="US CDL exam prep — practice questions, pre-trip checklist, inspector Q&A and study topics in a polished offline PWA." />
+  <meta name="theme-color" content="#0A0E1A" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="CDL Master Prep" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <base href="/pass-exam-usa/cdl/" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="192x192" href="pwa/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="pwa/icon-512.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="flag-bg" aria-hidden="true">
+    <svg id="flagSvg" class="flag-layer" viewBox="0 0 1900 1000" preserveAspectRatio="none">
+      <defs>
+        <filter id="flagWave" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence id="flagTurbulence" type="fractalNoise" baseFrequency="0.007 0.028" numOctaves="2" seed="7" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="44" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <linearGradient id="stripeSheen" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="rgba(255,255,255,.16)" />
+          <stop offset=".48" stop-color="rgba(255,255,255,0)" />
+          <stop offset="1" stop-color="rgba(0,0,0,.22)" />
+        </linearGradient>
+      </defs>
+      <g id="flagFabric" filter="url(#flagWave)"></g>
+    </svg>
+    <div class="vignette"></div>
+  </div>
+
+  <main class="desktop-shell">
+    <section class="phone-shell" aria-label="CDL Master Prep app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">CDL</div>
+          <div>
+            <div class="eyebrow">Pass Exam USA</div>
+            <strong>Master Prep 2026</strong>
+          </div>
+        </div>
+        <div class="lang-row" aria-label="Language helpers">
+          <button class="lang active">EN</button>
+          <button class="lang">RU</button>
+          <button class="lang">ES</button>
+          <button class="lang">PL</button>
+        </div>
+      </header>
+
+      <div class="screen-scroll">
+        <section id="home" class="screen active" data-screen="Home"></section>
+        <section id="study" class="screen" data-screen="Study"></section>
+        <section id="exam" class="screen" data-screen="Exam"></section>
+        <section id="tools" class="screen" data-screen="Tools"></section>
+        <section id="profile" class="screen" data-screen="Profile"></section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-tab="home"><span>🏠</span><small>Home</small></button>
+        <button class="nav-item" data-tab="study"><span>📚</span><small>Study</small></button>
+        <button class="nav-item" data-tab="exam"><span>📝</span><small>Exam</small></button>
+        <button class="nav-item" data-tab="tools"><span>🛠️</span><small>Tools</small></button>
+        <button class="nav-item" data-tab="profile"><span>👤</span><small>Profile</small></button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
 </html>

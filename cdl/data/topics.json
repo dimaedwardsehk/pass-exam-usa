@@ -1,0 +1,182 @@
+[
+  {
+    "id": "general-knowledge",
+    "title": {
+      "en": "General Knowledge",
+      "ru": "Общие знания",
+      "es": "Conocimientos generales",
+      "pl": "Wiedza ogólna"
+    },
+    "summary": {
+      "en": "Core CDL knowledge required for all classes: vehicle inspection, safe operation, road signs.",
+      "ru": "Базовые знания CDL для всех классов: осмотр ТС, безопасное вождение, знаки.",
+      "es": "Conocimientos básicos CDL para todas las clases: inspección, conducción segura, señales.",
+      "pl": "Podstawowa wiedza CDL dla wszystkich klas: inspekcja, bezpieczna jazda, znaki."
+    },
+    "icon": "book",
+    "emoji": "📘",
+    "color": "#3B82F6"
+  },
+  {
+    "id": "air-brakes",
+    "title": {
+      "en": "Air Brakes",
+      "ru": "Пневматические тормоза",
+      "es": "Frenos de aire",
+      "pl": "Hamulce pneumatyczne"
+    },
+    "summary": {
+      "en": "Air brake system components, inspection, troubleshooting and emergency procedures.",
+      "ru": "Компоненты пневмосистемы, проверка, неисправности и аварийные процедуры.",
+      "es": "Componentes del sistema de frenos de aire, inspección y procedimientos de emergencia.",
+      "pl": "Elementy układu hamulców pneumatycznych, inspekcja, awarie i procedury awaryjne."
+    },
+    "icon": "wind",
+    "emoji": "💨",
+    "color": "#0EA5E9"
+  },
+  {
+    "id": "combination-vehicles",
+    "title": {
+      "en": "Combination Vehicles",
+      "ru": "Составные автопоезда",
+      "es": "Vehículos combinados",
+      "pl": "Pojazdy zespołowe"
+    },
+    "summary": {
+      "en": "Coupling and uncoupling, kingpin, fifth wheel, driving doubles and triples.",
+      "ru": "Сцепка/расцепка, шкворень, седло, вождение сдвоенных и строенных составов.",
+      "es": "Acoplamiento y desacople, quinta rueda, manejo de combinaciones dobles y triples.",
+      "pl": "Sprzęganie i rozłączanie, sworzeń główny, jazda zespołami podwójnymi i potrójnymi."
+    },
+    "icon": "truck",
+    "emoji": "🚛",
+    "color": "#8B5CF6"
+  },
+  {
+    "id": "hazmat",
+    "title": {
+      "en": "Hazardous Materials",
+      "ru": "Опасные грузы",
+      "es": "Materiales peligrosos",
+      "pl": "Materiały niebezpieczne"
+    },
+    "summary": {
+      "en": "Placards, shipping papers, emergency response and hazmat endorsement basics.",
+      "ru": "Знаки опасности, перевозочные документы, аварийные действия, основы endorsement H.",
+      "es": "Carteles, documentos de embarque, respuesta de emergencia y endoso de hazmat.",
+      "pl": "Tablice, dokumenty przewozowe, reagowanie awaryjne i podstawy endorsement H."
+    },
+    "icon": "alert-triangle",
+    "emoji": "⚠️",
+    "color": "#EF4444"
+  },
+  {
+    "id": "tankers",
+    "title": {
+      "en": "Tank Vehicles",
+      "ru": "Транспорт-цистерны",
+      "es": "Vehículos cisterna",
+      "pl": "Pojazdy cysterny"
+    },
+    "summary": {
+      "en": "Driving tankers, baffles, surge, smooth-bore tanks, liquid loads.",
+      "ru": "Цистерны: перегородки, surge, гладкостенные цистерны, жидкие грузы.",
+      "es": "Cisternas, bafles, surge, tanques de pared lisa, cargas líquidas.",
+      "pl": "Cysterny, przegrody, surge, cysterny gładkościenne, ładunki płynne."
+    },
+    "icon": "droplet",
+    "emoji": "💧",
+    "color": "#10B981"
+  },
+  {
+    "id": "passengers",
+    "title": {
+      "en": "Passenger Transport",
+      "ru": "Пассажирские перевозки",
+      "es": "Transporte de pasajeros",
+      "pl": "Przewóz pasażerów"
+    },
+    "summary": {
+      "en": "Buses, school buses, passenger safety, behavior at railroad crossings.",
+      "ru": "Автобусы, школьные автобусы, безопасность пассажиров, ж/д переезды.",
+      "es": "Autobuses, autobuses escolares, seguridad y comportamiento en cruces de ferrocarril.",
+      "pl": "Autobusy, autobusy szkolne, bezpieczeństwo pasażerów, przejazdy kolejowe."
+    },
+    "icon": "users",
+    "emoji": "🚌",
+    "color": "#F59E0B"
+  },
+  {
+    "id": "pre-trip-inspection",
+    "title": {
+      "en": "Pre-Trip Inspection",
+      "ru": "Pre-Trip осмотр",
+      "es": "Inspección previa al viaje",
+      "pl": "Inspekcja przed jazdą"
+    },
+    "summary": {
+      "en": "Step-by-step inspection of engine, suspension, brakes, lights and trailer.",
+      "ru": "Пошаговая проверка двигателя, подвески, тормозов, света и прицепа.",
+      "es": "Inspección paso a paso de motor, suspensión, frenos, luces y remolque.",
+      "pl": "Krok po kroku: silnik, zawieszenie, hamulce, światła i naczepa."
+    },
+    "icon": "check-circle",
+    "emoji": "🔎",
+    "color": "#22C55E"
+  },
+  {
+    "id": "safe-driving",
+    "title": {
+      "en": "Safe Driving",
+      "ru": "Безопасное вождение",
+      "es": "Conducción segura",
+      "pl": "Bezpieczna jazda"
+    },
+    "summary": {
+      "en": "Speed management, space management, night driving, hazards, fatigue and DUI.",
+      "ru": "Скорость, дистанции, ночное вождение, опасности, усталость и алкоголь.",
+      "es": "Velocidad, distancia, conducción nocturna, peligros, fatiga y alcohol.",
+      "pl": "Prędkość, odstępy, jazda nocą, zagrożenia, zmęczenie i alkohol."
+    },
+    "icon": "shield",
+    "emoji": "🛡️",
+    "color": "#06B6D4"
+  },
+  {
+    "id": "emergencies",
+    "title": {
+      "en": "Emergencies",
+      "ru": "Аварийные ситуации",
+      "es": "Emergencias",
+      "pl": "Sytuacje awaryjne"
+    },
+    "summary": {
+      "en": "Brake failure, tire blowouts, skids, jackknifing, runaway ramps.",
+      "ru": "Отказ тормозов, разрыв шины, заносы, складывание, аварийные съезды.",
+      "es": "Falla de frenos, reventón, derrapes, plegado y rampas de escape.",
+      "pl": "Awaria hamulców, eksplozja opony, poślizg, składanie, rampy ratunkowe."
+    },
+    "icon": "alert-octagon",
+    "emoji": "🚨",
+    "color": "#F97316"
+  },
+  {
+    "id": "cargo",
+    "title": {
+      "en": "Cargo & Weight",
+      "ru": "Груз и вес",
+      "es": "Carga y peso",
+      "pl": "Ładunek i masa"
+    },
+    "summary": {
+      "en": "Securement, weight limits, balanced load distribution and inspection intervals.",
+      "ru": "Крепление, лимиты веса, распределение нагрузки и интервалы проверки.",
+      "es": "Sujeción, límites de peso, distribución equilibrada e intervalos de inspección.",
+      "pl": "Mocowanie, limity wagi, równomierny rozkład i interwały inspekcji."
+    },
+    "icon": "package",
+    "emoji": "📦",
+    "color": "#A855F7"
+  }
+]
