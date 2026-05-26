@@ -1,5 +1,5 @@
 {
-  "_comment": "Главный конфиг сайта Pass Exam USA. Меняй цены, ссылки, акции прямо здесь.",
+  "_comment": "ÐÐ»Ð°Ð²Ð½ÑÐ¹ ÐºÐ¾Ð½ÑÐ¸Ð³ ÑÐ°Ð¹ÑÐ° Pass Exam USA. ÐÐµÐ½ÑÐ¹ ÑÐµÐ½Ñ, ÑÑÑÐ»ÐºÐ¸, Ð°ÐºÑÐ¸Ð¸ Ð¿ÑÑÐ¼Ð¾ Ð·Ð´ÐµÑÑ.",
   "products": {
     "real_estate": {
       "title": "Real Estate License",
@@ -7,14 +7,36 @@
       "currency": "$",
       "status": "available",
       "stores": {
-        "app_store":   { "url": "", "enabled": false },
-        "google_play": { "url": "", "enabled": false }
+        "app_store": {
+          "url": "",
+          "enabled": false
+        },
+        "google_play": {
+          "url": "",
+          "enabled": false
+        }
       },
       "payment_links": {
-        "patreon":      { "url": "", "enabled": false, "label": "Buy on Patreon" },
-        "lemonsqueezy": { "url": "", "enabled": false, "label": "Buy via Lemon Squeezy" },
-        "gumroad":      { "url": "", "enabled": false, "label": "Buy on Gumroad" },
-        "telegram":     { "url": "", "enabled": false, "label": "Pay via Telegram" }
+        "patreon": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy on Patreon"
+        },
+        "lemonsqueezy": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy via Lemon Squeezy"
+        },
+        "gumroad": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy on Gumroad"
+        },
+        "telegram": {
+          "url": "",
+          "enabled": false,
+          "label": "Pay via Telegram"
+        }
       }
     },
     "cdl": {
@@ -23,14 +45,36 @@
       "currency": "$",
       "status": "available",
       "stores": {
-        "app_store":   { "url": "", "enabled": false },
-        "google_play": { "url": "", "enabled": false }
+        "app_store": {
+          "url": "",
+          "enabled": false
+        },
+        "google_play": {
+          "url": "",
+          "enabled": false
+        }
       },
       "payment_links": {
-        "patreon":      { "url": "", "enabled": false, "label": "Buy on Patreon" },
-        "lemonsqueezy": { "url": "", "enabled": false, "label": "Buy via Lemon Squeezy" },
-        "gumroad":      { "url": "", "enabled": false, "label": "Buy on Gumroad" },
-        "telegram":     { "url": "", "enabled": false, "label": "Pay via Telegram" }
+        "patreon": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy on Patreon"
+        },
+        "lemonsqueezy": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy via Lemon Squeezy"
+        },
+        "gumroad": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy on Gumroad"
+        },
+        "telegram": {
+          "url": "",
+          "enabled": false,
+          "label": "Pay via Telegram"
+        }
       }
     },
     "dmv": {
@@ -39,14 +83,36 @@
       "currency": "$",
       "status": "available",
       "stores": {
-        "app_store":   { "url": "", "enabled": false },
-        "google_play": { "url": "", "enabled": false }
+        "app_store": {
+          "url": "",
+          "enabled": false
+        },
+        "google_play": {
+          "url": "",
+          "enabled": false
+        }
       },
       "payment_links": {
-        "patreon":      { "url": "", "enabled": false, "label": "Buy on Patreon" },
-        "lemonsqueezy": { "url": "", "enabled": false, "label": "Buy via Lemon Squeezy" },
-        "gumroad":      { "url": "", "enabled": false, "label": "Buy on Gumroad" },
-        "telegram":     { "url": "", "enabled": false, "label": "Pay via Telegram" }
+        "patreon": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy on Patreon"
+        },
+        "lemonsqueezy": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy via Lemon Squeezy"
+        },
+        "gumroad": {
+          "url": "",
+          "enabled": false,
+          "label": "Buy on Gumroad"
+        },
+        "telegram": {
+          "url": "",
+          "enabled": false,
+          "label": "Pay via Telegram"
+        }
       }
     }
   },
