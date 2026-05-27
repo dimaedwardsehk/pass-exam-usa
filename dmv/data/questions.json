@@ -1,0 +1,2402 @@
+[
+  {
+    "id": 1,
+    "category": "Road Signs",
+    "text": "What does a red octagonal sign mean?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yield to traffic"
+      },
+      {
+        "id": "B",
+        "text": "Complete stop required"
+      },
+      {
+        "id": "C",
+        "text": "Slow down"
+      },
+      {
+        "id": "D",
+        "text": "Speed limit"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 2,
+    "category": "Road Signs",
+    "text": "A steady yellow traffic light means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Floor it"
+      },
+      {
+        "id": "B",
+        "text": "Prepare to stop safely"
+      },
+      {
+        "id": "C",
+        "text": "Stop and wait 5 minutes"
+      },
+      {
+        "id": "D",
+        "text": "Turn right only"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 3,
+    "category": "Road Signs",
+    "text": "This sign means you are near a:",
+    "options": [
+      {
+        "id": "A",
+        "text": "School. Watch for children"
+      },
+      {
+        "id": "B",
+        "text": "Playground ahead"
+      },
+      {
+        "id": "C",
+        "text": "Pedestrian crossing only for adults"
+      },
+      {
+        "id": "D",
+        "text": "Buses stop here"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 4,
+    "category": "Road Signs",
+    "text": "What does this sign prohibit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Making a right turn"
+      },
+      {
+        "id": "B",
+        "text": "Making a left turn"
+      },
+      {
+        "id": "C",
+        "text": "Making a U-turn"
+      },
+      {
+        "id": "D",
+        "text": "Stopping"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 5,
+    "category": "Road Signs",
+    "text": "This sign indicates the road ahead is:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Divided"
+      },
+      {
+        "id": "B",
+        "text": "You are on a one-way street"
+      },
+      {
+        "id": "C",
+        "text": "Two-way traffic ahead"
+      },
+      {
+        "id": "D",
+        "text": "Lane ends. Merge left"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 6,
+    "category": "Road Signs",
+    "text": "A green light means you can:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Go, but only if the intersection is clear"
+      },
+      {
+        "id": "B",
+        "text": "Stop and wait"
+      },
+      {
+        "id": "C",
+        "text": "Speed up to pass"
+      },
+      {
+        "id": "D",
+        "text": "Turn around"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 7,
+    "category": "Road Signs",
+    "text": "This sign warns that:",
+    "options": [
+      {
+        "id": "A",
+        "text": "The road is always wet"
+      },
+      {
+        "id": "B",
+        "text": "The road surface is slippery when wet"
+      },
+      {
+        "id": "C",
+        "text": "There is a car wash ahead"
+      },
+      {
+        "id": "D",
+        "text": "The road is for boats only"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 8,
+    "category": "Road Signs",
+    "text": "This sign warns you about:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A sharp turn to the right"
+      },
+      {
+        "id": "B",
+        "text": "A winding road ahead"
+      },
+      {
+        "id": "C",
+        "text": "A roundabout"
+      },
+      {
+        "id": "D",
+        "text": "A road closure"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 9,
+    "category": "Road Signs",
+    "text": "This sign means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "All traffic must go straight"
+      },
+      {
+        "id": "B",
+        "text": "Do not enter one-way street"
+      },
+      {
+        "id": "C",
+        "text": "No turns allowed"
+      },
+      {
+        "id": "D",
+        "text": "Do not enter"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 10,
+    "category": "Road Signs",
+    "text": "What should you do when you see this sign?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prepare for a change in traffic direction"
+      },
+      {
+        "id": "B",
+        "text": "Slow down for a sharp turn"
+      },
+      {
+        "id": "C",
+        "text": "Stop and wait for oncoming traffic"
+      },
+      {
+        "id": "D",
+        "text": "The road ahead is closed"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 11,
+    "category": "Road Signs",
+    "text": "A solid white line on the right edge of the highway slants in towards your left. That shows that:",
+    "options": [
+      {
+        "id": "A",
+        "text": "There is an intersection just ahead"
+      },
+      {
+        "id": "B",
+        "text": "You are approaching a construction area"
+      },
+      {
+        "id": "C",
+        "text": "The road will get narrower"
+      },
+      {
+        "id": "D",
+        "text": "You must exit the freeway"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 12,
+    "category": "Road Signs",
+    "text": "If a traffic signal is not working, you should treat the intersection as:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A four-way stop"
+      },
+      {
+        "id": "B",
+        "text": "An uncontrolled intersection"
+      },
+      {
+        "id": "C",
+        "text": "A yield sign"
+      },
+      {
+        "id": "D",
+        "text": "A green light"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 13,
+    "category": "Road Signs",
+    "text": "This sign warns of:",
+    "options": [
+      {
+        "id": "A",
+        "text": "An upcoming traffic signal"
+      },
+      {
+        "id": "B",
+        "text": "A stop sign ahead"
+      },
+      {
+        "id": "C",
+        "text": "A railroad crossing"
+      },
+      {
+        "id": "D",
+        "text": "A school crossing"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 14,
+    "category": "Road Signs",
+    "text": "This sign indicates:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A sharp turn to the left"
+      },
+      {
+        "id": "B",
+        "text": "A sharp turn to the right"
+      },
+      {
+        "id": "C",
+        "text": "The road curves ahead"
+      },
+      {
+        "id": "D",
+        "text": "A roundabout is ahead"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 15,
+    "category": "Road Signs",
+    "text": "When a school bus with its red lights flashing is stopped ahead on your side of the road, you must:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stop until the lights stop flashing"
+      },
+      {
+        "id": "B",
+        "text": "Slow down and pass carefully"
+      },
+      {
+        "id": "C",
+        "text": "Change lanes and pass"
+      },
+      {
+        "id": "D",
+        "text": "Stop. Then proceed when you think it is safe"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 16,
+    "category": "Road Signs",
+    "text": "A flashing red traffic light at an intersection means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stop before entering"
+      },
+      {
+        "id": "B",
+        "text": "Slow down before entering"
+      },
+      {
+        "id": "C",
+        "text": "Wait for the green light"
+      },
+      {
+        "id": "D",
+        "text": "Stop and wait for a police officer"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 17,
+    "category": "Road Signs",
+    "text": "This sign is used to inform drivers about:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A parking spot for persons with disabilities"
+      },
+      {
+        "id": "B",
+        "text": "A hospital ahead"
+      },
+      {
+        "id": "C",
+        "text": "A rest area"
+      },
+      {
+        "id": "D",
+        "text": "A bus stop"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 18,
+    "category": "Road Signs",
+    "text": "What does this sign mean?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pedestrians must run"
+      },
+      {
+        "id": "B",
+        "text": "Pedestrian crossing ahead"
+      },
+      {
+        "id": "C",
+        "text": "Pedestrians are not allowed to cross here"
+      },
+      {
+        "id": "D",
+        "text": "Use crosswalk with caution"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 19,
+    "category": "Road Signs",
+    "text": "This sign warns that you are:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Leaving a one-way street and will be entering a street with oncoming traffic"
+      },
+      {
+        "id": "B",
+        "text": "A dead end"
+      },
+      {
+        "id": "C",
+        "text": "A divider"
+      },
+      {
+        "id": "D",
+        "text": "A toll booth"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 20,
+    "category": "Road Signs",
+    "text": "This sign is a:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stop sign"
+      },
+      {
+        "id": "B",
+        "text": "Yield sign"
+      },
+      {
+        "id": "C",
+        "text": "Slow-moving vehicle emblem"
+      },
+      {
+        "id": "D",
+        "text": "Construction sign"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 21,
+    "category": "Road Signs",
+    "text": "This regulatory sign means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Right turns are not allowed"
+      },
+      {
+        "id": "B",
+        "text": "You must make a right turn"
+      },
+      {
+        "id": "C",
+        "text": "A sharp right turn is ahead"
+      },
+      {
+        "id": "D",
+        "text": "Right lane ends"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 22,
+    "category": "Road Signs",
+    "text": "Before changing lanes, you must:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Check your mirrors"
+      },
+      {
+        "id": "B",
+        "text": "Look over your shoulder into your blind spot"
+      },
+      {
+        "id": "C",
+        "text": "Signal your intention"
+      },
+      {
+        "id": "D",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 23,
+    "category": "Road Signs",
+    "text": "A flashing yellow traffic light means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stop and wait for it to turn green"
+      },
+      {
+        "id": "B",
+        "text": "Proceed with caution"
+      },
+      {
+        "id": "C",
+        "text": "The light is about to turn red"
+      },
+      {
+        "id": "D",
+        "text": "Yield to all traffic"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 24,
+    "category": "Road Signs",
+    "text": "This sign indicates that:",
+    "options": [
+      {
+        "id": "A",
+        "text": "The road narrows"
+      },
+      {
+        "id": "B",
+        "text": "You must merge"
+      },
+      {
+        "id": "C",
+        "text": "Traffic from another road will be entering your lane"
+      },
+      {
+        "id": "D",
+        "text": "The right lane is ending"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 25,
+    "category": "Road Signs",
+    "text": "Two sets of solid double yellow lines that are two or more feet apart:",
+    "options": [
+      {
+        "id": "A",
+        "text": "May be crossed to enter or exit a private driveway"
+      },
+      {
+        "id": "B",
+        "text": "May not be crossed for any reason"
+      },
+      {
+        "id": "C",
+        "text": "Should be treated as a separate traffic lane"
+      },
+      {
+        "id": "D",
+        "text": "Designate a passing zone"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 26,
+    "category": "Traffic Laws",
+    "text": "At a yield sign, you must:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stop no matter what"
+      },
+      {
+        "id": "B",
+        "text": "Speed up to merge"
+      },
+      {
+        "id": "C",
+        "text": "Give right of way if needed"
+      },
+      {
+        "id": "D",
+        "text": "Honk and proceed"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 27,
+    "category": "Traffic Laws",
+    "text": "You must notify the DMV within 5 days if you:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sell or transfer your vehicle"
+      },
+      {
+        "id": "B",
+        "text": "Get a new prescription for glasses"
+      },
+      {
+        "id": "C",
+        "text": "Paint your vehicle a different color"
+      },
+      {
+        "id": "D",
+        "text": "Get a new pet"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 28,
+    "category": "Traffic Laws",
+    "text": "If you are involved in a traffic collision, you are required to complete and submit a written report SR1 to the DMV if:",
+    "options": [
+      {
+        "id": "A",
+        "text": "You are at fault"
+      },
+      {
+        "id": "B",
+        "text": "There is property damage in excess of $1,000 or any injuries"
+      },
+      {
+        "id": "C",
+        "text": "Your vehicle is towed"
+      },
+      {
+        "id": "D",
+        "text": "The other driver does not have insurance"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 29,
+    "category": "Traffic Laws",
+    "text": "When you see a pedestrian with a white cane or guide dog, you should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Honk to let them know you are there"
+      },
+      {
+        "id": "B",
+        "text": "Stop and give them the right of way"
+      },
+      {
+        "id": "C",
+        "text": "Slow down and proceed around them"
+      },
+      {
+        "id": "D",
+        "text": "Tell them when it is safe to cross"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 30,
+    "category": "Traffic Laws",
+    "text": "When can you legally drive in a bike lane?",
+    "options": [
+      {
+        "id": "A",
+        "text": "When you are within 200 ft of a cross street where you plan to turn right"
+      },
+      {
+        "id": "B",
+        "text": "As a regular traffic lane during rush hour"
+      },
+      {
+        "id": "C",
+        "text": "To pass a vehicle turning left"
+      },
+      {
+        "id": "D",
+        "text": "Never"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 31,
+    "category": "Traffic Laws",
+    "text": "To avoid last-minute moves, you should be looking down the road to where your vehicle will be in about:",
+    "options": [
+      {
+        "id": "A",
+        "text": "5 to 10 seconds"
+      },
+      {
+        "id": "B",
+        "text": "10 to 15 seconds"
+      },
+      {
+        "id": "C",
+        "text": "15 to 20 seconds"
+      },
+      {
+        "id": "D",
+        "text": "20 to 25 seconds"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 32,
+    "category": "Traffic Laws",
+    "text": "What is the first thing to do when you are involved in a collision?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Move your vehicle out of traffic if possible"
+      },
+      {
+        "id": "B",
+        "text": "Call your insurance company"
+      },
+      {
+        "id": "C",
+        "text": "Stop and check for injuries"
+      },
+      {
+        "id": "D",
+        "text": "Exchange information with the other driver"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 33,
+    "category": "Traffic Laws",
+    "text": "In California, a person must be at least what age to obtain a provisional driver's license?",
+    "options": [
+      {
+        "id": "A",
+        "text": "15 years old"
+      },
+      {
+        "id": "B",
+        "text": "16 years old"
+      },
+      {
+        "id": "C",
+        "text": "17 years old"
+      },
+      {
+        "id": "D",
+        "text": "18 years old"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 34,
+    "category": "Traffic Laws",
+    "text": "A driver extending their left arm downward indicates they are:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Making a right turn"
+      },
+      {
+        "id": "B",
+        "text": "Making a left turn"
+      },
+      {
+        "id": "C",
+        "text": "Stopping or slowing down"
+      },
+      {
+        "id": "D",
+        "text": "About to change lanes"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 35,
+    "category": "Traffic Laws",
+    "text": "You must report a traffic accident to the DMV if:",
+    "options": [
+      {
+        "id": "A",
+        "text": "There is more than $1,000 in damage, or if anyone was injured or killed"
+      },
+      {
+        "id": "B",
+        "text": "Your vehicle requires towing"
+      },
+      {
+        "id": "C",
+        "text": "It was the other driver's fault"
+      },
+      {
+        "id": "D",
+        "text": "It happens on a freeway"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 36,
+    "category": "Traffic Laws",
+    "text": "At an intersection with a crosswalk where there are no traffic signals, you must yield the right-of-way to:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vehicles that arrive first"
+      },
+      {
+        "id": "B",
+        "text": "Pedestrians in the crosswalk"
+      },
+      {
+        "id": "C",
+        "text": "Bicycles in the crosswalk"
+      },
+      {
+        "id": "D",
+        "text": "Vehicles on your right"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 37,
+    "category": "Traffic Laws",
+    "text": "At a 4-way stop, if two cars arrive at the same time, who has the right-of-way?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The car on the left"
+      },
+      {
+        "id": "B",
+        "text": "The car on the right"
+      },
+      {
+        "id": "C",
+        "text": "The larger car"
+      },
+      {
+        "id": "D",
+        "text": "The car going straight"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 38,
+    "category": "Traffic Laws",
+    "text": "In California, using a handheld cell phone while driving is:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Allowed if you are over 18"
+      },
+      {
+        "id": "B",
+        "text": "Allowed during daylight hours"
+      },
+      {
+        "id": "C",
+        "text": "Illegal, unless for emergency purposes"
+      },
+      {
+        "id": "D",
+        "text": "Legal if traffic is light"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 39,
+    "category": "Traffic Laws",
+    "text": "Tailgating other drivers (driving too close to their rear bumper):",
+    "options": [
+      {
+        "id": "A",
+        "text": "Can frustrate other drivers and make them angry"
+      },
+      {
+        "id": "B",
+        "text": "Reduces the time you have to react"
+      },
+      {
+        "id": "C",
+        "text": "Is illegal"
+      },
+      {
+        "id": "D",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 40,
+    "category": "Traffic Laws",
+    "text": "You have been involved in a minor traffic collision with a parked vehicle and you can't find the owner. You must:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Leave a note with your name, address, and phone number"
+      },
+      {
+        "id": "B",
+        "text": "Report it to the police immediately"
+      },
+      {
+        "id": "C",
+        "text": "Wait for the owner to return"
+      },
+      {
+        "id": "D",
+        "text": "Take photos and leave"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 41,
+    "category": "Traffic Laws",
+    "text": "When is it legal to use a cell phone without a hands-free device while driving?",
+    "options": [
+      {
+        "id": "A",
+        "text": "When traffic is light"
+      },
+      {
+        "id": "B",
+        "text": "When making a call for emergency assistance"
+      },
+      {
+        "id": "C",
+        "text": "When you are over 18"
+      },
+      {
+        "id": "D",
+        "text": "Never"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 42,
+    "category": "Traffic Laws",
+    "text": "If you are involved in a collision, you must exchange with the other person(s) your driver license info, proof of insurance, vehicle registration, and:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Your phone number"
+      },
+      {
+        "id": "B",
+        "text": "Your home address"
+      },
+      {
+        "id": "C",
+        "text": "Your work address"
+      },
+      {
+        "id": "D",
+        "text": "Your current address"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 43,
+    "category": "Traffic Laws",
+    "text": "U-turns in residential districts are legal:",
+    "options": [
+      {
+        "id": "A",
+        "text": "At intersections, unless a sign prohibits it"
+      },
+      {
+        "id": "B",
+        "text": "Across two sets of double yellow lines"
+      },
+      {
+        "id": "C",
+        "text": "In front of a fire station"
+      },
+      {
+        "id": "D",
+        "text": "On a one-way street"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 44,
+    "category": "Traffic Laws",
+    "text": "A person between 13 and 21, convicted of an alcohol-related offense, can have their license suspended for:",
+    "options": [
+      {
+        "id": "A",
+        "text": "30 days"
+      },
+      {
+        "id": "B",
+        "text": "6 months"
+      },
+      {
+        "id": "C",
+        "text": "1 year"
+      },
+      {
+        "id": "D",
+        "text": "2 years"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 45,
+    "category": "Traffic Laws",
+    "text": "What is the purpose of a turnout lane on a two-lane road?",
+    "options": [
+      {
+        "id": "A",
+        "text": "For making U-turns"
+      },
+      {
+        "id": "B",
+        "text": "For passing slower vehicles"
+      },
+      {
+        "id": "C",
+        "text": "To allow faster traffic to pass"
+      },
+      {
+        "id": "D",
+        "text": "For stopping in an emergency"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 46,
+    "category": "Traffic Laws",
+    "text": "A driver who is a minor receives a phone call on their cell phone. They should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Answer it if it's from their parents"
+      },
+      {
+        "id": "B",
+        "text": "Not answer the call"
+      },
+      {
+        "id": "C",
+        "text": "Pull over to answer the call"
+      },
+      {
+        "id": "D",
+        "text": "Answer if they use a hands-free device"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 47,
+    "category": "Traffic Laws",
+    "text": "You can be fined up to $1,000 and jailed for 6 months if you are cited for:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Making an illegal U-turn"
+      },
+      {
+        "id": "B",
+        "text": "Dumping or abandoning an animal on a highway"
+      },
+      {
+        "id": "C",
+        "text": "Speeding in a construction zone"
+      },
+      {
+        "id": "D",
+        "text": "Not wearing a seat belt"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 48,
+    "category": "Traffic Laws",
+    "text": "You are driving on a freeway posted for 65 mph. Most of the other vehicles are driving 70 mph or faster. You may legally drive:",
+    "options": [
+      {
+        "id": "A",
+        "text": "70 mph or faster to keep up with traffic"
+      },
+      {
+        "id": "B",
+        "text": "Between 65 and 70 mph"
+      },
+      {
+        "id": "C",
+        "text": "No faster than 65 mph"
+      },
+      {
+        "id": "D",
+        "text": "Whatever the other cars are driving"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 49,
+    "category": "Traffic Laws",
+    "text": "This is a four-way stop sign. It means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "The first vehicle to arrive goes first"
+      },
+      {
+        "id": "B",
+        "text": "Traffic from the right has the right of way"
+      },
+      {
+        "id": "C",
+        "text": "You must stop and then you may proceed"
+      },
+      {
+        "id": "D",
+        "text": "All traffic must stop then proceed in order"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 50,
+    "category": "Traffic Laws",
+    "text": "If you are a minor, you can use your cell phone:",
+    "options": [
+      {
+        "id": "A",
+        "text": "To make a call in an emergency situation"
+      },
+      {
+        "id": "B",
+        "text": "To text a friend if it's urgent"
+      },
+      {
+        "id": "C",
+        "text": "To change your music"
+      },
+      {
+        "id": "D",
+        "text": "To check a map"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 51,
+    "category": "Safe Driving",
+    "text": "When you see this sign, you should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stop, look, and listen for a train"
+      },
+      {
+        "id": "B",
+        "text": "Increase your speed"
+      },
+      {
+        "id": "C",
+        "text": "Expect a traffic light ahead"
+      },
+      {
+        "id": "D",
+        "text": "Honk your horn"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 52,
+    "category": "Safe Driving",
+    "text": "The number on this sign represents the:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Minimum legal speed"
+      },
+      {
+        "id": "B",
+        "text": "Maximum legal speed"
+      },
+      {
+        "id": "C",
+        "text": "Recommended speed"
+      },
+      {
+        "id": "D",
+        "text": "Highway number"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 53,
+    "category": "Safe Driving",
+    "text": "When you are merging onto the freeway, you should be driving at:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Or near the same speed as the traffic on the freeway"
+      },
+      {
+        "id": "B",
+        "text": "5 to 10 mph slower than the traffic on the freeway"
+      },
+      {
+        "id": "C",
+        "text": "15 to 20 mph slower than the traffic on the freeway"
+      },
+      {
+        "id": "D",
+        "text": "The posted speed limit for unramped traffic"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 54,
+    "category": "Safe Driving",
+    "text": "You should use your horn when:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Another driver makes a mistake"
+      },
+      {
+        "id": "B",
+        "text": "You are angry"
+      },
+      {
+        "id": "C",
+        "text": "It is necessary to avoid a collision"
+      },
+      {
+        "id": "D",
+        "text": "You want to greet another driver"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 55,
+    "category": "Safe Driving",
+    "text": "If you are driving and a dust storm blows across the freeway causing reduced visibility, you should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Slow down, turn on your headlights, and pull off the road"
+      },
+      {
+        "id": "B",
+        "text": "Speed up to get through it quickly"
+      },
+      {
+        "id": "C",
+        "text": "Stop in your lane"
+      },
+      {
+        "id": "D",
+        "text": "Turn on your hazard lights and continue at the same speed"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 56,
+    "category": "Safe Driving",
+    "text": "You must use your headlights:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Between sunrise and sunset only during nighttime hours"
+      },
+      {
+        "id": "B",
+        "text": "30 minutes after sunset until 30 minutes before sunrise"
+      },
+      {
+        "id": "C",
+        "text": "Only when it is raining"
+      },
+      {
+        "id": "D",
+        "text": "When visibility is low"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 57,
+    "category": "Safe Driving",
+    "text": "When you see or hear an emergency vehicle with a siren and flashing lights, you must:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Slow down and continue driving"
+      },
+      {
+        "id": "B",
+        "text": "Pull over to the right edge of the road and stop"
+      },
+      {
+        "id": "C",
+        "text": "Speed up to stay out of the way"
+      },
+      {
+        "id": "D",
+        "text": "Follow the emergency vehicle"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 58,
+    "category": "Safe Driving",
+    "text": "Before entering an intersection, you should look:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Straight ahead only"
+      },
+      {
+        "id": "B",
+        "text": "To the left, then right"
+      },
+      {
+        "id": "C",
+        "text": "To the left, then right, then left again"
+      },
+      {
+        "id": "D",
+        "text": "In your rear view mirror"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 59,
+    "category": "Safe Driving",
+    "text": "Hydroplaning is when:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Your tires lose contact with the road on a wet surface"
+      },
+      {
+        "id": "B",
+        "text": "You drive on a road covered in ice"
+      },
+      {
+        "id": "C",
+        "text": "Your brakes fail on a steep hill"
+      },
+      {
+        "id": "D",
+        "text": "Your engine overheats in hot weather"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 60,
+    "category": "Safe Driving",
+    "text": "If your accelerator (gas pedal) sticks, what is the first thing you should do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reach down and pull the pedal up"
+      },
+      {
+        "id": "B",
+        "text": "Turn off the engine immediately"
+      },
+      {
+        "id": "C",
+        "text": "Shift to neutral and apply the brakes"
+      },
+      {
+        "id": "D",
+        "text": "Honk your horn and flash your lights"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 61,
+    "category": "Safe Driving",
+    "text": "This sign indicates a lane reserved for:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Buses and taxis only"
+      },
+      {
+        "id": "B",
+        "text": "Emergency vehicles only"
+      },
+      {
+        "id": "C",
+        "text": "High-Occupancy Vehicles (HOV)"
+      },
+      {
+        "id": "D",
+        "text": "Left turns only"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 62,
+    "category": "Safe Driving",
+    "text": "If your vehicle begins to skid on a slippery surface, you should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Slam on the brakes hard"
+      },
+      {
+        "id": "B",
+        "text": "Turn the steering wheel in the opposite direction of the skid"
+      },
+      {
+        "id": "C",
+        "text": "Take your foot off the accelerator and steer in the direction you want to go"
+      },
+      {
+        "id": "D",
+        "text": "Accelerate slightly to regain traction"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 63,
+    "category": "Safe Driving",
+    "text": "When driving near a large truck, you should avoid the areas on its sides and rear where the truck driver cannot see you. These areas are called:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Danger Zones"
+      },
+      {
+        "id": "B",
+        "text": "No-Zones"
+      },
+      {
+        "id": "C",
+        "text": "Truck Alleys"
+      },
+      {
+        "id": "D",
+        "text": "Slow Spots"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 64,
+    "category": "Safe Driving",
+    "text": "You should allow more space when following a motorcycle because:",
+    "options": [
+      {
+        "id": "A",
+        "text": "They are less stable and can stop quickly"
+      },
+      {
+        "id": "B",
+        "text": "They may swerve to avoid road hazards"
+      },
+      {
+        "id": "C",
+        "text": "They are harder to see than cars"
+      },
+      {
+        "id": "D",
+        "text": "All of the above"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 65,
+    "category": "Safe Driving",
+    "text": "You must use your headlights when visibility is less than:",
+    "options": [
+      {
+        "id": "A",
+        "text": "500 feet"
+      },
+      {
+        "id": "B",
+        "text": "1,000 feet"
+      },
+      {
+        "id": "C",
+        "text": "2,000 feet"
+      },
+      {
+        "id": "D",
+        "text": "1 mile"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 66,
+    "category": "Safe Driving",
+    "text": "You see a pedestrian with a white cane at the corner ready to cross the street. You should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Honk to let them know you are there"
+      },
+      {
+        "id": "B",
+        "text": "Stop and let them cross"
+      },
+      {
+        "id": "C",
+        "text": "Slow down and drive around them"
+      },
+      {
+        "id": "D",
+        "text": "Tell them when it is safe to cross"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 67,
+    "category": "Safe Driving",
+    "text": "When you are being passed by another vehicle, you should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Speed up"
+      },
+      {
+        "id": "B",
+        "text": "Move to the left"
+      },
+      {
+        "id": "C",
+        "text": "Maintain your speed and lane position"
+      },
+      {
+        "id": "D",
+        "text": "Brake suddenly"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 68,
+    "category": "Safe Driving",
+    "text": "This sign prohibits:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pedestrians"
+      },
+      {
+        "id": "B",
+        "text": "Bicycles"
+      },
+      {
+        "id": "C",
+        "text": "Motorcycles"
+      },
+      {
+        "id": "D",
+        "text": "All motor vehicles"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 69,
+    "category": "Safe Driving",
+    "text": "When driving at night on a dimly lit street, you should:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Drive with your high beams on"
+      },
+      {
+        "id": "B",
+        "text": "Keep instrument lights bright to be more alert"
+      },
+      {
+        "id": "C",
+        "text": "Drive slowly enough to stop within the area lit by your headlights"
+      },
+      {
+        "id": "D",
+        "text": "Drive close to the car ahead"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 70,
+    "category": "Safe Driving",
+    "text": "You are on a freeway posted for 65 MPH. Traffic is heavy and moving at 35 MPH. The best speed for your vehicle is:",
+    "options": [
+      {
+        "id": "A",
+        "text": "65 MPH, the posted speed limit"
+      },
+      {
+        "id": "B",
+        "text": "35 MPH, to go with the flow of traffic"
+      },
+      {
+        "id": "C",
+        "text": "50 MPH, a middle ground"
+      },
+      {
+        "id": "D",
+        "text": "25 MPH, to be extra safe"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 71,
+    "category": "Parking Rules",
+    "text": "When parking uphill on a two-way street with no curb, your front wheels should be turned:",
+    "options": [
+      {
+        "id": "A",
+        "text": "To the left toward the street"
+      },
+      {
+        "id": "B",
+        "text": "To the right away from the street"
+      },
+      {
+        "id": "C",
+        "text": "Straight ahead"
+      },
+      {
+        "id": "D",
+        "text": "It does not matter"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 72,
+    "category": "Parking Rules",
+    "text": "You may legally park in front of a driveway:",
+    "options": [
+      {
+        "id": "A",
+        "text": "If you are only there for a few minutes"
+      },
+      {
+        "id": "B",
+        "text": "Under no circumstances"
+      },
+      {
+        "id": "C",
+        "text": "If the owner of the driveway says it's okay"
+      },
+      {
+        "id": "D",
+        "text": "If you leave your hazard lights on"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 73,
+    "category": "Parking Rules",
+    "text": "A curb painted blue means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Parking for disabled persons with a placard"
+      },
+      {
+        "id": "B",
+        "text": "Loading zone for passengers or mail only"
+      },
+      {
+        "id": "C",
+        "text": "Loading zone for freight or passengers"
+      },
+      {
+        "id": "D",
+        "text": "No stopping or parking"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 74,
+    "category": "Parking Rules",
+    "text": "A curb painted red means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Stopping or parking is not allowed"
+      },
+      {
+        "id": "B",
+        "text": "Parking for disabled persons"
+      },
+      {
+        "id": "C",
+        "text": "Passenger loading zone"
+      },
+      {
+        "id": "D",
+        "text": "Commercial loading zone"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 75,
+    "category": "Parking Rules",
+    "text": "When two vehicles meet on a steep mountain road where neither can pass, which vehicle has the right of way?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The vehicle going downhill"
+      },
+      {
+        "id": "B",
+        "text": "The vehicle going uphill"
+      },
+      {
+        "id": "C",
+        "text": "The vehicle that arrived first"
+      },
+      {
+        "id": "D",
+        "text": "The larger vehicle"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 76,
+    "category": "Parking Rules",
+    "text": "A curb painted yellow means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "No stopping or parking"
+      },
+      {
+        "id": "B",
+        "text": "Stop to load or unload freight or passengers for a stated time"
+      },
+      {
+        "id": "C",
+        "text": "Parking for disabled persons"
+      },
+      {
+        "id": "D",
+        "text": "You may stop to mail a letter"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 77,
+    "category": "Parking Rules",
+    "text": "When parking your vehicle parallel to the curb on a level street:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Your front wheels must be turned toward the street"
+      },
+      {
+        "id": "B",
+        "text": "Your wheels must be within 18 inches of the curb"
+      },
+      {
+        "id": "C",
+        "text": "Your wheels must be touching the curb"
+      },
+      {
+        "id": "D",
+        "text": "Your rear wheels must be touching the curb"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 78,
+    "category": "Parking Rules",
+    "text": "What is the 'Three Feet for Safety' Act?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Requires drivers to give bicyclists at least three feet of space when passing"
+      },
+      {
+        "id": "B",
+        "text": "Requires bicyclists to ride single file"
+      },
+      {
+        "id": "C",
+        "text": "Requires a three-foot space between parked cars"
+      },
+      {
+        "id": "D",
+        "text": "Requires drivers to stop three feet behind a crosswalk"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 79,
+    "category": "Parking Rules",
+    "text": "When you park alongside a curb on a level street, your wheels must be within ___ of the curb.",
+    "options": [
+      {
+        "id": "A",
+        "text": "6 inches"
+      },
+      {
+        "id": "B",
+        "text": "12 inches"
+      },
+      {
+        "id": "C",
+        "text": "18 inches"
+      },
+      {
+        "id": "D",
+        "text": "24 inches"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 80,
+    "category": "Parking Rules",
+    "text": "When parking uphill with a curb, you should turn your wheels:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Toward the curb"
+      },
+      {
+        "id": "B",
+        "text": "Away from the curb"
+      },
+      {
+        "id": "C",
+        "text": "Parallel to the curb"
+      },
+      {
+        "id": "D",
+        "text": "Any direction is fine"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 81,
+    "category": "Parking Rules",
+    "text": "You may legally park your car in front of a driveway:",
+    "options": [
+      {
+        "id": "A",
+        "text": "If you are there for less than 10 minutes"
+      },
+      {
+        "id": "B",
+        "text": "Under no circumstances"
+      },
+      {
+        "id": "C",
+        "text": "If the owner gives you permission"
+      },
+      {
+        "id": "D",
+        "text": "If it's your own driveway"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 82,
+    "category": "Parking Rules",
+    "text": "When parking on a hill with a curb, facing uphill, you should turn your front wheels:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Toward the curb"
+      },
+      {
+        "id": "B",
+        "text": "Away from the curb"
+      },
+      {
+        "id": "C",
+        "text": "Straight ahead"
+      },
+      {
+        "id": "D",
+        "text": "It doesn't matter"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 83,
+    "category": "Parking Rules",
+    "text": "A curb painted green means:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disabled parking"
+      },
+      {
+        "id": "B",
+        "text": "Loading zone"
+      },
+      {
+        "id": "C",
+        "text": "Parking for a limited time"
+      },
+      {
+        "id": "D",
+        "text": "No parking"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 84,
+    "category": "Alcohol & DUI",
+    "text": "It is illegal for a person 21 years of age or older to drive with a blood alcohol concentration (BAC) that is:",
+    "options": [
+      {
+        "id": "A",
+        "text": "0.08% or higher"
+      },
+      {
+        "id": "B",
+        "text": "0.05%"
+      },
+      {
+        "id": "C",
+        "text": "0.10%"
+      },
+      {
+        "id": "D",
+        "text": "0.01%"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 85,
+    "category": "Alcohol & DUI",
+    "text": "It is illegal for a person under 21 years of age to drive with a Blood Alcohol Concentration (BAC) of:",
+    "options": [
+      {
+        "id": "A",
+        "text": "0.08% or more"
+      },
+      {
+        "id": "B",
+        "text": "0.05% or more"
+      },
+      {
+        "id": "C",
+        "text": "0.01% or more"
+      },
+      {
+        "id": "D",
+        "text": "0.10% or more"
+      }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 86,
+    "category": "Alcohol & DUI",
+    "text": "If you are convicted of driving with an excessive blood alcohol concentration (BAC), you may be sentenced to serve:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A warning for the first offense"
+      },
+      {
+        "id": "B",
+        "text": "Up to six months in jail"
+      },
+      {
+        "id": "C",
+        "text": "Community service only"
+      },
+      {
+        "id": "D",
+        "text": "A mandatory driving class"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 87,
+    "category": "Alcohol & DUI",
+    "text": "What is the implied consent law?",
+    "options": [
+      {
+        "id": "A",
+        "text": "You agree to a blood alcohol test if you are arrested for DUI"
+      },
+      {
+        "id": "B",
+        "text": "You consent to a vehicle search if pulled over"
+      },
+      {
+        "id": "C",
+        "text": "You consent to let others borrow your vehicle"
+      },
+      {
+        "id": "D",
+        "text": "You agree to always carry auto insurance"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 88,
+    "category": "Traffic Laws",
+    "text": "Which of these statements about drugs and driving is true?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Any prescription drug is safe to use if you don't feel drowsy"
+      },
+      {
+        "id": "B",
+        "text": "Even over-the-counter drugs can impair your driving"
+      },
+      {
+        "id": "C",
+        "text": "Only illegal drugs can impair your driving"
+      },
+      {
+        "id": "D",
+        "text": "A driver can be safe after one drink"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 89,
+    "category": "Traffic Laws",
+    "text": "The 3 second rule applies to the space:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Of your vehicle"
+      },
+      {
+        "id": "B",
+        "text": "To the sides"
+      },
+      {
+        "id": "C",
+        "text": "Behind"
+      },
+      {
+        "id": "D",
+        "text": "Ahead"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 90,
+    "category": "Traffic Laws",
+    "text": "You must use your seat belt:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only on the freeway"
+      },
+      {
+        "id": "B",
+        "text": "If you are the driver"
+      },
+      {
+        "id": "C",
+        "text": "If you are a passenger"
+      },
+      {
+        "id": "D",
+        "text": "And failure to do so may result in a traffic ticket"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 91,
+    "category": "Traffic Laws",
+    "text": "What is the purpose of turnout areas on a two-lane road?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To allow faster vehicles to pass"
+      },
+      {
+        "id": "B",
+        "text": "To stop and make phone calls"
+      },
+      {
+        "id": "C",
+        "text": "For emergency parking only"
+      },
+      {
+        "id": "D",
+        "text": "To make U-turns"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 92,
+    "category": "Traffic Laws",
+    "text": "It is illegal to leave a child ___ years old or younger unattended in a motor vehicle.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Five"
+      },
+      {
+        "id": "B",
+        "text": "Six"
+      },
+      {
+        "id": "C",
+        "text": "Seven"
+      },
+      {
+        "id": "D",
+        "text": "Eight"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 93,
+    "category": "Traffic Laws",
+    "text": "You must notify the DMV of a change of address within:",
+    "options": [
+      {
+        "id": "A",
+        "text": "5 days"
+      },
+      {
+        "id": "B",
+        "text": "10 days"
+      },
+      {
+        "id": "C",
+        "text": "15 days"
+      },
+      {
+        "id": "D",
+        "text": "30 days"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 94,
+    "category": "Traffic Laws",
+    "text": "In a roundabout, you should always drive in:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A clockwise direction"
+      },
+      {
+        "id": "B",
+        "text": "A counter-clockwise direction"
+      },
+      {
+        "id": "C",
+        "text": "Any direction that is shorter"
+      },
+      {
+        "id": "D",
+        "text": "The direction indicated by your GPS"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 95,
+    "category": "Traffic Laws",
+    "text": "It is illegal to have an open container of alcohol in your car, except:",
+    "options": [
+      {
+        "id": "A",
+        "text": "In the glove compartment"
+      },
+      {
+        "id": "B",
+        "text": "In the trunk"
+      },
+      {
+        "id": "C",
+        "text": "On the back seat"
+      },
+      {
+        "id": "D",
+        "text": "If the container is empty"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 96,
+    "category": "Traffic Laws",
+    "text": "You are driving on a one-way street. You may turn left onto another one-way street:",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the far left lane"
+      },
+      {
+        "id": "B",
+        "text": "From the center lane"
+      },
+      {
+        "id": "C",
+        "text": "From any lane"
+      },
+      {
+        "id": "D",
+        "text": "After stopping first"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 97,
+    "category": "Traffic Laws",
+    "text": "If you are involved in a collision, you must report it to the DMV if:",
+    "options": [
+      {
+        "id": "A",
+        "text": "There is property damage over $1,000"
+      },
+      {
+        "id": "B",
+        "text": "There is injury or death"
+      },
+      {
+        "id": "C",
+        "text": "Your vehicle is towed"
+      },
+      {
+        "id": "D",
+        "text": "Both A and B"
+      }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 98,
+    "category": "Traffic Laws",
+    "text": "It is legal to wear headphones or earbuds:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only one earbud"
+      },
+      {
+        "id": "B",
+        "text": "Never while driving"
+      },
+      {
+        "id": "C",
+        "text": "If volume low"
+      },
+      {
+        "id": "D",
+        "text": "For navigation only"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 99,
+    "category": "Road Signs",
+    "text": "A diamond-shaped sign is a:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Regulatory sign"
+      },
+      {
+        "id": "B",
+        "text": "Warning sign"
+      },
+      {
+        "id": "C",
+        "text": "Guide sign"
+      },
+      {
+        "id": "D",
+        "text": "Railroad crossing sign"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 100,
+    "category": "Road Signs",
+    "text": "This sign is used to indicate:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A place where U-turns are permitted"
+      },
+      {
+        "id": "B",
+        "text": "A roundabout ahead"
+      },
+      {
+        "id": "C",
+        "text": "A circular intersection"
+      },
+      {
+        "id": "D",
+        "text": "A one-way street"
+      }
+    ],
+    "correctAnswer": "A"
+  }
+]

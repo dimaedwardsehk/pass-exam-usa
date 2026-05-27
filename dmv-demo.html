@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DMV Practice Test — Free 10 Questions | Pass Exam USA</title>
+<meta name="description" content="Free 10-question DMV practice test with the trickiest scenarios drivers miss. Road signs, traffic laws, parking, DUI rules. Pass your Driver's License exam!">
+<link rel="canonical" href="https://dimaedwardsehk.github.io/pass-exam-usa/dmv-demo.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050A14;
+    --card: rgba(14, 21, 37, 0.92);
+    --card-2: rgba(19, 28, 48, 0.92);
+    --border: #1E2B47;
+    --accent: #3B82F6;
+    --accent-2: #2563EB;
+    --accent-deep: #1D4ED8;
+    --text: #F4F6FB;
+    --muted: #8B96AE;
+    --dim: #5A6478;
+    --good: #22C55E;
+    --good-bg: rgba(15, 42, 26, .92);
+    --bad: #EF4444;
+    --bad-bg: rgba(42, 15, 18, .92);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ========= PHONE SHELL — центрированный max-width на десктопе ========= */
+  .phone-shell {
+    position: relative;
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: var(--bg);
+    box-shadow: 0 0 80px -20px rgba(59,130,246,0.08);
+  }
+  @media (min-width: 480px) {
+    body { background: #020408; }
+    .phone-shell {
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    padding: 14px 18px 30px;
+  }
+
+  /* HEADER */
+  .top-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .brand a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .brand-mark {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: #fff; font-size: 15px;
+    box-shadow: 0 6px 18px -6px rgba(59,130,246,.45);
+  }
+  .brand-name { font-weight: 800; font-size: 16px; letter-spacing: -0.01em; }
+  .brand-sub { color: var(--muted); font-size: 11px; font-weight: 500; }
+  .badge-dl {
+    display: inline-flex; align-items: center;
+    background: rgba(59,130,246,.12);
+    border: 1px solid rgba(59,130,246,.35);
+    color: var(--accent);
+    padding: 5px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  /* HERO */
+  .hero { margin: 0 0 14px; }
+  .hero-title {
+    font-size: clamp(22px, 5vw, 28px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .hero-title .blue {
+    background: linear-gradient(180deg, #fff 0%, var(--accent) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* TOPICS RAIL */
+  .topics-rail {
+    margin: 0 0 16px;
+    display: flex; gap: 8px;
+    overflow-x: auto; overflow-y: hidden;
+    padding: 4px 2px 10px;
+    scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .topics-rail::-webkit-scrollbar { display: none; }
+  .topic-chip {
+    flex: 0 0 auto;
+    background: var(--card-2);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 8px 12px;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer; color: var(--muted);
+    font-family: inherit; font-size: 12px; font-weight: 700;
+    transition: all .15s ease;
+    backdrop-filter: blur(6px);
+    min-width: 120px;
+  }
+  .topic-chip:hover { border-color: var(--accent); color: var(--text); transform: translateY(-1px); }
+  .topic-chip .topic-emoji { font-size: 18px; line-height: 1; }
+  .topic-chip .topic-name { white-space: nowrap; }
+  .topic-chip .topic-lock { margin-left: auto; font-size: 10px; color: var(--accent); opacity: 0.6; }
+
+  /* META ROW */
+  .meta-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 8px; font-weight: 700;
+  }
+  .meta-x {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--muted); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 16px; font-family: inherit; line-height: 1;
+  }
+  .meta-x:hover { color: var(--text); border-color: var(--accent); }
+  .meta-counter { color: var(--muted); font-size: 13px; }
+  .meta-counter b { color: var(--text); }
+  .meta-pill {
+    display: inline-flex; align-items: center;
+    background: rgba(59,130,246,.10);
+    border: 1px solid rgba(59,130,246,.35);
+    color: var(--accent);
+    padding: 3px 9px; border-radius: 6px;
+    font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .meta-pts {
+    margin-left: auto; color: var(--accent);
+    font-size: 13px; font-weight: 800;
+  }
+
+  /* PROGRESS */
+  .progress-track {
+    height: 4px; background: var(--card-2); border-radius: 999px;
+    overflow: hidden; margin-bottom: 14px;
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-deep), var(--accent));
+    width: 0%; transition: width .45s cubic-bezier(.4,0,.2,1);
+  }
+
+  /* QUIZ CARD */
+  .quiz-shell {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px 16px 14px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(59,130,246,.06);
+  }
+  .q-text {
+    font-size: clamp(16px, 4vw, 19px);
+    font-weight: 700; line-height: 1.35;
+    margin: 0 0 12px; letter-spacing: -0.01em;
+  }
+
+  /* OPTIONS */
+  .options { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+  .option {
+    position: relative;
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card-2);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    cursor: pointer; text-align: left;
+    color: var(--text); font-size: 14px;
+    line-height: 1.4; font-family: inherit;
+    transition: all .15s ease; width: 100%;
+  }
+  .option:hover:not(:disabled) { border-color: var(--accent); }
+  .option:disabled { cursor: default; }
+  .opt-letter {
+    flex-shrink: 0;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,.04);
+    color: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 12px;
+    border: 1px solid var(--border);
+  }
+  .opt-text { flex: 1; }
+  .opt-icon {
+    flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+    display: none; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800; font-size: 12px;
+  }
+  .option.correct { border-color: var(--good); background: var(--good-bg); }
+  .option.correct .opt-letter { background: var(--good); border-color: var(--good); color: #fff; }
+  .option.correct .opt-icon { display: flex; background: var(--good); }
+  .option.wrong { border-color: var(--bad); background: var(--bad-bg); }
+  .option.wrong .opt-letter { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .option.wrong .opt-icon { display: flex; background: var(--bad); }
+
+  /* FEEDBACK */
+  .feedback {
+    margin: 0 0 12px;
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden; display: none;
+  }
+  .feedback.show { display: block; }
+  .feedback-header {
+    padding: 11px 13px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none; gap: 8px;
+  }
+  .feedback-title { font-weight: 800; font-size: 13px; color: var(--accent); flex: 1; }
+  .feedback.is-correct .feedback-title { color: var(--good); }
+  .feedback-toggle {
+    color: var(--muted); font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .feedback-toggle::after { content: '▾'; transition: transform .2s; }
+  .feedback.collapsed .feedback-toggle::after { transform: rotate(-90deg); }
+  .feedback-body {
+    padding: 0 13px 13px;
+    font-size: 13px; line-height: 1.5; color: var(--text);
+  }
+  .feedback.collapsed .feedback-body { display: none; }
+  .feedback-watch {
+    margin-top: 8px;
+    background: rgba(0,0,0,.2);
+    border-left: 3px solid var(--accent);
+    padding: 8px 10px;
+    border-radius: 0 8px 8px 0;
+  }
+  .feedback-watch-title {
+    color: var(--accent); font-weight: 800; font-size: 12px;
+    display: flex; align-items: center; gap: 5px; margin: 0 0 3px;
+  }
+  .feedback-watch-title::before { content: '💡'; font-size: 13px; }
+  .feedback-watch-text { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 0; }
+
+  /* NEXT BUTTON */
+  .next-btn {
+    width: 100%;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+    color: #fff; border: none; border-radius: 12px;
+    padding: 13px 20px;
+    font-size: 15px; font-weight: 800;
+    cursor: pointer; font-family: inherit;
+    letter-spacing: 0.01em;
+    transition: transform .15s, filter .2s;
+    box-shadow: 0 10px 28px -8px rgba(59,130,246,.4);
+  }
+  .next-btn:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(1.05); }
+  .next-btn:disabled { background: var(--card-2); color: var(--dim); cursor: not-allowed; box-shadow: none; }
+
+  /* RESULTS */
+  .results-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+  .score-ring { position: relative; width: 160px; height: 160px; margin: 0 auto 12px; }
+  .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .score-ring .ring-bg { stroke: rgba(255,255,255,.05); }
+  .score-ring .ring-fg { stroke: url(#blueGrad); transition: stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .score-pct {
+    font-size: 40px; font-weight: 800;
+    background: linear-gradient(180deg, #fff, var(--accent));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1; letter-spacing: -0.02em;
+  }
+  .score-label { color: var(--muted); font-size: 12px; font-weight: 600; margin-top: 4px; }
+  .score-correct { font-size: 28px; font-weight: 800; margin: 4px 0; color: var(--text); }
+  .score-correct-label { color: var(--muted); font-size: 12px; font-weight: 600; }
+  .score-verdict { color: var(--text); font-size: 14px; font-weight: 600; margin-top: 12px; }
+
+  .cta-box {
+    margin-top: 20px;
+    background: var(--card-2);
+    border: 1.5px solid var(--accent);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 0 0 1px rgba(59,130,246,.15), 0 16px 40px -16px rgba(59,130,246,.25);
+  }
+  .cta-box h3 {
+    margin: 0 0 10px; font-size: 18px; font-weight: 800;
+    background: linear-gradient(180deg, #fff, var(--accent));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cta-list { list-style: none; margin: 0 0 14px; padding: 0; }
+  .cta-list li {
+    padding: 5px 0 5px 24px; position: relative;
+    font-size: 13px; color: var(--text);
+  }
+  .cta-list li::before {
+    content: '✓'; position: absolute; left: 0; top: 5px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    color: #fff; font-weight: 900; font-size: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cta-price-row {
+    display: flex; align-items: baseline; gap: 8px;
+    margin: 12px 0 10px; flex-wrap: wrap;
+  }
+  .cta-price { font-size: 28px; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+  .cta-price-sub { color: var(--muted); font-size: 12px; }
+  .cta-btn {
+    display: block;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+    color: #fff; padding: 13px 20px;
+    border-radius: 12px; font-weight: 800; font-size: 15px;
+    text-decoration: none; text-align: center;
+    box-shadow: 0 10px 28px -8px rgba(59,130,246,.5);
+  }
+  .restart-btn {
+    margin-top: 10px; background: transparent;
+    color: var(--muted); border: 1px solid var(--border);
+    border-radius: 12px; padding: 10px 16px;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+  }
+  .restart-btn:hover { color: var(--text); border-color: var(--accent); }
+
+  /* TOOLS GRID */
+  .tools-section { margin-top: 30px; }
+  .tools-title { font-size: 16px; font-weight: 800; margin: 0 0 10px; color: var(--text); }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .tool-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .15s ease;
+    backdrop-filter: blur(6px);
+    position: relative;
+    font-family: inherit; color: var(--text);
+  }
+  .tool-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .tool-card .tool-emoji { font-size: 22px; margin-bottom: 4px; display: block; }
+  .tool-card .tool-label { font-size: 11px; font-weight: 700; line-height: 1.25; }
+  .tool-card .tool-sub { font-size: 9px; color: var(--muted); margin-top: 2px; }
+  .tool-card .tool-lock {
+    position: absolute; top: 6px; right: 6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.35);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8px; color: var(--accent);
+  }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+    z-index: 5;
+    width: 100%; max-width: 430px;
+    display: flex; justify-content: space-around; align-items: center;
+    background: rgba(8, 13, 27, 0.95);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    padding: 7px 0 calc(7px + env(safe-area-inset-bottom, 0));
+  }
+  .nav-item {
+    flex: 1; background: transparent; border: none;
+    padding: 6px 4px; color: var(--muted);
+    font-family: inherit; font-size: 9px; font-weight: 700;
+    cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    transition: color .15s; position: relative;
+  }
+  .nav-item .nav-emoji { font-size: 18px; line-height: 1; opacity: 0.6; transition: opacity .15s, transform .15s; }
+  .nav-item.active { color: var(--accent); }
+  .nav-item.active .nav-emoji { opacity: 1; transform: scale(1.1); }
+  .nav-item:hover:not(.active) { color: var(--text); }
+  .nav-item:hover:not(.active) .nav-emoji { opacity: 0.85; }
+  .nav-item .nav-lock {
+    position: absolute; top: 2px; right: 50%;
+    transform: translateX(14px);
+    font-size: 7px; color: var(--accent); opacity: 0.5;
+  }
+
+  /* TOAST */
+  .toast {
+    position: fixed; left: 50%; bottom: 78px;
+    transform: translateX(-50%) translateY(20px);
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    color: #fff; padding: 11px 20px; border-radius: 999px;
+    font-weight: 800; font-size: 13px;
+    box-shadow: 0 10px 30px -8px rgba(59,130,246,.5), 0 0 0 1px rgba(255,255,255,0.12) inset;
+    opacity: 0; pointer-events: none;
+    transition: opacity .25s, transform .25s;
+    z-index: 100; white-space: nowrap;
+    max-width: 400px;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  body { padding-bottom: 64px; }
+
+  @media (max-width: 380px) {
+    .container { padding: 12px 10px 20px; }
+    .quiz-shell { padding: 14px 12px 12px; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="phone-shell">
+<div class="container">
+
+  <div class="top-bar">
+    <div class="brand">
+      <a href="https://dimaedwardsehk.github.io/pass-exam-usa/">
+        <div class="brand-mark">PE</div>
+        <div>
+          <div class="brand-name">Pass Exam USA</div>
+          <div class="brand-sub">CDL · Real Estate · DMV</div>
+        </div>
+      </a>
+    </div>
+    <div class="badge-dl">Driver's License</div>
+  </div>
+
+  <div class="hero">
+    <h1 class="hero-title"><span class="blue">Free DMV Practice</span></h1>
+  </div>
+
+  <div class="topics-rail" id="topicsRail"></div>
+
+  <div id="quizArea"></div>
+  <div id="resultsArea" style="display:none;"></div>
+
+  <section class="tools-section">
+    <h2 class="tools-title">Tools</h2>
+    <div class="tools-grid" id="toolsGrid"></div>
+  </section>
+
+</div>
+</div>
+
+<nav class="bottom-nav" id="bottomNav"></nav>
+<div class="toast" id="toast">🔒 Available in full version — $4.99 →</div>
+
+<script>
+/* =========================================================================
+   QUESTIONS — 10 trickiest DMV questions (inline, no fetch)
+   ========================================================================= */
+const questions = [
+  {
+    id: 1,
+    category: 'PARKING',
+    text: 'When parking uphill on a two-way street with no curb, your front wheels should be turned:',
+    options: [
+      { id: 'A', text: 'To the left toward the street' },
+      { id: 'B', text: 'To the right away from the street' },
+      { id: 'C', text: 'Straight ahead' },
+      { id: 'D', text: 'It does not matter' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'When parking uphill with no curb, turn your wheels to the right (away from the street). If the car rolls backward, it will roll off the road rather than into traffic.',
+    watchOut: 'Many drivers confuse "uphill with curb" (turn left) and "uphill without curb" (turn right). The key: without a curb, you want the car to roll away from traffic.'
+  },
+  {
+    id: 2,
+    category: 'ALCOHOL & DUI',
+    text: 'It is illegal for a person 21 years of age or older to drive with a blood alcohol concentration (BAC) that is:',
+    options: [
+      { id: 'A', text: '0.08% or higher' },
+      { id: 'B', text: '0.05%' },
+      { id: 'C', text: '0.10%' },
+      { id: 'D', text: '0.01%' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'For drivers 21 and over, the legal BAC limit is 0.08%. Driving at or above this level is a DUI offense. For drivers under 21, the limit is much lower — 0.01%.',
+    watchOut: 'The exam often tests whether you know the difference between 0.08% (21+) and 0.01% (under 21). Don\'t mix them up!'
+  },
+  {
+    id: 3,
+    category: 'TRAFFIC LAWS',
+    text: 'If a traffic signal is not working, you should treat the intersection as:',
+    options: [
+      { id: 'A', text: 'A four-way stop' },
+      { id: 'B', text: 'An uncontrolled intersection' },
+      { id: 'C', text: 'A yield sign' },
+      { id: 'D', text: 'A green light' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'A broken or dark traffic signal must be treated as a four-way stop. All drivers must stop and proceed in the order they arrived at the intersection.',
+    watchOut: 'Some test-takers pick "uncontrolled intersection" — but that\'s wrong. A broken signal = all-way stop, not a free-for-all.'
+  },
+  {
+    id: 4,
+    category: 'SAFE DRIVING',
+    text: 'When a school bus with its red lights flashing is stopped ahead on your side of the road, you must:',
+    options: [
+      { id: 'A', text: 'Stop until the lights stop flashing' },
+      { id: 'B', text: 'Slow down and pass carefully' },
+      { id: 'C', text: 'Change lanes and pass' },
+      { id: 'D', text: 'Stop, then proceed when you think it is safe' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'When a school bus has its red lights flashing, you MUST stop and remain stopped until the lights stop flashing. This applies regardless of the direction you are traveling, unless separated by a physical median.',
+    watchOut: 'Option D is a common trap — you must wait for the lights to STOP flashing, not just stop momentarily and decide on your own.'
+  },
+  {
+    id: 5,
+    category: 'TRAFFIC LAWS',
+    text: 'If you are involved in a traffic collision, you are required to complete and submit a written report (SR1) to the DMV if:',
+    options: [
+      { id: 'A', text: 'You are at fault' },
+      { id: 'B', text: 'There is property damage in excess of $1,000 or any injuries' },
+      { id: 'C', text: 'Your vehicle is towed' },
+      { id: 'D', text: 'The other driver does not have insurance' }
+    ],
+    correctAnswer: 'B',
+    explanation: 'You must file an SR1 report with the DMV within 10 days if the collision caused property damage exceeding $1,000, or if anyone was injured or killed — regardless of who was at fault.',
+    watchOut: 'The threshold is $1,000 in damage OR any injury. It\'s not about fault — even if you\'re not at fault, you must still report.'
+  },
+  {
+    id: 6,
+    category: 'SAFE DRIVING',
+    text: 'When you are merging onto the freeway, you should be driving at:',
+    options: [
+      { id: 'A', text: 'Or near the same speed as the traffic on the freeway' },
+      { id: 'B', text: '5 to 10 mph slower than the traffic on the freeway' },
+      { id: 'C', text: '15 to 20 mph slower than the traffic on the freeway' },
+      { id: 'D', text: 'The posted speed limit for unramped traffic' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'When merging onto the freeway, use the on-ramp to accelerate to match the speed of freeway traffic. Entering too slowly creates a dangerous speed difference.',
+    watchOut: 'Many new drivers think they should go slower to be "safe" — but entering a freeway too slowly is actually more dangerous than matching flow speed.'
+  },
+  {
+    id: 7,
+    category: 'TRAFFIC LAWS',
+    text: 'You must notify the DMV within 5 days if you:',
+    options: [
+      { id: 'A', text: 'Sell or transfer your vehicle' },
+      { id: 'B', text: 'Get a new prescription for glasses' },
+      { id: 'C', text: 'Paint your vehicle a different color' },
+      { id: 'D', text: 'Get a new pet' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'You are required to notify the DMV within 5 days when you sell or transfer your vehicle. This protects you from liability for parking tickets, tolls, or accidents after the sale.',
+    watchOut: 'The 5-day window is strict. Some states also require notification for address changes (within 10 days), but selling a vehicle is always 5 days.'
+  },
+  {
+    id: 8,
+    category: 'ROAD SIGNS',
+    text: 'A flashing red traffic light at an intersection means:',
+    options: [
+      { id: 'A', text: 'Stop before entering' },
+      { id: 'B', text: 'Slow down before entering' },
+      { id: 'C', text: 'Wait for the green light' },
+      { id: 'D', text: 'Stop and wait for a police officer' }
+    ],
+    correctAnswer: 'A',
+    explanation: 'A flashing red light is treated the same as a stop sign. You must come to a complete stop, check that the intersection is clear, and then proceed.',
+    watchOut: 'Don\'t confuse flashing red (= stop sign) with flashing yellow (= proceed with caution). This is one of the most commonly missed questions.'
+  },
+  {
+    id: 9,
+    category: 'ROAD SIGNS',
+    text: 'A solid white line on the right edge of the highway slants in towards your left. That shows that:',
+    options: [
+      { id: 'A', text: 'There is an intersection just ahead' },
+      { id: 'B', text: 'You are approaching a construction area' },
+      { id: 'C', text: 'The road will get narrower' },
+      { id: 'D', text: 'You must exit the freeway' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'When the white edge line slants inward toward the center of the road, it means the road is narrowing ahead. Prepare to merge or adjust your lane position.',
+    watchOut: 'This visual cue is subtle and many drivers miss it. The line literally shows the road getting narrower — it\'s a physical representation of what\'s ahead.'
+  },
+  {
+    id: 10,
+    category: 'SAFE DRIVING',
+    text: 'You should use your horn when:',
+    options: [
+      { id: 'A', text: 'Another driver makes a mistake' },
+      { id: 'B', text: 'You are angry' },
+      { id: 'C', text: 'It is necessary to avoid a collision' },
+      { id: 'D', text: 'You want to greet another driver' }
+    ],
+    correctAnswer: 'C',
+    explanation: 'Your horn should only be used when necessary to avoid a collision or to alert another driver/pedestrian of a hazard. Using it out of frustration or to greet someone is improper.',
+    watchOut: 'The horn is a safety device, not a communication tool. On the exam, the only correct use is collision avoidance.'
+  }
+];
+
+/* =========================================================================
+   QUIZ ENGINE
+   ========================================================================= */
+let current = 0;
+let correctCount = 0;
+let answered = false;
+let feedbackCollapsed = false;
+
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function setProgress(idx) {
+  const bar = document.getElementById('progressBar');
+  if (bar) bar.style.width = ((idx / questions.length) * 100) + '%';
+}
+
+function renderQuestion() {
+  const q = questions[current];
+  if (!q) { renderResults(); return; }
+  answered = false;
+  feedbackCollapsed = false;
+
+  let h = '';
+  h += '<div class="meta-row">';
+  h += '<button class="meta-x" type="button" onclick="window.scrollTo({top:0,behavior:\'smooth\'})">&times;</button>';
+  h += '<span class="meta-counter"><b>' + (current+1) + '</b>/' + questions.length + '</span>';
+  h += '<span class="meta-pill">' + esc(q.category) + '</span>';
+  h += '<span class="meta-pts">' + (correctCount*10) + ' pts</span>';
+  h += '</div>';
+  h += '<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>';
+  h += '<div class="quiz-shell">';
+  h += '<div class="q-text">' + esc(q.text) + '</div>';
+  h += '<div class="options">';
+  for (const o of q.options) {
+    h += '<button class="option" data-id="'+o.id+'" type="button">';
+    h += '<span class="opt-letter">'+o.id+'</span>';
+    h += '<span class="opt-text">'+esc(o.text)+'</span>';
+    h += '<span class="opt-icon"></span>';
+    h += '</button>';
+  }
+  h += '</div>';
+  h += '<div class="feedback" id="feedbackBox">';
+  h += '<div class="feedback-header" id="feedbackHeader">';
+  h += '<span class="feedback-title" id="feedbackTitle"></span>';
+  h += '<span class="feedback-toggle">why</span>';
+  h += '</div>';
+  h += '<div class="feedback-body">';
+  h += '<div id="feedbackText"></div>';
+  h += '<div class="feedback-watch" id="feedbackWatch" style="display:none;">';
+  h += '<div class="feedback-watch-title">Watch Out</div>';
+  h += '<div class="feedback-watch-text" id="feedbackWatchText"></div>';
+  h += '</div></div></div>';
+  h += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
+  h += '</div>';
+
+  document.getElementById('quizArea').innerHTML = h;
+  setProgress(current);
+
+  document.querySelectorAll('.option').forEach(btn => {
+    btn.addEventListener('click', () => onAnswer(btn.dataset.id));
+  });
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    current++;
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  const fbH = document.getElementById('feedbackHeader');
+  if (fbH) fbH.addEventListener('click', () => {
+    feedbackCollapsed = !feedbackCollapsed;
+    document.getElementById('feedbackBox').classList.toggle('collapsed', feedbackCollapsed);
+  });
+}
+
+function onAnswer(chosenId) {
+  if (answered) return;
+  answered = true;
+  const q = questions[current];
+  const correct = q.correctAnswer;
+  const wasCorrect = chosenId === correct;
+  if (wasCorrect) correctCount++;
+
+  document.querySelectorAll('.option').forEach(btn => {
+    btn.disabled = true;
+    if (btn.dataset.id === correct) {
+      btn.classList.add('correct');
+      btn.querySelector('.opt-icon').textContent = '✓';
+    }
+    if (btn.dataset.id === chosenId && !wasCorrect) {
+      btn.classList.add('wrong');
+      btn.querySelector('.opt-icon').textContent = '✕';
+    }
+  });
+
+  const pts = document.querySelector('.meta-pts');
+  if (pts) pts.textContent = (correctCount*10) + ' pts';
+
+  const fb = document.getElementById('feedbackBox');
+  fb.classList.add('show');
+  fb.classList.toggle('is-correct', wasCorrect);
+  feedbackCollapsed = wasCorrect;
+  fb.classList.toggle('collapsed', feedbackCollapsed);
+
+  document.getElementById('feedbackTitle').textContent = wasCorrect
+    ? '✓ Correct — tap "why" to see the explanation'
+    : '✕ Incorrect — Here\'s Why';
+  document.getElementById('feedbackText').textContent = q.explanation;
+
+  if (q.watchOut) {
+    document.getElementById('feedbackWatch').style.display = 'block';
+    document.getElementById('feedbackWatchText').textContent = q.watchOut;
+  }
+
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.disabled = false;
+  nextBtn.textContent = current === questions.length - 1 ? 'See Results →' : 'Next Question →';
+  setTimeout(() => nextBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+}
+
+function renderResults() {
+  document.getElementById('quizArea').style.display = 'none';
+  const area = document.getElementById('resultsArea');
+  area.style.display = 'block';
+
+  const pct = Math.round((correctCount / questions.length) * 100);
+  let verdict = '';
+  if (pct >= 80) verdict = 'Strong result! Lock it in with the full test.';
+  else if (pct >= 60) verdict = 'On track. Polish the weak areas with the full test.';
+  else verdict = 'Drill the basics before exam day.';
+
+  const radius = 68;
+  const circ = 2 * Math.PI * radius;
+  const offset = circ * (1 - correctCount / questions.length);
+
+  area.innerHTML = ''
+    + '<div class="results-card">'
+    + '<div class="score-ring">'
+    + '<svg viewBox="0 0 160 160">'
+    + '<defs><linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">'
+    + '<stop offset="0%" stop-color="#60A5FA"/>'
+    + '<stop offset="100%" stop-color="#1D4ED8"/>'
+    + '</linearGradient></defs>'
+    + '<circle class="ring-bg" cx="80" cy="80" r="'+radius+'" fill="none" stroke-width="9"/>'
+    + '<circle class="ring-fg" cx="80" cy="80" r="'+radius+'" fill="none" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+circ+'" stroke-dashoffset="'+circ+'" id="ringFg"/>'
+    + '</svg>'
+    + '<div class="score-num">'
+    + '<div class="score-pct">'+pct+'%</div>'
+    + '<div class="score-label">Ready</div>'
+    + '</div></div>'
+    + '<div class="score-correct">'+correctCount+' / '+questions.length+'</div>'
+    + '<div class="score-correct-label">Answered correctly</div>'
+    + '<div class="score-verdict">'+verdict+'</div>'
+    + '<div class="cta-box">'
+    + '<h3>Get the full DMV Practice Test 2026</h3>'
+    + '<ul class="cta-list">'
+    + '<li>100+ questions covering all 50 states</li>'
+    + '<li>Road signs, traffic laws, parking, DUI rules</li>'
+    + '<li>Works fully offline</li>'
+    + '<li>Lifetime access, no subscription</li>'
+    + '</ul>'
+    + '<div class="cta-price-row">'
+    + '<div class="cta-price">$4.99</div>'
+    + '<div class="cta-price-sub">one-time payment · lifetime access</div>'
+    + '</div>'
+    + '<a class="cta-btn" href="https://dimaedwardsehk.github.io/pass-exam-usa/#dmv">Get Full DMV Prep →</a>'
+    + '</div>'
+    + '<button class="restart-btn" id="restartBtn">Restart Demo</button>'
+    + '</div>';
+
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const ring = document.getElementById('ringFg');
+      if (ring) ring.style.strokeDashoffset = offset;
+    }, 100);
+  });
+
+  document.getElementById('restartBtn').addEventListener('click', () => {
+    current = 0; correctCount = 0;
+    document.getElementById('quizArea').style.display = '';
+    area.style.display = 'none';
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// Start quiz
+renderQuestion();
+
+/* =========================================================================
+   APP SHELL — Topics rail, Tools grid, Bottom nav, Toast
+   ========================================================================= */
+(function buildAppShell() {
+  const TOPICS = [
+    { emoji: '🚦', name: 'Road Signs' },
+    { emoji: '📋', name: 'Traffic Laws' },
+    { emoji: '🚗', name: 'Safe Driving' },
+    { emoji: '🅿️', name: 'Parking' },
+    { emoji: '🍺', name: 'Alcohol & Drugs' }
+  ];
+
+  const TOOLS = [
+    { emoji: '🚦', label: 'Road Signs',    sub: 'Shapes & meanings' },
+    { emoji: '📋', label: 'Traffic Laws',   sub: 'Rules & regulations' },
+    { emoji: '🅿️', label: 'Parking Rules', sub: 'Curbs & hills' },
+    { emoji: '🍺', label: 'Alcohol & DUI',  sub: 'BAC limits & penalties' },
+    { emoji: '🚗', label: 'Safe Driving',   sub: 'Defensive techniques' }
+  ];
+
+  const NAV = [
+    { emoji: '🏠', label: 'Home',    active: true,  free: true },
+    { emoji: '📚', label: 'Study',   active: false, free: false },
+    { emoji: '📝', label: 'Exam',    active: false, free: false },
+    { emoji: '🛠️', label: 'Tools',  active: false, free: false },
+    { emoji: '👤', label: 'Profile', active: false, free: false }
+  ];
+
+  const rail = document.getElementById('topicsRail');
+  if (rail) {
+    rail.innerHTML = TOPICS.map(t =>
+      '<button class="topic-chip" type="button">'+
+      '<span class="topic-emoji">'+t.emoji+'</span>'+
+      '<span class="topic-name">'+t.name+'</span>'+
+      '<span class="topic-lock">🔒</span>'+
+      '</button>'
+    ).join('');
+    rail.querySelectorAll('.topic-chip').forEach(c => c.addEventListener('click', showToast));
+  }
+
+  const tools = document.getElementById('toolsGrid');
+  if (tools) {
+    tools.innerHTML = TOOLS.map(t =>
+      '<button class="tool-card" type="button">'+
+      '<span class="tool-lock">🔒</span>'+
+      '<span class="tool-emoji">'+t.emoji+'</span>'+
+      '<span class="tool-label">'+t.label+'</span>'+
+      '<span class="tool-sub">'+t.sub+'</span>'+
+      '</button>'
+    ).join('');
+    tools.querySelectorAll('.tool-card').forEach(c => c.addEventListener('click', showToast));
+  }
+
+  const nav = document.getElementById('bottomNav');
+  if (nav) {
+    nav.innerHTML = NAV.map(n =>
+      '<button class="nav-item'+(n.active?' active':'')+'" type="button" data-free="'+(n.free?'1':'0')+'">'+
+      '<span class="nav-emoji">'+n.emoji+'</span>'+
+      '<span>'+n.label+'</span>'+
+      (n.free?'':'<span class="nav-lock">🔒</span>')+
+      '</button>'
+    ).join('');
+    nav.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.dataset.free === '1') window.scrollTo({ top: 0, behavior: 'smooth' });
+        else showToast();
+      });
+    });
+  }
+
+  let toastTimer = null;
+  function showToast() {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+  }
+})();
+</script>
+</body>
+</html>

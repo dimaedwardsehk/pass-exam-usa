@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>DMV Practice Test 2026 | Pass Exam USA</title>
+  <meta name="description" content="US DMV exam prep — 100 practice questions, road signs, traffic laws, parking, DUI rules. Works fully offline." />
+  <meta name="theme-color" content="#050A14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="DMV Prep" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <base href="/pass-exam-usa/dmv/" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ANIMATED US FLAG -->
+<div class="flag-bg" id="flagBg" aria-hidden="true"></div>
+
+<div class="phone-shell">
+  <div class="container">
+    <!-- HEADER (shared) -->
+    <div class="top-bar">
+      <div class="brand">
+        <a href="https://dimaedwardsehk.github.io/pass-exam-usa/">
+          <div class="brand-mark">PE</div>
+          <div>
+            <div class="brand-name">Pass Exam USA</div>
+            <div class="brand-sub">CDL · Real Estate · DMV</div>
+          </div>
+        </a>
+      </div>
+      <div class="badge-dl">Driver's License</div>
+    </div>
+
+    <!-- SVG DEFS -->
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#60A5FA"/>
+          <stop offset="100%" stop-color="#1D4ED8"/>
+        </linearGradient>
+        <linearGradient id="blueGrad2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#60A5FA"/>
+          <stop offset="100%" stop-color="#1D4ED8"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- SCREENS -->
+    <div id="screenHome" class="screen active"></div>
+    <div id="screenStudy" class="screen"></div>
+    <div id="screenExam" class="screen"></div>
+    <div id="screenTools" class="screen"></div>
+    <div id="screenProfile" class="screen"></div>
+    <div id="screenQuiz" class="screen"></div>
+  </div>
+</div>
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="app.js"></script>
+</body>
+</html>
