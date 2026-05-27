@@ -1,155 +1,2131 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
-<title>Fast Pass Real Estate — Free Trial (15 Questions)</title>
-<meta name="description" content="Test your Real Estate License Exam knowledge with 15 free questions."/>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Real Estate Practice Test — Free 15 Questions | Pass Exam USA</title>
+
+<meta name="description" content="Free 15-question Real Estate practice test: fiduciary duties, 1031 exchange, lead paint disclosure, Fair Housing, TREC, California TDS, Florida Johnson v. Davis, RE math.">
+
+<link rel="canonical" href="https://dimaedwardsehk.github.io/pass-exam-usa/re-demo.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0A0F1E;color:#fff;min-height:100vh}
-.container{max-width:600px;margin:0 auto;padding:16px}
-.header{text-align:center;padding:24px 0 16px}
-.header h1{font-size:22px;color:#fff;margin-bottom:4px}
-.header p{font-size:13px;color:#8899aa}
-.progress-bar{height:4px;background:#1a2233;border-radius:2px;margin:16px 0}
-.progress-fill{height:100%;background:linear-gradient(90deg,#3C7AE8,#5C9AFF);border-radius:2px;transition:width .3s}
-.stats{display:flex;justify-content:space-between;font-size:13px;color:#8899aa;margin-bottom:20px}
-.category-badge{display:inline-block;font-size:11px;background:#1a2844;color:#5C9AFF;padding:4px 10px;border-radius:12px;margin-bottom:12px}
-.question-text{font-size:18px;line-height:1.5;margin-bottom:20px}
-.option{display:block;width:100%;padding:14px 16px;margin-bottom:10px;border-radius:12px;border:1.5px solid #1a2844;background:#0d1525;color:#fff;font-size:15px;text-align:left;cursor:pointer;transition:all .2s}
-.option:hover{border-color:#3C7AE8;background:#111d33}
-.option.selected{border-color:#3C7AE8;background:#152244}
-.option.correct{border-color:#22c55e;background:#0d2818;color:#22c55e}
-.option.wrong{border-color:#ef4444;background:#2a0d0d;color:#ef4444}
-.option .letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1a2844;color:#5C9AFF;font-size:13px;font-weight:600;margin-right:10px}
-.option.correct .letter{background:#22c55e;color:#fff}
-.option.wrong .letter{background:#ef4444;color:#fff}
-.explanation{margin-top:16px;padding:14px;background:#111d33;border-radius:10px;font-size:14px;line-height:1.5;color:#aabbcc;display:none}
-.explanation.show{display:block}
-.btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:16px;font-weight:600;cursor:pointer;margin-top:16px}
-.btn-primary{background:linear-gradient(135deg,#3C7AE8,#5C9AFF);color:#fff}
-.btn-primary:hover{opacity:.9}
-.result-card{text-align:center;padding:40px 20px}
-.result-score{font-size:64px;font-weight:700;background:linear-gradient(135deg,#3C7AE8,#5C9AFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:20px 0 10px}
-.result-text{font-size:18px;color:#8899aa;margin-bottom:24px}
-.result-breakdown{text-align:left;background:#0d1525;border-radius:12px;padding:16px;margin-top:20px}
-.result-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1a2233;font-size:14px}
-.result-row:last-child{border:none}
-.result-row .cat{color:#8899aa}.result-row .res{font-weight:600}
-.res.pass{color:#22c55e}.res.fail{color:#ef4444}
-.cta{text-align:center;margin-top:30px;padding:20px;background:#111d33;border-radius:12px}
-.cta h3{font-size:18px;margin-bottom:8px}.cta p{font-size:14px;color:#8899aa;margin-bottom:16px}
-.hidden{display:none}
+
+  :root {
+
+    --bg: #050A14;
+
+    --card: rgba(14, 21, 37, 0.92);
+
+    --card-2: rgba(19, 28, 48, 0.92);
+
+    --border: #1E2B47;
+
+    --gold: #C8A84B;
+
+    --gold-2: #A8862C;
+
+    --gold-deep: #7A5F12;
+
+    --text: #F4F6FB;
+
+    --muted: #8B96AE;
+
+    --dim: #5A6478;
+
+    --good: #22C55E;
+
+    --good-bg: rgba(15, 42, 26, .92);
+
+    --bad: #EF4444;
+
+    --bad-bg: rgba(42, 15, 18, .92);
+
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+
+    margin: 0; padding: 0;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+  }
+
+
+
+  /* ========= ANIMATED US FLAG — exact port from CDL demo ========= */
+
+  .flag-bg {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background: #050A14;
+
+  }
+
+  .flag-layer { position: absolute; transform-origin: center center; }
+
+
+
+  .container {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 880px;
+
+    margin: 0 auto;
+
+    padding: 14px 22px 30px;
+
+  }
+
+
+
+  /* HEADER */
+
+  .top-bar {
+
+    display: flex; align-items: center; justify-content: space-between;
+
+    gap: 14px; margin-bottom: 18px; flex-wrap: wrap;
+
+  }
+
+  .brand a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 12px; }
+
+  .brand-mark {
+
+    width: 38px; height: 38px; border-radius: 10px;
+
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-weight: 800; color: #1a0e00; font-size: 17px;
+
+    box-shadow: 0 6px 18px -6px rgba(200,168,75,.55);
+
+  }
+
+  .brand-name { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
+
+  .brand-sub { color: var(--muted); font-size: 12px; font-weight: 500; }
+
+
+
+  .lang-row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .lang-btn {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    padding: 7px 13px; border-radius: 999px;
+
+    font-size: 12px; font-weight: 700; cursor: default;
+
+    font-family: inherit; letter-spacing: 0.04em;
+
+    backdrop-filter: blur(6px);
+
+  }
+
+  .lang-btn.active {
+
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+
+    color: #1a0e00; border-color: transparent;
+
+  }
+
+
+
+  .hero { margin: 0 0 14px; }
+
+  .hero-title {
+
+    font-size: clamp(24px, 4vw, 32px);
+
+    font-weight: 800;
+
+    letter-spacing: -0.02em;
+
+    line-height: 1.1;
+
+    margin: 0;
+
+  }
+
+  .hero-title .gold {
+
+    background: linear-gradient(180deg, #fff 0%, var(--gold) 100%);
+
+    -webkit-background-clip: text; background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+  }
+
+
+
+  /* META ROW */
+
+  .meta-row {
+
+    display: flex; align-items: center; gap: 12px;
+
+    margin-bottom: 10px; font-weight: 700;
+
+  }
+
+  .meta-x {
+
+    width: 28px; height: 28px; border-radius: 50%;
+
+    border: 1px solid var(--border); background: transparent;
+
+    color: var(--muted); display: flex; align-items: center; justify-content: center;
+
+    cursor: pointer; font-size: 16px; font-family: inherit; line-height: 1;
+
+  }
+
+  .meta-x:hover { color: var(--text); border-color: var(--gold); }
+
+  .meta-counter { color: var(--muted); font-size: 14px; }
+
+  .meta-counter b { color: var(--text); }
+
+  .meta-pill {
+
+    display: inline-flex; align-items: center;
+
+    background: rgba(200,168,75,.10);
+
+    border: 1px solid rgba(200,168,75,.35);
+
+    color: var(--gold);
+
+    padding: 4px 10px; border-radius: 6px;
+
+    font-size: 11px; font-weight: 800;
+
+    text-transform: uppercase; letter-spacing: 0.1em;
+
+  }
+
+  .meta-pts { margin-left: auto; color: var(--gold); font-size: 14px; font-weight: 800; }
+
+  .progress-track {
+
+    height: 4px; background: var(--card-2); border-radius: 999px;
+
+    overflow: hidden; margin-bottom: 16px;
+
+  }
+
+  .progress-bar {
+
+    height: 100%;
+
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold));
+
+    width: 0%;
+
+    transition: width .45s cubic-bezier(.4,0,.2,1);
+
+  }
+
+
+
+  .quiz-shell {
+
+    position: relative;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 20px 20px 16px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(200,168,75,.08);
+
+  }
+
+
+
+  .q-text {
+
+    font-size: clamp(17px, 2.4vw, 20px);
+
+    font-weight: 700; line-height: 1.35;
+
+    margin: 0 0 12px; letter-spacing: -0.01em;
+
+  }
+
+
+
+  .options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+
+  .option {
+
+    position: relative;
+
+    display: flex; align-items: center; gap: 12px;
+
+    background: var(--card-2);
+
+    border: 1.5px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 11px 14px;
+
+    cursor: pointer; text-align: left;
+
+    color: var(--text); font-size: 14.5px;
+
+    line-height: 1.4;
+
+    font-family: inherit;
+
+    transition: all .15s ease;
+
+  }
+
+  .option:hover:not(:disabled) { border-color: var(--gold); }
+
+  .option:disabled { cursor: default; }
+
+  .opt-letter {
+
+    flex-shrink: 0;
+
+    width: 30px; height: 30px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.04);
+
+    color: var(--text);
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-weight: 800; font-size: 13px;
+
+    border: 1px solid var(--border);
+
+  }
+
+  .opt-text { flex: 1; }
+
+  .opt-icon {
+
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+
+    display: none; align-items: center; justify-content: center;
+
+    color: #fff; font-weight: 800; font-size: 13px;
+
+  }
+
+  .option.correct { border-color: var(--good); background: var(--good-bg); }
+
+  .option.correct .opt-letter { background: var(--good); border-color: var(--good); color: #fff; }
+
+  .option.correct .opt-icon { display: flex; background: var(--good); }
+
+  .option.wrong { border-color: var(--bad); background: var(--bad-bg); }
+
+  .option.wrong .opt-letter { background: var(--bad); border-color: var(--bad); color: #fff; }
+
+  .option.wrong .opt-icon { display: flex; background: var(--bad); }
+
+
+
+  .feedback {
+
+    margin: 0 0 12px;
+
+    background: var(--card-2);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: none;
+
+  }
+
+  .feedback.show { display: block; }
+
+  .feedback-header {
+
+    padding: 12px 14px;
+
+    display: flex; align-items: center; justify-content: space-between;
+
+    cursor: pointer; user-select: none; gap: 10px;
+
+  }
+
+  .feedback-title { font-weight: 800; font-size: 14px; color: var(--gold); flex: 1; }
+
+  .feedback.is-correct .feedback-title { color: var(--good); }
+
+  .feedback-toggle { color: var(--muted); font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+
+  .feedback-toggle::after { content: '▾'; transition: transform .2s; }
+
+  .feedback.collapsed .feedback-toggle::after { transform: rotate(-90deg); }
+
+  .feedback-body { padding: 0 14px 14px; font-size: 14px; line-height: 1.5; color: var(--text); }
+
+  .feedback.collapsed .feedback-body { display: none; }
+
+
+
+  .next-btn {
+
+    width: 100%;
+
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
+
+    color: #1a0e00;
+
+    border: none; border-radius: 12px;
+
+    padding: 14px 22px;
+
+    font-size: 16px; font-weight: 800;
+
+    cursor: pointer; font-family: inherit;
+
+    letter-spacing: 0.01em;
+
+    transition: transform .15s, filter .2s;
+
+    box-shadow: 0 10px 28px -8px rgba(200,168,75,.4);
+
+  }
+
+  .next-btn:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(1.05); }
+
+  .next-btn:disabled { background: var(--card-2); color: var(--dim); cursor: not-allowed; box-shadow: none; }
+
+
+
+  /* RESULTS */
+
+  .results-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 32px 24px;
+
+    text-align: center;
+
+    backdrop-filter: blur(8px);
+
+  }
+
+  .score-ring { position: relative; width: 180px; height: 180px; margin: 0 auto 14px; }
+
+  .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+
+  .score-ring .ring-bg { stroke: rgba(255,255,255,.05); }
+
+  .score-ring .ring-fg { stroke: url(#goldGrad); transition: stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1); }
+
+  .score-num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+  .score-pct {
+
+    font-size: 44px; font-weight: 800;
+
+    background: linear-gradient(180deg, #fff, var(--gold));
+
+    -webkit-background-clip: text; background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    line-height: 1; letter-spacing: -0.02em;
+
+  }
+
+  .score-label { color: var(--muted); font-size: 13px; font-weight: 600; margin-top: 6px; }
+
+  .score-correct { font-size: 32px; font-weight: 800; margin: 6px 0 4px; color: var(--text); }
+
+  .score-correct-label { color: var(--muted); font-size: 13px; font-weight: 600; }
+
+  .score-verdict { color: var(--text); font-size: 15px; font-weight: 600; margin-top: 14px; }
+
+
+
+  .cta-box {
+
+    margin-top: 22px;
+
+    background: var(--card-2);
+
+    border: 1.5px solid var(--gold);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    text-align: left;
+
+    box-shadow: 0 0 0 1px rgba(200,168,75,.2), 0 16px 40px -16px rgba(200,168,75,.3);
+
+  }
+
+  .cta-box h3 {
+
+    margin: 0 0 12px; font-size: 20px; font-weight: 800;
+
+    background: linear-gradient(180deg, #fff, var(--gold));
+
+    -webkit-background-clip: text; background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  .cta-list { list-style: none; margin: 0 0 16px; padding: 0; }
+
+  .cta-list li { padding: 6px 0 6px 26px; position: relative; font-size: 14px; color: var(--text); }
+
+  .cta-list li::before {
+
+    content: '✓'; position: absolute; left: 0; top: 6px;
+
+    width: 18px; height: 18px; border-radius: 50%;
+
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+
+    color: #1a0e00; font-weight: 900; font-size: 11px;
+
+    display: flex; align-items: center; justify-content: center;
+
+  }
+
+  .cta-price-row { display: flex; align-items: baseline; gap: 10px; margin: 14px 0 12px; flex-wrap: wrap; }
+
+  .cta-price { font-size: 30px; font-weight: 800; color: var(--gold); letter-spacing: -0.02em; }
+
+  .cta-price-sub { color: var(--muted); font-size: 13px; }
+
+  .cta-btn {
+
+    display: block;
+
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
+
+    color: #1a0e00;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    font-weight: 800; font-size: 16px;
+
+    text-decoration: none; text-align: center;
+
+    box-shadow: 0 10px 28px -8px rgba(200,168,75,.5);
+
+  }
+
+  .restart-btn {
+
+    margin-top: 12px; background: transparent;
+
+    color: var(--muted); border: 1px solid var(--border);
+
+    border-radius: 12px; padding: 10px 18px;
+
+    font-size: 14px; font-weight: 600;
+
+    cursor: pointer; font-family: inherit;
+
+  }
+
+  .restart-btn:hover { color: var(--text); border-color: var(--gold); }
+
+
+
+  footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 22px; }
+
+  footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+
+
+  /* TOPICS RAIL */
+
+  .topics-rail {
+
+    margin: 0 0 16px;
+
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 6px 2px 12px;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+
+  }
+
+  .topics-rail::-webkit-scrollbar { display: none; }
+
+  .topic-chip {
+
+    flex: 0 0 auto;
+
+    background: var(--card-2);
+
+    border: 1.5px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 10px 14px;
+
+    display: flex; align-items: center; gap: 10px;
+
+    cursor: pointer;
+
+    color: var(--muted);
+
+    font-family: inherit;
+
+    font-size: 13px; font-weight: 700;
+
+    transition: all .15s ease;
+
+    backdrop-filter: blur(6px);
+
+    position: relative;
+
+    min-width: 130px;
+
+  }
+
+  .topic-chip:hover { border-color: var(--gold); color: var(--text); transform: translateY(-1px); }
+
+  .topic-chip .topic-emoji { font-size: 20px; line-height: 1; }
+
+  .topic-chip .topic-name { white-space: nowrap; }
+
+  .topic-chip .topic-lock { margin-left: auto; font-size: 11px; color: var(--gold); opacity: 0.6; }
+
+
+
+  /* TOOLS */
+
+  .tools-section { margin-top: 36px; }
+
+  .tools-title { font-size: 18px; font-weight: 800; margin: 0 0 12px; color: var(--text); letter-spacing: -0.01em; }
+
+  .tools-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+
+  .tool-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 12px 10px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all .15s ease;
+
+    backdrop-filter: blur(6px);
+
+    position: relative;
+
+    font-family: inherit;
+
+    color: var(--text);
+
+  }
+
+  .tool-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+  .tool-card .tool-emoji { font-size: 24px; margin-bottom: 5px; display: block; }
+
+  .tool-card .tool-label { font-size: 12px; font-weight: 700; line-height: 1.25; color: var(--text); }
+
+  .tool-card .tool-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .tool-card .tool-lock {
+
+    position: absolute; top: 8px; right: 8px;
+
+    width: 18px; height: 18px; border-radius: 50%;
+
+    background: rgba(200,168,75,0.15);
+
+    border: 1px solid rgba(200,168,75,0.4);
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 9px; color: var(--gold);
+
+  }
+
+
+
+  /* BOTTOM NAV */
+
+  .bottom-nav {
+
+    position: fixed;
+
+    bottom: 0; left: 0; right: 0;
+
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    background: rgba(8, 13, 27, 0.92);
+
+    border-top: 1px solid var(--border);
+
+    backdrop-filter: blur(16px);
+
+    padding: 8px env(safe-area-inset-right, 0) calc(8px + env(safe-area-inset-bottom, 0)) env(safe-area-inset-left, 0);
+
+  }
+
+  .nav-item {
+
+    flex: 1; background: transparent; border: none;
+
+    padding: 8px 4px; color: var(--muted);
+
+    font-family: inherit; font-size: 10px; font-weight: 700;
+
+    cursor: pointer; display: flex; flex-direction: column;
+
+    align-items: center; gap: 3px;
+
+    transition: color .15s; position: relative;
+
+  }
+
+  .nav-item .nav-emoji { font-size: 20px; line-height: 1; opacity: 0.65; transition: opacity .15s, transform .15s; }
+
+  .nav-item.active { color: var(--gold); }
+
+  .nav-item.active .nav-emoji { opacity: 1; transform: scale(1.1); }
+
+  .nav-item:hover:not(.active) { color: var(--text); }
+
+  .nav-item:hover:not(.active) .nav-emoji { opacity: 0.9; }
+
+  .nav-item .nav-lock {
+
+    position: absolute; top: 4px; right: 50%;
+
+    transform: translateX(16px);
+
+    font-size: 8px; color: var(--gold); opacity: 0.5;
+
+  }
+
+
+
+  /* TOAST */
+
+  .toast {
+
+    position: fixed;
+
+    left: 50%; bottom: 84px;
+
+    transform: translateX(-50%) translateY(20px);
+
+    background: linear-gradient(180deg, var(--gold), var(--gold-2));
+
+    color: #1a0e00;
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    font-weight: 800;
+
+    font-size: 14px;
+
+    box-shadow: 0 10px 30px -8px rgba(200,168,75,.5), 0 0 0 1px rgba(255,255,255,0.15) inset;
+
+    opacity: 0; pointer-events: none;
+
+    transition: opacity .25s, transform .25s;
+
+    z-index: 100;
+
+    white-space: nowrap;
+
+  }
+
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+
+
+  body { padding-bottom: 70px; }
+
+
+
+  @media (max-width: 720px) {
+
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .tool-card { padding: 14px 8px; }
+
+    .tool-card .tool-emoji { font-size: 24px; }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .container { padding: 16px 12px 24px; }
+
+    .quiz-shell { padding: 16px 14px 14px; }
+
+    .options { gap: 7px; }
+
+    .option { padding: 10px 12px; font-size: 14px; }
+
+    .opt-letter { width: 28px; height: 28px; font-size: 12px; }
+
+    .next-btn { padding: 13px; font-size: 15px; }
+
+    .score-ring { width: 150px; height: 150px; }
+
+    .topic-chip { min-width: 110px; padding: 8px 12px; font-size: 12px; }
+
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .nav-item { font-size: 9px; }
+
+    .nav-item .nav-emoji { font-size: 18px; }
+
+  }
+
 </style>
+
 </head>
+
 <body>
+
+
+
+<!-- ========= ANIMATED US FLAG ========= -->
+
+<div class="flag-bg" id="bg-wrap" aria-hidden="true"></div>
+
+
+
 <div class="container">
-  <div class="header">
-    <h1>Fast Pass Real Estate</h1>
-    <p>Free Trial — 15 Questions</p>
+
+
+
+  <div class="top-bar">
+
+    <div class="brand">
+
+      <a href="index.html">
+
+        <div class="brand-mark">PE</div>
+
+        <div>
+
+          <div class="brand-name">Pass Exam USA</div>
+
+          <div class="brand-sub">CDL · Real Estate · DMV</div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <div class="lang-row">
+
+      <button class="lang-btn active" data-lang="en" type="button">EN</button>
+
+    </div>
+
   </div>
 
-  <div id="quiz-screen">
-    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
-    <div class="stats">
-      <span id="counter">Question 1 of 15</span>
-      <span id="score-display">Score: 0</span>
-    </div>
-    <div class="category-badge" id="category"></div>
-    <div class="question-text" id="question"></div>
-    <div id="options"></div>
-    <div class="explanation" id="explanation"></div>
-    <button class="btn btn-primary hidden" id="next-btn" onclick="nextQuestion()">Next Question</button>
+
+
+  <div class="hero">
+
+    <h1 class="hero-title"><span class="gold">Free Real Estate Practice</span></h1>
+
   </div>
 
-  <div id="result-screen" class="hidden">
-    <div class="result-card">
-      <h2>Trial Complete!</h2>
-      <div class="result-score" id="final-score"></div>
-      <div class="result-text" id="final-text"></div>
-      <div class="result-breakdown" id="breakdown"></div>
-      <div class="cta">
-        <h3>Want all 200+ questions?</h3>
-        <p>Get the full Fast Pass Real Estate app with mock exams, vocabulary, math practice, and more.</p>
-        <button class="btn btn-primary" onclick="window.location.reload()">Retry Trial</button>
-      </div>
-    </div>
-  </div>
+
+
+  <div class="topics-rail" id="topicsRail"></div>
+
+
+
+  <div id="quizArea"></div>
+
+  <div id="resultsArea" style="display:none;"></div>
+
+
+
+  <section class="tools-section">
+
+    <h2 class="tools-title">Tools</h2>
+
+    <div class="tools-grid" id="toolsGrid"></div>
+
+  </section>
+
+
+
+  <footer></footer>
+
 </div>
 
+
+
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+
+
+<div class="toast" id="toast">🔒 Available in full version — $14.99 →</div>
+
+
+
 <script>
-const questions=[{"id":22,"category":"Agency & Ethics","question":"The fiduciary duties owed by an agent to a client are often remembered by the acronym:","options":["RESPA","OLDCAR","TILA","CLOSE"],"correctIndex":1,"explanation":"OLDCAR stands for Obedience, Loyalty, Disclosure, Confidentiality, Accountability, and Reasonable care."},{"id":18,"category":"Appraisal & Value","question":"The sales comparison approach to value is most reliable for:","options":["Income-producing commercial buildings","Residential properties in active markets","Special-purpose properties","Vacant farmland"],"correctIndex":1,"explanation":"The sales comparison approach works best in active residential markets where comparable sales data is abundant."},{"id":126,"category":"California Specifics","question":"In California, the Transfer Disclosure Statement (TDS) must be provided by the seller in which type of transaction?","options":["All real property transactions without exception","Residential property sales of 1-4 units","Only new construction sales","Commercial property sales only"],"correctIndex":1,"explanation":"California Civil Code Section 1102 requires sellers of residential property containing one to four dwelling units to provide a Transfer Disclosure Statement."},{"id":9,"category":"Contracts","question":"For a real estate contract to be enforceable, it must satisfy the:","options":["Statute of frauds","Rule against perpetuities","Parol evidence rule","Doctrine of laches"],"correctIndex":0,"explanation":"The Statute of Frauds requires real estate contracts to be in writing and signed to be enforceable."},{"id":42,"category":"Environmental","question":"Lead-based paint disclosure is required for homes built before:","options":["1970","1978","1990","1960"],"correctIndex":1,"explanation":"Federal law requires sellers and landlords to disclose known lead-based paint hazards in properties built before 1978."},{"id":30,"category":"Fair Housing","question":"The Fair Housing Act of 1968 prohibits discrimination based on all of the following EXCEPT:","options":["National origin","Marital status","Race","Religion"],"correctIndex":1,"explanation":"Federal Fair Housing law protects race, color, religion, sex, national origin, disability, and familial status. Marital status is protected in some states but not under federal law."},{"id":13,"category":"Finance & Mortgages","question":"In a mortgage, the borrower is called the:","options":["Mortgagor","Beneficiary","Trustor","Mortgagee"],"correctIndex":0,"explanation":"The mortgagor is the borrower who pledges property as security; the mortgagee is the lender."},{"id":156,"category":"Florida Specifics","question":"The Johnson v. Davis case in Florida established which important principle?","options":["Caveat emptor applies to all residential real estate transactions","Buyers must conduct their own inspections and have no recourse against sellers","Real estate agents are strictly liable for all property defects","Sellers of residential property must disclose known material defects that are not readily observable"],"correctIndex":3,"explanation":"Johnson v. Davis (1985) established that sellers of residential real estate in Florida have a duty to disclose known facts that materially affect the value of the property and are not readily observable by the buyer."},{"id":48,"category":"Investment","question":"A 1031 exchange allows an investor to:","options":["Convert a rental property into a primary residence tax-free","Deduct mortgage interest at double the rate","Avoid all taxes permanently","Defer capital gains tax by exchanging like-kind investment properties"],"correctIndex":3,"explanation":"A 1031 exchange (IRC \u00a71031) defers capital gains taxes when an investor sells one investment property and reinvests in another like-kind property."},{"id":6,"category":"Land Use & Zoning","question":"A municipality\u2019s power to regulate land use through zoning comes from:","options":["Escheat","Police power","Taxation","Eminent domain"],"correctIndex":1,"explanation":"Police power allows the government to enact zoning laws to promote public health, safety, and welfare."},{"id":45,"category":"Licensing","question":"An active real estate license must be held under a:","options":["Licensed sponsoring broker","Home inspector","Mortgage lender","Title company"],"correctIndex":0,"explanation":"A salesperson\u2019s license must be held under (or sponsored by) a licensed broker to legally practice real estate."},{"id":37,"category":"Math","question":"A property sold for $350,000. The agent\u2019s commission is 6%. How much is the commission?","options":["$21,000","$35,000","$17,500","$24,500"],"correctIndex":0,"explanation":"$350,000 \u00d7 0.06 = $21,000. Commission is calculated by multiplying the sale price by the commission rate."},{"id":34,"category":"Property Management","question":"A gross lease requires the tenant to pay:","options":["Only property taxes","A fixed rent with the landlord paying operating expenses","Base rent plus all operating expenses","A percentage of sales revenue"],"correctIndex":1,"explanation":"In a gross (full-service) lease, the tenant pays a fixed rent and the landlord covers operating expenses such as taxes, insurance, and maintenance."},{"id":1,"category":"Property Ownership","question":"Which type of estate gives the owner the most complete form of ownership?","options":["Fee simple absolute","Leasehold estate","Life estate","Fee simple defeasible"],"correctIndex":0,"explanation":"Fee simple absolute is the highest form of ownership recognized by law. It is unlimited in duration and freely transferable."},{"id":141,"category":"Texas Specifics","question":"In Texas, the TREC promulgated contract forms are best described as:","options":["Standardized contract forms that licensees are generally required to use for real estate transactions","Forms created by the Texas Association of Realtors for member use only","Optional forms that agents may use at their discretion","Federal contract forms mandated by HUD for all states"],"correctIndex":0,"explanation":"The Texas Real Estate Commission (TREC) promulgates contract forms that licensees must use when applicable. Using non-promulgated forms when a promulgated version exists can be a violation of the Texas Real Estate License Act."}];
 
-const letters=['A','B','C','D'];
-let current=0,score=0,answered=false,results=[];
+/* =========================================================================
 
-function render(){
-  const q=questions[current];
-  document.getElementById('progress').style.width=((current/questions.length)*100)+'%';
-  document.getElementById('counter').textContent=`Question ${current+1} of ${questions.length}`;
-  document.getElementById('score-display').textContent=`Score: ${score}`;
-  document.getElementById('category').textContent=q.category;
-  document.getElementById('question').textContent=q.question;
-  document.getElementById('explanation').classList.remove('show');
-  document.getElementById('explanation').textContent='';
-  document.getElementById('next-btn').classList.add('hidden');
-  answered=false;
+   ANIMATED US FLAG — direct port from CDL demo (v76).
 
-  const optDiv=document.getElementById('options');
-  optDiv.innerHTML='';
-  q.options.forEach((opt,i)=>{
-    const btn=document.createElement('button');
-    btn.className='option';
-    btn.innerHTML=`<span class="letter">${letters[i]}</span>${opt}`;
-    btn.onclick=()=>selectAnswer(i);
-    optDiv.appendChild(btn);
+   Same math, same RAF throttle (every 3rd frame), same muted colors.
+
+   ========================================================================= */
+
+(function initFlag() {
+
+  const COLORS = { red:'#4A1520', white:'#5A544D', blue:'#0A1220' };
+
+  const STRIPE_COUNT = 13;
+
+  const ROTATION = '-35deg';
+
+
+
+  function buildFlag() {
+
+    const SW = window.innerWidth, SH = window.innerHeight;
+
+    const diagonal = Math.sqrt(SW*SW + SH*SH);
+
+    const FLAG_W = diagonal * 1.4;
+
+    const FLAG_H = FLAG_W / 1.9;
+
+    const STRIPE_H = FLAG_H / STRIPE_COUNT;
+
+    const CANTON_H = STRIPE_H * 7;
+
+    const CANTON_W = FLAG_W * 0.4;
+
+    const bottomOffset = -diagonal * 0.28;
+
+    const leftOffset = -diagonal * 0.32;
+
+
+
+    const stars = [];
+
+    const cols=9, rows=7, sx=CANTON_W/(cols+1), sy=CANTON_H/(rows+1);
+
+    for(let r=1;r<=rows;r++) for(let c=1;c<=cols;c++){
+
+      if(r%2===0 && c>cols-1) continue;
+
+      const x = c*sx + (r%2===0 ? sx*0.5 : 0);
+
+      const y = r*sy;
+
+      const sz = STRIPE_H*0.3;
+
+      const cx=x, cy=y;
+
+      stars.push(`<path d="M ${cx} ${cy-sz} L ${cx+sz*0.22} ${cy-sz*0.22} L ${cx+sz*0.95} ${cy-sz*0.31} L ${cx+sz*0.44} ${cy+sz*0.22} L ${cx+sz*0.59} ${cy+sz*0.9} L ${cx} ${cy+sz*0.5} L ${cx-sz*0.59} ${cy+sz*0.9} L ${cx-sz*0.44} ${cy+sz*0.22} L ${cx-sz*0.95} ${cy-sz*0.31} L ${cx-sz*0.22} ${cy-sz*0.22} Z" fill="#FFFFFF" opacity="0.25"/>`);
+
+    }
+
+
+
+    let stripes = '';
+
+    for(let i=0;i<STRIPE_COUNT;i++){
+
+      stripes += `<rect x="0" y="${i*STRIPE_H}" width="${FLAG_W}" height="${STRIPE_H+0.5}" fill="${i%2===0?COLORS.red:COLORS.white}"/>`;
+
+    }
+
+
+
+    const wrap = document.getElementById('bg-wrap');
+
+    wrap.innerHTML = `
+
+      <div class="flag-layer" style="bottom:${bottomOffset}px;left:${leftOffset}px;width:${FLAG_W}px;height:${FLAG_H}px;transform:rotate(${ROTATION})">
+
+        <svg width="${FLAG_W}" height="${FLAG_H}" viewBox="0 0 ${FLAG_W} ${FLAG_H}" style="overflow:visible">
+
+          <defs>
+
+            <filter id="flag-wave" x="-20%" y="-20%" width="140%" height="140%">
+
+              <feTurbulence id="ft" type="fractalNoise" baseFrequency="0.00275 0.00525" numOctaves="2" seed="5" result="turbulence"/>
+
+              <feDisplacementMap id="fd" in="SourceGraphic" in2="turbulence" scale="80" xChannelSelector="R" yChannelSelector="G"/>
+
+            </filter>
+
+          </defs>
+
+          <g filter="url(#flag-wave)">
+
+            ${stripes}
+
+            <rect x="0" y="0" width="${CANTON_W}" height="${CANTON_H}" fill="${COLORS.blue}"/>
+
+            ${stars.join('')}
+
+          </g>
+
+        </svg>
+
+      </div>
+
+    `;
+
+
+
+    const ft = document.getElementById('ft');
+
+    const fd = document.getElementById('fd');
+
+    const startTime = performance.now();
+
+    const TURB_DUR = 32000, DISP_DUR = 24000;
+
+    let frameCount = 0;
+
+
+
+    function animate() {
+
+      frameCount++;
+
+      if (frameCount % 3 === 0) {
+
+        const elapsed = performance.now() - startTime;
+
+        const turbSin = Math.sin((elapsed%TURB_DUR)/TURB_DUR * Math.PI*2);
+
+        const freqX = 0.00275 + 0.00075*turbSin;
+
+        const freqY = 0.00525 + 0.00125*turbSin;
+
+        if(ft) ft.setAttribute('baseFrequency', freqX.toFixed(5)+' '+freqY.toFixed(5));
+
+        const dispSin = Math.sin((elapsed%DISP_DUR)/DISP_DUR * Math.PI*2);
+
+        const scale = 80 + 5*dispSin;
+
+        if(fd) fd.setAttribute('scale', scale.toFixed(1));
+
+      }
+
+      requestAnimationFrame(animate);
+
+    }
+
+    requestAnimationFrame(animate);
+
+  }
+
+
+
+  buildFlag();
+
+  window.addEventListener('resize', buildFlag);
+
+})();
+
+
+
+/* =========================================================================
+
+   QUIZ DATA — 15 hand-picked tough RE questions
+
+   ========================================================================= */
+
+const QUESTIONS = [
+
+  {
+
+    topicId: 'agency',
+
+    text: "A listing agent privately learns the seller will accept $50,000 less than the asking price. The buyer's agent asks what the seller might accept. What should the listing agent do?",
+
+    options: [
+
+      { id: 'A', text: "Disclose the seller's lowest acceptable price to help close the deal" },
+
+      { id: 'B', text: "Refuse to disclose the seller's bottom-line price and continue to represent the seller's interests" },
+
+      { id: 'C', text: "Disclose it only if the buyer's agent agrees to split the commission" },
+
+      { id: 'D', text: "Tell the buyer's agent to offer asking price minus $25,000" }
+
+    ],
+
+    correctAnswer: 'B',
+
+    explanation: "Fiduciary duties of confidentiality and loyalty prohibit a listing agent from disclosing the seller's bottom-line price to a buyer or buyer's agent. Doing so would breach the agency relationship — even if it could 'help' the deal close."
+
+  },
+
+  {
+
+    topicId: 'tax-exchange',
+
+    text: "To qualify for a Section 1031 like-kind exchange, the investor must:",
+
+    options: [
+
+      { id: 'A', text: "Identify the replacement property within 30 days and close within 90 days" },
+
+      { id: 'B', text: "Identify the replacement property within 45 days and close within 180 days" },
+
+      { id: 'C', text: "Use the property as a primary residence for at least one year" },
+
+      { id: 'D', text: "Exchange only properties located in the same state" }
+
+    ],
+
+    correctAnswer: 'B',
+
+    explanation: "IRC §1031 requires a 45-day identification window and a 180-day closing window from the date of sale of the relinquished property. Both must be held for investment or productive business use — primary residences do not qualify."
+
+  },
+
+  {
+
+    topicId: 'disclosure',
+
+    text: "The federal Lead-Based Paint Disclosure Rule (Title X) applies to:",
+
+    options: [
+
+      { id: 'A', text: "All residential properties regardless of construction date" },
+
+      { id: 'B', text: "Residential 'target housing' built before 1978" },
+
+      { id: 'C', text: "Commercial buildings built before 1978" },
+
+      { id: 'D', text: "Only properties located in states that opted into the rule" }
+
+    ],
+
+    correctAnswer: 'B',
+
+    explanation: "Title X requires disclosure on 'target housing' built before 1978. Exemptions include rentals under 100 days, zero-bedroom units, and housing for the elderly or disabled where children will not reside."
+
+  },
+
+  {
+
+    topicId: 'fair-housing',
+
+    text: "Which of the following is NOT a protected class under the federal Fair Housing Act?",
+
+    options: [
+
+      { id: 'A', text: "Familial status" },
+
+      { id: 'B', text: "Religion" },
+
+      { id: 'C', text: "Marital status" },
+
+      { id: 'D', text: "National origin" }
+
+    ],
+
+    correctAnswer: 'C',
+
+    explanation: "Federal FHA protected classes are: race, color, religion, national origin, sex, familial status, and disability. Marital status is NOT a federal protected class — though many state laws add it. (Note: sexual orientation and gender identity are now protected by HUD policy following Bostock.)"
+
+  },
+
+  {
+
+    topicId: 'state-tx',
+
+    text: "In Texas, the TREC One to Four Family Residential Contract (Resale) must be used:",
+
+    options: [
+
+      { id: 'A', text: "Only when a buyer's agent is involved in the transaction" },
+
+      { id: 'B', text: "By Texas license holders representing a party in a 1–4 family residential resale" },
+
+      { id: 'C', text: "Only for first-time homebuyers" },
+
+      { id: 'D', text: "Only when no attorney is involved" }
+
+    ],
+
+    correctAnswer: 'B',
+
+    explanation: "TREC-promulgated contract forms must be used by Texas real estate license holders in transactions where they represent a party for resale of 1–4 family residential property. New construction sold by the builder is an exception."
+
+  },
+
+  {
+
+    topicId: 'financing',
+
+    text: "A 'due-on-sale clause' in a mortgage allows the lender to:",
+
+    options: [
+
+      { id: 'A', text: "Demand full repayment of the loan if the property is sold or transferred" },
+
+      { id: 'B', text: "Increase the interest rate every twelve months" },
+
+      { id: 'C', text: "Charge a prepayment penalty whenever the loan is paid off early" },
+
+      { id: 'D', text: "Foreclose only when payments are more than 90 days late" }
+
+    ],
+
+    correctAnswer: 'A',
+
+    explanation: "Also called an alienation/acceleration clause, it lets the lender call the entire loan balance due upon transfer of the property, effectively preventing unauthorized loan assumption. The federal Garn-St. Germain Act lists narrow exceptions (intra-family transfers, etc.)."
+
+  },
+
+  {
+
+    topicId: 'state-ca',
+
+    text: "California's Real Estate Transfer Disclosure Statement (TDS) must be delivered:",
+
+    options: [
+
+      { id: 'A', text: "Only after the buyer has signed an offer" },
+
+      { id: 'B', text: "As soon as practicable before transfer of title" },
+
+      { id: 'C', text: "At the listing appointment, to the listing agent only" },
+
+      { id: 'D', text: "After close of escrow" }
+
+    ],
+
+    correctAnswer: 'B',
+
+    explanation: "Cal. Civ. Code §1102 requires the TDS to be delivered 'as soon as practicable before transfer of title.' If delivered after the buyer signs an offer, the buyer has 3 days (personal delivery) or 5 days (by mail) to terminate the contract."
+
+  },
+
+  {
+
+    topicId: 'state-fl',
+
+    text: "Florida's Johnson v. Davis ruling imposes which obligation on sellers of residential property?",
+
+    options: [
+
+      { id: 'A', text: "Disclose only defects that the seller personally repaired" },
+
+      { id: 'B', text: "Disclose facts materially affecting value that are not readily observable and not known to the buyer" },
+
+      { id: 'C', text: "Provide a written 12-month warranty against all defects" },
+
+      { id: 'D', text: "Pay for the buyer's home inspection" }
+
+    ],
+
+    correctAnswer: 'B',
+
+    explanation: "Johnson v. Davis (Fla. 1985) created an affirmative duty for sellers to disclose latent material defects that are not readily observable and not known to the buyer. This is the basis for residential disclosure practice in Florida."
+
+  },
+
+  {
+
+    topicId: 'math',
+
+    text: "A property sells for $425,000. The total commission is 6%, split 50/50 between the listing and buyer's brokerages. The listing agent's contract gives them 60% of the listing brokerage's share. How much does the listing agent earn?",
+
+    options: [
+
+      { id: 'A', text: "$7,650" },
+
+      { id: 'B', text: "$12,750" },
+
+      { id: 'C', text: "$15,300" },
+
+      { id: 'D', text: "$25,500" }
+
+    ],
+
+    correctAnswer: 'A',
+
+    explanation: "$425,000 × 6% = $25,500 total. Listing brokerage's 50% share = $12,750. Listing agent's 60% of that = $7,650."
+
+  },
+
+  {
+
+    topicId: 'math',
+
+    text: "A buyer purchases a home for $360,000 with a $72,000 down payment. What is the loan-to-value (LTV) ratio?",
+
+    options: [
+
+      { id: 'A', text: "70%" },
+
+      { id: 'B', text: "75%" },
+
+      { id: 'C', text: "80%" },
+
+      { id: 'D', text: "90%" }
+
+    ],
+
+    correctAnswer: 'C',
+
+    explanation: "Loan amount = $360,000 − $72,000 = $288,000. LTV = $288,000 ÷ $360,000 = 0.80, or 80%."
+
+  },
+
+  {
+
+    topicId: 'deeds',
+
+    text: "Which deed provides the GREATEST protection to the grantee?",
+
+    options: [
+
+      { id: 'A', text: "Quitclaim deed" },
+
+      { id: 'B', text: "Bargain and sale deed" },
+
+      { id: 'C', text: "Special (limited) warranty deed" },
+
+      { id: 'D', text: "General warranty deed" }
+
+    ],
+
+    correctAnswer: 'D',
+
+    explanation: "A general warranty deed warrants title against all defects — including those that arose before the grantor's ownership, back to the property's origin. Special warranty only covers the grantor's period of ownership; a quitclaim provides no warranty at all."
+
+  },
+
+  {
+
+    topicId: 'zoning',
+
+    text: "A non-conforming use is best defined as:",
+
+    options: [
+
+      { id: 'A', text: "A use that violates current zoning and must cease immediately" },
+
+      { id: 'B', text: "A use that was legal when established but does not conform to current zoning" },
+
+      { id: 'C', text: "A use that requires a conditional use permit in every district" },
+
+      { id: 'D', text: "Identical in meaning to a zoning variance" }
+
+    ],
+
+    correctAnswer: 'B',
+
+    explanation: "A non-conforming (or 'grandfathered') use was lawful at inception but no longer complies after rezoning. It is generally allowed to continue, cannot be expanded, and may lose protection if abandoned for a statutory period."
+
+  },
+
+  {
+
+    topicId: 'leases',
+
+    text: "Effective July 1, 2024, California (AB 12) generally limits a residential security deposit on an unfurnished unit to:",
+
+    options: [
+
+      { id: 'A', text: "One month's rent" },
+
+      { id: 'B', text: "Two months' rent" },
+
+      { id: 'C', text: "Three months' rent" },
+
+      { id: 'D', text: "No statutory maximum" }
+
+    ],
+
+    correctAnswer: 'A',
+
+    explanation: "AB 12 caps residential security deposits at one month's rent, regardless of furnished or unfurnished status. A narrow exception lets small landlords (≤2 properties / ≤4 units) collect up to 2 months' rent — but not from a service-member tenant."
+
+  },
+
+  {
+
+    topicId: 'valuation',
+
+    text: "The appraisal principle of substitution states that:",
+
+    options: [
+
+      { id: 'A', text: "A prudent buyer will pay no more for a property than for an equally desirable substitute" },
+
+      { id: 'B', text: "Value always increases with improvements to the property" },
+
+      { id: 'C', text: "Value is determined solely by the highest and best use" },
+
+      { id: 'D', text: "Property values automatically rise during periods of inflation" }
+
+    ],
+
+    correctAnswer: 'A',
+
+    explanation: "Substitution is the foundation of the sales comparison approach: a buyer will pay no more for a property than it would cost to acquire an equally desirable substitute, assuming no costly delays."
+
+  },
+
+  {
+
+    topicId: 'closing',
+
+    text: "Under RESPA, paying or accepting a fee, kickback, or thing of value for the referral of settlement-service business is:",
+
+    options: [
+
+      { id: 'A', text: "Permitted if disclosed in writing to the consumer" },
+
+      { id: 'B', text: "Permitted if both parties agree in advance" },
+
+      { id: 'C', text: "Prohibited under Section 8" },
+
+      { id: 'D', text: "Permitted only between licensed brokers" }
+
+    ],
+
+    correctAnswer: 'C',
+
+    explanation: "RESPA Section 8 prohibits kickbacks and unearned fees for referrals of federally related mortgage settlement services. Violations carry civil and criminal penalties — including fines and up to one year in prison."
+
+  }
+
+];
+
+
+
+const TOPIC_LABELS = {
+
+  'agency': 'AGENCY',
+
+  'tax-exchange': '1031 EXCHANGE',
+
+  'disclosure': 'DISCLOSURE',
+
+  'fair-housing': 'FAIR HOUSING',
+
+  'state-tx': 'TEXAS LAW',
+
+  'financing': 'FINANCING',
+
+  'state-ca': 'CALIFORNIA LAW',
+
+  'state-fl': 'FLORIDA LAW',
+
+  'math': 'RE MATH',
+
+  'deeds': 'DEEDS & TITLE',
+
+  'zoning': 'ZONING',
+
+  'leases': 'LEASES',
+
+  'valuation': 'VALUATION',
+
+  'closing': 'CLOSING / RESPA'
+
+};
+
+
+
+let questions = QUESTIONS;
+
+let current = 0;
+
+let correctCount = 0;
+
+let answered = false;
+
+let feedbackCollapsed = false;
+
+
+
+function escapeHtml(s) {
+
+  if (s == null) return '';
+
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+}
+
+function setProgress(idx) {
+
+  const pct = (idx / questions.length) * 100;
+
+  const bar = document.getElementById('progressBar');
+
+  if (bar) bar.style.width = pct + '%';
+
+}
+
+
+
+function renderQuestion() {
+
+  const q = questions[current];
+
+  if (!q) { renderResults(); return; }
+
+  answered = false;
+
+  feedbackCollapsed = false;
+
+
+
+  const topic = TOPIC_LABELS[q.topicId] || q.topicId.toUpperCase();
+
+
+
+  let html = '';
+
+  html += '<div class="meta-row">';
+
+  html += '<button class="meta-x" type="button" onclick="window.location.href=\'index.html\'">×</button>';
+
+  html += '<span class="meta-counter"><b>' + (current + 1) + '</b>/' + questions.length + '</span>';
+
+  html += '<span class="meta-pill">' + escapeHtml(topic) + '</span>';
+
+  html += '<span class="meta-pts">' + (correctCount * 10) + ' pts</span>';
+
+  html += '</div>';
+
+  html += '<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>';
+
+  html += '<div class="quiz-shell">';
+
+  html += '<div class="q-text">' + escapeHtml(q.text) + '</div>';
+
+  html += '<div class="options">';
+
+  for (const opt of q.options) {
+
+    html += '<button class="option" data-id="' + opt.id + '" type="button">';
+
+    html += '<span class="opt-letter">' + opt.id + '</span>';
+
+    html += '<span class="opt-text">' + escapeHtml(opt.text) + '</span>';
+
+    html += '<span class="opt-icon"></span>';
+
+    html += '</button>';
+
+  }
+
+  html += '</div>';
+
+  html += '<div class="feedback" id="feedbackBox">';
+
+  html += '<div class="feedback-header" id="feedbackHeader">';
+
+  html += '<span class="feedback-title" id="feedbackTitle"></span>';
+
+  html += '<span class="feedback-toggle">why</span>';
+
+  html += '</div>';
+
+  html += '<div class="feedback-body">';
+
+  html += '<div id="feedbackText"></div>';
+
+  html += '</div>';
+
+  html += '</div>';
+
+  html += '<button class="next-btn" id="nextBtn" disabled>Select an answer</button>';
+
+  html += '</div>';
+
+
+
+  document.getElementById('quizArea').innerHTML = html;
+
+  setProgress(current);
+
+
+
+  document.querySelectorAll('.option').forEach(btn => {
+
+    btn.addEventListener('click', () => onAnswer(btn.dataset.id));
+
   });
-}
 
-function selectAnswer(idx){
-  if(answered)return;
-  answered=true;
-  const q=questions[current];
-  const opts=document.querySelectorAll('.option');
-  opts.forEach((o,i)=>{
-    if(i===q.correctIndex)o.classList.add('correct');
-    if(i===idx&&i!==q.correctIndex)o.classList.add('wrong');
-    o.style.pointerEvents='none';
+  document.getElementById('nextBtn').addEventListener('click', () => {
+
+    current++;
+
+    renderQuestion();
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
   });
-  if(idx===q.correctIndex)score++;
-  results.push({category:q.category,correct:idx===q.correctIndex});
 
-  const expl=document.getElementById('explanation');
-  expl.textContent=q.explanation;
-  expl.classList.add('show');
-  document.getElementById('next-btn').classList.remove('hidden');
-  document.getElementById('score-display').textContent=`Score: ${score}`;
+  const fbHeader = document.getElementById('feedbackHeader');
+
+  if (fbHeader) {
+
+    fbHeader.addEventListener('click', () => {
+
+      const fb = document.getElementById('feedbackBox');
+
+      feedbackCollapsed = !feedbackCollapsed;
+
+      fb.classList.toggle('collapsed', feedbackCollapsed);
+
+    });
+
+  }
+
 }
 
-function nextQuestion(){
-  current++;
-  if(current>=questions.length){showResults();return;}
-  render();
-}
 
-function showResults(){
-  document.getElementById('quiz-screen').classList.add('hidden');
-  document.getElementById('result-screen').classList.remove('hidden');
-  const pct=Math.round((score/questions.length)*100);
-  document.getElementById('final-score').textContent=pct+'%';
-  document.getElementById('final-text').textContent=
-    pct>=70?`You passed! ${score}/${questions.length} correct.`:`${score}/${questions.length} correct. You need 70% to pass.`;
 
-  const bd=document.getElementById('breakdown');
-  let html='';
-  results.forEach(r=>{
-    html+=`<div class="result-row"><span class="cat">${r.category}</span><span class="res ${r.correct?'pass':'fail'}">${r.correct?'Correct':'Wrong'}</span></div>`;
+function onAnswer(chosenId) {
+
+  if (answered) return;
+
+  answered = true;
+
+  const q = questions[current];
+
+  const correct = q.correctAnswer;
+
+  const wasCorrect = chosenId === correct;
+
+  if (wasCorrect) correctCount++;
+
+
+
+  document.querySelectorAll('.option').forEach(btn => {
+
+    btn.disabled = true;
+
+    if (btn.dataset.id === correct) {
+
+      btn.classList.add('correct');
+
+      const icon = btn.querySelector('.opt-icon');
+
+      if (icon) icon.textContent = '✓';
+
+    }
+
+    if (btn.dataset.id === chosenId && !wasCorrect) {
+
+      btn.classList.add('wrong');
+
+      const icon = btn.querySelector('.opt-icon');
+
+      if (icon) icon.textContent = '✕';
+
+    }
+
   });
-  bd.innerHTML=html;
+
+
+
+  const pts = document.querySelector('.meta-pts');
+
+  if (pts) pts.textContent = (correctCount * 10) + ' pts';
+
+
+
+  const fb = document.getElementById('feedbackBox');
+
+  const fbTitle = document.getElementById('feedbackTitle');
+
+  const fbText = document.getElementById('feedbackText');
+
+  fb.classList.add('show');
+
+  fb.classList.toggle('is-correct', wasCorrect);
+
+  feedbackCollapsed = wasCorrect;
+
+  fb.classList.toggle('collapsed', feedbackCollapsed);
+
+
+
+  fbTitle.textContent = wasCorrect ? '✓ Correct — tap "why" to see the explanation' : '✕ Incorrect — Here\u2019s Why';
+
+  fbText.textContent = q.explanation;
+
+
+
+  const nextBtn = document.getElementById('nextBtn');
+
+  nextBtn.disabled = false;
+
+  nextBtn.textContent = current === questions.length - 1 ? 'See Results →' : 'Next Question →';
+
+
+
+  setTimeout(() => {
+
+    nextBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  }, 50);
+
 }
 
-render();
+
+
+function renderResults() {
+
+  document.getElementById('quizArea').style.display = 'none';
+
+  const area = document.getElementById('resultsArea');
+
+  area.style.display = 'block';
+
+
+
+  const pct = Math.round((correctCount / questions.length) * 100);
+
+  let verdict = '';
+
+  if (pct >= 80) verdict = 'Strong result. Lock it in with the full Real Estate prep.';
+
+  else if (pct >= 60) verdict = 'On track. Polish the weak categories before exam day.';
+
+  else verdict = 'Drill the fundamentals — laws, math, disclosure — before your test.';
+
+
+
+  const radius = 78;
+
+  const circumference = 2 * Math.PI * radius;
+
+  const offset = circumference * (1 - correctCount / questions.length);
+
+
+
+  area.innerHTML = ''
+
+    + '<div class="results-card">'
+
+      + '<div class="score-ring">'
+
+        + '<svg viewBox="0 0 180 180">'
+
+          + '<defs><linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">'
+
+            + '<stop offset="0%" stop-color="#C8A84B"/>'
+
+            + '<stop offset="100%" stop-color="#7A5F12"/>'
+
+          + '</linearGradient></defs>'
+
+          + '<circle class="ring-bg" cx="90" cy="90" r="' + radius + '" fill="none" stroke-width="10"/>'
+
+          + '<circle class="ring-fg" cx="90" cy="90" r="' + radius + '" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + circumference + '" id="ringFg"/>'
+
+        + '</svg>'
+
+        + '<div class="score-num">'
+
+          + '<div class="score-pct">' + pct + '%</div>'
+
+          + '<div class="score-label">Ready</div>'
+
+        + '</div>'
+
+      + '</div>'
+
+      + '<div class="score-correct">' + correctCount + ' / ' + questions.length + '</div>'
+
+      + '<div class="score-correct-label">Answered correctly</div>'
+
+      + '<div class="score-verdict">' + verdict + '</div>'
+
+      + '<div class="cta-box">'
+
+        + '<h3>Get the full Fast Pass Real Estate</h3>'
+
+        + '<ul class="cta-list">'
+
+          + '<li>200+ exam questions across all categories</li>'
+
+          + '<li>National + California, Texas, Florida coverage</li>'
+
+          + '<li>Real Estate Math module with step-by-step solutions</li>'
+
+          + '<li>Readiness Score Tracker — know when you’re exam-ready</li>'
+
+          + '<li>Works fully offline — no signal needed</li>'
+
+          + '<li>Lifetime access, no subscription</li>'
+
+        + '</ul>'
+
+        + '<div class="cta-price-row">'
+
+          + '<div class="cta-price">$14.99</div>'
+
+          + '<div class="cta-price-sub">one-time payment · lifetime access</div>'
+
+        + '</div>'
+
+        + '<a class="cta-btn" href="index.html#real-estate">Get Full Real Estate Prep →</a>'
+
+      + '</div>'
+
+      + '<button class="restart-btn" id="restartBtn">Restart Demo</button>'
+
+    + '</div>';
+
+
+
+  requestAnimationFrame(() => {
+
+    setTimeout(() => {
+
+      const ring = document.getElementById('ringFg');
+
+      if (ring) ring.style.strokeDashoffset = offset;
+
+    }, 100);
+
+  });
+
+
+
+  document.getElementById('restartBtn').addEventListener('click', () => {
+
+    current = 0; correctCount = 0;
+
+    document.getElementById('quizArea').style.display = '';
+
+    area.style.display = 'none';
+
+    renderQuestion();
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  });
+
+}
+
+
+
+renderQuestion();
+
+
+
+/* =========================================================================
+
+   APK SHELL — Topics rail, Tools grid, Bottom nav, Toast
+
+   ========================================================================= */
+
+(function buildAppShell() {
+
+  // 15 RE categories
+
+  const TOPICS = [
+
+    { emoji: '🤝',  name: 'Agency & Fiduciary' },
+
+    { emoji: '📝',  name: 'Contracts' },
+
+    { emoji: '🏠',  name: 'Property Ownership' },
+
+    { emoji: '💰',  name: 'Financing & Mortgages' },
+
+    { emoji: '🧮',  name: 'Real Estate Math' },
+
+    { emoji: '⚖️', name: 'Fair Housing' },
+
+    { emoji: '📋',  name: 'Disclosures' },
+
+    { emoji: '📜',  name: 'Title & Deeds' },
+
+    { emoji: '🏗️', name: 'Land Use & Zoning' },
+
+    { emoji: '🔑',  name: 'Leases & Property Mgmt' },
+
+    { emoji: '✍️',  name: 'Closing & Settlement' },
+
+    { emoji: '📊',  name: 'Valuation & Appraisal' },
+
+    { emoji: '🇺🇸', name: 'Federal Law' },
+
+    { emoji: '🌴',  name: 'California State Law' },
+
+    { emoji: '🤠',  name: 'Texas State Law' }
+
+  ];
+
+
+
+  // 5 RE tools (per spec)
+
+  const TOOLS = [
+
+    { emoji: '🏠',  label: 'Property Law',   sub: 'Core principles' },
+
+    { emoji: '📊',  label: 'Math Practice',  sub: 'Step-by-step solutions' },
+
+    { emoji: '📋',  label: 'Contracts',       sub: 'Forms & clauses' },
+
+    { emoji: '🏗️', label: 'Zoning',          sub: 'Land use rules' },
+
+    { emoji: '📖',  label: 'Glossary',         sub: '500+ RE terms' }
+
+  ];
+
+
+
+  const NAV = [
+
+    { emoji: '🏠',  label: 'Home',    active: true,  free: true  },
+
+    { emoji: '📚',  label: 'Study',   active: false, free: false },
+
+    { emoji: '📝',  label: 'Exam',    active: false, free: false },
+
+    { emoji: '🛠️', label: 'Tools',   active: false, free: false },
+
+    { emoji: '👤',  label: 'Profile', active: false, free: false }
+
+  ];
+
+
+
+  const rail = document.getElementById('topicsRail');
+
+  if (rail) {
+
+    rail.innerHTML = TOPICS.map(t => (
+
+      '<button class="topic-chip" type="button" data-locked="1">' +
+
+        '<span class="topic-emoji">' + t.emoji + '</span>' +
+
+        '<span class="topic-name">' + t.name + '</span>' +
+
+        '<span class="topic-lock">🔒</span>' +
+
+      '</button>'
+
+    )).join('');
+
+    rail.querySelectorAll('.topic-chip').forEach(chip => {
+
+      chip.addEventListener('click', () => showLockToast());
+
+    });
+
+  }
+
+
+
+  const tools = document.getElementById('toolsGrid');
+
+  if (tools) {
+
+    tools.innerHTML = TOOLS.map(t => (
+
+      '<button class="tool-card" type="button" data-locked="1">' +
+
+        '<span class="tool-lock">🔒</span>' +
+
+        '<span class="tool-emoji">' + t.emoji + '</span>' +
+
+        '<span class="tool-label">' + t.label + '</span>' +
+
+        '<span class="tool-sub">' + t.sub + '</span>' +
+
+      '</button>'
+
+    )).join('');
+
+    tools.querySelectorAll('.tool-card').forEach(card => {
+
+      card.addEventListener('click', () => showLockToast());
+
+    });
+
+  }
+
+
+
+  const nav = document.getElementById('bottomNav');
+
+  if (nav) {
+
+    nav.innerHTML = NAV.map(n => (
+
+      '<button class="nav-item' + (n.active ? ' active' : '') + '" type="button" data-free="' + (n.free ? '1' : '0') + '">' +
+
+        '<span class="nav-emoji">' + n.emoji + '</span>' +
+
+        '<span>' + n.label + '</span>' +
+
+        (n.free ? '' : '<span class="nav-lock">🔒</span>') +
+
+      '</button>'
+
+    )).join('');
+
+    nav.querySelectorAll('.nav-item').forEach(item => {
+
+      item.addEventListener('click', () => {
+
+        if (item.dataset.free === '1') {
+
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        } else {
+
+          showLockToast();
+
+        }
+
+      });
+
+    });
+
+  }
+
+
+
+  let toastTimer = null;
+
+  function showLockToast() {
+
+    const toast = document.getElementById('toast');
+
+    if (!toast) return;
+
+    toast.classList.add('show');
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+
+      toast.classList.remove('show');
+
+    }, 2500);
+
+  }
+
+  window.__showLockToast = showLockToast;
+
+})();
+
 </script>
+
 </body>
+
 </html>
