@@ -2,16 +2,6 @@
    DMV Practice Test 2026 — PWA App
    ========================================================================= */
 
-/* ---------- ACCESS CONTROL ---------- */
-(function() {
-  const accessToken = sessionStorage.getItem('dmv_access_token');
-  const accessGranted = sessionStorage.getItem('dmv_access_granted');
-  if (accessToken !== 'x7k92p59' || accessGranted !== 'true') {
-    // Access check failed - content will be blocked by index.html
-    console.warn('DMV access control: Access denied');
-  }
-})();
-
 /* ---------- DATA ---------- */
 const CATEGORIES = [
   { id: 'Road Signs',    emoji: '🚦', target: 25 },

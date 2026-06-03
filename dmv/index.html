@@ -22,16 +22,19 @@
 <!-- ACCESS CHECK -->
 <script>
   (function() {
-    const accessToken = sessionStorage.getItem('dmv_access_token');
-    const accessGranted = sessionStorage.getItem('dmv_access_granted');
-    if (accessToken !== 'x7k92p59' || accessGranted !== 'true') {
+    // Check for access code in URL parameter
+    const params = new URLSearchParams(window.location.search);
+    const accessCode = params.get('access');
+    
+    if (accessCode !== 'dmv-full-x7k92p59') {
+      // No valid access code - show lock message
       document.body.innerHTML = `
         <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#050A14;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:20px;">
           <div style="text-align:center;max-width:500px;">
             <div style="font-size:48px;margin-bottom:20px;">🔒</div>
             <h1 style="color:#fff;font-size:28px;margin-bottom:12px;font-weight:700;">Access Required</h1>
             <p style="color:#8B96AE;font-size:16px;line-height:1.6;margin-bottom:32px;">
-              This is a premium product. Please purchase to receive your private access link.
+              This is a premium product. Please purchase this product to receive your private access link.
             </p>
             <a href="https://dimaedwardsehk.github.io/pass-exam-usa/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#3B82F6,#60A5FA);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.3s;">
               Back to Store
@@ -40,7 +43,7 @@
         </div>
       `;
       document.documentElement.innerHTML = `<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Access Required - DMV Practice Test</title><style>body{margin:0;padding:0;background:#050A14;}</style></head>${document.body.outerHTML}</html>`;
-      throw new Error('Access denied');
+      throw new Error('Access denied: invalid or missing access code');
     }
   })();
 </script>
