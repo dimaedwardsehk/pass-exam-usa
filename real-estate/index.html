@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ACCESS CHECK - Early validation before loading resources -->
+    <script>
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const accessCode = params.get('access');
+        if (accessCode !== 're-full-z9n5k3w2') {
+          document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Access Required</title><style>body{margin:0;padding:0;background:#0A0F1E;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:system-ui,-apple-system;}</style></head><body><div style="text-align:center;max-width:500px;padding:20px;"><div style="font-size:48px;margin-bottom:20px;">🔒</div><h1 style="color:#fff;font-size:28px;margin-bottom:12px;font-weight:700;">Access Required</h1><p style="color:#94A3B8;font-size:16px;line-height:1.6;margin-bottom:32px;">This is a premium product. Please purchase to receive your private access link.</p><a href="https://dimaedwardsehk.github.io/pass-exam-usa/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#C8A84B,#D4B85C);color:#0A0F1E;border-radius:8px;text-decoration:none;font-weight:600;">Back to Store</a></div></body></html>`);
+          document.close();
+          throw new Error('Access denied');
+        }
+      })();
+    </script>
+
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -31,28 +44,6 @@
 </head>
 
   <body>
-    <!-- ACCESS CHECK -->
-    <script>
-      (function() {
-        // Real Estate is closed for now - no paid access links yet
-        document.body.innerHTML = `
-          <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0A0F1E;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:20px;">
-            <div style="text-align:center;max-width:500px;">
-              <div style="font-size:48px;margin-bottom:20px;">🔒</div>
-              <h1 style="color:#fff;font-size:28px;margin-bottom:12px;font-weight:700;">Access Required</h1>
-              <p style="color:#94A3B8;font-size:16px;line-height:1.6;margin-bottom:32px;">
-                This is a premium product. Please purchase to receive your private access link.
-              </p>
-              <a href="https://dimaedwardsehk.github.io/pass-exam-usa/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#C8A84B,#D4B85C);color:#0A0F1E;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.3s;">
-                Back to Store
-              </a>
-            </div>
-          </div>
-        `;
-        document.documentElement.innerHTML = `<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Access Required - Real Estate License</title><style>body{margin:0;padding:0;background:#0A0F1E;}</style></head>${document.body.outerHTML}</html>`;
-        throw new Error('Access denied');
-      })();
-    </script>
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
     <noscript>
       You need to enable JavaScript to run this app.
