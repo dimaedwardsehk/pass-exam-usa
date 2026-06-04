@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import logging
 import re
 import time
@@ -15,7 +16,7 @@ from slugify import slugify
 
 logger = logging.getLogger(__name__)
 
-MODEL_NAME = "gpt-4o-mini"
+MODEL_NAME = os.getenv("AI_MODEL", "5a01010b-395b-48c7-b931-0ece022b1e12")
 TEMPERATURE = 0.4
 MAX_TOKENS = 3500
 MAX_ATTEMPTS = 3
@@ -137,7 +138,17 @@ def _fill_prompt(
 
 
 def _request_article(filled_prompt: str) -> str:
-    client = OpenAI()
+    api_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
+    base_url = os.getenv("AI_BASE_URL")
+
+    if not api_key:
+        raise RuntimeError("Missing AI_API_KEY")
+
+    client_args = {"api_key": api_key}
+    if base_url:
+        client_args["base_url"] = base_url
+
+    client = OpenAI(**client_args)
 
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:

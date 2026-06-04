@@ -232,3 +232,53 @@ if __name__ == "__main__":
     update_sitemap(path)
     print("OK:", path)
     sys.exit(0)
+
+
+def update_blog_index() -> None:
+    """Create blog/index.html with links to all published articles."""
+    blog_dir = ROOT / "blog"
+    blog_dir.mkdir(parents=True, exist_ok=True)
+
+    articles = []
+    for path in sorted(blog_dir.glob("*.html"), reverse=True):
+        if path.name in ("index.html", "_template.html"):
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        title_match = re.search(r"<title>(.*?)</title>", text, re.DOTALL)
+        title = title_match.group(1).strip() if title_match else path.stem.replace("-", " ").title()
+        articles.append((path.name, html.escape(title)))
+
+    if articles:
+        items = "\n".join(
+            f'      <li><a href="{filename}">{title}</a></li>'
+            for filename, title in articles
+        )
+    else:
+        items = '      <li>No articles published yet.</li>'
+
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pass Exam USA Blog</title>
+<meta name="description" content="Study guides and exam prep articles for DMV, CDL, and Real Estate exams.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header><a href="../index.html">&larr; Back to Pass Exam USA</a></header>
+<main>
+  <section class="blog-list" aria-label="All articles">
+    <h1>Pass Exam USA Blog</h1>
+    <p>Latest study guides and exam prep articles.</p>
+    <ul>
+{items}
+    </ul>
+  </section>
+</main>
+<footer><p>&copy; Pass Exam USA</p></footer>
+</body>
+</html>
+"""
+    (blog_dir / "index.html").write_text(page, encoding="utf-8")
+    logger.info("Updated blog/index.html")

@@ -157,6 +157,7 @@ def _run_pipeline() -> int:
 
     article_path = integrator.save_article(article)
     integrator.update_index(article_path, article["title"], article["category"])
+    integrator.update_blog_index()
     integrator.update_sitemap(article_path)
 
     used.append(str(keyword["kw"]))
