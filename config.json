@@ -89,7 +89,7 @@
     },
     "dmv": {
       "title": "Driver's License",
-      "price": 0.99,
+      "price": 4.99,
       "currency": "$",
       "status": "available",
       "stores": {
