@@ -17,6 +17,11 @@
         }
       },
       "payment_links": {
+        "payhip": {
+          "url": "PASTE_REAL_ESTATE_PAYHIP_LINK_HERE",
+          "enabled": false,
+          "label": "Buy Now - $14.99"
+        },
         "patreon": {
           "url": "",
           "enabled": false,
@@ -55,6 +60,11 @@
         }
       },
       "payment_links": {
+        "payhip": {
+          "url": "PASTE_CDL_PAYHIP_LINK_HERE",
+          "enabled": false,
+          "label": "Buy Now - $9.99"
+        },
         "patreon": {
           "url": "",
           "enabled": false,
@@ -93,6 +103,11 @@
         }
       },
       "payment_links": {
+        "payhip": {
+          "url": "https://payhip.com/b/qv3fM",
+          "enabled": true,
+          "label": "Buy Now - $4.99"
+        },
         "patreon": {
           "url": "",
           "enabled": false,
