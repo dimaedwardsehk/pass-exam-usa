@@ -18,8 +18,8 @@
       },
       "payment_links": {
         "payhip": {
-          "url": "PASTE_REAL_ESTATE_PAYHIP_LINK_HERE",
-          "enabled": false,
+          "url": "https://payhip.com/b/Agjxt",
+          "enabled": true,
           "label": "Buy Now - $14.99"
         },
         "patreon": {
@@ -61,8 +61,8 @@
       },
       "payment_links": {
         "payhip": {
-          "url": "PASTE_CDL_PAYHIP_LINK_HERE",
-          "enabled": false,
+          "url": "https://payhip.com/b/FEgQH",
+          "enabled": true,
           "label": "Buy Now - $9.99"
         },
         "patreon": {
