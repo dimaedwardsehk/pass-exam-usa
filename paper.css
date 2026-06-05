@@ -1,0 +1,50 @@
+/* Dark-green recolor for the stacked paper-sheet article cards.
+   Loaded AFTER style.css so these win the cascade.
+   The site is navy + gold; sheets used to be white, which clashed. */
+
+.blog-list[aria-label="All articles"] li,
+.blog-list[aria-label="Latest articles"] li.blog-item {
+  background: linear-gradient(158deg, #143b30 0%, #0a241d 100%) !important;
+  border: 1px solid rgba(212,175,55,.32) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.05) inset,
+    0 18px 30px rgba(2, 6, 23, 0.55),
+    0 6px 10px rgba(2, 6, 23, 0.45) !important;
+}
+
+/* faint ruled lines (warm gold tint instead of blue-on-white) */
+.blog-list[aria-label="All articles"] li::before,
+.blog-list[aria-label="Latest articles"] li.blog-item::before {
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 26px, rgba(245,215,110,0.08) 27px) !important;
+}
+
+/* folded dog-ear in a darker green */
+.blog-list[aria-label="All articles"] li::after,
+.blog-list[aria-label="Latest articles"] li.blog-item::after {
+  border-color: transparent #08201a transparent transparent !important;
+  filter: drop-shadow(-1px 1px 1px rgba(0,0,0,.4)) !important;
+}
+
+/* title band: dark base + warm light text */
+.blog-list[aria-label="All articles"] li a,
+.blog-list[aria-label="Latest articles"] li.blog-item a {
+  color: #f3ead0 !important;
+  background: linear-gradient(to top, #0a241d 60%, rgba(10,36,29,0)) !important;
+  border-top: 1px solid rgba(245,215,110,.30) !important;
+}
+
+/* keep category accents on the title band */
+.blog-list li.blog-item[data-category="cdl"] a { border-top-color: rgba(232,124,53,.7) !important; }
+.blog-list li.blog-item[data-category="real_estate"] a { border-top-color: rgba(212,175,55,.75) !important; }
+.blog-list li.blog-item[data-category="dmv"] a { border-top-color: rgba(96,165,250,.7) !important; }
+
+/* newest (front) sheet keeps the gold ring, on dark green */
+.blog-list[aria-label="All articles"] li:first-child,
+.blog-list[aria-label="Latest articles"] li.blog-item:first-child {
+  border-color: rgba(212,175,55,.6) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.05) inset,
+    0 26px 44px rgba(2, 6, 23, 0.6),
+    0 0 0 1px rgba(212,175,55,.4),
+    0 0 26px rgba(212,175,55,.3) !important;
+}
