@@ -124,3 +124,64 @@ main[data-category] article section[class*="cta"] * {
   text-decoration: underline;
 }
 /* SEO_ARTICLE_POLISH_END */
+
+/* QUICK_DARK_BLOG_FIX */
+#latest-articles,
+.seo-articles-home {
+  max-width: 760px !important;
+  margin: 32px auto 42px !important;
+  padding: 16px !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, rgba(8,15,35,.96), rgba(4,9,24,.88)) !important;
+  border: 1px solid rgba(212,175,55,.35) !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,.45) !important;
+  color: #f8fafc !important;
+}
+
+#latest-articles h2,
+#latest-articles h3,
+#latest-articles p,
+#latest-articles a {
+  color: #f8fafc !important;
+}
+
+#latest-articles article,
+.seo-article-card {
+  background: rgba(15,23,42,.82) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 16px !important;
+  padding: 14px !important;
+}
+
+#latest-articles a[href*="blog/"]:last-child,
+.seo-article-card__button {
+  background: linear-gradient(135deg, #d4af37, #f5d76e) !important;
+  color: #07101f !important;
+  border-radius: 999px !important;
+}
+
+body.blog-article-page,
+body:has(main[data-category]) {
+  background: #060b1a !important;
+}
+
+main[data-category] article {
+  background: linear-gradient(145deg, rgba(8,15,35,.96), rgba(4,9,24,.9)) !important;
+  border: 1px solid rgba(212,175,55,.28) !important;
+  box-shadow: 0 30px 90px rgba(0,0,0,.5) !important;
+  color: #e5e7eb !important;
+}
+
+main[data-category] article h1 {
+  color: #ffffff !important;
+}
+
+main[data-category] article h2 {
+  color: #f5d76e !important;
+}
+
+main[data-category] article p,
+main[data-category] article li {
+  color: #cbd5e1 !important;
+  text-align: left !important;
+}
