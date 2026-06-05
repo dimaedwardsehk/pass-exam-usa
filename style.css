@@ -286,31 +286,20 @@ main[data-category] article li {
 
 
 /* PAPER_STACK_BLOG_START */
-/* Blog index ("/blog/") rendered as a 3D stack of small A4 paper sheets.
-   Scoped strictly to the blog listing via [aria-label="All articles"] so the
-   homepage "Latest articles" list and cards are never affected. */
+/* Articles rendered as a 3D stack of small A4 paper sheets.
+   Two contexts share the look:
+   - /blog/ page:  .blog-list[aria-label="All articles"]  (items: <li>)
+   - homepage:     .blog-list[aria-label="Latest articles"]  (items: <li class="blog-item">) */
+
+/* --- /blog/ page: dark background + centered header/footer --- */
 body:has(.blog-list[aria-label="All articles"]) {
   background:
     radial-gradient(1200px 600px at 50% -8%, #0d1838, #060b1a 60%) !important;
   min-height: 100vh;
 }
-
-body:has(.blog-list[aria-label="All articles"]) header {
-  text-align: center;
-  padding: 26px 0 4px;
-}
-
-body:has(.blog-list[aria-label="All articles"]) header a {
-  color: #f5d76e;
-  text-decoration: none;
-  font-weight: 800;
-}
-
-body:has(.blog-list[aria-label="All articles"]) footer {
-  color: #64748b;
-  text-align: center;
-  padding: 40px 0 56px;
-}
+body:has(.blog-list[aria-label="All articles"]) header { text-align: center; padding: 26px 0 4px; }
+body:has(.blog-list[aria-label="All articles"]) header a { color: #f5d76e; text-decoration: none; font-weight: 800; }
+body:has(.blog-list[aria-label="All articles"]) footer { color: #64748b; text-align: center; padding: 40px 0 56px; }
 
 .blog-list[aria-label="All articles"] {
   max-width: 780px !important;
@@ -321,37 +310,37 @@ body:has(.blog-list[aria-label="All articles"]) footer {
   box-shadow: none !important;
   text-align: center;
 }
+.blog-list[aria-label="All articles"] h1 { color: #fff; font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.03em; margin: 8px 0 6px; }
+.blog-list[aria-label="All articles"] > p { color: #9fb0c7; margin: 0 0 40px; font-size: 15px; }
 
-.blog-list[aria-label="All articles"] h1 {
-  color: #ffffff;
-  font-size: clamp(28px, 4vw, 38px);
-  letter-spacing: -0.03em;
-  margin: 8px 0 6px;
+/* --- homepage panel wrapper --- */
+.seo-articles-home { text-align: center; }
+.seo-articles-home .seo-articles-eyebrow { margin: 0 0 4px; color: #d4af37; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
+.seo-articles-home .seo-articles-title { margin: 0 0 26px; color: #fff; font-size: clamp(21px, 2.4vw, 30px); letter-spacing: -.03em; }
+.seo-articles-home .seo-articles-all { margin: 30px 0 4px; }
+.seo-articles-home .seo-articles-all a { color: #f5d76e; font-weight: 800; font-size: 13px; text-decoration: none; }
+.blog-list[aria-label="Latest articles"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
+  padding: 6px 0 36px !important;
 }
 
-.blog-list[aria-label="All articles"] > p {
-  color: #9fb0c7;
-  margin: 0 0 40px;
-  font-size: 15px;
+/* --- shared: the stacked list --- */
+.blog-list[aria-label="All articles"] ul,
+.blog-list[aria-label="Latest articles"] ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; align-items: center;
 }
 
-.blog-list[aria-label="All articles"] ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Each article = a small A4 paper sheet */
-.blog-list[aria-label="All articles"] li {
-  position: relative;
-  list-style: none;
-  width: 214px;
-  height: 303px;
-  margin: 0 !important;
-  padding: 0 !important;
+/* --- shared: each sheet --- */
+.blog-list[aria-label="All articles"] li,
+.blog-list[aria-label="Latest articles"] li.blog-item {
+  position: relative; list-style: none;
+  width: 214px; height: 303px;
+  margin: 0 !important; padding: 0 !important;
   border: 1px solid rgba(15, 23, 42, 0.10) !important;
   border-radius: 8px !important;
   background: linear-gradient(158deg, #ffffff 0%, #eef0f5 100%) !important;
@@ -362,62 +351,41 @@ body:has(.blog-list[aria-label="All articles"]) footer {
   overflow: hidden;
   transition: transform .28s ease, box-shadow .28s ease;
 }
+.blog-list[aria-label="All articles"] li + li,
+.blog-list[aria-label="Latest articles"] li.blog-item + li.blog-item { margin-top: -231px !important; }
 
-/* Tuck every following sheet under the previous one, leaving a 72px title band */
-.blog-list[aria-label="All articles"] li + li {
-  margin-top: -231px !important;
-}
-
-/* Ruled-paper texture on the body of each sheet */
-.blog-list[aria-label="All articles"] li::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 72px 0;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 26px,
-    rgba(37, 99, 235, 0.07) 27px
-  );
+.blog-list[aria-label="All articles"] li::before,
+.blog-list[aria-label="Latest articles"] li.blog-item::before {
+  content: ""; position: absolute; inset: 0 0 72px 0;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 26px, rgba(37, 99, 235, 0.07) 27px);
   pointer-events: none;
 }
-
-/* Folded dog-ear corner */
-.blog-list[aria-label="All articles"] li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
+.blog-list[aria-label="All articles"] li::after,
+.blog-list[aria-label="Latest articles"] li.blog-item::after {
+  content: ""; position: absolute; top: 0; right: 0;
+  width: 0; height: 0; border-style: solid;
   border-width: 0 22px 22px 0;
   border-color: transparent #dfe3ea transparent transparent;
   filter: drop-shadow(-1px 1px 1px rgba(2,6,23,.18));
 }
-
-/* Title band pinned to the bottom 72px — the strip that always peeks out */
-.blog-list[aria-label="All articles"] li a {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 72px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  padding: 12px 15px;
-  box-sizing: border-box;
+.blog-list[aria-label="All articles"] li a,
+.blog-list[aria-label="Latest articles"] li.blog-item a {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 72px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  padding: 12px 15px; box-sizing: border-box;
   font: 700 13.5px/1.25 Georgia, "Times New Roman", serif;
-  color: #16213e !important;
-  text-decoration: none !important;
+  color: #16213e !important; text-decoration: none !important;
   border-top: 1px solid rgba(15,23,42,.08);
   background: linear-gradient(to top, #ffffff 62%, rgba(255,255,255,0));
 }
+/* category accent on the title band */
+.blog-list li.blog-item[data-category="cdl"] a { border-top-color: rgba(232,124,53,.55); }
+.blog-list li.blog-item[data-category="real_estate"] a { border-top-color: rgba(200,168,75,.6); }
+.blog-list li.blog-item[data-category="dmv"] a { border-top-color: rgba(59,130,246,.55); }
 
-/* Newest article (front sheet): raised + gold ring */
-.blog-list[aria-label="All articles"] li:first-child {
+/* newest article = front sheet: raised + gold ring */
+.blog-list[aria-label="All articles"] li:first-child,
+.blog-list[aria-label="Latest articles"] li.blog-item:first-child {
   transform: translateY(-7px);
   border-color: rgba(212, 175, 55, 0.55) !important;
   box-shadow:
@@ -426,10 +394,11 @@ body:has(.blog-list[aria-label="All articles"]) footer {
     0 0 0 1px rgba(212,175,55,.35),
     0 0 26px rgba(212,175,55,.28);
 }
-
-/* Lift a sheet fully out on hover/focus for easy reading + clicking */
+/* lift a sheet fully out on hover/focus */
 .blog-list[aria-label="All articles"] li:hover,
-.blog-list[aria-label="All articles"] li:focus-within {
+.blog-list[aria-label="All articles"] li:focus-within,
+.blog-list[aria-label="Latest articles"] li.blog-item:hover,
+.blog-list[aria-label="Latest articles"] li.blog-item:focus-within {
   transform: translateY(-18px) scale(1.05) rotate(-0.7deg);
   z-index: 9000 !important;
   box-shadow:
@@ -437,37 +406,28 @@ body:has(.blog-list[aria-label="All articles"]) footer {
     0 40px 60px rgba(2, 6, 23, 0.6),
     0 0 30px rgba(212,175,55,.25);
 }
-
-/* Newest sheet on top of the pile; each lower sheet stacks beneath it */
-.blog-list[aria-label="All articles"] li:nth-child(1) { z-index: 40; }
-.blog-list[aria-label="All articles"] li:nth-child(2) { z-index: 39; }
-.blog-list[aria-label="All articles"] li:nth-child(3) { z-index: 38; }
-.blog-list[aria-label="All articles"] li:nth-child(4) { z-index: 37; }
-.blog-list[aria-label="All articles"] li:nth-child(5) { z-index: 36; }
-.blog-list[aria-label="All articles"] li:nth-child(6) { z-index: 35; }
-.blog-list[aria-label="All articles"] li:nth-child(7) { z-index: 34; }
-.blog-list[aria-label="All articles"] li:nth-child(8) { z-index: 33; }
-.blog-list[aria-label="All articles"] li:nth-child(9) { z-index: 32; }
-.blog-list[aria-label="All articles"] li:nth-child(10) { z-index: 31; }
-.blog-list[aria-label="All articles"] li:nth-child(11) { z-index: 30; }
-.blog-list[aria-label="All articles"] li:nth-child(12) { z-index: 29; }
-.blog-list[aria-label="All articles"] li:nth-child(13) { z-index: 28; }
-.blog-list[aria-label="All articles"] li:nth-child(14) { z-index: 27; }
-.blog-list[aria-label="All articles"] li:nth-child(15) { z-index: 26; }
-.blog-list[aria-label="All articles"] li:nth-child(16) { z-index: 25; }
-.blog-list[aria-label="All articles"] li:nth-child(17) { z-index: 24; }
-.blog-list[aria-label="All articles"] li:nth-child(18) { z-index: 23; }
-.blog-list[aria-label="All articles"] li:nth-child(19) { z-index: 22; }
-.blog-list[aria-label="All articles"] li:nth-child(20) { z-index: 21; }
-.blog-list[aria-label="All articles"] li:nth-child(n+21) { z-index: 1; }
+/* stacking order: newest sheet on top of the pile */
+.blog-list[aria-label="All articles"] li:nth-child(1), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(1) { z-index: 40; }
+.blog-list[aria-label="All articles"] li:nth-child(2), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(2) { z-index: 39; }
+.blog-list[aria-label="All articles"] li:nth-child(3), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(3) { z-index: 38; }
+.blog-list[aria-label="All articles"] li:nth-child(4), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(4) { z-index: 37; }
+.blog-list[aria-label="All articles"] li:nth-child(5), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(5) { z-index: 36; }
+.blog-list[aria-label="All articles"] li:nth-child(6), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(6) { z-index: 35; }
+.blog-list[aria-label="All articles"] li:nth-child(7), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(7) { z-index: 34; }
+.blog-list[aria-label="All articles"] li:nth-child(8), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(8) { z-index: 33; }
+.blog-list[aria-label="All articles"] li:nth-child(9), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(9) { z-index: 32; }
+.blog-list[aria-label="All articles"] li:nth-child(10), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(10) { z-index: 31; }
+.blog-list[aria-label="All articles"] li:nth-child(11), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(11) { z-index: 30; }
+.blog-list[aria-label="All articles"] li:nth-child(12), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(12) { z-index: 29; }
+.blog-list[aria-label="All articles"] li:nth-child(13), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(13) { z-index: 28; }
+.blog-list[aria-label="All articles"] li:nth-child(14), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(14) { z-index: 27; }
+.blog-list[aria-label="All articles"] li:nth-child(15), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(15) { z-index: 26; }
+.blog-list[aria-label="All articles"] li:nth-child(n+16), .blog-list[aria-label="Latest articles"] li.blog-item:nth-child(n+16) { z-index: 1; }
 
 @media (max-width: 480px) {
-  .blog-list[aria-label="All articles"] li {
-    width: 182px;
-    height: 258px;
-  }
-  .blog-list[aria-label="All articles"] li + li {
-    margin-top: -186px !important;
-  }
+  .blog-list[aria-label="All articles"] li,
+  .blog-list[aria-label="Latest articles"] li.blog-item { width: 182px; height: 258px; }
+  .blog-list[aria-label="All articles"] li + li,
+  .blog-list[aria-label="Latest articles"] li.blog-item + li.blog-item { margin-top: -186px !important; }
 }
 /* PAPER_STACK_BLOG_END */
