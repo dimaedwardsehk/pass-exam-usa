@@ -1,11 +1,11 @@
-const CACHE_NAME = 'dmv-prep-v1';
+const CACHE_NAME = 'dmv-prep-v2';
 const ASSETS = [
-  '/pass-exam-usa/dmv/',
-  '/pass-exam-usa/dmv/index.html',
-  '/pass-exam-usa/dmv/styles.css',
-  '/pass-exam-usa/dmv/app.js',
-  '/pass-exam-usa/dmv/data/questions.json',
-  '/pass-exam-usa/dmv/manifest.webmanifest'
+  '/dmv/',
+  '/dmv/index.html',
+  '/dmv/styles.css',
+  '/dmv/app.js',
+  '/dmv/data/questions.json',
+  '/dmv/manifest.webmanifest'
 ];
 
 self.addEventListener('install', e => {
