@@ -1,5 +1,5 @@
-const CACHE_NAME = 'fastpass-re-v33';
-const urlsToCache = ['/pass-exam-usa/real-estate/'];
+const CACHE_NAME = 'fastpass-re-v34';
+const urlsToCache = ['/real-estate/'];
 
 self.addEventListener('install', event => {
   event.waitUntil(

@@ -2,24 +2,24 @@
   "name": "Fast Pass Real Estate",
   "short_name": "FastPass RE",
   "description": "Real Estate License Exam Prep 2026",
-  "start_url": "/pass-exam-usa/real-estate/",
+  "start_url": "/real-estate/?access=re-full-z9n5k3w2",
   "display": "standalone",
   "background_color": "#0A0F1E",
   "theme_color": "#C8A84B",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/pass-exam-usa/real-estate/favicon.ico",
+      "src": "/real-estate/favicon.ico",
       "sizes": "48x48",
       "type": "image/x-icon"
     },
     {
-      "src": "/pass-exam-usa/real-estate/assets/icon.png",
+      "src": "/real-estate/assets/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/pass-exam-usa/real-estate/assets/icon-512.png",
+      "src": "/real-estate/assets/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
