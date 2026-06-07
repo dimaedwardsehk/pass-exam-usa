@@ -13,6 +13,24 @@
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="paper.css">
+<style>
+.seo-articles-home{text-align:center;padding:64px 0}
+.seo-articles-home .seo-articles-eyebrow{margin:0 0 6px;color:var(--accent-gold);font-family:var(--font-mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px}
+.seo-articles-home .seo-articles-title{font-family:var(--font-display);font-size:clamp(26px,3.5vw,40px);margin:0 0 44px}
+.home-articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left;max-width:1120px;margin:0 auto;padding:0 24px}
+.home-article-card{display:flex;flex-direction:column;gap:12px;padding:26px;background:var(--bg-glass);border:1px solid var(--border-gold);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.4);color:var(--text-primary);text-decoration:none;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.home-article-card:hover{transform:translateY(-6px);border-color:var(--accent-gold);box-shadow:0 16px 48px rgba(0,0,0,.55),0 0 26px rgba(200,168,75,.14)}
+.home-article-card .hac-tag{align-self:flex-start;font-family:var(--font-mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:5px 12px;border-radius:100px;background:rgba(200,168,75,.15);color:var(--accent-gold)}
+.home-article-card[data-category="cdl"] .hac-tag{background:rgba(232,124,53,.15);color:var(--accent-orange)}
+.home-article-card[data-category="dmv"] .hac-tag{background:rgba(59,130,246,.15);color:var(--accent-blue)}
+.home-article-card h3{font-family:var(--font-display);font-size:19px;line-height:1.3;font-weight:700;margin:0;color:var(--text-primary)}
+.home-article-card p{font-size:14px;color:var(--text-secondary);line-height:1.6;margin:0;flex-grow:1}
+.home-article-card .hac-read{font-size:13px;font-weight:700;color:var(--accent-gold);margin-top:4px}
+.home-article-card[data-category="cdl"] .hac-read{color:var(--accent-orange)}
+.home-article-card[data-category="dmv"] .hac-read{color:var(--accent-blue)}
+@media(max-width:1024px){.home-articles-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.home-articles-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -79,20 +97,33 @@
     <div class="hero-gradient"></div>
   </section>
 
-  <!-- ======== LATEST ARTICLES (paper stack) — moved to top ======== -->
+  <!-- ======== LATEST ARTICLES ======== -->
   <!-- SEO_ARTICLES_START -->
   <section class="seo-articles-home">
     <p class="seo-articles-eyebrow">New study guides</p>
     <h2 class="seo-articles-title">Latest Exam Prep Articles</h2>
-    <div class="blog-list" aria-label="Latest articles">
+    <div class="home-articles-grid">
       <!-- BLOG_LIST_START -->
-      <ul>
-        <li class="blog-item" data-category="cdl"><a href="blog/cdl-exam-prep-4-languages-immigrant-drivers.html">CDL Exam Prep in 4 Languages for Immigrant Drivers</a></li>
-        <li class="blog-item" data-category="real_estate"><a href="blog/how-to-pass-texas-real-estate-exam-guide.html">How to Pass the Texas Real Estate Exam (2026 Guide)</a></li>
-      </ul>
+      <a class="home-article-card" data-category="real_estate" href="blog/real-estate-exam-topics-that-trip-up-first-time-test-takers.html">
+        <span class="hac-tag">Real Estate</span>
+        <h3>Real Estate Exam: 7 Topics That Trip Up First-Time Test Takers</h3>
+        <p>The high-weight topics that fail most first-time candidates — agency law, finance, real estate math and contracts — and how to master each one.</p>
+        <span class="hac-read">Read article →</span>
+      </a>
+      <a class="home-article-card" data-category="real_estate" href="blog/how-to-pass-texas-real-estate-exam-guide.html">
+        <span class="hac-tag">Real Estate</span>
+        <h3>How to Pass the Texas Real Estate Exam (2026 Guide)</h3>
+        <p>A step-by-step study plan: what the exam tests, the hardest topics, and the practice habits that build real confidence before test day.</p>
+        <span class="hac-read">Read article →</span>
+      </a>
+      <a class="home-article-card" data-category="cdl" href="blog/cdl-exam-prep-4-languages-immigrant-drivers.html">
+        <span class="hac-tag">CDL</span>
+        <h3>CDL Exam Prep in 4 Languages for Immigrant Drivers</h3>
+        <p>How immigrant drivers can prepare for the CDL exam with quick language support in Spanish, Russian and Polish while studying in English.</p>
+        <span class="hac-read">Read article →</span>
+      </a>
       <!-- BLOG_LIST_END -->
     </div>
-    <p class="seo-articles-all"><a href="blog/">Open the full blog →</a></p>
   </section>
   <!-- SEO_ARTICLES_END -->
 
@@ -815,7 +846,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 PassExamUSA. All rights reserved.</span>
+      <span>© 2026 PassExamUSA. All rights reserved.</span>
       <div class="footer-socials">
         <a href="#" aria-label="Twitter">𝕏</a>
         <a href="#" aria-label="Instagram">◉</a>
