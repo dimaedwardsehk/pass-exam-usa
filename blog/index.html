@@ -6,18 +6,54 @@
 <title>Pass Exam USA Blog</title>
 <meta name="description" content="Study guides and exam prep articles for DMV, CDL, and Real Estate exams.">
 <link rel="stylesheet" href="../style.css">
+<style>
+body{background:radial-gradient(1200px 600px at 50% -8%,#0d1838,#060b1a 60%);min-height:100vh;font-family:'DM Sans',system-ui,sans-serif;color:#e5e7eb;margin:0}
+.blog-wrap{max-width:1120px;margin:0 auto;padding:0 22px 80px}
+.blog-wrap .top{padding:26px 0 4px}
+.blog-wrap .top a{color:#f5d76e;text-decoration:none;font-weight:800;font-size:14px}
+.blog-wrap h1{text-align:center;color:#fff;font-size:clamp(28px,4vw,42px);letter-spacing:-.02em;margin:26px 0 6px;font-family:Georgia,serif}
+.blog-wrap .sub{text-align:center;color:#9fb0c7;margin:0 0 42px}
+.article-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.article-card{display:flex;flex-direction:column;gap:11px;padding:24px;background:linear-gradient(160deg,rgba(20,27,45,.95),rgba(10,15,30,.95));border:1px solid rgba(200,168,75,.22);border-radius:16px;box-shadow:0 10px 34px rgba(0,0,0,.45);color:#f1f5f9;text-decoration:none;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.article-card:hover{transform:translateY(-6px);border-color:rgba(200,168,75,.6);box-shadow:0 18px 50px rgba(0,0,0,.55),0 0 26px rgba(200,168,75,.14)}
+.article-card .ac-tag{align-self:flex-start;font:700 11px/1 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.8px;padding:5px 12px;border-radius:100px;background:rgba(200,168,75,.15);color:#C8A84B}
+.article-card[data-category="cdl"] .ac-tag{background:rgba(232,124,53,.15);color:#E87C35}
+.article-card[data-category="dmv"] .ac-tag{background:rgba(59,130,246,.15);color:#3B82F6}
+.article-card h3{margin:0;font:700 19px/1.3 Georgia,serif;color:#fff}
+.article-card p{margin:0;flex-grow:1;font-size:14px;line-height:1.6;color:#94a3b8}
+.article-card .ac-read{font-size:13px;font-weight:700;color:#C8A84B}
+.article-card[data-category="cdl"] .ac-read{color:#E87C35}
+.blog-wrap .foot{color:#64748b;text-align:center;padding:50px 0 0;font-size:13px}
+@media(max-width:1024px){.article-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.article-cards{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<header><a href="../index.html">&larr; Back to Pass Exam USA</a></header>
-<section class="blog-list" aria-label="All articles">
+<div class="blog-wrap">
+<div class="top"><a href="../index.html">← Back to Pass Exam USA</a></div>
 <h1>Pass Exam USA Blog</h1>
-<p>Latest study guides and exam prep articles.</p>
-<ul>
-      <li><a href="real-estate-exam-topics-that-trip-up-first-time-test-takers.html">Real Estate Exam: 7 Topics That Trip Up First-Time Test Takers (2026)</a></li>
-      <li><a href="cdl-exam-prep-4-languages-immigrant-drivers.html">CDL Exam Prep in 4 Languages for Immigrant Drivers</a></li>
-      <li><a href="how-to-pass-texas-real-estate-exam-guide.html">How to Pass the Texas Real Estate Exam (2026 Guide)</a></li>
-</ul>
-</section>
-<footer><p>&copy; Pass Exam USA</p></footer>
+<p class="sub">Latest study guides and exam prep articles.</p>
+<div class="article-cards">
+  <a class="article-card" data-category="real_estate" href="real-estate-exam-topics-that-trip-up-first-time-test-takers.html">
+    <span class="ac-tag">Real Estate</span>
+    <h3>Real Estate Exam: 7 Topics That Trip Up First-Time Test Takers</h3>
+    <p>The high-weight topics that fail most first-time candidates — agency law, finance, real estate math and contracts — and how to master each one.</p>
+    <span class="ac-read">Read article →</span>
+  </a>
+  <a class="article-card" data-category="real_estate" href="how-to-pass-texas-real-estate-exam-guide.html">
+    <span class="ac-tag">Real Estate</span>
+    <h3>How to Pass the Texas Real Estate Exam (2026 Guide)</h3>
+    <p>A step-by-step study plan: what the exam tests, the hardest topics, and the practice habits that build real confidence before test day.</p>
+    <span class="ac-read">Read article →</span>
+  </a>
+  <a class="article-card" data-category="cdl" href="cdl-exam-prep-4-languages-immigrant-drivers.html">
+    <span class="ac-tag">CDL</span>
+    <h3>CDL Exam Prep in 4 Languages for Immigrant Drivers</h3>
+    <p>How immigrant drivers can prepare for the CDL exam with quick language support in Spanish, Russian and Polish while studying in English.</p>
+    <span class="ac-read">Read article →</span>
+  </a>
+</div>
+<div class="foot">© Pass Exam USA</div>
+</div>
 </body>
 </html>
