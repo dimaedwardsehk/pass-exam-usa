@@ -1,17 +1,17 @@
-timestamp: 2026-06-08T14:08:48.142303+00:00
+timestamp: 2026-06-08T18:13:45.149379+00:00
 context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: True
-AI_BASE_URL: https://tokenlb.net/v1
-AI_MODEL: claude-opus-4-7
+AI_BASE_URL: https://api.pioneer.ai/v1
+AI_MODEL: 5a01010b-395b-48c7-b931-0ece022b1e12
 ----- traceback -----
 Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/run.py", line 193, in _run_pipeline
     article = generator.generate_article(keyword, source_text, cta_html)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 74, in generate_article
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 79, in generate_article
     response_text = _request_article(filled_prompt)
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 155, in _request_article
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 156, in _request_article
     response = client.chat.completions.create(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
@@ -25,5 +25,5 @@ Traceback (most recent call last):
                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/openai/_base_client.py", line 1105, in request
     raise self._make_status_error_from_response(err.response) from None
-openai.PermissionDeniedError: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: ¥0.000796, 需要预扣费额度: ¥0.033288 (request id: 202606081408479533306288268d9d6iDE0kSgh)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+openai.PermissionDeniedError: Error code: 403 - {'detail': {'code': 'card_verification_required', 'message': 'To get started with Pioneer, activate the Hobby plan for $5 at https://agent.pioneer.ai/billing. This is a one-time payment that unlocks inference credits.', 'billing_url': 'https://agent.pioneer.ai/billing'}}
 
