@@ -1,3 +1,6 @@
 /* The stacked paper-sheet article look was removed in favor of flat dark cards.
-   All article-card styling now lives in style.css (the .blog-list cards).
-   This file is intentionally left empty. */
+   All article-card styling now lives in style.css (the .blog-list cards). */
+
+/* Hide the leftover, unstyled CDL language panel that was dumping raw text
+   above the footer on every page. */
+.cdl-language-panel{display:none !important;}
