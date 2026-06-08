@@ -1,4 +1,4 @@
-timestamp: 2026-06-08T18:16:08.988570+00:00
+timestamp: 2026-06-08T18:25:48.870491+00:00
 context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: True
 AI_BASE_URL: https://api.pioneer.ai/v1
@@ -8,22 +8,11 @@ Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/run.py", line 193, in _run_pipeline
     article = generator.generate_article(keyword, source_text, cta_html)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 79, in generate_article
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 89, in generate_article
     response_text = _request_article(filled_prompt)
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 156, in _request_article
-    response = client.chat.completions.create(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1251, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/openai/_base_client.py", line 1332, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/openai/_base_client.py", line 1105, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.PermissionDeniedError: Error code: 403 - {'detail': {'code': 'card_verification_required', 'message': 'To get started with Pioneer, activate the Hobby plan for $5 at https://agent.pioneer.ai/billing. This is a one-time payment that unlocks inference credits.', 'billing_url': 'https://agent.pioneer.ai/billing'}}
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 229, in _request_article
+    raise RuntimeError(
+RuntimeError: All 1 provider(s) failed. Per-provider results:
+[legacy_env] PermissionDeniedError: Error code: 403 - {'detail': {'code': 'card_verification_required', 'message': 'To get started with Pioneer, activate the Hobby plan for $5 at https://agent.pioneer.ai/billing. This is a one-time payment that unlocks inference credits.', 'billing_url': 'https://agent.pioneer.ai/billing'}}
 
