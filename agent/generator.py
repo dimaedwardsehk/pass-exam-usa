@@ -16,7 +16,12 @@ from slugify import slugify
 
 logger = logging.getLogger(__name__)
 
-MODEL_NAME = os.getenv("AI_MODEL", "5a01010b-395b-48c7-b931-0ece022b1e12")
+# --- Provider configuration -------------------------------------------------
+# Hardcoded to pioneer.ai on purpose: the ONLY secret that needs to be set is
+# AI_API_KEY. The AI_BASE_URL and AI_MODEL secrets are intentionally IGNORED so
+# a stale/leftover value can never point the agent at the wrong provider again.
+PROVIDER_BASE_URL = "https://api.pioneer.ai/v1"
+MODEL_NAME = "5a01010b-395b-48c7-b931-0ece022b1e12"
 TEMPERATURE = 0.4
 MAX_TOKENS = 3500
 MAX_ATTEMPTS = 3
@@ -139,16 +144,12 @@ def _fill_prompt(
 
 def _request_article(filled_prompt: str) -> str:
     api_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
-    base_url = os.getenv("AI_BASE_URL")
+    base_url = PROVIDER_BASE_URL
 
     if not api_key:
         raise RuntimeError("Missing AI_API_KEY")
 
-    client_args = {"api_key": api_key}
-    if base_url:
-        client_args["base_url"] = base_url
-
-    client = OpenAI(**client_args)
+    client = OpenAI(api_key=api_key, base_url=base_url)
 
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
@@ -279,39 +280,3 @@ def _build_slug(title: str) -> str:
 
 def _is_valid_slug(slug: str) -> bool:
     return len(slug) <= 60 and SLUG_PATTERN.fullmatch(slug) is not None
-
-
-if __name__ == "__main__":
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s %(name)s | %(message)s",
-    )
-    demo_keyword = {
-        "kw": "cdl air brakes practice test",
-        "state": None,
-        "intent": "transactional",
-        "category": "cdl",
-        "h1_pattern": "CDL Air Brakes Practice Test Guide for 2026",
-        "title_pattern": "CDL Air Brakes Practice Test (2026)",
-        "meta_pattern": (
-            "Study CDL air brakes for 2026 with practice questions, system "
-            "vocabulary, inspection topics, and test-day review tips for drivers."
-        ),
-    }
-    demo_source = (
-        "Air brakes use compressed air to stop heavy vehicles. Pre-trip "
-        "inspection includes checking the air compressor, governor, and brake "
-        "pedal. Drivers must learn the difference between service brakes, "
-        "parking brakes, and emergency brakes."
-    )
-    demo_cta = (
-        '<aside class="cta"><h3>Ready to practice?</h3><p>Get web access to '
-        'our CDL trainer for $9.99.</p><a href="https://dimaedwardsehk.github.io/'
-        'pass-exam-usa/#cdl">Start Practicing</a></aside>'
-    )
-    result = generate_article(demo_keyword, demo_source, demo_cta)
-    print("TITLE:", result["title"])
-    print("META :", result["meta_description"])
-    print("SLUG :", result["slug"])
-    print("URL  :", result["canonical_url"])
-    print("HTML head (500):", result["html"][:500])
