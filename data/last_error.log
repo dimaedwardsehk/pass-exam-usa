@@ -1,4 +1,4 @@
-timestamp: 2026-06-08T13:35:13.443956+00:00
+timestamp: 2026-06-08T14:02:22.576116+00:00
 context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: True
 AI_BASE_URL: https://tokenlb.net/v1
@@ -25,5 +25,5 @@ Traceback (most recent call last):
                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/openai/_base_client.py", line 1105, in request
     raise self._make_status_error_from_response(err.response) from None
-openai.PermissionDeniedError: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: ¥0.000796, 需要预扣费额度: ¥0.033288 (request id: 202606081335132835635618268d9d6DQFVwNMg)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+openai.PermissionDeniedError: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: ¥0.000796, 需要预扣费额度: ¥0.033288 (request id: 202606081402223857085098268d9d6NTMbZiP9)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
 
