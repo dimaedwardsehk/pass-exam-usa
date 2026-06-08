@@ -17,11 +17,22 @@ from slugify import slugify
 logger = logging.getLogger(__name__)
 
 # --- Provider configuration -------------------------------------------------
-# Hardcoded to pioneer.ai on purpose: the ONLY secret that needs to be set is
-# AI_API_KEY. The AI_BASE_URL and AI_MODEL secrets are intentionally IGNORED so
-# a stale/leftover value can never point the agent at the wrong provider again.
-PROVIDER_BASE_URL = "https://api.pioneer.ai/v1"
-MODEL_NAME = "5a01010b-395b-48c7-b931-0ece022b1e12"
+# The agent rotates over a POOL of providers (the "revolver"). Configure the
+# pool in a SINGLE secret named AI_PROVIDERS, a JSON array of objects:
+#   [
+#     {"name": "pioneer", "base_url": "https://api.pioneer.ai/v1",
+#      "model": "5a01010b-395b-48c7-b931-0ece022b1e12", "api_key": "pio_sk_..."},
+#     {"name": "grok", "base_url": "https://api.x.ai/v1",
+#      "model": "grok-3", "api_key": "xai-..."}
+#   ]
+# The code tries each provider in order and returns the first success. If a
+# provider fails, its exact error is recorded and the next one is tried.
+# Add or remove keys by editing ONLY the AI_PROVIDERS secret - never the code.
+#
+# Backward compatible: if AI_PROVIDERS is not set, falls back to a single
+# provider built from AI_API_KEY / AI_BASE_URL / AI_MODEL (or sane defaults).
+DEFAULT_BASE_URL = "https://api.pioneer.ai/v1"
+DEFAULT_MODEL = "5a01010b-395b-48c7-b931-0ece022b1e12"
 TEMPERATURE = 0.4
 MAX_TOKENS = 3500
 MAX_ATTEMPTS = 3
@@ -55,9 +66,8 @@ def generate_article(
     canonical_url = canonical_base + provisional_slug + ".html"
 
     logger.info(
-        "Starting article generation keyword=%s model=%s source_text_length=%d",
+        "Starting article generation keyword=%s source_text_length=%d",
         keyword_text,
-        MODEL_NAME,
         len(source_text),
     )
 
@@ -142,19 +152,96 @@ def _fill_prompt(
     return filled_prompt
 
 
+def _load_providers() -> list[dict[str, str]]:
+    """Build the ordered provider pool (the revolver).
+
+    Prefers the AI_PROVIDERS secret (a JSON array). Falls back to a single
+    provider from AI_API_KEY / AI_BASE_URL / AI_MODEL for backward compat.
+    """
+    raw = os.getenv("AI_PROVIDERS")
+    if raw and raw.strip():
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise RuntimeError(f"AI_PROVIDERS is not valid JSON: {exc}")
+        if not isinstance(data, list):
+            raise RuntimeError("AI_PROVIDERS must be a JSON array of objects.")
+        providers: list[dict[str, str]] = []
+        for idx, item in enumerate(data):
+            if not isinstance(item, dict):
+                continue
+            api_key = str(item.get("api_key") or item.get("key") or "").strip()
+            if not api_key:
+                continue
+            providers.append(
+                {
+                    "name": str(item.get("name") or f"provider_{idx + 1}"),
+                    "api_key": api_key,
+                    "base_url": str(item.get("base_url") or DEFAULT_BASE_URL).strip(),
+                    "model": str(item.get("model") or DEFAULT_MODEL).strip(),
+                }
+            )
+        if not providers:
+            raise RuntimeError(
+                "AI_PROVIDERS is set but contains no usable provider (each entry "
+                "needs at least an 'api_key')."
+            )
+        return providers
+
+    legacy_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
+    if legacy_key and legacy_key.strip():
+        return [
+            {
+                "name": "legacy_env",
+                "api_key": legacy_key.strip(),
+                "base_url": (os.getenv("AI_BASE_URL") or DEFAULT_BASE_URL).strip(),
+                "model": (os.getenv("AI_MODEL") or DEFAULT_MODEL).strip(),
+            }
+        ]
+
+    raise RuntimeError(
+        "No AI providers configured. Set the AI_PROVIDERS secret (a JSON array) "
+        "or AI_API_KEY."
+    )
+
+
 def _request_article(filled_prompt: str) -> str:
-    api_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
-    base_url = PROVIDER_BASE_URL
+    """Rotate over the provider pool, returning the first successful response.
 
-    if not api_key:
-        raise RuntimeError("Missing AI_API_KEY")
+    Every provider's outcome is recorded so the failure log shows exactly what
+    each key returned (auth ok / quota / billing / network), ending guesswork.
+    """
+    providers = _load_providers()
+    results: list[str] = []
 
-    client = OpenAI(api_key=api_key, base_url=base_url)
+    for provider in providers:
+        name = provider["name"]
+        try:
+            content = _request_from_provider(provider, filled_prompt)
+            logger.info("Provider %s succeeded.", name)
+            return content
+        except Exception as exc:  # noqa: BLE001 - record and try the next key
+            detail = f"[{name}] {type(exc).__name__}: {exc}"
+            results.append(detail)
+            logger.warning("Provider failed, rotating to next: %s", detail)
+            continue
+
+    raise RuntimeError(
+        "All "
+        + str(len(providers))
+        + " provider(s) failed. Per-provider results:\n"
+        + "\n".join(results)
+    )
+
+
+def _request_from_provider(provider: dict[str, str], filled_prompt: str) -> str:
+    client = OpenAI(api_key=provider["api_key"], base_url=provider["base_url"])
+    model = provider["model"]
 
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
             response = client.chat.completions.create(
-                model=MODEL_NAME,
+                model=model,
                 temperature=TEMPERATURE,
                 max_tokens=MAX_TOKENS,
                 messages=[
@@ -164,8 +251,12 @@ def _request_article(filled_prompt: str) -> str:
             )
             content = response.choices[0].message.content
             if content is None:
-                raise ValueError("OpenAI response did not contain message content.")
+                raise ValueError("Response did not contain message content.")
             return content
+        except (openai.AuthenticationError, openai.PermissionDeniedError):
+            # Permanent for this key (bad key / billing not activated).
+            # Do not retry - let the revolver move to the next provider.
+            raise
         except (
             openai.APIError,
             openai.RateLimitError,
@@ -176,7 +267,7 @@ def _request_article(filled_prompt: str) -> str:
                 raise
             delay = RETRY_DELAYS[attempt - 1]
             logger.warning(
-                "OpenAI request failed on attempt %d/%d; retrying in %d seconds: %s",
+                "Request failed on attempt %d/%d; retrying in %d seconds: %s",
                 attempt,
                 MAX_ATTEMPTS,
                 delay,
@@ -184,7 +275,7 @@ def _request_article(filled_prompt: str) -> str:
             )
             time.sleep(delay)
 
-    raise RuntimeError("OpenAI retry loop ended without returning a response.")
+    raise RuntimeError("Retry loop ended without returning a response.")
 
 
 def _parse_model_response(response_text: str) -> dict[str, str]:
