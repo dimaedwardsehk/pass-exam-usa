@@ -4,8 +4,12 @@ from __future__ import annotations
 
 import json
 import logging
+import os
+import subprocess
 import sys
+import traceback
 from collections.abc import Mapping
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -20,10 +24,56 @@ DATA_DIR = ROOT_DIR / "data"
 KEYWORDS_PATH = DATA_DIR / "keywords.json"
 SOURCES_PATH = DATA_DIR / "sources.json"
 STATE_PATH = DATA_DIR / "state.json"
+ERROR_LOG_PATH = DATA_DIR / "last_error.log"
 
 
 def _load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _capture_error(context: str, error_text: str) -> None:
+    """Write the exact failure to a committed file so it can be read later.
+
+    Never writes the API key value, only whether it is present.
+    """
+    try:
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        timestamp = datetime.now(timezone.utc).isoformat()
+        api_key_present = bool(
+            os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
+        )
+        base_url = os.getenv("AI_BASE_URL", "(not set, using default)")
+        model = os.getenv("AI_MODEL", "(not set, using default)")
+        diagnostic = (
+            f"timestamp: {timestamp}\n"
+            f"context: {context}\n"
+            f"AI_API_KEY present: {api_key_present}\n"
+            f"AI_BASE_URL: {base_url}\n"
+            f"AI_MODEL: {model}\n"
+            f"----- traceback -----\n"
+            f"{error_text}\n"
+        )
+        ERROR_LOG_PATH.write_text(diagnostic, encoding="utf-8")
+    except Exception:
+        LOGGER.exception("failed to write error log")
+        return
+
+    for command in (
+        ["git", "config", "user.name", "seo-agent[bot]"],
+        [
+            "git",
+            "config",
+            "user.email",
+            "seo-agent[bot]@users.noreply.github.com",
+        ],
+        ["git", "add", str(ERROR_LOG_PATH)],
+        ["git", "commit", "-m", "chore(seo): capture run error [skip ci]"],
+        ["git", "push", "origin", "HEAD:main"],
+    ):
+        try:
+            subprocess.run(command, cwd=str(ROOT_DIR), check=False)
+        except Exception:
+            LOGGER.exception("git command failed: %s", " ".join(command))
 
 
 def _load_state() -> dict[str, list[str]]:
@@ -143,6 +193,10 @@ def _run_pipeline() -> int:
             article = generator.generate_article(keyword, source_text, cta_html)
         except Exception:
             LOGGER.exception("article generation failed")
+            _capture_error(
+                f"article generation failed for keyword: {keyword.get('kw')}",
+                traceback.format_exc(),
+            )
             return 1
 
         warnings = seo_check.validate(article, keyword)
@@ -179,6 +233,10 @@ def _run_pipeline() -> int:
         "no publishable article found; %d keyword(s) failed SEO validation",
         skipped,
     )
+    _capture_error(
+        "no publishable article found",
+        f"{skipped} keyword(s) failed SEO validation",
+    )
     return 2
 
 
@@ -192,6 +250,7 @@ def main() -> int:
         return _run_pipeline()
     except Exception:
         LOGGER.exception("unexpected pipeline failure")
+        _capture_error("unexpected pipeline failure", traceback.format_exc())
         return 1
 
 
