@@ -134,38 +134,52 @@ def _run_pipeline() -> int:
         state = {"used": used}
         remaining = all_keywords
 
-    keyword = remaining[0]
-    source_text = _read_source_text(keyword)
-    cta_html = build_cta(keyword["category"], keyword.get("state"))
+    skipped = 0
+    for keyword in remaining:
+        source_text = _read_source_text(keyword)
+        cta_html = build_cta(keyword["category"], keyword.get("state"))
 
-    try:
-        article = generator.generate_article(keyword, source_text, cta_html)
-    except Exception:
-        LOGGER.exception("article generation failed")
-        return 1
+        try:
+            article = generator.generate_article(keyword, source_text, cta_html)
+        except Exception:
+            LOGGER.exception("article generation failed")
+            return 1
 
-    warnings = seo_check.validate(article, keyword)
-    critical_warnings = [w for w in warnings if _is_critical_warning(w)]
-    for w in warnings:
-        if w in critical_warnings:
-            LOGGER.error(w)
-        else:
-            LOGGER.warning(w)
+        warnings = seo_check.validate(article, keyword)
+        critical_warnings = [w for w in warnings if _is_critical_warning(w)]
+        for w in warnings:
+            if w in critical_warnings:
+                LOGGER.error(w)
+            else:
+                LOGGER.warning(w)
 
-    if critical_warnings:
-        return 2
+        if critical_warnings:
+            LOGGER.error(
+                "skipping keyword due to critical SEO warnings: %s",
+                keyword.get("kw"),
+            )
+            skipped += 1
+            continue
 
-    article_path = integrator.save_article(article)
-    integrator.update_index(article_path, article["title"], article["category"])
-    integrator.update_blog_index()
-    integrator.update_sitemap(article_path)
+        article_path = integrator.save_article(article)
+        integrator.update_index(
+            article_path, article["title"], article["category"]
+        )
+        integrator.update_blog_index()
+        integrator.update_sitemap(article_path)
 
-    used.append(str(keyword["kw"]))
-    state["used"] = used
-    _save_state(state)
+        used.append(str(keyword["kw"]))
+        state["used"] = used
+        _save_state(state)
 
-    LOGGER.info("published %s", article_path)
-    return 0
+        LOGGER.info("published %s", article_path)
+        return 0
+
+    LOGGER.error(
+        "no publishable article found; %d keyword(s) failed SEO validation",
+        skipped,
+    )
+    return 2
 
 
 def main() -> int:
