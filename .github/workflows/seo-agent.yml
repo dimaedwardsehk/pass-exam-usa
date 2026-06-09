@@ -43,9 +43,10 @@ jobs:
 
       - name: Run SEO agent
         env:
-          AI_API_KEY: ${{ secrets.AI_API_KEY }}
-          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
-          AI_MODEL: ${{ secrets.AI_MODEL }}
+          AI_PROVIDERS: $ secrets.AI_PROVIDERS 
+          AI_API_KEY: $ secrets.AI_API_KEY 
+          AI_BASE_URL: $ secrets.AI_BASE_URL 
+          AI_MODEL: $ secrets.AI_MODEL 
         run: python -m agent.run
 
       - name: Configure git
