@@ -17,20 +17,27 @@ from slugify import slugify
 logger = logging.getLogger(__name__)
 
 # --- Provider configuration -------------------------------------------------
-# The agent rotates over a POOL of providers (the "revolver"). Configure the
-# pool in a SINGLE secret named AI_PROVIDERS, a JSON array of objects:
-#   [
-#     {"name": "groq", "base_url": "https://api.groq.com/openai/v1",
-#      "model": "llama-3.3-70b-versatile", "api_key": "gsk_..."},
-#     {"name": "pioneer", "base_url": "https://api.pioneer.ai/v1",
-#      "model": "5a01010b-395b-48c7-b931-0ece022b1e12", "api_key": "pio_sk_..."}
-#   ]
+# The agent rotates over a POOL of providers (the "revolver"). The pool can be
+# configured in EITHER of two places (checked in this order):
+#
+#   1. data/providers.json  -- a plain JSON file committed to the repo. This is
+#      the simplest option and needs NO GitHub Actions secrets and NO workflow
+#      changes. Format: a JSON array of objects, e.g.
+#        [
+#          {"name": "groq", "base_url": "https://api.groq.com/openai/v1",
+#           "model": "llama-3.3-70b-versatile", "api_key": "gsk_..."}
+#        ]
+#      NOTE: anything committed to a public repo is publicly visible. Use this
+#      only for disposable/free keys, and rotate them if needed.
+#
+#   2. The AI_PROVIDERS environment variable (same JSON array format), typically
+#      wired from a GitHub Actions secret.
+#
+# If neither is present, it falls back to a single provider built from
+# AI_API_KEY / AI_BASE_URL / AI_MODEL.
+#
 # The code tries each provider in order and returns the first success. If a
 # provider fails, its exact error is recorded and the next one is tried.
-# Add or remove keys by editing ONLY the AI_PROVIDERS secret - never the code.
-#
-# Backward compatible: if AI_PROVIDERS is not set, falls back to a single
-# provider built from AI_API_KEY / AI_BASE_URL / AI_MODEL (or sane defaults).
 DEFAULT_BASE_URL = "https://api.pioneer.ai/v1"
 DEFAULT_MODEL = "5a01010b-395b-48c7-b931-0ece022b1e12"
 TEMPERATURE = 0.4
@@ -152,44 +159,72 @@ def _fill_prompt(
     return filled_prompt
 
 
+def _coerce_providers(data: Any) -> list[dict[str, str]]:
+    """Normalize a parsed JSON array into a clean provider list."""
+    if not isinstance(data, list):
+        raise RuntimeError("Providers config must be a JSON array of objects.")
+    providers: list[dict[str, str]] = []
+    for idx, item in enumerate(data):
+        if not isinstance(item, dict):
+            continue
+        api_key = str(item.get("api_key") or item.get("key") or "").strip()
+        if not api_key or api_key.startswith("$"):
+            continue
+        providers.append(
+            {
+                "name": str(item.get("name") or f"provider_{idx + 1}"),
+                "api_key": api_key,
+                "base_url": str(item.get("base_url") or DEFAULT_BASE_URL).strip(),
+                "model": str(item.get("model") or DEFAULT_MODEL).strip(),
+            }
+        )
+    return providers
+
+
 def _load_providers() -> list[dict[str, str]]:
     """Build the ordered provider pool (the revolver).
 
-    Prefers the AI_PROVIDERS secret (a JSON array). Falls back to a single
-    provider from AI_API_KEY / AI_BASE_URL / AI_MODEL for backward compat.
+    Priority:
+      1. data/providers.json committed in the repo (a JSON array). Needs no
+         GitHub Actions secret and no workflow expression syntax.
+      2. The AI_PROVIDERS environment variable (a JSON array).
+      3. Legacy single provider from AI_API_KEY / AI_BASE_URL / AI_MODEL.
     """
-    raw = os.getenv("AI_PROVIDERS")
-    if raw and raw.strip():
+    # 1. Committed providers file.
+    repo_root = Path(__file__).resolve().parent.parent
+    providers_file = repo_root / "data" / "providers.json"
+    if providers_file.exists():
         try:
-            data = json.loads(raw)
+            file_data = json.loads(providers_file.read_text(encoding="utf-8"))
+            file_providers = _coerce_providers(file_data)
+        except (json.JSONDecodeError, OSError, RuntimeError) as exc:
+            logger.warning("Ignoring invalid data/providers.json: %s", exc)
+            file_providers = []
+        if file_providers:
+            logger.info(
+                "Loaded %d provider(s) from data/providers.json.",
+                len(file_providers),
+            )
+            return file_providers
+
+    # 2. AI_PROVIDERS env var (only treat as config if it looks like JSON).
+    raw = os.getenv("AI_PROVIDERS")
+    if raw and raw.strip().startswith("["):
+        try:
+            env_data = json.loads(raw)
         except json.JSONDecodeError as exc:
             raise RuntimeError(f"AI_PROVIDERS is not valid JSON: {exc}")
-        if not isinstance(data, list):
-            raise RuntimeError("AI_PROVIDERS must be a JSON array of objects.")
-        providers: list[dict[str, str]] = []
-        for idx, item in enumerate(data):
-            if not isinstance(item, dict):
-                continue
-            api_key = str(item.get("api_key") or item.get("key") or "").strip()
-            if not api_key:
-                continue
-            providers.append(
-                {
-                    "name": str(item.get("name") or f"provider_{idx + 1}"),
-                    "api_key": api_key,
-                    "base_url": str(item.get("base_url") or DEFAULT_BASE_URL).strip(),
-                    "model": str(item.get("model") or DEFAULT_MODEL).strip(),
-                }
-            )
-        if not providers:
-            raise RuntimeError(
-                "AI_PROVIDERS is set but contains no usable provider (each entry "
-                "needs at least an 'api_key')."
-            )
-        return providers
+        env_providers = _coerce_providers(env_data)
+        if env_providers:
+            return env_providers
+        raise RuntimeError(
+            "AI_PROVIDERS is set but contains no usable provider (each entry "
+            "needs at least an 'api_key')."
+        )
 
+    # 3. Legacy single provider from individual env vars.
     legacy_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
-    if legacy_key and legacy_key.strip():
+    if legacy_key and legacy_key.strip() and not legacy_key.strip().startswith("$"):
         return [
             {
                 "name": "legacy_env",
@@ -200,8 +235,8 @@ def _load_providers() -> list[dict[str, str]]:
         ]
 
     raise RuntimeError(
-        "No AI providers configured. Set the AI_PROVIDERS secret (a JSON array) "
-        "or AI_API_KEY."
+        "No AI providers configured. Add data/providers.json (a JSON array) or "
+        "set the AI_PROVIDERS secret."
     )
 
 
