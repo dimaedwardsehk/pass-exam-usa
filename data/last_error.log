@@ -1,9 +1,25 @@
-timestamp: 2026-06-09T06:58:30.848593+00:00
+timestamp: 2026-06-09T07:01:26.112171+00:00
 context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: True
-AI_BASE_URL: https://api.x.ai/
-AI_MODEL: llama-3.3-70b-versatile
+AI_BASE_URL: $ secrets.AI_BASE_URL
+AI_MODEL: $ secrets.AI_MODEL
 ----- traceback -----
+Traceback (most recent call last):
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 164, in _load_providers
+    data = json.loads(raw)
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/run.py", line 193, in _run_pipeline
     article = generator.generate_article(keyword, source_text, cta_html)
@@ -11,8 +27,10 @@ Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 89, in generate_article
     response_text = _request_article(filled_prompt)
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 229, in _request_article
-    raise RuntimeError(
-RuntimeError: All 1 provider(s) failed. Per-provider results:
-[legacy_env] NotFoundError: Error code: 404 - {'error': {'code': 404, 'message': 'The requested resource was not found. Please check the URL and try again. Documentation is available at https://docs.x.ai/'}}
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 214, in _request_article
+    providers = _load_providers()
+                ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 166, in _load_providers
+    raise RuntimeError(f"AI_PROVIDERS is not valid JSON: {exc}")
+RuntimeError: AI_PROVIDERS is not valid JSON: Expecting value: line 1 column 1 (char 0)
 
