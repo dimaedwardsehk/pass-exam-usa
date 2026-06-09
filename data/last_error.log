@@ -1,8 +1,8 @@
-timestamp: 2026-06-09T05:00:48.906639+00:00
+timestamp: 2026-06-09T06:57:18.360583+00:00
 context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: True
-AI_BASE_URL: https://api.pioneer.ai/v1
-AI_MODEL: 5a01010b-395b-48c7-b931-0ece022b1e12
+AI_BASE_URL: https://api.x.ai/
+AI_MODEL: llama-3.3-70b-versatile
 ----- traceback -----
 Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/run.py", line 193, in _run_pipeline
@@ -14,5 +14,5 @@ Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 229, in _request_article
     raise RuntimeError(
 RuntimeError: All 1 provider(s) failed. Per-provider results:
-[legacy_env] PermissionDeniedError: Error code: 403 - {'detail': {'code': 'card_verification_required', 'message': 'To get started with Pioneer, activate the Hobby plan for $5 at https://agent.pioneer.ai/billing. This is a one-time payment that unlocks inference credits.', 'billing_url': 'https://agent.pioneer.ai/billing'}}
+[legacy_env] NotFoundError: Error code: 404 - {'error': {'code': 404, 'message': 'The requested resource was not found. Please check the URL and try again. Documentation is available at https://docs.x.ai/'}}
 
