@@ -1,8 +1,8 @@
-timestamp: 2026-06-09T17:34:29.361489+00:00
+timestamp: 2026-06-09T17:37:41.264828+00:00
 context: article generation failed for keyword: texas real estate math practice
-AI_API_KEY present: True
-AI_BASE_URL: $ secrets.AI_BASE_URL
-AI_MODEL: $ secrets.AI_MODEL
+AI_API_KEY present: False
+AI_BASE_URL: (not set, using default)
+AI_MODEL: (not set, using default)
 ----- traceback -----
 Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/run.py", line 193, in _run_pipeline
