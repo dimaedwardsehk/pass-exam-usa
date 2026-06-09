@@ -20,10 +20,10 @@ logger = logging.getLogger(__name__)
 # The agent rotates over a POOL of providers (the "revolver"). Configure the
 # pool in a SINGLE secret named AI_PROVIDERS, a JSON array of objects:
 #   [
+#     {"name": "groq", "base_url": "https://api.groq.com/openai/v1",
+#      "model": "llama-3.3-70b-versatile", "api_key": "gsk_..."},
 #     {"name": "pioneer", "base_url": "https://api.pioneer.ai/v1",
-#      "model": "5a01010b-395b-48c7-b931-0ece022b1e12", "api_key": "pio_sk_..."},
-#     {"name": "grok", "base_url": "https://api.x.ai/v1",
-#      "model": "grok-3", "api_key": "xai-..."}
+#      "model": "5a01010b-395b-48c7-b931-0ece022b1e12", "api_key": "pio_sk_..."}
 #   ]
 # The code tries each provider in order and returns the first success. If a
 # provider fails, its exact error is recorded and the next one is tried.
@@ -51,7 +51,7 @@ def generate_article(
     keyword: dict[str, Any],
     source_text: str,
     cta_html: str,
-    canonical_base: str = "https://dimaedwardsehk.github.io/pass-exam-usa/blog/",
+    canonical_base: str = "https://passexamusa.org/blog/",
 ) -> dict[str, str | None]:
     """Generate one SEO article and return parsed metadata plus HTML."""
     keyword_text = str(keyword["kw"])
