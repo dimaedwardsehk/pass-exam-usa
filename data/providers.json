@@ -1,13 +1,20 @@
 [
   {
-    "name": "groq",
+    "name": "groq-1",
     "base_url": "https://api.groq.com/openai/v1",
     "model": "llama-3.3-70b-versatile",
-    "api_key_parts": [
-      "gsk_pYTymsMLakBI",
-      "59tdCkhMWGdyb3FY",
-      "yKv6OTZB1KbfU3U0",
-      "Hjt5YJGt"
-    ]
+    "api_key_parts": ["gsk_7al6Ydm0Li", "7v3HDyWpKhWGdy", "b3FYBUKvrsJWLv", "6FfhB1qNIGMha5"]
+  },
+  {
+    "name": "groq-2",
+    "base_url": "https://api.groq.com/openai/v1",
+    "model": "llama-3.3-70b-versatile",
+    "api_key_parts": ["gsk_pYTymsMLakBI", "59tdCkhMWGdyb3FY", "yKv6OTZB1KbfU3U0", "Hjt5YJGt"]
+  },
+  {
+    "name": "groq-3",
+    "base_url": "https://api.groq.com/openai/v1",
+    "model": "llama-3.3-70b-versatile",
+    "api_key_parts": ["gsk_xyE4VVM0w2", "sgzD89koDLWGdy", "b3FYAHNwYCL11f", "d7Fxz0KOSrTy8f"]
   }
 ]
