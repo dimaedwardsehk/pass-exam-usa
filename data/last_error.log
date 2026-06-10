@@ -1,4 +1,4 @@
-timestamp: 2026-06-09T18:00:05.807064+00:00
+timestamp: 2026-06-10T06:50:17.289658+00:00
 context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: False
 AI_BASE_URL: (not set, using default)
@@ -8,13 +8,10 @@ Traceback (most recent call last):
   File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/run.py", line 193, in _run_pipeline
     article = generator.generate_article(keyword, source_text, cta_html)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 96, in generate_article
-    response_text = _request_article(filled_prompt)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 249, in _request_article
-    providers = _load_providers()
-                ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 237, in _load_providers
-    raise RuntimeError(
-RuntimeError: No AI providers configured. Add data/providers.json (a JSON array) or set the AI_PROVIDERS secret.
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 102, in generate_article
+    final_meta_description = _validate_and_trim_meta(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 372, in _validate_and_trim_meta
+    raise ValueError(
+ValueError: Model meta_description is shorter than 120 characters: 78
 
