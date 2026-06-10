@@ -1,0 +1,13 @@
+[
+  {
+    "name": "groq",
+    "base_url": "https://api.groq.com/openai/v1",
+    "model": "llama-3.3-70b-versatile",
+    "api_key_parts": [
+      "gsk_pYTymsMLakBI",
+      "59tdCkhMWGdyb3FY",
+      "yKv6OTZB1KbfU3U0",
+      "Hjt5YJGt"
+    ]
+  }
+]
