@@ -5,9 +5,9 @@ from __future__ import annotations
 from html import escape
 
 _HREFS = {
-    "cdl": "https://dimaedwardsehk.github.io/pass-exam-usa/#cdl",
-    "real_estate": "https://dimaedwardsehk.github.io/pass-exam-usa/#real-estate",
-    "dmv": "https://dimaedwardsehk.github.io/pass-exam-usa/#dmv",
+    "cdl": "https://passexamusa.org/#cdl",
+    "real_estate": "https://passexamusa.org/#real-estate",
+    "dmv": "https://passexamusa.org/#dmv",
 }
 
 _CONTENT = {
