@@ -134,6 +134,69 @@
       "h1_pattern": "Florida Real Estate Exam Practice Test Guide for 2026",
       "title_pattern": "Florida Real Estate Exam Practice Test Guide",
       "meta_pattern": "Use Florida real estate exam practice tests to review major topics, track progress, and prepare with confidence for 2026."
+    },
+    {
+      "kw": "how to pass the new york real estate exam",
+      "state": "NY",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the New York Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the New York Real Estate Exam",
+      "meta_pattern": "Follow a clear 2026 plan to pass the New York real estate exam, with study timing, key topics, and practice questions that build confidence."
+    },
+    {
+      "kw": "how to pass the georgia real estate exam",
+      "state": "GA",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the Georgia Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the Georgia Real Estate Exam",
+      "meta_pattern": "Prepare for the Georgia real estate exam in 2026 with a simple study schedule, the hardest topics, and focused practice question review."
+    },
+    {
+      "kw": "how to pass the illinois real estate exam",
+      "state": "IL",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the Illinois Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the Illinois Real Estate Exam",
+      "meta_pattern": "Use a practical 2026 plan for the Illinois real estate exam, covering study timing, tough topics, and practice questions for steady progress."
+    },
+    {
+      "kw": "how to pass the north carolina real estate exam",
+      "state": "NC",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the North Carolina Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the North Carolina Real Estate Exam",
+      "meta_pattern": "Get ready for the North Carolina real estate exam in 2026 with a clear study plan, key topic review, and practice question strategy."
+    },
+    {
+      "kw": "how to pass the arizona real estate exam",
+      "state": "AZ",
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "How to Pass the Arizona Real Estate Exam in 2026",
+      "title_pattern": "How to Pass the Arizona Real Estate Exam",
+      "meta_pattern": "Prepare for the Arizona real estate exam in 2026 with a step-by-step study plan, hardest topics, and practice questions to build confidence."
+    },
+    {
+      "kw": "real estate practice exam questions",
+      "state": null,
+      "intent": "transactional",
+      "category": "real_estate",
+      "h1_pattern": "Real Estate Practice Exam Questions for 2026",
+      "title_pattern": "Real Estate Practice Exam Questions (2026)",
+      "meta_pattern": "Use real estate practice exam questions to review key topics, find weak areas, and plan smarter study sessions before your 2026 test day."
+    },
+    {
+      "kw": "real estate exam vocabulary terms",
+      "state": null,
+      "intent": "informational",
+      "category": "real_estate",
+      "h1_pattern": "Real Estate Exam Vocabulary Terms to Know in 2026",
+      "title_pattern": "Real Estate Exam Vocabulary Terms to Know",
+      "meta_pattern": "Learn the real estate exam vocabulary terms that matter most, with plain definitions and study tips to remember them for 2026 test day."
     }
   ],
   "cdl": [
@@ -208,6 +271,60 @@
       "h1_pattern": "Florida CDL Passenger Endorsement Practice Test for 2026",
       "title_pattern": "Florida CDL Passenger Endorsement Practice",
       "meta_pattern": "Study for the Florida CDL passenger endorsement with practice questions, passenger safety review, and 2026 test prep tips."
+    },
+    {
+      "kw": "cdl combination vehicles practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL Combination Vehicles Practice Test Guide for 2026",
+      "title_pattern": "CDL Combination Vehicles Practice Test",
+      "meta_pattern": "Study CDL combination vehicles for 2026 with practice questions, coupling and safety topics, and a focused plan for exam prep and review."
+    },
+    {
+      "kw": "cdl pre trip inspection practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL Pre-Trip Inspection Practice Test Guide for 2026",
+      "title_pattern": "CDL Pre-Trip Inspection Practice Test",
+      "meta_pattern": "Prepare for the CDL pre-trip inspection with 2026 practice questions, step-by-step checks, and safety topics drivers must know for test day."
+    },
+    {
+      "kw": "cdl doubles triples practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL Doubles and Triples Practice Test Guide for 2026",
+      "title_pattern": "CDL Doubles and Triples Practice Test",
+      "meta_pattern": "Review CDL doubles and triples topics for 2026 with practice questions, coupling rules, and safety review to prepare with confidence."
+    },
+    {
+      "kw": "cdl tanker endorsement practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "CDL Tanker Endorsement Practice Test Guide for 2026",
+      "title_pattern": "CDL Tanker Endorsement Practice Test",
+      "meta_pattern": "Prepare for the CDL tanker endorsement with 2026 practice questions, liquid surge and safety topics, and a clear study plan for test day."
+    },
+    {
+      "kw": "new york cdl practice test",
+      "state": "NY",
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "New York CDL Practice Test Guide for 2026",
+      "title_pattern": "New York CDL Practice Test (2026)",
+      "meta_pattern": "Prepare for the New York CDL test with 2026 practice questions, safe driving rules, vehicle topics, and a focused study routine for drivers."
+    },
+    {
+      "kw": "georgia cdl general knowledge practice test",
+      "state": "GA",
+      "intent": "transactional",
+      "category": "cdl",
+      "h1_pattern": "Georgia CDL General Knowledge Practice Test for 2026",
+      "title_pattern": "Georgia CDL General Knowledge Practice Test",
+      "meta_pattern": "Use Georgia CDL general knowledge practice to review safe driving rules, vehicle topics, and exam-style questions for your 2026 test day."
     }
   ],
   "dmv": [
@@ -273,6 +390,60 @@
       "h1_pattern": "Florida Permit Test Practice Questions for 2026",
       "title_pattern": "Florida Permit Test Practice Questions",
       "meta_pattern": "Use Florida permit test practice questions to review signs, traffic laws, and safe driving topics for your 2026 exam day."
+    },
+    {
+      "kw": "new york dmv practice test",
+      "state": "NY",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "New York DMV Practice Test Guide for 2026",
+      "title_pattern": "New York DMV Practice Test (2026)",
+      "meta_pattern": "Prepare for the New York DMV test with 2026 practice questions, road sign review, traffic laws, and practical study tips for test day."
+    },
+    {
+      "kw": "georgia dmv practice test",
+      "state": "GA",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "Georgia DMV Practice Test Guide for 2026",
+      "title_pattern": "Georgia DMV Practice Test (2026)",
+      "meta_pattern": "Prepare for the Georgia DMV test with 2026 practice questions, road signs, safe driving rules, and driver handbook study tips for test day."
+    },
+    {
+      "kw": "illinois dmv practice test",
+      "state": "IL",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "Illinois DMV Practice Test Guide for 2026",
+      "title_pattern": "Illinois DMV Practice Test (2026)",
+      "meta_pattern": "Prepare for the Illinois DMV test with 2026 practice questions, road sign review, and rules of the road study tips for a confident test day."
+    },
+    {
+      "kw": "arizona dmv practice test",
+      "state": "AZ",
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "Arizona DMV Practice Test Guide for 2026",
+      "title_pattern": "Arizona DMV Practice Test (2026)",
+      "meta_pattern": "Prepare for the Arizona DMV test with 2026 practice questions, road signs, traffic laws, and driver handbook review tips for test day."
+    },
+    {
+      "kw": "road signs practice test",
+      "state": null,
+      "intent": "transactional",
+      "category": "dmv",
+      "h1_pattern": "Road Signs Practice Test Guide for 2026",
+      "title_pattern": "Road Signs Practice Test (2026)",
+      "meta_pattern": "Use a road signs practice test to review warning, regulatory, and guide signs, and prepare for your 2026 DMV written test with confidence."
+    },
+    {
+      "kw": "dmv permit test study guide",
+      "state": null,
+      "intent": "informational",
+      "category": "dmv",
+      "h1_pattern": "DMV Permit Test Study Guide for 2026",
+      "title_pattern": "DMV Permit Test Study Guide (2026)",
+      "meta_pattern": "Study for the DMV permit test with a 2026 guide to road signs, traffic laws, safe driving basics, and practice questions for steady review."
     }
   ]
 }
