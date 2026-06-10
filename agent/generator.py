@@ -22,16 +22,12 @@ logger = logging.getLogger(__name__)
 #
 #   1. data/providers.json  -- a plain JSON file committed to the repo. This is
 #      the simplest option and needs NO GitHub Actions secrets and NO workflow
-#      changes. Format: a JSON array of objects, e.g.
-#        [
-#          {"name": "groq", "base_url": "https://api.groq.com/openai/v1",
-#           "model": "llama-3.3-70b-versatile", "api_key": "gsk_..."}
-#        ]
-#      The api key may be given either as "api_key" (one string) or as
-#      "api_key_parts" (a list of string fragments that are concatenated).
-#      Splitting the key into parts keeps GitHub secret scanning from rejecting
-#      the commit. NOTE: anything committed to a public repo is publicly
-#      visible; use disposable/free keys and rotate them if needed.
+#      changes. Format: a JSON array of objects. The api key may be given either
+#      as "api_key" (one string) or as "api_key_parts" (a list of string
+#      fragments that are concatenated). Splitting the key into parts keeps
+#      GitHub secret scanning from rejecting the commit. NOTE: anything
+#      committed to a public repo is publicly visible; use disposable/free keys
+#      and rotate them if needed.
 #
 #   2. The AI_PROVIDERS environment variable (same JSON array format), typically
 #      wired from a GitHub Actions secret.
@@ -40,13 +36,16 @@ logger = logging.getLogger(__name__)
 # AI_API_KEY / AI_BASE_URL / AI_MODEL.
 #
 # The code tries each provider in order and returns the first success. If a
-# provider fails, its exact error is recorded and the next one is tried.
+# provider fails (e.g. rate limit), its exact error is recorded and the next
+# one is tried.
 DEFAULT_BASE_URL = "https://api.pioneer.ai/v1"
 DEFAULT_MODEL = "5a01010b-395b-48c7-b931-0ece022b1e12"
 TEMPERATURE = 0.4
 MAX_TOKENS = 3500
 MAX_ATTEMPTS = 3
 RETRY_DELAYS = (1, 2, 4)
+META_MIN_LENGTH = 70
+META_MAX_LENGTH = 155
 STOPWORDS = ["the", "a", "in", "of", "and"]
 SYSTEM_MESSAGE = (
     "You are an expert SEO content writer. Follow the user prompt strictly "
@@ -367,22 +366,23 @@ def _parse_model_response(response_text: str) -> dict[str, str]:
 
 
 def _validate_and_trim_meta(meta_description: str) -> str:
-    clean_meta = " ".join(meta_description.strip().split())
-    if len(clean_meta) < 120:
-        raise ValueError(
-            "Model meta_description is shorter than 120 characters: "
-            f"{len(clean_meta)}"
-        )
-    if len(clean_meta) <= 155:
-        return clean_meta
+    """Clean up the meta description.
 
-    trimmed_meta = _trim_to_words(clean_meta, 155)
-    if len(trimmed_meta) < 120:
-        raise ValueError(
-            "Trimmed meta_description is shorter than 120 characters: "
-            f"{len(trimmed_meta)}"
+    A meta description that is a bit short is fine for SEO, so we never fail the
+    whole pipeline over it - we only trim it when it is too long and log a note
+    when it is on the short side.
+    """
+    clean_meta = " ".join(meta_description.strip().split())
+    if not clean_meta:
+        raise ValueError("Model returned an empty meta_description.")
+    if len(clean_meta) > META_MAX_LENGTH:
+        clean_meta = _trim_to_words(clean_meta, META_MAX_LENGTH)
+    if len(clean_meta) < META_MIN_LENGTH:
+        logger.warning(
+            "meta_description is short (%d chars); using it as-is.",
+            len(clean_meta),
         )
-    return trimmed_meta
+    return clean_meta
 
 
 def _normalize_slug(slug: str, title: str) -> str:
