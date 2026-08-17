@@ -1,7 +1,20 @@
-timestamp: 2026-08-15T12:26:46.976906+00:00
-context: no publishable article found
+timestamp: 2026-08-17T12:26:43.318598+00:00
+context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: False
 AI_BASE_URL: (not set, using default)
 AI_MODEL: (not set, using default)
 ----- traceback -----
-15 keyword(s) failed SEO validation
+Traceback (most recent call last):
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/run.py", line 193, in _run_pipeline
+    article = generator.generate_article(keyword, source_text, cta_html)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 98, in generate_article
+    response_text = _request_article(filled_prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/pass-exam-usa/pass-exam-usa/agent/generator.py", line 277, in _request_article
+    raise RuntimeError(
+RuntimeError: All 3 provider(s) failed. Per-provider results:
+[groq-1] NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+[groq-2] NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+[groq-3] NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+
