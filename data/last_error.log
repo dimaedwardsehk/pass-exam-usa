@@ -1,4 +1,4 @@
-timestamp: 2026-08-21T12:30:34.548119+00:00
+timestamp: 2026-08-23T12:22:25.698739+00:00
 context: article generation failed for keyword: texas real estate math practice
 AI_API_KEY present: False
 AI_BASE_URL: (not set, using default)
@@ -16,5 +16,5 @@ Traceback (most recent call last):
 RuntimeError: All 3 provider(s) failed. Per-provider results:
 [groq-1] NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
 [groq-2] NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
-[groq-3] NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+[groq-3] AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'expired_api_key'}}
 
